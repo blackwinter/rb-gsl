@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>multimin - Ruby/GSL (v1.15.3.2)</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Multidimensional+Minimization">Multidimensional Minimization</a>
+    <li><a href="#label-+Overview"><a href="index.html"name="1"></a> Overview</a>
+    <li><a href="#label-+Caveats"><a href="index.html"name="2"></a> Caveats</a>
+    <li><a href="#label-+Initializing+the+Multidimensional+Minimizer"><a href="index.html"name="3"></a> Initializing the Multidimensional Minimizer</a>
+    <li><a href="#label-+Providing+a+function+to+minimize"><a href="index.html"name="4"></a> Providing a function to minimize</a>
+    <li><a href="#label-+Iteration"><a href="index.html"name="5"></a> Iteration</a>
+    <li><a href="#label-+Stopping+Criteria"><a href="index.html"name="6"></a> Stopping Criteria</a>
+    <li><a href="#label-+Examples"><a href="index.html"name="7"></a> Examples</a>
+    <li><a href="#label-+FdfMinimizer"><a href="index.html"name="7.1"></a> FdfMinimizer</a>
+    <li><a href="#label-+FMinimizer"><a href="index.html"name="7.2"></a> FMinimizer</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/index_rdoc.html">index</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/multimin.rdoc">
+
+<h1 id="label-Multidimensional+Minimization">Multidimensional Minimization<span><a href="#label-Multidimensional+Minimization">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>This chapter describes routines for finding minima of arbitrary 
+multidimensional functions. The library provides low level components for a
+variety of iterative minimizers and convergence tests. These can be
+combined  by the user to achieve the desired solution, while providing full
+access to  the intermediate steps of the algorithms. Each class of methods
+uses the  same framework, so that you can switch between minimizers at
+runtime without  needing to recompile your program. Each instance of a
+minimizer keeps track  of its own state, allowing the minimizers to be used
+in multi-threaded  programs.</p>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="multimin_rdoc.html#1">Overview</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#2">Caveats</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#3">Initializing the Multidimensional
+Minimizer</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#4">Providing a function to minimize</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#5">Iteration</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#6">Stopping Criteria</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#7">Examples</a></p>
+<ol><li>
+<p><a href="multimin_rdoc.html#7.1">FdfMinimizer</a></p>
+</li><li>
+<p><a href="multimin_rdoc.html#7.2">FMinimizer</a></p>
+</li></ol>
+</li></ol>
+
+<h2 id="label-+Overview"><a href="../index.html"name="1"></a> Overview<span><a href="#label-+Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The problem of multidimensional minimization requires finding a point x
+such  that the scalar function, takes a value which is lower than at any
+neighboring  point. For smooth functions the gradient g = nabla f vanishes
+at the minimum.  In general there are no bracketing methods available for
+the minimization of  n-dimensional functions. The algorithms proceed from
+an initial guess using a  search algorithm which attempts to move in a
+downhill direction.</p>
+
+<p>Algorithms making use of the gradient of the function perform a 
+one-dimensional line minimisation along this direction until the lowest
+point  is found to a suitable tolerance. The search direction is then
+updated with  local information from the function and its derivatives, and
+the whole process  repeated until the true n-dimensional minimum is found.</p>
+
+<p>The Nelder-Mead Simplex algorithm applies a different strategy. It
+maintains  n+1 trial parameter vectors as the vertices of a n-dimensional
+simplex.  In each iteration step it tries to improve the worst vertex by a
+simple  geometrical transformation until the size of the simplex falls
+below a given  tolerance.</p>
+
+<p>Both types of algorithms use a standard framework. The user provides a 
+high-level driver for the algorithms, and the library provides the
+individual  functions necessary for each of the steps. There are three main
+phases of the  iteration. The steps are,</p>
+<ul><li>
+<p>initialize minimizer state, s, for algorithm T</p>
+</li><li>
+<p>update s using the iteration T</p>
+</li><li>
+<p>test s for convergence, and repeat iteration if necessary</p>
+</li></ul>
+
+<p>Each iteration step consists either of an improvement to the
+line-minimisation  in the current direction or an update to the search
+direction itself. The  state for the minimizers is held in a
+<code>GSL::MultiMin::FdfMinimizer</code> or  a
+<code>GSL::MultiMin::FMinimizer</code> object.</p>
+
+<h2 id="label-+Caveats"><a href="../index.html"name="2"></a> Caveats<span><a href="#label-+Caveats">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Note that the minimization algorithms can only search for one local minimum
+at a time. When there are several local minima in the search area, the
+first  minimum to be found will be returned; however it is difficult to
+predict which  of the minima this will be. In most cases, no error will be
+reported if you  try to find a local minimum in an area where there is more
+than one.</p>
+
+<p>It is also important to note that the minimization algorithms find local 
+minima; there is no way to determine whether a minimum is a global minimum
+of  the function in question.</p>
+
+<h2 id="label-+Initializing+the+Multidimensional+Minimizer"><a href="../index.html"name="3"></a> Initializing the Multidimensional Minimizer<span><a href="#label-+Initializing+the+Multidimensional+Minimizer">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer.alloc(type, n)</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer.alloc(type, n)</p>
+
+<p>These method create a minimizer of type <code>type</code> for an
+<code>n</code>-dimension function.  The type is given by a string, or by a
+Ruby constant.</p>
+<ul><li>
+<p><code>GSL::MultiMin::FdfMinimizer::CONJUGATE_FR</code> or
+<code>&quot;conjugate_fr&quot;</code></p>
+</li><li>
+<p><code>GSL::MultiMin::FdfMinimizer::CONJUGATE_PR</code> or
+<code>&quot;conjugate_pr&quot;</code></p>
+</li><li>
+<p><code>GSL::MultiMin::FdfMinimizer::VECTOR_BFGS</code> or
+<code>&quot;vector_bfgs&quot;</code></p>
+</li><li>
+<p><code>GSL::MultiMin::FdfMinimizer::VECTOR_BFGS2</code> or
+<code>&quot;vector_bfgs2&quot;</code> (GSL-1.9 or later)</p>
+</li><li>
+<p><code>GSL::MultiMin::FdfMinimizer::STEEPEST_DESCENT</code> or
+<code>&quot;steepest_descent&quot;</code></p>
+</li><li>
+<p><code>GSL::MultiMin::FMinimizer::NMSIMPLEX</code> or
+<code>&quot;nmsimplex&quot;</code></p>
+</li><li>
+<p><code>GSL::MultiMin::FMinimizer::NMSIMPLEX2RAND</code> or
+<code>&quot;nmsimplex2rand&quot;</code> (GSL-1.13)</p>
+</li></ul>
+
+<p>ex:</p>
+
+<pre>include GSL::MultiMin
+m1 = FdfMinimizer.alloc(FdfMinimizer::CONJUGATE_FR, 2)
+m2 = FdfMinimizer.alloc(&quot;steepest_descent&quot;, 4)
+m3 = FMinimizer.alloc(FMinimizer::NMSIMPLEX, 3)
+m4 = FMinimizer.alloc(&quot;nmsimplex&quot;, 2)</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#set(func, x, step_size, tol)</p>
+
+<p>This method initializes the minimizer <code>self</code> to minimize the
+function  <code>fdf</code> (the <code>GSL::MultiMin::Function_fdf</code>
+class, see below) starting from  the initial point <code>x</code>
+(<code>GSL::Vector</code>). The size of the first trial step is  given by
+<code>step_size</code> (<code>Vector</code>). The accuracy of the line
+minimization is  specified by <code>tol</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FMinimizer#set(func, x, step_size)</p>
+
+<p>This method initializes the minimizer <code>self</code> to minimize the
+function <code>func</code>,  starting from the initial point <code>x</code>
+(Vector). The size of the initial trial steps  is given in vector
+<code>step_size</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#name</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer#name</p>
+
+<p>These return the name of the minimizer <code>self</code>.</p>
+</li></ul>
+
+<h2 id="label-+Providing+a+function+to+minimize"><a href="../index.html"name="4"></a> Providing a function to minimize<span><a href="#label-+Providing+a+function+to+minimize">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>You must provide a parametric function of <code>n</code> variables for the
+minimizers to  operate on. You may also need to provide a routine which
+calculates the gradient of the  function. In order to allow for general
+parameters the functions are defined by the  classes,
+<code>GSL::MultiMin::Function_fdf</code> and
+<code>GSL::MultiMin::Function</code>.</p>
+<hr>
+<ul><li>
+<p>GSL::MultiMin:Function_fdf.alloc(proc_f, proc_df, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function_fdf.alloc(proc_f, proc_df, proc_fdf, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function_fdf#set_procs(proc_f, proc_df)</p>
+</li><li>
+<p>GSL::MultiMin:Function_fdf#set_procs(proc_f, proc_df, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function_fdf#set_procs(proc_f, proc_df, proc_fdf, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function_fdf#set_params(params)</p>
+
+<p>See example below.</p>
+
+<pre class="ruby"><span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiMin</span>
+
+<span class="ruby-identifier">my_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-value">10.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">30.0</span>
+}
+
+<span class="ruby-identifier">my_df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">df</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">df</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">-</span><span class="ruby-identifier">p0</span>)
+  <span class="ruby-identifier">df</span>[<span class="ruby-value">1</span>] = <span class="ruby-value">40.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span><span class="ruby-operator">-</span><span class="ruby-identifier">p1</span>)
+}
+
+<span class="ruby-identifier">my_func</span> = <span class="ruby-constant">Function_fdf</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">my_f</span>, <span class="ruby-identifier">my_df</span>, <span class="ruby-value">2</span>)
+<span class="ruby-identifier">my_func</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">2.0</span>])      <span class="ruby-comment"># parameters</span>
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin:Function.alloc(proc_f, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function#set_proc(proc_f)</p>
+</li><li>
+<p>GSL::MultiMin:Function#set_proc(proc_f, n)</p>
+</li><li>
+<p>GSL::MultiMin:Function#set_params(params)</p>
+
+<p>See example below.</p>
+
+<pre class="ruby"><span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiMin</span>
+
+<span class="ruby-identifier">np</span> = <span class="ruby-value">2</span>
+<span class="ruby-identifier">my_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-value">10.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">30.0</span>
+}
+
+<span class="ruby-identifier">my_func</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">my_f</span>, <span class="ruby-identifier">np</span>)
+<span class="ruby-identifier">my_func</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">2.0</span>])      <span class="ruby-comment"># parameters</span>
+</pre>
+</li></ul>
+
+<h2 id="label-+Iteration"><a href="../index.html"name="5"></a> Iteration<span><a href="#label-+Iteration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#iterate</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer#iterate</p>
+
+<p>These methods perform a single iteration of the minimizer
+<code>self</code>.  If the iteration encounters an unexpected problem then
+an error code will be returned. The minimizer maintains a current best
+estimate of the minimum at all times.  This information can be accessed
+with the following methods,</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#x</p>
+</li><li>
+<p>GSL::MultiMin::FdfMinimizer#minimum</p>
+</li><li>
+<p>GSL::MultiMin::FdfMinimizer#gradient</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer#x</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer#minimum</p>
+</li><li>
+<p>GSL::MultiMin::FMinimizer#size</p>
+
+<p>These method return the current best estimate of the location of the
+minimum,  the value of the function at that point, its gradient, and
+minimizer specific  characteristic size for the minimizer
+<code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#restart</p>
+
+<p>This method resets the minimizer <code>self</code> to use the current point
+as a new  starting point.</p>
+</li></ul>
+
+<h2 id="label-+Stopping+Criteria"><a href="../index.html"name="6"></a> Stopping Criteria<span><a href="#label-+Stopping+Criteria">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>A minimization procedure should stop when one of the following conditions
+is true:</p>
+<ul><li>
+<p>A minimum has been found to within the user-specified precision.</p>
+</li><li>
+<p>A user-specified maximum number of iterations has been reached.</p>
+</li><li>
+<p>An error has occurred.</p>
+</li></ul>
+
+<p>The handling of these conditions is under user control. The methods below
+allow the  user to test the precision of the current result.</p>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#test_gradient(epsabs)</p>
+</li><li>
+<p>GSL::MultiMin::FdfMinimizer.test_gradient(g, epsabs)</p>
+
+<p>These method test the norm of the gradient <code>g</code> against the
+absolute tolerance  <code>epsabs</code>. The gradient of a multidimensional
+function goes to zero at a minimum.  The tests return
+<code>GSL::SUCCESS</code> if the following condition is achieved,</p>
+
+<pre>|g| &lt; epsabs</pre>
+
+<p>and returns <code>GSL::CONTINUE</code> otherwise. A suitable choice of
+<code>epsabs</code> can  be made from the desired accuracy in the function
+for small variations in <code>x</code>.  The relationship between these
+quantities is given by <code>\delta f = g \delta x</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiMin::FdfMinimizer#test_size(epsabs)</p>
+</li><li>
+<p>GSL::MultiMin::FdfMinimizer.test_size(size, epsabs)</p>
+
+<p>These method test the minimizer specific characteristic <code>size</code> 
+(if applicable to the used minimizer) against absolute tolerance
+<code>epsabs</code>.  The tests return (<code>GSL::SUCCESS</code> if the
+size is smaller than tolerance,  otherwise <code>GSL::CONTINUE</code> is
+returned.</p>
+</li></ul>
+
+<h2 id="label-+Examples"><a href="../index.html"name="7"></a> Examples<span><a href="#label-+Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<h3 id="label-+FdfMinimizer"><a href="../index.html"name="7.1"></a> FdfMinimizer<span><a href="#label-+FdfMinimizer">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiMin</span>
+
+<span class="ruby-identifier">my_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-value">10.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">30.0</span>
+}
+
+<span class="ruby-identifier">my_df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">df</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">df</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">-</span><span class="ruby-identifier">p0</span>)
+  <span class="ruby-identifier">df</span>[<span class="ruby-value">1</span>] = <span class="ruby-value">40.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span><span class="ruby-operator">-</span><span class="ruby-identifier">p1</span>)
+}
+
+<span class="ruby-identifier">my_func</span> = <span class="ruby-constant">Function_fdf</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">my_f</span>, <span class="ruby-identifier">my_df</span>, <span class="ruby-value">2</span>)
+<span class="ruby-identifier">my_func</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">2.0</span>])      <span class="ruby-comment"># parameters</span>
+
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">5.0</span>, <span class="ruby-value">7.0</span>)          <span class="ruby-comment"># starting point</span>
+
+<span class="ruby-identifier">minimizer</span> = <span class="ruby-constant">FdfMinimizer</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;conjugate_fr&quot;</span>, <span class="ruby-value">2</span>)
+<span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">my_func</span>, <span class="ruby-identifier">x</span>, <span class="ruby-value">0.01</span>, <span class="ruby-value">1e-4</span>)
+
+<span class="ruby-identifier">iter</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-identifier">iter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">iterate</span>()
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">test_gradient</span>(<span class="ruby-value">1e-3</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SUCCESS</span>
+    <span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;Minimum found at&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">f</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%5d %.5f %.5f %10.5f\n&quot;</span>, <span class="ruby-identifier">iter</span>, <span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">x</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">f</span>)
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">CONTINUE</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">iter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">100</span>
+</pre>
+
+<h3 id="label-+FMinimizer"><a href="../index.html"name="7.2"></a> FMinimizer<span><a href="#label-+FMinimizer">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiMin</span>
+
+<span class="ruby-identifier">np</span> = <span class="ruby-value">2</span>
+
+<span class="ruby-identifier">my_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">y</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-value">10.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">20.0</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>)<span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">30.0</span>
+}
+
+<span class="ruby-identifier">my_func</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">my_f</span>, <span class="ruby-identifier">np</span>)
+<span class="ruby-identifier">my_func</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">2.0</span>])      <span class="ruby-comment"># parameters</span>
+
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">5</span>, <span class="ruby-value">7</span>])
+<span class="ruby-identifier">ss</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">np</span>)
+<span class="ruby-identifier">ss</span>.<span class="ruby-identifier">set_all</span>(<span class="ruby-value">1.0</span>)
+
+<span class="ruby-identifier">minimizer</span> = <span class="ruby-constant">FMinimizer</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;nmsimplex&quot;</span>, <span class="ruby-identifier">np</span>)
+<span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">my_func</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">ss</span>)
+
+<span class="ruby-identifier">iter</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-identifier">iter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">iterate</span>()
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">test_size</span>(<span class="ruby-value">1e-2</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SUCCESS</span>
+    <span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;converged to minimum at&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%5d &quot;</span>, <span class="ruby-identifier">iter</span>);
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">np</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%10.3e &quot;</span>, <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;f() = %7.3f size = %.3f\n&quot;</span>, <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">fval</span>, <span class="ruby-identifier">minimizer</span>.<span class="ruby-identifier">size</span>);
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">CONTINUE</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">iter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">100</span>
+</pre>
+
+<p><a href="multiroot_rdoc.html">prev</a> <a href="fit_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

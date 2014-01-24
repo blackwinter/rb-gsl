@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>dht - Ruby/GSL (v1.15.3.2)</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Discrete+Hankel+Transforms">Discrete Hankel Transforms</a>
+    <li><a href="#label-+Definitions"><a href="index.html"name="1"></a> Definitions</a>
+    <li><a href="#label-+Initialization"><a href="index.html"name="2"></a> Initialization</a>
+    <li><a href="#label-+Methods"><a href="index.html"name="3"></a> Methods</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/index_rdoc.html">index</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/dht.rdoc">
+
+<h1 id="label-Discrete+Hankel+Transforms">Discrete Hankel Transforms<span><a href="#label-Discrete+Hankel+Transforms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>This chapter describes functions for performing Discrete Hankel Transforms 
+(DHTs).</p>
+<ol><li>
+<p><a href="dht_rdoc.html#1">Definitions</a></p>
+</li><li>
+<p><a href="dht_rdoc.html#2">Initialization</a></p>
+</li><li>
+<p><a href="dht_rdoc.html#3">Methods</a></p>
+</li></ol>
+
+<h2 id="label-+Definitions"><a href="../index.html"name="1"></a> Definitions<span><a href="#label-+Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The discrete Hankel transform acts on a vector of sampled data, where the 
+samples are assumed to have been taken at points related to the zeroes of a
+Bessel function of fixed order; compare this to the case of the discrete 
+Fourier transform, where samples are taken at points related to the zeroes 
+of the sine or cosine function.</p>
+
+<p>Specifically, let f(t) be a function on the unit interval. Then the finite 
+nu-Hankel transform of f(t) is defined to be the set of numbers g_m given
+by,  so that, Suppose that f is band-limited in the sense that g_m=0 for m
+&gt; M. Then we have the following fundamental sampling theorem. It is this
+discrete  expression which defines the discrete Hankel transform. The
+kernel in the  summation above defines the matrix of the nu-Hankel
+transform of size M-1.  The coefficients of this matrix, being dependent on
+nu and M, must be  precomputed and stored; the <code>GSL::Dht</code> object
+encapsulates this data.  The constructor <code>GSL::Dht.alloc</code>
+returns a <code>GSL::Dht</code> object  which must be properly initialized
+with <code>GSL::Dht#init</code> before  it can be used to perform
+transforms on data sample vectors,  for fixed nu and M, using the
+<code>GSL::Dht#apply</code> method.  The implementation allows a scaling of
+the fundamental  interval, for convenience, so that one can assume the
+function is defined on  the interval [0,X], rather than the unit interval.</p>
+
+<p>Notice that by assumption f(t) vanishes at the endpoints of the interval, 
+consistent with the inversion formula and the sampling formula given above.
+Therefore, this transform corresponds to an orthogonal expansion in 
+eigenfunctions of the Dirichlet problem for the Bessel differential
+equation.</p>
+
+<h2 id="label-+Initialization"><a href="../index.html"name="2"></a> Initialization<span><a href="#label-+Initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Dht.alloc(size)</p>
+</li><li>
+<p>GSL::Dht.alloc(size, nu, xmax)</p>
+
+<p>These methods allocate a Discrete Hankel transform object
+<code>GSL::Dht</code>  of size <code>size</code>. If three arguments are
+given, the object is initialized with the values of <code>nu, xmax</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#init(nu, xmax)</p>
+
+<p>This initializes the transform <code>self</code> for the given values of
+<code>nu</code> and <code>xmax</code>.</p>
+</li></ul>
+
+<h2 id="label-+Methods"><a href="../index.html"name="3"></a> Methods<span><a href="#label-+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Dht#apply(vin, vout)</p>
+</li><li>
+<p>GSL::Dht#apply(vin)</p>
+
+<p>This applies the transform <code>self</code> to the vector <code>vin</code>
+whose size is  equal to the size of the transform.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#x_sample(n)</p>
+
+<p>This method returns the value of the n&#39;th sample point in the unit
+interval,  (j_{nu,n+1}/j_{nu,M}) X. These are the points where the function
+f(t) is  assumed to be sampled.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#k_sample(n)</p>
+
+<p>This method returns the value of the n&#39;th sample point in “k-space”, 
+j_{nu,n+1}/X.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#size</p>
+
+<p>Returns the size of the sample arrays to be transformed</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#nu</p>
+
+<p>Returns the Bessel function order</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#xmax</p>
+
+<p>Returns the upper limit to the x-sampling domain</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#kmax</p>
+
+<p>Returns the upper limit to the k-sampling domain</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#j</p>
+
+<p>Returns an array of computed J_nu zeros, j_{nu,s} = <a href="s">j</a>  as a
+<code>GSL::Vector::View</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#Jjj</p>
+
+<p>Returns an array of transform numerator, J_nu(j_i j_m / j_N) as a
+<code>GSL::Vector::View</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#J2</p>
+
+<p>Returns an array of transform numerator, J_nu(j_i j_m / j_N).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Dht#coef</p>
+</li><li>
+<p>GSL::Dht#coef(n, m)</p>
+
+<p>Return the (n,m)-th transform coefficient.</p>
+</li></ul>
+
+<p><a href="sum_rdoc.html">prev</a> <a href="roots_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

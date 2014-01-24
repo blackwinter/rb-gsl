@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>function - Ruby/GSL (v1.15.3.2)</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-GSL%3A%3AFunction+class">GSL::Function class</a>
+    <li><a href="#label-+Class+Methods"><a href="index.html"name="1"></a> Class Methods</a>
+    <li><a href="#label-+Methods"><a href="index.html"name="2"></a> Methods</a>
+    <li><a href="#label-+Graph"><a href="index.html"name="3"></a> Graph</a>
+    <li><a href="#label-+Example"><a href="index.html"name="4"></a> Example</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/index_rdoc.html">index</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/function.rdoc">
+
+<h1 id="label-GSL%3A%3AFunction+class">GSL::Function class<span><a href="#label-GSL%3A%3AFunction+class">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h2 id="label-+Class+Methods"><a href="../index.html"name="1"></a> Class Methods<span><a href="#label-+Class+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Function.alloc</p>
+
+<p>Constructor.</p>
+<ul><li>
+<p>ex:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sin</span>(<span class="ruby-identifier">x</span>) }
+</pre>
+</li></ul>
+
+<p>The value of the function is calculated by the method
+<code>Function#eval</code>, as</p>
+
+<pre>p f.eval(x)</pre>
+
+<p>The function can have parameters of arbitrary numbers. Here is an example
+in case of exponential function <code>f(x; a, b) = a*exp(-b*x)</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>    <span class="ruby-comment"># x: a scalar, params: an array</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">exp</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">b</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>)
+}
+</pre>
+
+<p>To evaluate the function <code>f(x) = 2*exp(-3*x)</code>,</p>
+
+<pre>f.set_params([2, 3])
+f.eval(x)</pre>
+</li></ul>
+
+<h2 id="label-+Methods"><a href="../index.html"name="2"></a> Methods<span><a href="#label-+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Function#eval(x)</p>
+</li><li>
+<p>GSL::Function#call(x)</p>
+</li><li>
+<p>GSL::Function#at(x)</p>
+</li><li>
+<p><a href="x">GSL::Function#</a></p>
+
+<p>These methods return a value of the function at <code>x</code>.</p>
+
+<pre>p f.eval(2.5)
+p f.call(2.5)
+p f[2.5]</pre>
+
+<p>The argument <code>x</code> can be a scalar, a Vector, Matrix, Array or
+Range.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Function#set { |x| … }</p>
+</li><li>
+<p>GSL::Function#set(proc, params)</p>
+
+<p>This method sets or resets the procedure of <code>self</code>, as</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sin</span>(<span class="ruby-identifier">x</span>) }
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">1.0</span>)               <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-identifier">sin</span>(<span class="ruby-value">1.0</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">set</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cos</span>(<span class="ruby-identifier">x</span>) }
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">1.0</span>)               <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-identifier">cos</span>(<span class="ruby-value">1.0</span>)
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Function#set_params(params)</p>
+
+<p>This set the constant parameters of the function.</p>
+</li></ul>
+
+<h2 id="label-+Graph"><a href="../index.html"name="3"></a> Graph<span><a href="#label-+Graph">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Function#graph(x[, options])</p>
+
+<p>This method uses <code>GNU graph</code> to plot the function
+<code>self</code>. The argument <code>x</code> is given by a
+<code>GSL::Vector</code> or an <code>Array</code>.</p>
+
+<p>Ex: Plot sin(x)</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-identifier">x</span>) }
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">M_PI</span>, <span class="ruby-value">50</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">graph</span>(<span class="ruby-identifier">x</span>, <span class="ruby-string">&quot;-T X -g 3 -C -L &#39;sin(x)&#39;&quot;</span>)
+</pre>
+</li></ul>
+
+<h2 id="label-+Example"><a href="../index.html"name="4"></a> Example<span><a href="#label-+Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>A quadratic function, f(x) = x^2 + 2x + 3.</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">param</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">param</span>[<span class="ruby-value">1</span>] } 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Function:0x6e8eb0&gt;</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">set_params</span>(<span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Function:0x6e8eb0&gt;</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">2</span>)                             <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Scalar</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-value">11</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>)                          <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Range</span>
+=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">11.0</span>, <span class="ruby-value">18.0</span>, <span class="ruby-value">27.0</span>]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])                     <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Array</span>
+=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">11.0</span>, <span class="ruby-value">18.0</span>]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>], [<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]))    <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
+[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">1.100e+01</span> 
+  <span class="ruby-value">1.800e+01</span> <span class="ruby-value">2.700e+01</span> ]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Matrix:0x6dd1b4&gt;</span>
+</pre>
+
+<p><a href="../index.html">back</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

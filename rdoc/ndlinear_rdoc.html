@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>ndlinear - Ruby/GSL (v1.15.3.2)</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-NDLINAR%3A+multi-linear%2C+multi-parameter+least+squares+fitting+">NDLINAR: multi-linear, multi-parameter least squares fitting </a>
+    <li><a href="#label-+Introduction"><a href="index.html"name="1"></a> Introduction</a>
+    <li><a href="#label-+Class+and+Methods"><a href="index.html"name="2"></a> Class and Methods</a>
+    <li><a href="#label-+Examples"><a href="index.html"name="3"></a> Examples</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/index_rdoc.html">index</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/ndlinear.rdoc">
+
+<h1 id="label-NDLINAR%3A+multi-linear%2C+multi-parameter+least+squares+fitting+">NDLINAR: multi-linear, multi-parameter least squares fitting <span><a href="#label-NDLINAR%3A+multi-linear%2C+multi-parameter+least+squares+fitting+">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The multi-dimension fitting library NDLINEAR is not included in GSL, but is
+provided as an extension library. This is available at the <a
+href="http://ucsu.colorado.edu/~alken/gsl/"target="_top">Patric Alken’s
+page</a>.</p>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="ndlinear_rdoc.html#1">Introduction</a></p>
+</li><li>
+<p><a href="ndlinear_rdoc.html#2">Class and methods</a></p>
+</li><li>
+<p><a href="ndlinear_rdoc.html#3">Examples</a></p>
+</li></ol>
+
+<h2 id="label-+Introduction"><a href="../index.html"name="1"></a> Introduction<span><a href="#label-+Introduction">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The NDLINEAR extension provides support for general linear least squares 
+fitting to data which is a function of more than one variable (multi-linear
+or  multi-dimensional least squares fitting). This model has the form where
+<code>x</code> is a vector of independent variables, a_i are the fit
+coefficients,  and F_i are the basis functions of the fit. This GSL
+extension computes the  design matrix X_{ij = F_j(x_i) in the special case
+that the basis functions  separate: Here the superscript value j indicates
+the basis function  corresponding to the independent variable x_j. The
+subscripts (i_1, i_2, i_3,  …) refer to which basis function to use from
+the complete set. These subscripts are related to the index i in a complex
+way, which is the main  problem this extension addresses. The model then
+becomes where n is the  dimension of the fit and N_i is the number of basis
+functions for the variable  x_i. Computationally, it is easier to supply
+the individual basis functions  u^{(j) than the total basis functions
+F_i(x). However the design matrix X is  easiest to construct given F_i(x).
+Therefore the routines below allow the user  to specify the individual
+basis functions u^{(j) and then automatically  construct the design matrix
+X.</p>
+
+<h2 id="label-+Class+and+Methods"><a href="../index.html"name="2"></a> Class and Methods<span><a href="#label-+Class+and+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::MultiFit::Ndlinear.alloc(n_dim, N, u, params)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear::Workspace.alloc(n_dim, N, u, params)</p>
+
+<p>Creates a workspace for solving multi-parameter, multi-dimensional linear 
+least squares problems. <code>n_dim</code> specifies the dimension of the
+fit  (the number of independent variables in the model). The array
+<code>N</code> of  length <code>n_dim</code> specifies the number of terms
+in each sum, so that  <code>N[i]</code> specifies the number of terms in
+the sum of the i-th independent variable.  The array of <code>Proc</code>
+objects <code>u</code> of length <code>n_dim</code> specifies  the basis
+functions for each independent fit variable, so that <code>u[i]</code>  is
+a procedure to calculate the basis function for the i-th  independent
+variable. Each of the procedures <code>u</code> takes three block
+parameters: a point  <code>x</code> at which to evaluate the basis
+function, an array y of length  <code>N[i]</code> which is filled on output
+with the basis function values at  <code>x</code> for all i, and a params
+argument which contains parameters needed  by the basis function. These
+parameters are supplied in the <code>params</code> argument to this method.</p>
+
+<p>Ex)</p>
+
+<pre class="ruby"><span class="ruby-constant">N_DIM</span> = <span class="ruby-value">3</span>
+<span class="ruby-constant">N_SUM_R</span> = <span class="ruby-value">10</span>
+<span class="ruby-constant">N_SUM_THETA</span> = <span class="ruby-value">11</span>
+<span class="ruby-constant">N_SUM_PHI</span> = <span class="ruby-value">9</span>
+
+<span class="ruby-identifier">basis_r</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">y</span>)
+}
+
+<span class="ruby-identifier">basis_theta</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">theta</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">N_SUM_THETA</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">legendre_Pl</span>(<span class="ruby-identifier">i</span>, <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">theta</span>));
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-identifier">basis_phi</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">phi</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">N_SUM_PHI</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">%</span><span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-value">0.5</span><span class="ruby-operator">*</span><span class="ruby-identifier">phi</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1.0</span>)<span class="ruby-operator">*</span><span class="ruby-value">0.5</span><span class="ruby-operator">*</span><span class="ruby-identifier">phi</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-constant">N</span> = [<span class="ruby-constant">N_SUM_R</span>, <span class="ruby-constant">N_SUM_THETA</span>, <span class="ruby-constant">N_SUM_PHI</span>]
+<span class="ruby-identifier">u</span> = [<span class="ruby-identifier">basis_r</span>, <span class="ruby-identifier">basis_theta</span>, <span class="ruby-identifier">basis_phi</span>]
+
+<span class="ruby-identifier">bspline</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">BSpline</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">4</span>, <span class="ruby-constant">N_SUM_R</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)
+
+<span class="ruby-identifier">ndlinear</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span><span class="ruby-operator">::</span><span class="ruby-constant">Ndlinear</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">N_DIM</span>, <span class="ruby-constant">N</span>, <span class="ruby-identifier">u</span>, <span class="ruby-identifier">bspline</span>)
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiFit::Ndlinear.design(vars, X, w)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear.design(vars, w)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear::Workspace#design(vars, X)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear::Workspace#design(vars)</p>
+
+<p>Construct the least squares design matrix <code>X</code> from the input
+<code>vars</code> and the previously specified basis functions. vars is a
+ndata-by-n_dim  matrix where the ith row specifies the n_dim independent
+variables for the  ith observation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiFit::Ndlinear.est(x, c, cov, w)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear::Workspace#est(x, c, cov)</p>
+
+<p>After the least squares problem is solved via
+<code>GSL::MultiFit::linear</code>,  this method can be used to evaluate
+the model at the data point <code>x</code>.  The coefficient vector
+<code>c</code> and covariance matrix <code>cov</code> are  outputs from
+<code>GSL::MultiFit::linear</code>. The model output value and  its error
+[<code>y, yerr</code>] are returned as an array.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::MultiFit::Ndlinear.calc(x, c, w)</p>
+</li><li>
+<p>GSL::MultiFit::Ndlinear::Workspace#calc(x, c)</p>
+
+<p>This method is similar to <code>GSL::MultiFit::Ndlinear.est</code>, but
+does not compute the model error. It computes the model value at the data
+point <code>x</code>  using the coefficient vector <code>c</code> and
+returns the model value.</p>
+</li></ul>
+
+<h2 id="label-+Examples"><a href="../index.html"name="3"></a> Examples<span><a href="#label-+Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>This example program generates data from the 3D isotropic harmonic
+oscillator  wavefunction (real part) and then fits a model to the data
+using B-splines in  the r coordinate, Legendre polynomials in theta, and
+sines/cosines in phi.  The exact form of the solution is (neglecting the
+normalization constant for  simplicity) The example program models psi by
+default.</p>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+
+<span class="ruby-constant">N_DIM</span> = <span class="ruby-value">3</span>
+<span class="ruby-constant">N_SUM_R</span> = <span class="ruby-value">10</span>
+<span class="ruby-constant">N_SUM_THETA</span> = <span class="ruby-value">10</span>
+<span class="ruby-constant">N_SUM_PHI</span> = <span class="ruby-value">9</span>
+<span class="ruby-constant">R_MAX</span> = <span class="ruby-value">3.0</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">psi_real_exact</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">l</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">theta</span>, <span class="ruby-identifier">phi</span>)
+   <span class="ruby-identifier">rr</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-identifier">pow</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">l</span>)<span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">r</span><span class="ruby-operator">*</span><span class="ruby-identifier">r</span>)<span class="ruby-operator">*</span><span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">laguerre_n</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">l</span> <span class="ruby-operator">+</span> <span class="ruby-value">0.5</span>, <span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">r</span>)     
+   <span class="ruby-identifier">tt</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">legendre_sphPlm</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">m</span>, <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">theta</span>))
+   <span class="ruby-identifier">pp</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">m</span><span class="ruby-operator">*</span><span class="ruby-identifier">phi</span>)
+   <span class="ruby-identifier">rr</span><span class="ruby-operator">*</span><span class="ruby-identifier">tt</span><span class="ruby-operator">*</span><span class="ruby-identifier">pp</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">basis_r</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">y</span>)
+}
+
+<span class="ruby-identifier">basis_theta</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">theta</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">N_SUM_THETA</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">legendre_Pl</span>(<span class="ruby-identifier">i</span>, <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">theta</span>));
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-identifier">basis_phi</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">phi</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">N_SUM_PHI</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">%</span><span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-value">0.5</span><span class="ruby-operator">*</span><span class="ruby-identifier">phi</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1.0</span>)<span class="ruby-operator">*</span><span class="ruby-value">0.5</span><span class="ruby-operator">*</span><span class="ruby-identifier">phi</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-identifier">env_setup</span>()
+
+<span class="ruby-identifier">k</span> = <span class="ruby-value">5</span>
+<span class="ruby-identifier">l</span> = <span class="ruby-value">4</span>
+<span class="ruby-identifier">m</span> = <span class="ruby-value">2</span>
+
+<span class="ruby-constant">NDATA</span> = <span class="ruby-value">3000</span>
+
+<span class="ruby-constant">N</span> = [<span class="ruby-constant">N_SUM_R</span>, <span class="ruby-constant">N_SUM_THETA</span>, <span class="ruby-constant">N_SUM_PHI</span>]
+<span class="ruby-identifier">u</span> = [<span class="ruby-identifier">basis_r</span>, <span class="ruby-identifier">basis_theta</span>, <span class="ruby-identifier">basis_phi</span>]
+
+<span class="ruby-identifier">rng</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>()
+
+<span class="ruby-identifier">bspline</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">BSpline</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">4</span>, <span class="ruby-constant">N_SUM_R</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)
+<span class="ruby-identifier">bspline</span>.<span class="ruby-identifier">knots_uniform</span>(<span class="ruby-value">0.0</span>, <span class="ruby-constant">R_MAX</span>)
+
+<span class="ruby-identifier">ndlinear</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span><span class="ruby-operator">::</span><span class="ruby-constant">Ndlinear</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">N_DIM</span>, <span class="ruby-constant">N</span>, <span class="ruby-identifier">u</span>, <span class="ruby-identifier">bspline</span>)
+<span class="ruby-identifier">multifit</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">NDATA</span>, <span class="ruby-identifier">ndlinear</span>.<span class="ruby-identifier">n_coeffs</span>)
+<span class="ruby-identifier">vars</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">NDATA</span>, <span class="ruby-constant">N_DIM</span>)
+<span class="ruby-identifier">data</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">NDATA</span>)
+
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">NDATA</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">uniform</span>()<span class="ruby-operator">*</span><span class="ruby-constant">R_MAX</span>
+  <span class="ruby-identifier">theta</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">uniform</span>()<span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+  <span class="ruby-identifier">phi</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">uniform</span>()<span class="ruby-operator">*</span><span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+  <span class="ruby-identifier">psi</span> = <span class="ruby-identifier">psi_real_exact</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">l</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">theta</span>, <span class="ruby-identifier">phi</span>)
+  <span class="ruby-identifier">dpsi</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">gaussian</span>(<span class="ruby-value">0.05</span><span class="ruby-operator">*</span><span class="ruby-identifier">psi</span>)
+
+  <span class="ruby-identifier">vars</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">0</span>] = <span class="ruby-identifier">r</span>
+  <span class="ruby-identifier">vars</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">1</span>] = <span class="ruby-identifier">theta</span>
+  <span class="ruby-identifier">vars</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">2</span>] = <span class="ruby-identifier">phi</span>           
+
+  <span class="ruby-identifier">data</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">psi</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">dpsi</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">X</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span><span class="ruby-operator">::</span><span class="ruby-constant">Ndlinear</span><span class="ruby-operator">::</span><span class="ruby-identifier">design</span>(<span class="ruby-identifier">vars</span>, <span class="ruby-identifier">ndlinear</span>)
+
+<span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">cov</span>, <span class="ruby-identifier">chisq</span>, = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span><span class="ruby-operator">::</span><span class="ruby-identifier">linear</span>(<span class="ruby-constant">X</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">multifit</span>)
+
+<span class="ruby-identifier">rsq</span> = <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">chisq</span><span class="ruby-operator">/</span><span class="ruby-identifier">data</span>.<span class="ruby-identifier">tss</span>
+<span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;chisq = %e, Rsq = %f\n&quot;</span>, <span class="ruby-identifier">chisq</span>, <span class="ruby-identifier">rsq</span>)
+
+<span class="ruby-identifier">eps_rms</span> = <span class="ruby-value">0.0</span>
+<span class="ruby-identifier">volume</span> = <span class="ruby-value">0.0</span>
+<span class="ruby-identifier">dr</span> = <span class="ruby-value">0.05</span>;
+<span class="ruby-identifier">dtheta</span> = <span class="ruby-value">5.0</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>
+<span class="ruby-identifier">dphi</span> = <span class="ruby-value">5.0</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180.0</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">N_DIM</span>)
+
+<span class="ruby-identifier">r</span> = <span class="ruby-value">0.01</span>
+<span class="ruby-keyword">while</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">R_MAX</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">theta</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">theta</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">phi</span> = <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">phi</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">dV</span> = <span class="ruby-identifier">r</span><span class="ruby-operator">*</span><span class="ruby-identifier">r</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-identifier">theta</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">r</span><span class="ruby-operator">*</span><span class="ruby-identifier">dtheta</span><span class="ruby-operator">*</span><span class="ruby-identifier">dphi</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">r</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">theta</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">phi</span>
+
+      <span class="ruby-identifier">psi_model</span>, <span class="ruby-identifier">err</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span><span class="ruby-operator">::</span><span class="ruby-constant">Ndlinear</span>.<span class="ruby-identifier">calc</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">ndlinear</span>)
+      <span class="ruby-identifier">psi</span> = <span class="ruby-identifier">psi_real_exact</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">l</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">theta</span>, <span class="ruby-identifier">phi</span>)
+      <span class="ruby-identifier">err</span> = <span class="ruby-identifier">psi_model</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">psi</span>
+      <span class="ruby-identifier">eps_rms</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">err</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">err</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dV</span>;
+      <span class="ruby-identifier">volume</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">dV</span>;
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">phi</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+        <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%e %e %e %e\n&quot;</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">theta</span>, <span class="ruby-identifier">psi</span>, <span class="ruby-identifier">psi_model</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">phi</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">dphi</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">theta</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">dtheta</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;\n&quot;</span>);
+  <span class="ruby-identifier">r</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">dr</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">eps_rms</span> <span class="ruby-operator">/=</span> <span class="ruby-identifier">volume</span>
+<span class="ruby-identifier">eps_rms</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">eps_rms</span>)
+<span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;rms error over all parameter space = %e\n&quot;</span>, <span class="ruby-identifier">eps_rms</span>)
+</pre>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
