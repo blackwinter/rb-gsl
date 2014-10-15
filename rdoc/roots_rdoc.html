@@ -164,8 +164,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -200,13 +198,13 @@
 
 <h1 id="label-One+dimensional+root-finding+and+the+solver+classes">One dimensional root-finding and the solver classes<span><a href="#label-One+dimensional+root-finding+and+the+solver+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>One-dimensional root finding algorithms can be divided into two classes, 
+<p>One-dimensional root finding algorithms can be divided into two classes,
 <code>root bracketing</code> and <code>root polishing</code>. The state for
-bracketing solvers  is held in a <code>GSL::Root::FSolver</code> object.
-The updating procedure uses only  function evaluations (not derivatives).
-The state for root polishing solvers is  held in a
+bracketing solvers is held in a <code>GSL::Root::FSolver</code> object. The
+updating procedure uses only function evaluations (not derivatives). The
+state for root polishing solvers is held in a
 <code>GSL::Root::FdfSolver</code> object. The updates require both the
-function  and its derivative (hence the name fdf) to be supplied by the
+function and its derivative (hence the name fdf) to be supplied by the
 user.</p>
 
 <p>Contents:</p>
@@ -234,8 +232,7 @@ function to solve</a></p>
 <p>GSL::Root::FSolver.alloc(T)</p>
 
 <p>This creates a equation solver with a root bracketing algorithm of type
-<code>T</code>.  The type <code>T</code> is given by a String or a
-constant,</p>
+<code>T</code>. The type <code>T</code> is given by a String or a constant,</p>
 <ul><li>
 <p><code>&quot;bisection&quot;</code> or
 <code>GSL::Root::FSolver::BISECION</code></p>
@@ -258,7 +255,7 @@ s4 = FSolver.alloc(FSolver::BRENT)</pre>
 <ul><li>
 <p>GSL::Root::FdfSolver.alloc(T)</p>
 
-<p>This creates a derivative-based solver of type <code>T</code>.  The type
+<p>This creates a derivative-based solver of type <code>T</code>. The type
 <code>T</code> is given by a String or a constant,</p>
 <ul><li>
 <p><code>&quot;newton&quot;</code> or
@@ -278,16 +275,16 @@ s4 = FSolver.alloc(FSolver::BRENT)</pre>
 <p>GSL::Root::FSolver#set(f, xl, xu)</p>
 
 <p>This initialize the solver <code>self</code> to use the function
-<code>f</code>,  and the initial search  interval <code>xl, xu</code>. The
-function to be solved <code>f</code> is given  an instanse of the <a
+<code>f</code>, and the initial search interval <code>xl, xu</code>. The
+function to be solved <code>f</code> is given an instanse of the <a
 href="function_rdoc.html">GSL::Function</a> class.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Root::FdfSolver#set(fdf, r)</p>
 
-<p>This initializes, or reinitializes, an existing solver <code>self</code> 
-to use the function and derivative <code>fdf</code> and the initial guess
+<p>This initializes, or reinitializes, an existing solver <code>self</code> to
+use the function and derivative <code>fdf</code> and the initial guess
 <code>r</code>. Here <code>fdf</code> is a <code>GSL::Function_fdf</code>
 object (see below).</p>
 </li></ul>
@@ -301,7 +298,7 @@ object (see below).</p>
 
 <p>This performs a single iteration of the solver. If the iteration encounters
 an unexpected problem then an error code will be returned (
-<code>GSL::EBADFUNC</code> or  <code>GSL::EZERODIV</code> ).</p>
+<code>GSL::EBADFUNC</code> or <code>GSL::EZERODIV</code> ).</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -330,7 +327,7 @@ an unexpected problem then an error code will be returned (
 
 <h3 id="label-+GSL%3A%3AFunction_fdf+class%3A+Providing+the+function+to+solve"><a href="../index.html"name="2.2"></a> GSL::Function_fdf class: Providing the function to solve<span><a href="#label-+GSL%3A%3AFunction_fdf+class%3A+Providing+the+function+to+solve">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
-<p>The <code>FSolver</code> object require an instance of the  <a
+<p>The <code>FSolver</code> object require an instance of the <a
 href="function_rdoc.html">GSL::Function</a> class, which is already
 introduced elsewhere. The <code>FdfSolver</code> which uses the
 root-polishing algorithm requires not only the function to solve, but also
@@ -346,7 +343,7 @@ procedures to calculate the derivatives. This is given by the
 
 <p>Constructors. Here <code>f, df</code> are Ruby <code>Proc</code> objects
 which return a single value. The option <code>fdf</code> must return an
-array which contain the values of the function  and its derivative.</p>
+array which contain the values of the function and its derivative.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -361,12 +358,12 @@ df</code> and <code>fdf</code>.</p>
 <p>ex: A quadratic equation a*x*x + b*x + c = 0:</p>
 
 <pre class="ruby"><span class="ruby-comment"># Returns a value of the function</span>
-<span class="ruby-identifier">f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span> 
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]; <span class="ruby-identifier">c</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">2</span>]
   (<span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span>
 }
 <span class="ruby-comment"># Calculate the derivative</span>
-<span class="ruby-identifier">df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span> 
+<span class="ruby-identifier">df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
   <span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>
 }
@@ -401,20 +398,20 @@ function.</p>
 <ul><li>
 <p>GSL::Root::test_interval(xl, xu, epsrel, epsabs)</p>
 
-<p>This function tests for the convergence of the interval  <code>[xl,
+<p>This function tests for the convergence of the interval <code>[xl,
 xu]</code> with absolute error <code>epsabs</code> and relative error
-<code>epsrel</code>.  The test returns <code>GSL::SUCCESS</code> if the
+<code>epsrel</code>. The test returns <code>GSL::SUCCESS</code> if the
 following condition is achieved,</p>
 
 <pre>|a - b| &lt; epsabs + epsrel min(|a|,|b|)</pre>
 
 <p>when the interval x = [a,b] does not include the origin. If the interval
-includes  the origin then min(|a|,|b|) is replaced by zero (which is the
-minimum value of  |x| over the interval). This ensures that the relative
-error is accurately  estimated for roots close to the origin.</p>
+includes the origin then min(|a|,|b|) is replaced by zero (which is the
+minimum value of |x| over the interval). This ensures that the relative
+error is accurately estimated for roots close to the origin.</p>
 
 <p>This condition on the interval also implies that any estimate of the root r
-in  the interval satisfies the same condition with respect to the true root
+in the interval satisfies the same condition with respect to the true root
 r0,</p>
 
 <pre>|r - r0| &lt; epsabs + epsrel r0</pre>
@@ -426,8 +423,8 @@ r0,</p>
 <p>GSL::Root::test_delta(x1, x0, epsrel, epsabs)</p>
 
 <p>This function tests for the convergence of the sequence …, <code>x0,
-x1</code> with  absolute error <code>epsabs</code> and relative error
-<code>epsrel</code>.  The test returns <code>GSL::SUCCESS</code> if the
+x1</code> with absolute error <code>epsabs</code> and relative error
+<code>epsrel</code>. The test returns <code>GSL::SUCCESS</code> if the
 following condition is achieved,</p>
 
 <pre>|x_1 - x_0| &lt; epsabs + epsrel |x_1|</pre>
@@ -439,14 +436,14 @@ following condition is achieved,</p>
 <p>GSL::Root::test_residual(f, epsabs)</p>
 
 <p>This function tests the residual value <code>f</code> against the absolute
-error bound  <code>epsabs</code>. The test returns
-<code>GSL::SUCCESS</code> if the following condition is  achieved,</p>
+error bound <code>epsabs</code>. The test returns <code>GSL::SUCCESS</code>
+if the following condition is achieved,</p>
 
 <pre>|f| &lt; epsabs</pre>
 
 <p>and returns <code>GSL::CONTINUE</code> otherwise. This criterion is
-suitable for  situations where the precise location of the root, x, is
-unimportant provided a  value can be found where the residual, |f(x)|, is
+suitable for situations where the precise location of the root, x, is
+unimportant provided a value can be found where the residual, |f(x)|, is
 small enough.</p>
 </li></ul>
 
@@ -489,7 +486,7 @@ elements is returned, as [<code>root, iterations, status</code>].</p>
 
 <h2 id="label-+Example"><a href="../index.html"name="4"></a> Example<span><a href="#label-+Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>This example is equivalent to the one found in the GSL manual,  using the
+<p>This example is equivalent to the one found in the GSL manual, using the
 Brent&#39;s algorithm to solve the equation x^2 - 5 = 0.</p>
 
 <pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
@@ -509,7 +506,7 @@ Brent&#39;s algorithm to solve the equation x^2 - 5 = 0.</p>
 <span class="ruby-identifier">func</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">-5</span>])
 
 <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%5s [%9s, %9s] %9s %10s %9s\n&quot;</span>,
-        <span class="ruby-string">&quot;iter&quot;</span>, <span class="ruby-string">&quot;lower&quot;</span>, <span class="ruby-string">&quot;upper&quot;</span>, <span class="ruby-string">&quot;root&quot;</span>, 
+        <span class="ruby-string">&quot;iter&quot;</span>, <span class="ruby-string">&quot;lower&quot;</span>, <span class="ruby-string">&quot;upper&quot;</span>, <span class="ruby-string">&quot;root&quot;</span>,
         <span class="ruby-string">&quot;err&quot;</span>, <span class="ruby-string">&quot;err(est)&quot;</span>)
 
 <span class="ruby-identifier">solver</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">func</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">5.0</span>)              <span class="ruby-comment"># initialize the solver</span>
@@ -531,17 +528,17 @@ Brent&#39;s algorithm to solve the equation x^2 - 5 = 0.</p>
 </pre>
 
 <p>The following is an another version, using the <code>FdfSolver</code> with
-the Newton-Raphson  algorithm.</p>
+the Newton-Raphson algorithm.</p>
 
 <pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
 <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;gsl&quot;</span>
 
-<span class="ruby-identifier">f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span> 
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]; <span class="ruby-identifier">c</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">2</span>]
   (<span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span>
 }
 
-<span class="ruby-identifier">df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span> 
+<span class="ruby-identifier">df</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
   <span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>
 }
@@ -584,7 +581,7 @@ the Newton-Raphson  algorithm.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

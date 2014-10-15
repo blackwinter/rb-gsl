@@ -161,8 +161,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -214,13 +212,13 @@
 
 <pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram2d</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">2</span>, <span class="ruby-value">3</span>)  <span class="ruby-comment"># size 6</span>
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">yrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">bin</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xrange</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">superclass</span>
 =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">::</span><span class="ruby-constant">ReadOnly</span>
@@ -232,13 +230,13 @@
 
 <pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span> = <span class="ruby-constant">Histogram2d</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">3</span>, <span class="ruby-value">6</span>, <span class="ruby-value">7</span>], [<span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">8</span>])
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">3.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">yrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">8.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">bin</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
 </pre>
 </li><li>
@@ -246,10 +244,10 @@
 
 <pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span> = <span class="ruby-constant">Histogram2d</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">4</span>, [<span class="ruby-value">0</span>, <span class="ruby-value">4</span>], <span class="ruby-value">3</span>, [<span class="ruby-value">1</span>, <span class="ruby-value">5</span>])
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">yrange</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.333e+00</span> <span class="ruby-value">3.667e+00</span> <span class="ruby-value">5.000e+00</span> ]
 </pre>
 </li></ol>
@@ -266,7 +264,7 @@
 <ul><li>
 <p>GSL::Histogram2d#set_ranges(vx, vy)</p>
 
-<p>This sets the ranges of the existing histogram using  two <a
+<p>This sets the ranges of the existing histogram using two <a
 href="vector_rdoc.html">GSL::Vector</a> objects or arrays.</p>
 </li></ul>
 <hr>
@@ -275,9 +273,9 @@ href="vector_rdoc.html">GSL::Vector</a> objects or arrays.</p>
 </li><li>
 <p>GSL::Histogram2d#set_ranges_uniform([xmin, xmax], [ymin, ymax])</p>
 
-<p>This sets the ranges of the existing histogram <code>self</code> to cover 
+<p>This sets the ranges of the existing histogram <code>self</code> to cover
 the ranges <code>xmin</code> to <code>xmax</code> and <code>ymin</code> to
-<code>ymax</code> uniformly.  The values of the histogram bins are reset to
+<code>ymax</code> uniformly. The values of the histogram bins are reset to
 zero.</p>
 </li></ul>
 <hr>
@@ -286,7 +284,7 @@ zero.</p>
 </li><li>
 <p>GSL::Histogram2d#duplicate</p>
 
-<p>Returns a newly created histogram which is an exact copy of the  histogram
+<p>Returns a newly created histogram which is an exact copy of the histogram
 <code>self</code>.</p>
 </li></ul>
 <hr>
@@ -298,9 +296,9 @@ zero.</p>
 <p>GSL::Histogram2d#fill(x, y, weight = 1)</p>
 
 <p>These method update the histogram <code>self</code> by adding
-<code>weight</code>  to the bin whose <code>x</code> and <code>y</code>
+<code>weight</code> to the bin whose <code>x</code> and <code>y</code>
 ranges contain the coordinates (x,y). If (x,y) lies outside the limits of
-the histogram then none of the  bins are modified.</p>
+the histogram then none of the bins are modified.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -332,7 +330,7 @@ is incremented.</p>
 <p>GSL::Histogram2d#get_yrange(j)</p>
 
 <p>These methods find the upper and lower range limits of the
-<code>i</code>-th  and <code>j</code>-th bins in the x and y directions of
+<code>i</code>-th and <code>j</code>-th bins in the x and y directions of
 the histogram <code>self</code>.</p>
 
 <p>Ex:</p>
@@ -367,7 +365,7 @@ objects.</p>
 </li><li>
 <p>GSL::Histogram2d#ny</p>
 
-<p>These methodss return the maximum upper and minimum lower range limits  and
+<p>These methodss return the maximum upper and minimum lower range limits and
 the number of bins for the x and y directions of the histogram
 <code>self</code>.</p>
 </li></ul>
@@ -381,7 +379,7 @@ the number of bins for the x and y directions of the histogram
 <ul><li>
 <p>GSL::Histogram2d#find(x, y)</p>
 
-<p>Finds the indices i and j to the to the bin which covers the  coordinates
+<p>Finds the indices i and j to the to the bin which covers the coordinates
 (<code>x,y</code>).</p>
 </li></ul>
 <hr>
@@ -394,7 +392,7 @@ the number of bins for the x and y directions of the histogram
 <ul><li>
 <p>GSL::Histogram2d#max_bin</p>
 
-<p>Returns the indices (i,j) of the bin containing the maximum value in  the
+<p>Returns the indices (i,j) of the bin containing the maximum value in the
 histogram <code>self</code>.</p>
 </li></ul>
 <hr>
@@ -414,40 +412,40 @@ histogram <code>self</code>.</p>
 <ul><li>
 <p>GSL::Histogram2d#xmean</p>
 
-<p>Returns the mean of the histogrammed x variable, where the histogram  is
-regarded as a probability distribution.  Negative bin values are ignored
-for the purposes of this calculation.</p>
+<p>Returns the mean of the histogrammed x variable, where the histogram is
+regarded as a probability distribution. Negative bin values are ignored for
+the purposes of this calculation.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Histogram2d#xsigma</p>
 
-<p>Returns the standard deviation of the histogrammed x variable,  where the
-histogram is regarded as a probability distribution.  Negative bin values
+<p>Returns the standard deviation of the histogrammed x variable, where the
+histogram is regarded as a probability distribution. Negative bin values
 are ignored for the purposes of this calculation.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Histogram2d#ymean</p>
 
-<p>Returns the mean of the histogrammed y variable, where the histogram  is
-regarded as a probability distribution. Negative bin values are  ignored
-for the purposes of this calculation.</p>
+<p>Returns the mean of the histogrammed y variable, where the histogram is
+regarded as a probability distribution. Negative bin values are ignored for
+the purposes of this calculation.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Histogram2d#ysigma</p>
 
-<p>Returns the standard deviation of the histogrammed y variable,  where the
-histogram is regarded as a probability distribution.  Negative bin values
+<p>Returns the standard deviation of the histogrammed y variable, where the
+histogram is regarded as a probability distribution. Negative bin values
 are ignored for the purposes of this calculation.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Histogram2d#cov</p>
 
-<p>Returns the covariance of the histogrammed x and y variables,  where the
-histogram is regarded as a probability distribution.  Negative bin values
+<p>Returns the covariance of the histogrammed x and y variables, where the
+histogram is regarded as a probability distribution. Negative bin values
 are ignored for the purposes of this calculation.</p>
 </li></ul>
 <hr>
@@ -558,7 +556,7 @@ GSL::graph(hx, hy, &quot;-T X -C -g 3&quot;)</pre>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

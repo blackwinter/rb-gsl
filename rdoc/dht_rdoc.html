@@ -160,8 +160,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -196,7 +194,7 @@
 
 <h1 id="label-Discrete+Hankel+Transforms">Discrete Hankel Transforms<span><a href="#label-Discrete+Hankel+Transforms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>This chapter describes functions for performing Discrete Hankel Transforms 
+<p>This chapter describes functions for performing Discrete Hankel Transforms
 (DHTs).</p>
 <ol><li>
 <p><a href="dht_rdoc.html#1">Definitions</a></p>
@@ -208,31 +206,31 @@
 
 <h2 id="label-+Definitions"><a href="../index.html"name="1"></a> Definitions<span><a href="#label-+Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>The discrete Hankel transform acts on a vector of sampled data, where the 
+<p>The discrete Hankel transform acts on a vector of sampled data, where the
 samples are assumed to have been taken at points related to the zeroes of a
-Bessel function of fixed order; compare this to the case of the discrete 
-Fourier transform, where samples are taken at points related to the zeroes 
+Bessel function of fixed order; compare this to the case of the discrete
+Fourier transform, where samples are taken at points related to the zeroes
 of the sine or cosine function.</p>
 
-<p>Specifically, let f(t) be a function on the unit interval. Then the finite 
+<p>Specifically, let f(t) be a function on the unit interval. Then the finite
 nu-Hankel transform of f(t) is defined to be the set of numbers g_m given
-by,  so that, Suppose that f is band-limited in the sense that g_m=0 for m
+by, so that, Suppose that f is band-limited in the sense that g_m=0 for m
 &gt; M. Then we have the following fundamental sampling theorem. It is this
-discrete  expression which defines the discrete Hankel transform. The
-kernel in the  summation above defines the matrix of the nu-Hankel
-transform of size M-1.  The coefficients of this matrix, being dependent on
-nu and M, must be  precomputed and stored; the <code>GSL::Dht</code> object
-encapsulates this data.  The constructor <code>GSL::Dht.alloc</code>
-returns a <code>GSL::Dht</code> object  which must be properly initialized
-with <code>GSL::Dht#init</code> before  it can be used to perform
-transforms on data sample vectors,  for fixed nu and M, using the
-<code>GSL::Dht#apply</code> method.  The implementation allows a scaling of
-the fundamental  interval, for convenience, so that one can assume the
-function is defined on  the interval [0,X], rather than the unit interval.</p>
+discrete expression which defines the discrete Hankel transform. The kernel
+in the summation above defines the matrix of the nu-Hankel transform of
+size M-1. The coefficients of this matrix, being dependent on nu and M,
+must be precomputed and stored; the <code>GSL::Dht</code> object
+encapsulates this data. The constructor <code>GSL::Dht.alloc</code> returns
+a <code>GSL::Dht</code> object which must be properly initialized with
+<code>GSL::Dht#init</code> before it can be used to perform transforms on
+data sample vectors, for fixed nu and M, using the
+<code>GSL::Dht#apply</code> method. The implementation allows a scaling of
+the fundamental interval, for convenience, so that one can assume the
+function is defined on the interval [0,X], rather than the unit interval.</p>
 
-<p>Notice that by assumption f(t) vanishes at the endpoints of the interval, 
+<p>Notice that by assumption f(t) vanishes at the endpoints of the interval,
 consistent with the inversion formula and the sampling formula given above.
-Therefore, this transform corresponds to an orthogonal expansion in 
+Therefore, this transform corresponds to an orthogonal expansion in
 eigenfunctions of the Dirichlet problem for the Bessel differential
 equation.</p>
 
@@ -244,7 +242,7 @@ equation.</p>
 <p>GSL::Dht.alloc(size, nu, xmax)</p>
 
 <p>These methods allocate a Discrete Hankel transform object
-<code>GSL::Dht</code>  of size <code>size</code>. If three arguments are
+<code>GSL::Dht</code> of size <code>size</code>. If three arguments are
 given, the object is initialized with the values of <code>nu, xmax</code>.</p>
 </li></ul>
 <hr>
@@ -263,21 +261,21 @@ given, the object is initialized with the values of <code>nu, xmax</code>.</p>
 <p>GSL::Dht#apply(vin)</p>
 
 <p>This applies the transform <code>self</code> to the vector <code>vin</code>
-whose size is  equal to the size of the transform.</p>
+whose size is equal to the size of the transform.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Dht#x_sample(n)</p>
 
 <p>This method returns the value of the n&#39;th sample point in the unit
-interval,  (j_{nu,n+1}/j_{nu,M}) X. These are the points where the function
-f(t) is  assumed to be sampled.</p>
+interval, (j_{nu,n+1}/j_{nu,M}) X. These are the points where the function
+f(t) is assumed to be sampled.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Dht#k_sample(n)</p>
 
-<p>This method returns the value of the n&#39;th sample point in “k-space”, 
+<p>This method returns the value of the n&#39;th sample point in “k-space”,
 j_{nu,n+1}/X.</p>
 </li></ul>
 <hr>
@@ -308,7 +306,7 @@ j_{nu,n+1}/X.</p>
 <ul><li>
 <p>GSL::Dht#j</p>
 
-<p>Returns an array of computed J_nu zeros, j_{nu,s} = <a href="s">j</a>  as a
+<p>Returns an array of computed J_nu zeros, j_{nu,s} = j[s] as a
 <code>GSL::Vector::View</code>.</p>
 </li></ul>
 <hr>
@@ -342,7 +340,7 @@ j_{nu,n+1}/X.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

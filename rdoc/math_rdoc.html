@@ -168,8 +168,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -340,14 +338,14 @@ Numbers</a></p>
 <ul><li>
 <p>GSL::POSINF</p>
 
-<p>The IEEE representation of positive infinity,  computed from the expression
+<p>The IEEE representation of positive infinity, computed from the expression
 +1.0/0.0.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::NEGINF</p>
 
-<p>The IEEE representation of negative infinity,  computed from the expression
+<p>The IEEE representation of negative infinity, computed from the expression
 -1.0/0.0.</p>
 </li></ul>
 <hr>
@@ -376,7 +374,7 @@ Numbers</a></p>
 <ul><li>
 <p>GSL::isinf(x)</p>
 
-<p>This returns +1 if <code>x</code>  is positive infinity,  -1 if
+<p>This returns +1 if <code>x</code>  is positive infinity, -1 if
 <code>x</code>  is negative infinity and 0 otherwise. NOTE: In
 Darwin9.5.0-gcc4.0.1, this method returns 1 for -inf.</p>
 </li></ul>
@@ -385,20 +383,20 @@ Darwin9.5.0-gcc4.0.1, this method returns 1 for -inf.</p>
 <p>GSL::isinf?(x)</p>
 
 <p>This returns <code>true</code> if <code>x</code> is positive or negative
-infinity,  and <code>false</code> otherwise.</p>
+infinity, and <code>false</code> otherwise.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::finite(x)</p>
 
-<p>This returns 1 if <code>x</code> is a real number,  and 0 if it is infinite
+<p>This returns 1 if <code>x</code> is a real number, and 0 if it is infinite
 or not-a-number.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::finite?(x)</p>
 
-<p>This returns <code>true</code> if <code>x</code> is a real number,  and
+<p>This returns <code>true</code> if <code>x</code> is a real number, and
 <code>false</code> if it is infinite or not-a-number.</p>
 </li></ul>
 
@@ -407,23 +405,23 @@ or not-a-number.</p>
 <ul><li>
 <p>GSL::log1p(x)</p>
 
-<p>This method computes the value of log(1+x)  in a way that is accurate for
-small <code>x</code>. It provides an alternative  to the BSD math function
+<p>This method computes the value of log(1+x) in a way that is accurate for
+small <code>x</code>. It provides an alternative to the BSD math function
 log1p(x).</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::expm1(x)</p>
 
-<p>This method computes the value of exp(x)-1  in a way that is accurate for
-small <code>x</code>. It provides an alternative  to the BSD math function
+<p>This method computes the value of exp(x)-1 in a way that is accurate for
+small <code>x</code>. It provides an alternative to the BSD math function
 expm1(x).</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::hypot(x, y)</p>
 
-<p>This method computes the value of sqrt{x^2 + y^2} in a way that  avoids
+<p>This method computes the value of sqrt{x^2 + y^2} in a way that avoids
 overflow.</p>
 </li></ul>
 <hr>
@@ -463,9 +461,9 @@ Array, Vector or Matrix.</p>
 <ul><li>
 <p>GSL::frexp(x)</p>
 
-<p>This method splits the number <code>x</code> into its normalized fraction 
-f and exponent e, such that x = f * 2^e and 0.5 &lt;= f &lt; 1.  The method
-returns f and the exponent e as an array, [f, e].  If <code>x</code> is
+<p>This method splits the number <code>x</code> into its normalized fraction f
+and exponent e, such that x = f * 2^e and 0.5 &lt;= f &lt; 1. The method
+returns f and the exponent e as an array, [f, e]. If <code>x</code> is
 zero, both f and e are set to zero.</p>
 </li></ul>
 
@@ -475,8 +473,8 @@ zero, both f and e are set to zero.</p>
 <p>GSL::pow_int(x, n)</p>
 
 <p>This routine computes the power <code>x^n</code> for integer
-<code>n</code>.  The power is computed efficiently – for example, x^8 is
-computed as  ((x^2)^2)^2, requiring only 3 multiplications.</p>
+<code>n</code>. The power is computed efficiently – for example, x^8 is
+computed as ((x^2)^2)^2, requiring only 3 multiplications.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -496,7 +494,7 @@ computed as  ((x^2)^2)^2, requiring only 3 multiplications.</p>
 </li><li>
 <p>GSL::pow_9(x)</p>
 
-<p>These methods can be used to compute small integer powers x^2, x^3, etc. 
+<p>These methods can be used to compute small integer powers x^2, x^3, etc.
 efficiently.</p>
 </li></ul>
 
@@ -507,9 +505,9 @@ efficiently.</p>
 </li><li>
 <p>GSL::sign(x)</p>
 
-<p>Return the sign of <code>x</code>.  It is defined as ((x) &gt;= 0 ? 1 :
--1).  Note that with this definition the sign of zero is positive 
-(regardless of its IEEE sign bit).</p>
+<p>Return the sign of <code>x</code>. It is defined as ((x) &gt;= 0 ? 1 : -1).
+Note that with this definition the sign of zero is positive (regardless of
+its IEEE sign bit).</p>
 </li></ul>
 
 <h2 id="label-+Testing+for+Odd+and+Even+Numbers"><a href="../index.html"name="6"></a> Testing for Odd and Even Numbers<span><a href="#label-+Testing+for+Odd+and+Even+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -519,8 +517,8 @@ efficiently.</p>
 </li><li>
 <p>GSL::IS_ODD(n)</p>
 
-<p>Evaluate to 1 if <code>n</code> is odd and 0 if <code>n</code> is even. 
-The argument <code>n</code> must be of Fixnum type.</p>
+<p>Evaluate to 1 if <code>n</code> is odd and 0 if <code>n</code> is even. The
+argument <code>n</code> must be of Fixnum type.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -537,8 +535,8 @@ even.</p>
 </li><li>
 <p>GSL::IS_EVEN(n)</p>
 
-<p>Evaluate to 1 if <code>n</code> is even and 0 if <code>n</code> is odd. 
-The argument <code>n</code> must be of Fixnum type.</p>
+<p>Evaluate to 1 if <code>n</code> is even and 0 if <code>n</code> is odd. The
+argument <code>n</code> must be of Fixnum type.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -568,7 +566,7 @@ if odd.</p>
 <p>GSL::fcmp(a, b, epsilon = 1e-10)</p>
 
 <p>This method determines whether <code>x</code> and <code>y</code> are
-approximately equal to a  relative accuracy <code>epsilon</code>.</p>
+approximately equal to a relative accuracy <code>epsilon</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -600,7 +598,7 @@ approximately equal to a  relative accuracy <code>epsilon</code>.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

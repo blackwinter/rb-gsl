@@ -60,7 +60,7 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Graphics">Graphics</a>
     <li><a href="#label-+Plotting+vectors"><a href="index.html"name="1"></a> Plotting vectors</a>
-    <li><a href="#label-+Drawing+histogram+"><a href="index.html"name="2"></a> Drawing histogram </a>
+    <li><a href="#label-+Drawing+histogram"><a href="index.html"name="2"></a> Drawing histogram</a>
     <li><a href="#label-+Plotting+Functions"><a href="index.html"name="3"></a> Plotting Functions</a>
     <li><a href="#label-+Other+way"><a href="index.html"name="4"></a> Other way</a>
   </ul>
@@ -161,8 +161,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -198,14 +196,14 @@
 <h1 id="label-Graphics">Graphics<span><a href="#label-Graphics">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>The GSL library itself does not include any utilities to visualize
-computation results. Some examples found in the GSL manual use  <a
-href="http://www.gnu.org/software/plotutils/plotutils.html"target="_top">GNU
-graph</a>  to show the results: the data are stored in data files, and then
-displayed by using <code>GNU graph</code>. Ruby/GSL provides simple
-interfaces to <code>GNU graph</code> to plot vectors or histograms directly
-without storing them in data files. Although the methods described below do
-not cover all the functionalities  of <code>GNU graph</code>, these are
-useful to check calculations and get some  speculations on the data.</p>
+computation results. Some examples found in the GSL manual use <a
+href="https://gnu.org/software/plotutils/plotutils.html">GNU graph</a> to
+show the results: the data are stored in data files, and then displayed by
+using <code>GNU graph</code>. Ruby/GSL provides simple interfaces to
+<code>GNU graph</code> to plot vectors or histograms directly without
+storing them in data files. Although the methods described below do not
+cover all the functionalities of <code>GNU graph</code>, these are useful
+to check calculations and get some speculations on the data.</p>
 
 <h2 id="label-+Plotting+vectors"><a href="../index.html"name="1"></a> Plotting vectors<span><a href="#label-+Plotting+vectors">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
@@ -228,8 +226,8 @@ useful to check calculations and get some  speculations on the data.</p>
 
 <p>These methods use the <code>GNU graph</code> utility to plot vectors. The
 options <code>options</code> given by a <code>String</code>. If
-<code>nil</code> is  given for <code>ARGV[0]</code>, auto-generated
-abscissa are used.</p>
+<code>nil</code> is given for <code>ARGV[0]</code>, auto-generated abscissa
+are used.</p>
 
 <p>Ex:</p>
 
@@ -252,8 +250,8 @@ abscissa are used.</p>
 </li><li>
 <p>GSL::Vector#graph(x[, options])</p>
 
-<p>These methods plot the vector using the GNU <code>graph</code>  command.
-The options for the <code>graph</code> command are given by a
+<p>These methods plot the vector using the GNU <code>graph</code> command. The
+options for the <code>graph</code> command are given by a
 <code>String</code>.</p>
 
 <p>Ex1:</p>
@@ -272,7 +270,7 @@ The options for the <code>graph</code> command are given by a
 &gt;&gt; c.graph(x, &quot;-T X -C -g 3 -L &#39;cos(x)&#39;&quot;)</pre>
 </li></ul>
 
-<h2 id="label-+Drawing+histogram+"><a href="../index.html"name="2"></a> Drawing histogram <span><a href="#label-+Drawing+histogram+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Drawing+histogram"><a href="../index.html"name="2"></a> Drawing histogram<span><a href="#label-+Drawing+histogram">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#graph(options)</p>
@@ -330,7 +328,7 @@ The options for the <code>graph</code> command are given by a
     <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">xlabel</span> <span class="ruby-string">&quot;x&quot;</span>
     <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">ylabel</span> <span class="ruby-string">&quot;sin(x)&quot;</span>
     <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">pointsize</span> <span class="ruby-value">3</span>
-    <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">grid</span> 
+    <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">grid</span>
 
     <span class="ruby-identifier">x</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>]
     <span class="ruby-identifier">y</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-identifier">x</span>)
@@ -361,7 +359,7 @@ The options for the <code>graph</code> command are given by a
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

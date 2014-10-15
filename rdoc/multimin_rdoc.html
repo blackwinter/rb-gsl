@@ -166,8 +166,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -202,15 +200,15 @@
 
 <h1 id="label-Multidimensional+Minimization">Multidimensional Minimization<span><a href="#label-Multidimensional+Minimization">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>This chapter describes routines for finding minima of arbitrary 
+<p>This chapter describes routines for finding minima of arbitrary
 multidimensional functions. The library provides low level components for a
 variety of iterative minimizers and convergence tests. These can be
-combined  by the user to achieve the desired solution, while providing full
-access to  the intermediate steps of the algorithms. Each class of methods
-uses the  same framework, so that you can switch between minimizers at
-runtime without  needing to recompile your program. Each instance of a
-minimizer keeps track  of its own state, allowing the minimizers to be used
-in multi-threaded  programs.</p>
+combined by the user to achieve the desired solution, while providing full
+access to the intermediate steps of the algorithms. Each class of methods
+uses the same framework, so that you can switch between minimizers at
+runtime without needing to recompile your program. Each instance of a
+minimizer keeps track of its own state, allowing the minimizers to be used
+in multi-threaded programs.</p>
 
 <p>Contents:</p>
 <ol><li>
@@ -238,29 +236,29 @@ Minimizer</a></p>
 <h2 id="label-+Overview"><a href="../index.html"name="1"></a> Overview<span><a href="#label-+Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>The problem of multidimensional minimization requires finding a point x
-such  that the scalar function, takes a value which is lower than at any
-neighboring  point. For smooth functions the gradient g = nabla f vanishes
-at the minimum.  In general there are no bracketing methods available for
-the minimization of  n-dimensional functions. The algorithms proceed from
-an initial guess using a  search algorithm which attempts to move in a
-downhill direction.</p>
+such that the scalar function, takes a value which is lower than at any
+neighboring point. For smooth functions the gradient g = nabla f vanishes
+at the minimum. In general there are no bracketing methods available for
+the minimization of n-dimensional functions. The algorithms proceed from an
+initial guess using a search algorithm which attempts to move in a downhill
+direction.</p>
 
-<p>Algorithms making use of the gradient of the function perform a 
+<p>Algorithms making use of the gradient of the function perform a
 one-dimensional line minimisation along this direction until the lowest
-point  is found to a suitable tolerance. The search direction is then
-updated with  local information from the function and its derivatives, and
-the whole process  repeated until the true n-dimensional minimum is found.</p>
+point is found to a suitable tolerance. The search direction is then
+updated with local information from the function and its derivatives, and
+the whole process repeated until the true n-dimensional minimum is found.</p>
 
 <p>The Nelder-Mead Simplex algorithm applies a different strategy. It
-maintains  n+1 trial parameter vectors as the vertices of a n-dimensional
-simplex.  In each iteration step it tries to improve the worst vertex by a
-simple  geometrical transformation until the size of the simplex falls
-below a given  tolerance.</p>
+maintains n+1 trial parameter vectors as the vertices of a n-dimensional
+simplex. In each iteration step it tries to improve the worst vertex by a
+simple geometrical transformation until the size of the simplex falls below
+a given tolerance.</p>
 
-<p>Both types of algorithms use a standard framework. The user provides a 
+<p>Both types of algorithms use a standard framework. The user provides a
 high-level driver for the algorithms, and the library provides the
-individual  functions necessary for each of the steps. There are three main
-phases of the  iteration. The steps are,</p>
+individual functions necessary for each of the steps. There are three main
+phases of the iteration. The steps are,</p>
 <ul><li>
 <p>initialize minimizer state, s, for algorithm T</p>
 </li><li>
@@ -270,23 +268,23 @@ phases of the  iteration. The steps are,</p>
 </li></ul>
 
 <p>Each iteration step consists either of an improvement to the
-line-minimisation  in the current direction or an update to the search
-direction itself. The  state for the minimizers is held in a
-<code>GSL::MultiMin::FdfMinimizer</code> or  a
+line-minimisation in the current direction or an update to the search
+direction itself. The state for the minimizers is held in a
+<code>GSL::MultiMin::FdfMinimizer</code> or a
 <code>GSL::MultiMin::FMinimizer</code> object.</p>
 
 <h2 id="label-+Caveats"><a href="../index.html"name="2"></a> Caveats<span><a href="#label-+Caveats">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Note that the minimization algorithms can only search for one local minimum
 at a time. When there are several local minima in the search area, the
-first  minimum to be found will be returned; however it is difficult to
-predict which  of the minima this will be. In most cases, no error will be
-reported if you  try to find a local minimum in an area where there is more
+first minimum to be found will be returned; however it is difficult to
+predict which of the minima this will be. In most cases, no error will be
+reported if you try to find a local minimum in an area where there is more
 than one.</p>
 
-<p>It is also important to note that the minimization algorithms find local 
+<p>It is also important to note that the minimization algorithms find local
 minima; there is no way to determine whether a minimum is a global minimum
-of  the function in question.</p>
+of the function in question.</p>
 
 <h2 id="label-+Initializing+the+Multidimensional+Minimizer"><a href="../index.html"name="3"></a> Initializing the Multidimensional Minimizer<span><a href="#label-+Initializing+the+Multidimensional+Minimizer">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
@@ -296,7 +294,7 @@ of  the function in question.</p>
 <p>GSL::MultiMin::FMinimizer.alloc(type, n)</p>
 
 <p>These method create a minimizer of type <code>type</code> for an
-<code>n</code>-dimension function.  The type is given by a string, or by a
+<code>n</code>-dimension function. The type is given by a string, or by a
 Ruby constant.</p>
 <ul><li>
 <p><code>GSL::MultiMin::FdfMinimizer::CONJUGATE_FR</code> or
@@ -334,19 +332,19 @@ m4 = FMinimizer.alloc(&quot;nmsimplex&quot;, 2)</pre>
 <p>GSL::MultiMin::FdfMinimizer#set(func, x, step_size, tol)</p>
 
 <p>This method initializes the minimizer <code>self</code> to minimize the
-function  <code>fdf</code> (the <code>GSL::MultiMin::Function_fdf</code>
-class, see below) starting from  the initial point <code>x</code>
-(<code>GSL::Vector</code>). The size of the first trial step is  given by
+function <code>fdf</code> (the <code>GSL::MultiMin::Function_fdf</code>
+class, see below) starting from the initial point <code>x</code>
+(<code>GSL::Vector</code>). The size of the first trial step is given by
 <code>step_size</code> (<code>Vector</code>). The accuracy of the line
-minimization is  specified by <code>tol</code>.</p>
+minimization is specified by <code>tol</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::MultiMin::FMinimizer#set(func, x, step_size)</p>
 
 <p>This method initializes the minimizer <code>self</code> to minimize the
-function <code>func</code>,  starting from the initial point <code>x</code>
-(Vector). The size of the initial trial steps  is given in vector
+function <code>func</code>, starting from the initial point <code>x</code>
+(Vector). The size of the initial trial steps is given in vector
 <code>step_size</code>.</p>
 </li></ul>
 <hr>
@@ -361,9 +359,9 @@ function <code>func</code>,  starting from the initial point <code>x</code>
 <h2 id="label-+Providing+a+function+to+minimize"><a href="../index.html"name="4"></a> Providing a function to minimize<span><a href="#label-+Providing+a+function+to+minimize">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>You must provide a parametric function of <code>n</code> variables for the
-minimizers to  operate on. You may also need to provide a routine which
-calculates the gradient of the  function. In order to allow for general
-parameters the functions are defined by the  classes,
+minimizers to operate on. You may also need to provide a routine which
+calculates the gradient of the function. In order to allow for general
+parameters the functions are defined by the classes,
 <code>GSL::MultiMin::Function_fdf</code> and
 <code>GSL::MultiMin::Function</code>.</p>
 <hr>
@@ -435,10 +433,10 @@ parameters the functions are defined by the  classes,
 <p>GSL::MultiMin::FMinimizer#iterate</p>
 
 <p>These methods perform a single iteration of the minimizer
-<code>self</code>.  If the iteration encounters an unexpected problem then
+<code>self</code>. If the iteration encounters an unexpected problem then
 an error code will be returned. The minimizer maintains a current best
-estimate of the minimum at all times.  This information can be accessed
-with the following methods,</p>
+estimate of the minimum at all times. This information can be accessed with
+the following methods,</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -455,16 +453,15 @@ with the following methods,</p>
 <p>GSL::MultiMin::FMinimizer#size</p>
 
 <p>These method return the current best estimate of the location of the
-minimum,  the value of the function at that point, its gradient, and
-minimizer specific  characteristic size for the minimizer
-<code>self</code>.</p>
+minimum, the value of the function at that point, its gradient, and
+minimizer specific characteristic size for the minimizer <code>self</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::MultiMin::FdfMinimizer#restart</p>
 
 <p>This method resets the minimizer <code>self</code> to use the current point
-as a new  starting point.</p>
+as a new starting point.</p>
 </li></ul>
 
 <h2 id="label-+Stopping+Criteria"><a href="../index.html"name="6"></a> Stopping Criteria<span><a href="#label-+Stopping+Criteria">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -480,7 +477,7 @@ is true:</p>
 </li></ul>
 
 <p>The handling of these conditions is under user control. The methods below
-allow the  user to test the precision of the current result.</p>
+allow the user to test the precision of the current result.</p>
 <hr>
 <ul><li>
 <p>GSL::MultiMin::FdfMinimizer#test_gradient(epsabs)</p>
@@ -488,15 +485,15 @@ allow the  user to test the precision of the current result.</p>
 <p>GSL::MultiMin::FdfMinimizer.test_gradient(g, epsabs)</p>
 
 <p>These method test the norm of the gradient <code>g</code> against the
-absolute tolerance  <code>epsabs</code>. The gradient of a multidimensional
-function goes to zero at a minimum.  The tests return
+absolute tolerance <code>epsabs</code>. The gradient of a multidimensional
+function goes to zero at a minimum. The tests return
 <code>GSL::SUCCESS</code> if the following condition is achieved,</p>
 
 <pre>|g| &lt; epsabs</pre>
 
 <p>and returns <code>GSL::CONTINUE</code> otherwise. A suitable choice of
-<code>epsabs</code> can  be made from the desired accuracy in the function
-for small variations in <code>x</code>.  The relationship between these
+<code>epsabs</code> can be made from the desired accuracy in the function
+for small variations in <code>x</code>. The relationship between these
 quantities is given by <code>\delta f = g \delta x</code>.</p>
 </li></ul>
 <hr>
@@ -505,10 +502,10 @@ quantities is given by <code>\delta f = g \delta x</code>.</p>
 </li><li>
 <p>GSL::MultiMin::FdfMinimizer.test_size(size, epsabs)</p>
 
-<p>These method test the minimizer specific characteristic <code>size</code> 
+<p>These method test the minimizer specific characteristic <code>size</code>
 (if applicable to the used minimizer) against absolute tolerance
-<code>epsabs</code>.  The tests return (<code>GSL::SUCCESS</code> if the
-size is smaller than tolerance,  otherwise <code>GSL::CONTINUE</code> is
+<code>epsabs</code>. The tests return (<code>GSL::SUCCESS</code> if the
+size is smaller than tolerance, otherwise <code>GSL::CONTINUE</code> is
 returned.</p>
 </li></ul>
 
@@ -605,7 +602,7 @@ returned.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -61,8 +61,8 @@
     <li><a href="#label-Interpolation">Interpolation</a>
     <li><a href="#label-+Interpolation+Classes"><a href="index.html"name="1"></a> Interpolation Classes</a>
     <li><a href="#label-+Initializing+interpolation+objects"><a href="index.html"name="2"></a> Initializing interpolation objects</a>
-    <li><a href="#label-+Index+Look-up+and+Acceleration+"><a href="index.html"name="3"></a> Index Look-up and Acceleration </a>
-    <li><a href="#label-+Evaluation+of+Interpolating+Functions+"><a href="index.html"name="4"></a> Evaluation of Interpolating Functions </a>
+    <li><a href="#label-+Index+Look-up+and+Acceleration"><a href="index.html"name="3"></a> Index Look-up and Acceleration</a>
+    <li><a href="#label-+Evaluation+of+Interpolating+Functions"><a href="index.html"name="4"></a> Evaluation of Interpolating Functions</a>
     <li><a href="#label-+Higher+level+interface%3A+GSL%3A%3ASpline+class"><a href="index.html"name="5"></a> Higher level interface: GSL::Spline class</a>
     <li><a href="#label-+Class+initialization"><a href="index.html"name="5.1"></a> Class initialization</a>
     <li><a href="#label-+Evaluation"><a href="index.html"name="5.2"></a> Evaluation</a>
@@ -165,8 +165,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -201,12 +199,12 @@
 
 <h1 id="label-Interpolation">Interpolation<span><a href="#label-Interpolation">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>This chapter describes functions for performing interpolation.  The library
-provides a variety of interpolation methods, including  Cubic splines and
-Akima splines. The interpolation types are interchangeable,  allowing
-different methods to be used without recompiling. Interpolations can  be
-defined for both normal and periodic boundary conditions. Additional 
-functions are available for computing derivatives and integrals of 
+<p>This chapter describes functions for performing interpolation. The library
+provides a variety of interpolation methods, including Cubic splines and
+Akima splines. The interpolation types are interchangeable, allowing
+different methods to be used without recompiling. Interpolations can be
+defined for both normal and periodic boundary conditions. Additional
+functions are available for computing derivatives and integrals of
 interpolating functions.</p>
 <ol><li>
 <p><a href="interp_rdoc.html#1">Interpolation classes</a></p>
@@ -250,9 +248,9 @@ interpolating functions.</p>
 <p>GSL::Interp.alloc(x, y)</p>
 
 <p>These methods create an  interpolation object of type <code>T</code> for
-<code>n</code>  data-points.</p>
+<code>n</code> data-points.</p>
 
-<p>The library provides six types, which are specifiled by an identifier of a 
+<p>The library provides six types, which are specifiled by an identifier of a
 constant or a string:</p>
 <ul><li>
 <p>Interp::LINEAR or “linear”</p>
@@ -295,12 +293,12 @@ uses the non-rounded corner algorithm of Wodicka.</p>
 <ul><li>
 <p>GSL::Interp#init(xa, ya)</p>
 
-<p>This method initializes the interpolation object interp for the data 
+<p>This method initializes the interpolation object interp for the data
 <code>(xa,ya)</code> where <code>xa</code> and <code>ya</code> are vectors.
-The interpolation object (<code>GSL::Interp</code>) does not save the data 
+The interpolation object (<code>GSL::Interp</code>) does not save the data
 vectors <code>xa, ya</code> and only stores the static state computed from
-the data.  The <code>xa</code> vector is always assumed to be strictly
-ordered; the behavior  for other arrangements is not defined.</p>
+the data. The <code>xa</code> vector is always assumed to be strictly
+ordered; the behavior for other arrangements is not defined.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -312,29 +310,29 @@ ordered; the behavior  for other arrangements is not defined.</p>
 <ul><li>
 <p>GSL::Interp#min_size</p>
 
-<p>This returns the minimum number of points required by the interpolation 
+<p>This returns the minimum number of points required by the interpolation
 type of <code>self</code>. For example, Akima spline interpolation requires
 a minimum of 5 points.</p>
 </li></ul>
 
-<h2 id="label-+Index+Look-up+and+Acceleration+"><a href="../index.html"name="3"></a> Index Look-up and Acceleration <span><a href="#label-+Index+Look-up+and+Acceleration+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Index+Look-up+and+Acceleration"><a href="../index.html"name="3"></a> Index Look-up and Acceleration<span><a href="#label-+Index+Look-up+and+Acceleration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Interp.bsearch(xa, x, index_lo, index_hi)</p>
 
-<p>This returns the index i of the vector <code>xa</code> such that 
+<p>This returns the index i of the vector <code>xa</code> such that
 <code>xa[i] &lt;= x &lt; x[i+1]</code>. The index is searched for in the
-range  <code>[index_lo,index_hi]</code>.</p>
+range <code>[index_lo,index_hi]</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Interp#accel</p>
 
-<p>In C level, the library requires a <code>gsl_interp_accel</code> object, 
-but it is hidden in Ruby/GSL. It is automatically allocated  when a
-<code>GSL::Interp</code> object is created, stored in it,  and destroyed
-when the <code>Interp</code> object  is cleaned by the Ruby GC.  This
-method is used to access to the <code>Interp::Accel</code> object stored in
+<p>In C level, the library requires a <code>gsl_interp_accel</code> object,
+but it is hidden in Ruby/GSL. It is automatically allocated when a
+<code>GSL::Interp</code> object is created, stored in it, and destroyed
+when the <code>Interp</code> object is cleaned by the Ruby GC. This method
+is used to access to the <code>Interp::Accel</code> object stored in
 <code>self</code>.</p>
 </li></ul>
 <hr>
@@ -345,13 +343,13 @@ method is used to access to the <code>Interp::Accel</code> object stored in
 </li><li>
 <p>GSL::Interp::Accel#find(xa, x)</p>
 
-<p>This method performs a lookup action on the data array <code>xa</code>. 
-This is how lookups are performed during evaluation  of an interpolation.
-The function returns an index <code>i</code> such that  <code>xa[i] &lt;= x
+<p>This method performs a lookup action on the data array <code>xa</code>.
+This is how lookups are performed during evaluation of an interpolation.
+The function returns an index <code>i</code> such that <code>xa[i] &lt;= x
 &lt; xa[i+1]</code>.</p>
 </li></ul>
 
-<h2 id="label-+Evaluation+of+Interpolating+Functions+"><a href="../index.html"name="4"></a> Evaluation of Interpolating Functions <span><a href="#label-+Evaluation+of+Interpolating+Functions+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Evaluation+of+Interpolating+Functions"><a href="../index.html"name="4"></a> Evaluation of Interpolating Functions<span><a href="#label-+Evaluation+of+Interpolating+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Interp#eval(xa, ya, x)</p>
@@ -359,7 +357,7 @@ The function returns an index <code>i</code> such that  <code>xa[i] &lt;= x
 <p>GSL::Interp#eval_e(xa, ya, x)</p>
 
 <p>These methods return the interpolated value for a given point
-<code>x</code>,  using the interpolation object <code>self</code>, data
+<code>x</code>, using the interpolation object <code>self</code>, data
 vectors <code>xa</code> and <code>ya</code>. The data <code>x</code> can be
 a <code>Numeric, Vector, Matrix</code> or an <code>NArray</code>.</p>
 </li></ul>
@@ -369,9 +367,9 @@ a <code>Numeric, Vector, Matrix</code> or an <code>NArray</code>.</p>
 </li><li>
 <p>GSL::Interp#eval_deriv_e(xa, ya, x)</p>
 
-<p>These methods return the derivative of an interpolated function for a 
-given point <code>x</code>, using the interpolation object
-<code>self</code>,  data vectors <code>xa</code> and <code>ya</code>.</p>
+<p>These methods return the derivative of an interpolated function for a given
+point <code>x</code>, using the interpolation object <code>self</code>,
+data vectors <code>xa</code> and <code>ya</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -379,9 +377,9 @@ given point <code>x</code>, using the interpolation object
 </li><li>
 <p>GSL::Interp#eval_deriv2_e(xa, ya, x)</p>
 
-<p>These methods return the second derivative of an interpolated function  for
+<p>These methods return the second derivative of an interpolated function for
 a given point <code>x</code>, using the interpolation object
-<code>self</code>,  data vectors <code>xa</code> and <code>ya</code>.</p>
+<code>self</code>, data vectors <code>xa</code> and <code>ya</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -389,9 +387,9 @@ a given point <code>x</code>, using the interpolation object
 </li><li>
 <p>GSL::Interp#eval_integ_e(xa, ya, a, b)</p>
 
-<p>These methods return the numerical integral result of an interpolated 
+<p>These methods return the numerical integral result of an interpolated
 function over the range <code>[a, b]</code>, using the interpolation object
-<code>self</code>,  data vectors <code>xa</code> and <code>ya</code>.</p>
+<code>self</code>, data vectors <code>xa</code> and <code>ya</code>.</p>
 </li></ul>
 
 <h2 id="label-+Higher+level+interface%3A+GSL%3A%3ASpline+class"><a href="../index.html"name="5"></a> Higher level interface: GSL::Spline class<span><a href="#label-+Higher+level+interface%3A+GSL%3A%3ASpline+class">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -406,7 +404,7 @@ function over the range <code>[a, b]</code>, using the interpolation object
 <p>GSL::Spline.alloc(x, y, T)</p>
 
 <p>This creates a <code>GSL::Spline</code> object of type <code>T</code> for
-<code>n</code>  data-points. The type <code>T</code> is the same as
+<code>n</code> data-points. The type <code>T</code> is the same as
 <code>GSL::Interp</code> class.</p>
 
 <p>These two are equivalent.</p>
@@ -428,8 +426,8 @@ sp.init(x, y)                 # x and y are vectors of length n</pre>
 <p>GSL::Spline#init(xa, ya)</p>
 
 <p>This initializes a <code>GSL::Spline</code> object <code>self</code> for
-the data  (<code>xa, ya</code>) where <code>xa</code> and <code>ya</code>
-are Ruby arrays of equal sizes  or <code>GSL::Vector</code>.</p>
+the data (<code>xa, ya</code>) where <code>xa</code> and <code>ya</code>
+are Ruby arrays of equal sizes or <code>GSL::Vector</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -449,10 +447,10 @@ data <code>x</code> can be a <code>Numeric, Vector, Matrix</code> or an
 
 <p>NOTE: In a GSL-C program, a <code>gsl_interp_accel</code> object is
 required to use the function <code>gsl_spline_eval</code>. In Ruby/GSL, the
-<code>gsl_interp_accel</code> is hidden, it is automatically  allocated
-when a <code>GSL::Spline</code> object is created,  and also destroyed when
-the <code>Spline</code> object  is cleaned by the Ruby GC. The accel object
-can be accessed via the method  <code>GSL::Spline#accel</code>.</p>
+<code>gsl_interp_accel</code> is hidden, it is automatically allocated when
+a <code>GSL::Spline</code> object is created, and also destroyed when the
+<code>Spline</code> object is cleaned by the Ruby GC. The accel object can
+be accessed via the method <code>GSL::Spline#accel</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -482,9 +480,9 @@ set by <code>init</code>.</p>
 </li><li>
 <p>GSL::Spline#accel_find(xa, x)</p>
 
-<p>This method performs a lookup action on the data array <code>xa</code>. 
-This is how lookups are performed during evaluation  of an interpolation.
-The function returns an index <code>i</code> such that  <code>xa[i] &lt;= x
+<p>This method performs a lookup action on the data array <code>xa</code>.
+This is how lookups are performed during evaluation of an interpolation.
+The function returns an index <code>i</code> such that <code>xa[i] &lt;= x
 &lt; xa[i+1]</code>.</p>
 </li></ul>
 
@@ -499,7 +497,7 @@ The function returns an index <code>i</code> such that  <code>xa[i] &lt;= x
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

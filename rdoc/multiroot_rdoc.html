@@ -166,8 +166,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -202,15 +200,15 @@
 
 <h1 id="label-Multidimensional+Root-Finding">Multidimensional Root-Finding<span><a href="#label-Multidimensional+Root-Finding">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>This chapter describes functions for multidimensional root-finding 
-(solving nonlinear systems with n equations in n unknowns).  The library
-provides low level components for a variety of iterative solvers  and
-convergence tests. These can be combined by the user to achieve the 
-desired solution, with full access to the intermediate steps of the
-iteration.  Each class of methods uses the same framework, so that you can
-switch between  solvers at runtime without needing to recompile your
-program. Each instance of  a solver keeps track of its own state, allowing
-the solvers to be used in  multi-threaded programs.</p>
+<p>This chapter describes functions for multidimensional root-finding (solving
+nonlinear systems with n equations in n unknowns). The library provides low
+level components for a variety of iterative solvers and convergence tests.
+These can be combined by the user to achieve the desired solution, with
+full access to the intermediate steps of the iteration. Each class of
+methods uses the same framework, so that you can switch between solvers at
+runtime without needing to recompile your program. Each instance of a
+solver keeps track of its own state, allowing the solvers to be used in
+multi-threaded programs.</p>
 <ol><li>
 <p><a href="multiroot_rdoc.html#1">Overview</a></p>
 </li><li>
@@ -234,21 +232,21 @@ the solvers to be used in  multi-threaded programs.</p>
 
 <h2 id="label-+Overview"><a href="../index.html"name="1"></a> Overview<span><a href="#label-+Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>The problem of multidimensional root finding requires the simultaneous 
-solution of n equations, f_i, in n variables, x_i, In general there are no 
+<p>The problem of multidimensional root finding requires the simultaneous
+solution of n equations, f_i, in n variables, x_i, In general there are no
 bracketing methods available for n dimensional systems, and no way of
-knowing  whether any solutions exist. All algorithms proceed from an
-initial guess  using a variant of the Newton iteration, where x, f are
-vector quantities and  J is the Jacobian matrix J_{ij} = d f_i / d x_j.
-Additional strategies can be  used to enlarge the region of convergence.
-These include requiring a decrease  in the norm |f| on each step proposed
-by Newton&#39;s method, or taking  steepest-descent steps in the direction
-of the negative gradient of |f|.</p>
+knowing whether any solutions exist. All algorithms proceed from an initial
+guess using a variant of the Newton iteration, where x, f are vector
+quantities and J is the Jacobian matrix J_{ij} = d f_i / d x_j. Additional
+strategies can be used to enlarge the region of convergence. These include
+requiring a decrease in the norm |f| on each step proposed by Newton&#39;s
+method, or taking steepest-descent steps in the direction of the negative
+gradient of |f|.</p>
 
-<p>Several root-finding algorithms are available within a single framework. 
-The user provides a high-level driver for the algorithms, and the library 
+<p>Several root-finding algorithms are available within a single framework.
+The user provides a high-level driver for the algorithms, and the library
 provides the individual functions necessary for each of the steps. There
-are  three main phases of the iteration. The steps are,</p>
+are three main phases of the iteration. The steps are,</p>
 <ul><li>
 <p>initialize solver state, <code>s</code>, for algorithm <code>T</code></p>
 </li><li>
@@ -257,24 +255,24 @@ are  three main phases of the iteration. The steps are,</p>
 <p>test <code>s</code> for convergence, and repeat iteration if necessary</p>
 </li></ul>
 
-<p>The evaluation of the Jacobian matrix can be problematic, either because 
+<p>The evaluation of the Jacobian matrix can be problematic, either because
 programming the derivatives is intractable or because computation of the
-n^2  terms of the matrix becomes too expensive. For these reasons the
-algorithms  provided by the library are divided into two classes according
-to whether  the derivatives are available or not.</p>
+n^2 terms of the matrix becomes too expensive. For these reasons the
+algorithms provided by the library are divided into two classes according
+to whether the derivatives are available or not.</p>
 
-<p>The state for solvers with an analytic Jacobian matrix is held in a 
+<p>The state for solvers with an analytic Jacobian matrix is held in a
 <code>GSL::MultiRoot::FdfSolver</code> object. The updating procedure
-requires both  the function and its derivatives to be supplied by the user.</p>
+requires both the function and its derivatives to be supplied by the user.</p>
 
 <p>The state for solvers which do not use an analytic Jacobian matrix is held
-in  a <code>GSL::MultiRoot::FSolver</code> object. The updating procedure
-uses only  function evaluations (not derivatives). The algorithms estimate
-the matrix J  or J^{-1} by approximate methods.</p>
+in a <code>GSL::MultiRoot::FSolver</code> object. The updating procedure
+uses only function evaluations (not derivatives). The algorithms estimate
+the matrix J or J^{-1} by approximate methods.</p>
 
 <h2 id="label-+Initializing+the+Solver"><a href="../index.html"name="2"></a> Initializing the Solver<span><a href="#label-+Initializing+the+Solver">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>Two types of solvers are available. The solver itself depends only on the 
+<p>Two types of solvers are available. The solver itself depends only on the
 dimension of the problem and the algorithm and can be reused for different
 problems. The <code>FdfSolver</code> requires derivatives of the function
 to solve.</p>
@@ -283,8 +281,8 @@ to solve.</p>
 <p>GSL::MultiRoot::FSolver.alloc(T, n)</p>
 
 <p>This creates an instance of the <code>FSolver</code> class of type
-<code>T</code>  for a system of <code>n</code> dimensions. The type is
-given by a constant or a string,</p>
+<code>T</code> for a system of <code>n</code> dimensions. The type is given
+by a constant or a string,</p>
 <ul><li>
 <p>GSL::MultiRoot:FSolver::HYBRIDS, or “hybrids”</p>
 </li><li>
@@ -300,8 +298,8 @@ given by a constant or a string,</p>
 <p>GSL::MultiRoot::FdfSolver.alloc(T, n)</p>
 
 <p>This creates an instance of the <code>FdfSolver</code> class of type
-<code>T</code>  for a system of <code>n</code> dimensions. The type is
-given by a constant,</p>
+<code>T</code> for a system of <code>n</code> dimensions. The type is given
+by a constant,</p>
 <ul><li>
 <p>GSL::MultiRoot:FdfSolver::HYBRIDSJ, or “hybridsj”</p>
 </li><li>
@@ -316,18 +314,18 @@ given by a constant,</p>
 <ul><li>
 <p>GSL::MultiRoot::FSolver#set(func, x)</p>
 
-<p>This method sets, or resets, an existing solver <code>self</code>  to use
+<p>This method sets, or resets, an existing solver <code>self</code> to use
 the function <code>func</code> and the initial guess <code>x</code>. Here
-<code>x</code> is a <code>Vector</code>, and <code>func</code>  is a
+<code>x</code> is a <code>Vector</code>, and <code>func</code> is a
 <code>MultiRoot:Function</code> object.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::MultiRoot::FdfSolver#set(func_fdf, x)</p>
 
-<p>This method sets, or resets, an existing solver <code>self</code>  to use
+<p>This method sets, or resets, an existing solver <code>self</code> to use
 the function <code>func_fdf</code> and the initial guess <code>x</code>.
-Here <code>x</code> is a <code>Vector</code>, and <code>func_fdf</code>  is
+Here <code>x</code> is a <code>Vector</code>, and <code>func_fdf</code> is
 a <code>MultiRoot:Function_fdf</code> object.</p>
 </li></ul>
 <hr>
@@ -398,19 +396,19 @@ a <code>MultiRoot:Function_fdf</code> object.</p>
 </li><li>
 <p>GSL::MultiRoot::FdfSolver#interate</p>
 
-<p>These methods perform a single iteration of the solver <code>self</code>. 
-If the iteration encounters an unexpected problem then an error code will 
+<p>These methods perform a single iteration of the solver <code>self</code>.
+If the iteration encounters an unexpected problem then an error code will
 be returned,</p>
 <ul><li>
 <p>GSL_EBADFUNC: the iteration encountered a singular point where the function
 or its derivative evaluated to Inf or NaN.</p>
 </li><li>
-<p>GSL_ENOPROG: the iteration is not making any progress, preventing the 
+<p>GSL_ENOPROG: the iteration is not making any progress, preventing the
 algorithm from continuing.</p>
 </li></ul>
 
-<p>The solver maintains a current best estimate of the root at all times. 
-This information can be accessed with the following auxiliary methods.</p>
+<p>The solver maintains a current best estimate of the root at all times. This
+information can be accessed with the following auxiliary methods.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -428,7 +426,7 @@ solver <code>self</code>.</p>
 <p>GSL::MultiRoot::FdfSolver#f</p>
 
 <p>These methds return the function value <code>f(x)</code> (Vector) at the
-current estimate  of the root for the solver <code>self</code>.</p>
+current estimate of the root for the solver <code>self</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -448,8 +446,8 @@ solver <code>self</code>.</p>
 <p>GSL::MultiRoot::FdfSolver#test_delta(epsabs, epsrel)</p>
 
 <p>This method tests for the convergence of the sequence by comparing the last
-step  <code>dx</code> with the absolute error <code>epsabs</code> and
-relative error <code>epsrel</code>  to the current position <code>x</code>.
+step <code>dx</code> with the absolute error <code>epsabs</code> and
+relative error <code>epsrel</code> to the current position <code>x</code>.
 The test returns <code>GSL::SUCCESS</code> if the following condition is
 achieved,</p>
 
@@ -465,14 +463,14 @@ otherwise.</p>
 <p>GSL::MultiRoot::FdfSolver#test_residual(epsabs)</p>
 
 <p>This method tests the residual value <code>f</code> against the absolute
-error  bound <code>epsabs</code>. The test returns
-<code>GSL::SUCCESS</code> if the following  condition is achieved,</p>
+error bound <code>epsabs</code>. The test returns <code>GSL::SUCCESS</code>
+if the following condition is achieved,</p>
 
 <pre>sum_i |f_i| &lt; epsabs</pre>
 
 <p>and returns <code>GSL::CONTINUE</code> otherwise. This criterion is
-suitable for  situations where the precise location of the root,
-<code>x</code>, is unimportant  provided a value can be found where the
+suitable for situations where the precise location of the root,
+<code>x</code>, is unimportant provided a value can be found where the
 residual is small enough.</p>
 </li></ul>
 
@@ -568,7 +566,7 @@ residual is small enough.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -165,8 +165,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -226,9 +224,9 @@
 <ul><li>
 <p>GSL::Permutation.alloc(n)</p>
 
-<p>These functions create a new permutation of size <code>n</code>.  The
-permutation is not initialized and its elements are undefined.  Use
-<code>GSL::Permutation.calloc</code> if you want to create a permutation 
+<p>These functions create a new permutation of size <code>n</code>. The
+permutation is not initialized and its elements are undefined. Use
+<code>GSL::Permutation.calloc</code> if you want to create a permutation
 which is initialized to the identity.</p>
 </li></ul>
 <hr>
@@ -250,7 +248,7 @@ the identity.</p>
 <ul><li>
 <p>GSL::Permutation.memcpy(dest, src)</p>
 
-<p>This method copies the elements of the permutation <code>src</code>  into
+<p>This method copies the elements of the permutation <code>src</code> into
 the permutation <code>dest</code>. The two permutations must have the same
 size.</p>
 </li></ul>
@@ -287,8 +285,8 @@ permutation.</p>
 <ul><li>
 <p>GSL::Permutation#valid</p>
 
-<p>This checks that the permutation <code>self</code> is valid.  The n
-elements should contain each of the numbers 0 .. n-1 once and only once.</p>
+<p>This checks that the permutation <code>self</code> is valid. The n elements
+should contain each of the numbers 0 .. n-1 once and only once.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -317,20 +315,20 @@ as a new permutation.</p>
 <p>GSL::Permutation#next</p>
 
 <p>This method advances the permutation <code>self</code> to the next
-permutation in  lexicographic order and returns <code>GSL::SUCCESS</code>.
-If no further permutations  are available it returns
-<code>GSL::FAILURE</code> and leaves <code>self</code> unmodified. 
-Starting with the identity permutation and repeatedly applying this
-function  will iterate through all possible permutations of a given order.</p>
+permutation in lexicographic order and returns <code>GSL::SUCCESS</code>.
+If no further permutations are available it returns
+<code>GSL::FAILURE</code> and leaves <code>self</code> unmodified. Starting
+with the identity permutation and repeatedly applying this function will
+iterate through all possible permutations of a given order.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Permutation#prev</p>
 
 <p>This method steps backwards from the permutation <code>self</code> to the
-previous  permutation in lexicographic order, returning
-<code>GSL_SUCCESS</code>.  If no previous permutation is available it
-returns <code>GSL_FAILURE</code>  and leaves <code>self</code> unmodified.</p>
+previous permutation in lexicographic order, returning
+<code>GSL_SUCCESS</code>. If no previous permutation is available it
+returns <code>GSL_FAILURE</code> and leaves <code>self</code> unmodified.</p>
 </li></ul>
 
 <h3 id="label-+Reading+and+writing+permutations"><a href="../index.html"name="2.4"></a> Reading and writing permutations<span><a href="#label-+Reading+and+writing+permutations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
@@ -355,25 +353,24 @@ returns <code>GSL_FAILURE</code>  and leaves <code>self</code> unmodified.</p>
 
 <h3 id="label-+Permutations+in+cyclic+Form"><a href="../index.html"name="2.5"></a> Permutations in cyclic Form<span><a href="#label-+Permutations+in+cyclic+Form">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
-<p>A permutation can be represented in both <code>linear</code> and 
+<p>A permutation can be represented in both <code>linear</code> and
 <code>cyclic</code> notations. The functions described in this section
-convert  between the two forms. The linear notation is an index mapping,
-and has  already been described above. The cyclic notation expresses a 
-permutation as a series of circular rearrangements of groups  of elements,
+convert between the two forms. The linear notation is an index mapping, and
+has already been described above. The cyclic notation expresses a
+permutation as a series of circular rearrangements of groups of elements,
 or <code>cycles</code>.</p>
 
-<p>For example, under the cycle (1 2 3), 1 is replaced by 2, 2 is replaced  by
-3 and 3 is replaced by 1 in a circular fashion. Cycles of different  sets
-of elements can be combined independently, for example (1 2 3) (4 5) 
-combines the cycle (1 2 3) with the cycle (4 5), which is an exchange of 
-elements 4 and 5. A cycle of length one represents an element which is 
-unchanged by the permutation and is referred to as a
-<code>singleton</code>.</p>
+<p>For example, under the cycle (1 2 3), 1 is replaced by 2, 2 is replaced by
+3 and 3 is replaced by 1 in a circular fashion. Cycles of different sets of
+elements can be combined independently, for example (1 2 3) (4 5) combines
+the cycle (1 2 3) with the cycle (4 5), which is an exchange of elements 4
+and 5. A cycle of length one represents an element which is unchanged by
+the permutation and is referred to as a <code>singleton</code>.</p>
 
-<p>It can be shown that every permutation can be decomposed into combinations 
-of cycles. The decomposition is not unique, but can always be rearranged 
-into a standard <code>canonical form</code> by a reordering of elements. 
-The library uses the canonical form defined in Knuth&#39;s  <code>Art of
+<p>It can be shown that every permutation can be decomposed into combinations
+of cycles. The decomposition is not unique, but can always be rearranged
+into a standard <code>canonical form</code> by a reordering of elements.
+The library uses the canonical form defined in Knuth&#39;s <code>Art of
 Computer Programming</code> (Vol 1, 3rd Ed, 1997) Section 1.3.3, p.178.</p>
 
 <p>The procedure for obtaining the canonical form given by Knuth is,</p>
@@ -385,23 +382,23 @@ Computer Programming</code> (Vol 1, 3rd Ed, 1997) Section 1.3.3, p.178.</p>
 <p>Order the cycles in decreasing order of the first number in the cycle.</p>
 </li></ol>
 
-<p>For example, the linear representation (2 4 3 0 1) is represented as  (1 4)
-(0 2 3) in canonical form. The permutation corresponds to an  exchange of
+<p>For example, the linear representation (2 4 3 0 1) is represented as (1 4)
+(0 2 3) in canonical form. The permutation corresponds to an exchange of
 elements 1 and 4, and rotation of elements 0, 2 and 3.</p>
 
 <p>The important property of the canonical form is that it can be
-reconstructed  from the contents of each cycle without the brackets. In
-addition, by removing  the brackets it can be considered as a linear
-representation of a different  permutation. In the example given above the
-permutation (2 4 3 0 1) would  become (1 4 0 2 3). This mapping has many
-applications in the theory of  permutations.</p>
+reconstructed from the contents of each cycle without the brackets. In
+addition, by removing the brackets it can be considered as a linear
+representation of a different permutation. In the example given above the
+permutation (2 4 3 0 1) would become (1 4 0 2 3). This mapping has many
+applications in the theory of permutations.</p>
 <hr>
 <ul><li>
 <p>GSL::Permutation#linear_to_canonical</p>
 </li><li>
 <p>GSL::Permutation#to_canonical</p>
 
-<p>Computes the canonical form of the permutation <code>self</code> and 
+<p>Computes the canonical form of the permutation <code>self</code> and
 returns it as a new <code>GSL::Permutation</code>.</p>
 </li></ul>
 <hr>
@@ -417,23 +414,23 @@ form and returns it as a new <code>GSL::Permutation</code>.</p>
 <ul><li>
 <p>GSL::Permutation#inversions</p>
 
-<p>Counts the number of inversions in the permutation <code>self</code>.  An
-inversion is any pair of elements that are not in order.  For example, the
+<p>Counts the number of inversions in the permutation <code>self</code>. An
+inversion is any pair of elements that are not in order. For example, the
 permutation 2031 has three inversions, corresponding to the pairs (2,0)
-(2,1) and (3,1).  The identity permutation has no inversions.</p>
+(2,1) and (3,1). The identity permutation has no inversions.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Permutation#linear_cycles</p>
 
-<p>Counts the number of cycles in the permutation <code>self</code>,  given in
+<p>Counts the number of cycles in the permutation <code>self</code>, given in
 linear form.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::Permutation#canonical_cycles</p>
 
-<p>Counts the number of cycles in the permutation <code>self</code>,  given in
+<p>Counts the number of cycles in the permutation <code>self</code>, given in
 canonical form.</p>
 </li></ul>
 
@@ -443,11 +440,10 @@ canonical form.</p>
 <p>GSL::Permutation::permute(v)</p>
 
 <p>Applies the permutation <code>self</code> to the elements of the vector
-<code>v</code>,  considered as a row-vector acted on by a permutation
-matrix from the  right, v&#39; = v P. The j-th column of the permutation
-matrix P is  given by the p_j-th column of the identity matrix.  The
-permutation <code>self</code> and the vector <code>v</code> must have the
-same length.</p>
+<code>v</code>, considered as a row-vector acted on by a permutation matrix
+from the right, v&#39; = v P. The j-th column of the permutation matrix P
+is given by the p_j-th column of the identity matrix. The permutation
+<code>self</code> and the vector <code>v</code> must have the same length.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -455,10 +451,10 @@ same length.</p>
 
 <p>Applies the inverse of the permutation <code>self</code> to the elements of
 the vector <code>v</code>, considered as a row-vector acted on by an
-inverse  permutation matrix from the right, v&#39; = v P^T.  Note that for
-permutation matrices the inverse is the same as the  transpose. The j-th
-column of the permutation matrix P is given by  the p_j-th column of the
-identity matrix.  The permutation <code>self</code> and the vector
+inverse permutation matrix from the right, v&#39; = v P^T. Note that for
+permutation matrices the inverse is the same as the transpose. The j-th
+column of the permutation matrix P is given by the p_j-th column of the
+identity matrix. The permutation <code>self</code> and the vector
 <code>v</code> must have the same length.</p>
 </li></ul>
 <hr>
@@ -466,8 +462,8 @@ identity matrix.  The permutation <code>self</code> and the vector
 <p>GSL::Permutation.mul(pa, pb)</p>
 
 <p>Combines the two permutations <code>pa</code> and <code>pb</code> into a
-single  permutation <code>p</code> and returns it.  The permutation
-<code>p</code> is equivalent to applying <code>pb</code> first  and then
+single permutation <code>p</code> and returns it. The permutation
+<code>p</code> is equivalent to applying <code>pb</code> first and then
 <code>pa</code>.</p>
 </li></ul>
 
@@ -480,7 +476,7 @@ single  permutation <code>p</code> and returns it.  The permutation
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

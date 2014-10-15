@@ -60,14 +60,14 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Statistics">Statistics</a>
     <li><a href="#label-+Mean%2C+Standard+Deviation+and+Variance"><a href="index.html"name="1"></a> Mean, Standard Deviation and Variance</a>
-    <li><a href="#label-+Absolute+deviation+"><a href="index.html"name="2"></a> Absolute deviation </a>
-    <li><a href="#label-+Higher+moments+%28skewness+and+kurtosis%29+"><a href="index.html"name="3"></a> Higher moments (skewness and kurtosis) </a>
+    <li><a href="#label-+Absolute+deviation"><a href="index.html"name="2"></a> Absolute deviation</a>
+    <li><a href="#label-+Higher+moments+%28skewness+and+kurtosis%29"><a href="index.html"name="3"></a> Higher moments (skewness and kurtosis)</a>
     <li><a href="#label-+Autocorrelation"><a href="index.html"name="4"></a> Autocorrelation</a>
     <li><a href="#label-+Covariance"><a href="index.html"name="5"></a> Covariance</a>
     <li><a href="#label-+Correlation"><a href="index.html"name="6"></a> Correlation</a>
     <li><a href="#label-+Weighted+samples"><a href="index.html"name="7"></a> Weighted samples</a>
-    <li><a href="#label-+Maximum+and+Minimum+values+"><a href="index.html"name="8"></a> Maximum and Minimum values </a>
-    <li><a href="#label-+Median+and+Percentiles+"><a href="index.html"name="9"></a> Median and Percentiles </a>
+    <li><a href="#label-+Maximum+and+Minimum+values"><a href="index.html"name="8"></a> Maximum and Minimum values</a>
+    <li><a href="#label-+Median+and+Percentiles"><a href="index.html"name="9"></a> Median and Percentiles</a>
     <li><a href="#label-+Example"><a href="index.html"name="10"></a> Example</a>
   </ul>
 </div>
@@ -167,8 +167,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -238,7 +236,7 @@
 <pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">7</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">mean</span>
 =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4.0</span>
@@ -265,7 +263,7 @@ GSL 1.11)</p>
 <ul><li>
 <p>GSL::Stats::variance_m(v[, mean])</p>
 </li><li>
-<p><a href="mean">GSL::Vector#variance_m(</a>)</p>
+<p>GSL::Vector#variance_m([mean])</p>
 
 <p>Variance of <code>v</code> relative to the given value of
 <code>mean</code>.</p>
@@ -274,7 +272,7 @@ GSL 1.11)</p>
 <ul><li>
 <p>GSL::Stats::sd(v[, mean])</p>
 </li><li>
-<p><a href="mean">GSL::Vector#sd(</a>)</p>
+<p>GSL::Vector#sd([mean])</p>
 
 <p>Standard deviation.</p>
 </li></ul>
@@ -282,7 +280,7 @@ GSL 1.11)</p>
 <ul><li>
 <p>GSL::Stats::tss(v[, mean])</p>
 </li><li>
-<p><a href="mean">GSL::Vector#tss(</a>)</p>
+<p>GSL::Vector#tss([mean])</p>
 
 <p>(GSL-1.11 or later) These methods return the total sum of squares (TSS) of
 data about the mean.</p>
@@ -294,7 +292,7 @@ data about the mean.</p>
 <p>GSL::Vector#variance_with_fixed_mean(mean)</p>
 
 <p>Unbiased estimate of the variance of <code>v</code> when the population
-mean  <code>mean</code> of the underlying distribution is known <code>a
+mean <code>mean</code> of the underlying distribution is known <code>a
 priori</code>.</p>
 </li></ul>
 <hr>
@@ -308,21 +306,21 @@ priori</code>.</p>
 <p>GSL::Vector#sd_with_fixed_mean(mean)</p>
 
 <p>Unbiased estimate of the variance of <code>v</code> when the population
-mean  <code>mean</code> of the underlying distribution is known <code>a
+mean <code>mean</code> of the underlying distribution is known <code>a
 priori</code>.</p>
 </li></ul>
 
-<h2 id="label-+Absolute+deviation+"><a href="../index.html"name="2"></a> Absolute deviation <span><a href="#label-+Absolute+deviation+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Absolute+deviation"><a href="../index.html"name="2"></a> Absolute deviation<span><a href="#label-+Absolute+deviation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::absdev(v[, mean])</p>
 </li><li>
-<p><a href="mean">GSL::Vector#absdev(</a>)</p>
+<p>GSL::Vector#absdev([mean])</p>
 
 <p>Compute the absolute deviation (from the mean <code>mean</code> if given).</p>
 </li></ul>
 
-<h2 id="label-+Higher+moments+%28skewness+and+kurtosis%29+"><a href="../index.html"name="3"></a> Higher moments (skewness and kurtosis) <span><a href="#label-+Higher+moments+%28skewness+and+kurtosis%29+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Higher+moments+%28skewness+and+kurtosis%29"><a href="../index.html"name="3"></a> Higher moments (skewness and kurtosis)<span><a href="#label-+Higher+moments+%28skewness+and+kurtosis%29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::skew(v[, mean, sd])</p>
@@ -345,7 +343,7 @@ priori</code>.</p>
 <ul><li>
 <p>GSL::Stats::lag1_autocorrelation(v[, mean])</p>
 </li><li>
-<p><a href="mean">GSL::Vector#lag1_autocorrelation(</a>)</p>
+<p>GSL::Vector#lag1_autocorrelation([mean])</p>
 
 <p>The lag-1 autocorrelation</p>
 </li></ul>
@@ -385,7 +383,7 @@ vectors <code>v1, v2</code>. (&gt;= GSL-1.10)</p>
 <p>GSL::Vector#wkurtosis(w)</p>
 </li></ul>
 
-<h2 id="label-+Maximum+and+Minimum+values+"><a href="../index.html"name="8"></a> Maximum and Minimum values <span><a href="#label-+Maximum+and+Minimum+values+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Maximum+and+Minimum+values"><a href="../index.html"name="8"></a> Maximum and Minimum values<span><a href="#label-+Maximum+and+Minimum+values">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::max(data)</p>
@@ -417,10 +415,10 @@ them.</p>
 </li><li>
 <p>GSL::Vector#max_index</p>
 
-<p>Return the index of the maximum value in <code>data</code>.  The maximum
-value is defined as the value of the element x_i  which satisfies x_i &gt;=
-x_j for all j.  When there are several equal maximum elements then the
-first one is chosen.</p>
+<p>Return the index of the maximum value in <code>data</code>. The maximum
+value is defined as the value of the element x_i which satisfies x_i &gt;=
+x_j for all j. When there are several equal maximum elements then the first
+one is chosen.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -428,10 +426,10 @@ first one is chosen.</p>
 </li><li>
 <p>GSL::Vector#min_index</p>
 
-<p>Returns the index of the minimum value in <code>data</code>.  The minimum
-value is defined as the value of the element x_i  which satisfies x_i &gt;=
-x_j for all j.  When there are several equal minimum elements then the
-first one is  chosen.</p>
+<p>Returns the index of the minimum value in <code>data</code>. The minimum
+value is defined as the value of the element x_i which satisfies x_i &gt;=
+x_j for all j. When there are several equal minimum elements then the first
+one is chosen.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -439,20 +437,20 @@ first one is  chosen.</p>
 </li><li>
 <p>GSL::Vector#minmax_index</p>
 
-<p>Return the indexes of the minimum and maximum values in <code>data</code> 
+<p>Return the indexes of the minimum and maximum values in <code>data</code>
 in a single pass.</p>
 </li></ul>
 
-<h2 id="label-+Median+and+Percentiles+"><a href="../index.html"name="9"></a> Median and Percentiles <span><a href="#label-+Median+and+Percentiles+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Median+and+Percentiles"><a href="../index.html"name="9"></a> Median and Percentiles<span><a href="#label-+Median+and+Percentiles">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::median_from_sorted_data(v)</p>
 </li><li>
 <p>GSL::Vector#median_from_sorted_data</p>
 
-<p>Return the median value. The elements of the data must be  in ascending
-numerical order. There are no checks to see whether  the data are sorted,
-so the method <code>GSL::Vector#sort</code>  should always be used first.</p>
+<p>Return the median value. The elements of the data must be in ascending
+numerical order. There are no checks to see whether the data are sorted, so
+the method <code>GSL::Vector#sort</code> should always be used first.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -460,9 +458,9 @@ so the method <code>GSL::Vector#sort</code>  should always be used first.</p>
 </li><li>
 <p>GSL::Vector#quantile_from_sorted_data</p>
 
-<p>Return the quantile value. The elements of the data must be  in ascending
-numerical order. There are no checks to see whether  the data are sorted,
-so the method <code>GSL::Vector#sort</code>  should always be used first.</p>
+<p>Return the quantile value. The elements of the data must be in ascending
+numerical order. There are no checks to see whether the data are sorted, so
+the method <code>GSL::Vector#sort</code> should always be used first.</p>
 </li></ul>
 
 <h2 id="label-+Example"><a href="../index.html"name="10"></a> Example<span><a href="#label-+Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -495,7 +493,7 @@ so the method <code>GSL::Vector#sort</code>  should always be used first.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

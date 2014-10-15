@@ -59,7 +59,7 @@
 
   <ul class="link-list" role="directory">
     <li><a href="#label-Fast+Fourier+Transforms">Fast Fourier Transforms</a>
-    <li><a href="#label-+Mathematical+Definitions+"><a href="index.html"name="1"></a> Mathematical Definitions </a>
+    <li><a href="#label-+Mathematical+Definitions"><a href="index.html"name="1"></a> Mathematical Definitions</a>
     <li><a href="#label-+Complex+data+FFTs"><a href="index.html"name="2"></a> Complex data FFTs</a>
     <li><a href="#label-+Overview+of+complex+data+FFTs"><a href="index.html"name="2.1"></a> Overview of complex data FFTs</a>
     <li><a href="#label-+Radix-2+FFT+routines+for+complex+data"><a href="index.html"name="2.2"></a> Radix-2 FFT routines for complex data</a>
@@ -70,7 +70,7 @@
     <li><a href="#label-+Methods+to+compute+transform"><a href="index.html"name="2.3.3"></a> Methods to compute transform</a>
     <li><a href="#label-+Example+to+use+the+mixed-radix+FFT+algorithm"><a href="index.html"name="2.3.4"></a> Example to use the mixed-radix FFT algorithm</a>
     <li><a href="#label-+Real+data+FFTs"><a href="index.html"name="3"></a> Real data FFTs</a>
-    <li><a href="#label-+Overview+of+real+data+FFTs+"><a href="index.html"name="3.1"></a> Overview of real data FFTs </a>
+    <li><a href="#label-+Overview+of+real+data+FFTs"><a href="index.html"name="3.1"></a> Overview of real data FFTs</a>
     <li><a href="#label-+Radix-2+FFT+routines+for+real+data"><a href="index.html"name="3.2"></a> Radix-2 FFT routines for real data</a>
     <li><a href="#label-+Mixed-radix+FFT+routines+for+real+data"><a href="index.html"name="4"></a> Mixed-radix FFT routines for real data</a>
     <li><a href="#label-+Data+storage+scheme"><a href="index.html"name="4.1"></a> Data storage scheme</a>
@@ -177,8 +177,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -257,40 +255,40 @@
 </li></ol>
 </li></ol>
 
-<h2 id="label-+Mathematical+Definitions+"><a href="../index.html"name="1"></a> Mathematical Definitions <span><a href="#label-+Mathematical+Definitions+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Mathematical+Definitions"><a href="../index.html"name="1"></a> Mathematical Definitions<span><a href="#label-+Mathematical+Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Fast Fourier Transforms are efficient algorithms for calculating the
-discrete  fourier transform (DFT),</p>
+discrete fourier transform (DFT),</p>
 
 <p>The DFT usually arises as an approximation to the continuous fourier
-transform  when functions are sampled at discrete intervals in space or
-time.  The naive evaluation of the discrete fourier transform is a
-matrix-vector  multiplication Wvec{z}. A general matrix-vector
-multiplication takes O(N^2)  operations for N data-points. Fast fourier
-transform algorithms use a  divide-and-conquer strategy to factorize the
-matrix W into smaller  sub-matrices, corresponding to the integer factors
-of the length N.  If N can be factorized into a product of integers f_1 f_2
-… f_n then the  DFT can be computed in O(N sum f_i) operations. For a
-radix-2 FFT this  gives an operation count of O(N log_2 N).</p>
+transform when functions are sampled at discrete intervals in space or
+time. The naive evaluation of the discrete fourier transform is a
+matrix-vector multiplication Wvec{z}. A general matrix-vector
+multiplication takes O(N^2) operations for N data-points. Fast fourier
+transform algorithms use a divide-and-conquer strategy to factorize the
+matrix W into smaller sub-matrices, corresponding to the integer factors of
+the length N. If N can be factorized into a product of integers f_1 f_2 …
+f_n then the DFT can be computed in O(N sum f_i) operations. For a radix-2
+FFT this gives an operation count of O(N log_2 N).</p>
 
 <p>All the FFT functions offer three types of transform: forwards, inverse and
 backwards, based on the same mathematical definitions. The definition of
-the  forward fourier transform, x = FFT(z), is, and the definition of the
-inverse  fourier transform, x = IFFT(z), is, The factor of 1/N makes this a
-true  inverse. For example, a call to gsl_fft_complex_forward followed by a
-call  to gsl_fft_complex_inverse should return the original data (within
-numerical  errors).</p>
+the forward fourier transform, x = FFT(z), is, and the definition of the
+inverse fourier transform, x = IFFT(z), is, The factor of 1/N makes this a
+true inverse. For example, a call to gsl_fft_complex_forward followed by a
+call to gsl_fft_complex_inverse should return the original data (within
+numerical errors).</p>
 
-<p>In general there are two possible choices for the sign of the exponential 
+<p>In general there are two possible choices for the sign of the exponential
 in the transform/ inverse-transform pair. GSL follows the same convention
-as FFTPACK, using a negative exponential for the forward transform.  The
-advantage of this convention is that the inverse transform recreates  the
-original function with simple fourier synthesis. Numerical Recipes uses 
-the opposite convention, a positive exponential in the forward transform.</p>
+as FFTPACK, using a negative exponential for the forward transform. The
+advantage of this convention is that the inverse transform recreates the
+original function with simple fourier synthesis. Numerical Recipes uses the
+opposite convention, a positive exponential in the forward transform.</p>
 
-<p>The backwards FFT is simply our terminology for an unscaled version of the 
+<p>The backwards FFT is simply our terminology for an unscaled version of the
 inverse FFT, When the overall scale of the result is unimportant it is
-often  convenient to use the backwards FFT instead of the inverse to save
+often convenient to use the backwards FFT instead of the inverse to save
 unnecessary divisions.</p>
 
 <h2 id="label-+Complex+data+FFTs"><a href="../index.html"name="2"></a> Complex data FFTs<span><a href="#label-+Complex+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -301,7 +299,7 @@ unnecessary divisions.</p>
 href="vector_complex_rdoc.html">GSL::Vector::Complex</a>.</p>
 
 <p>Here is a table which shows the layout of the array data, and the
-correspondence  between the time-domain complex data z, and the
+correspondence between the time-domain complex data z, and the
 frequency-domain complex data x.</p>
 
 <pre>index    z               x = FFT(z)
@@ -360,13 +358,13 @@ lengths, but not for odd lengths.</p>
 <h3 id="label-+Radix-2+FFT+routines+for+complex+data"><a href="../index.html"name="2.2"></a> Radix-2 FFT routines for complex data<span><a href="#label-+Radix-2+FFT+routines+for+complex+data">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>The radix-2 algorithms are simple and compact, although not necessarily the
-most efficient. They use the Cooley-Tukey algorithm to compute complex 
-FFTs for lengths which are a power of 2 – no additional storage is
-required.  The corresponding self-sorting mixed-radix routines offer better
-performance  at the expense of requiring additional working space.</p>
+most efficient. They use the Cooley-Tukey algorithm to compute complex FFTs
+for lengths which are a power of 2 – no additional storage is required. The
+corresponding self-sorting mixed-radix routines offer better performance at
+the expense of requiring additional working space.</p>
 
 <p><strong>The FFT methods described below return FFTed data, and the input
-vector is  not changed. Use methods with &#39;!&#39; as
+vector is not changed. Use methods with &#39;!&#39; as
 <code>tranform!</code> for in-place transform.</strong></p>
 <hr>
 <ul><li>
@@ -403,10 +401,10 @@ data, and the input data is not changed.</p>
 
 <h4 id="label-+Example+of+complex+Radix-2+FFT"><a href="../index.html"name="2.2.1"></a> Example of complex Radix-2 FFT<span><a href="#label-+Example+of+complex+Radix-2+FFT">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
 
-<p>Here is an example program which computes the FFT of a short pulse in a 
+<p>Here is an example program which computes the FFT of a short pulse in a
 sample of length  128. To make the resulting Fourier transform real the
-pulse  is defined for equal positive and negative times (-10 … 10), where
-the  negative times wrap around the end of the array.</p>
+pulse is defined for equal positive and negative times (-10 … 10), where
+the negative times wrap around the end of the array.</p>
 
 <pre>require(&quot;gsl&quot;)
 include GSL
@@ -441,17 +439,17 @@ end</pre>
 
 <p>This method prepares a trigonometric lookup table for a complex FFT of
 length <code>n</code>. The length <code>n</code> is factorized into a
-product of subtransforms, and the factors and their  trigonometric
+product of subtransforms, and the factors and their trigonometric
 coefficients are stored in the wavetable. The trigonometric coefficients
-are  computed using direct calls to sin and cos, for accuracy. Recursion
-relations could be used  to compute the lookup table faster, but if an
-application performs many FFTs of the same  length then this computation is
-a one-off overhead which does not affect the final  throughput.</p>
+are computed using direct calls to sin and cos, for accuracy. Recursion
+relations could be used to compute the lookup table faster, but if an
+application performs many FFTs of the same length then this computation is
+a one-off overhead which does not affect the final throughput.</p>
 
 <p>The <code>Wavetable</code> object can be used repeatedly for any transform
 of the same length. The table is not modified by calls to any of the other
-FFT functions. The same wavetable  can be used for both forward and
-backward (or inverse) transforms of a given length.</p>
+FFT functions. The same wavetable can be used for both forward and backward
+(or inverse) transforms of a given length.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -534,16 +532,17 @@ lookup tables and a workspace <code>work</code> (they are optional).</p>
 
 <h2 id="label-+Real+data+FFTs"><a href="../index.html"name="3"></a> Real data FFTs<span><a href="#label-+Real+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<h3 id="label-+Overview+of+real+data+FFTs+"><a href="../index.html"name="3.1"></a> Overview of real data FFTs <span><a href="#label-+Overview+of+real+data+FFTs+">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-+Overview+of+real+data+FFTs"><a href="../index.html"name="3.1"></a> Overview of real data FFTs<span><a href="#label-+Overview+of+real+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>The functions for real data FFTs are provided as instance methods of <a
-href="vector.class">GSL::Vector</a>.  While they are similar to those for
-complex data, there is an important difference in the data storage layout
-between forward and inverse transforms.  The Fourier transform of a real
-sequence is not real. It is a complex sequence with a special symmetry.  A
-sequence with this symmetry is called <code>conjugate-complex</code> or
-<code>half-complex</code> and requires only as much storage as the original
-real sequence instead of twice as much.</p>
+href="vector_rdoc.html">GSL::Vector</a>.  While they are similar to those
+for complex data, there is an important difference in the data storage
+layout between forward and inverse transforms.  The Fourier transform of a
+real sequence is not real. It is a complex sequence with a special
+symmetry.  A sequence with this symmetry is called
+<code>conjugate-complex</code> or <code>half-complex</code> and requires
+only as much storage as the original real sequence instead of twice as
+much.</p>
 
 <p>Forward transforms of real sequences produce half complex sequences of the
 same length.  Backward and inverse transforms of half complex sequences
@@ -593,22 +592,22 @@ zero are not stored.</p>
 <p>These methods return the FFTed data, and the input data is not changed.</p>
 
 <p>The following table shows the correspondence between the output
-<code>self</code>  and the equivalent results obtained by considering the
-input data as a  complex sequence with zero imaginary part,</p>
+<code>self</code> and the equivalent results obtained by considering the
+input data as a complex sequence with zero imaginary part,</p>
 
-<pre>complex[0].real    =    self[0] 
-complex[0].imag    =    0 
-complex[1].real    =    self[1] 
+<pre>complex[0].real    =    self[0]
+complex[0].imag    =    0
+complex[1].real    =    self[1]
 complex[1].imag    =    self[N-1]
     ...............         ................
 complex[k].real    =    self[k]
-complex[k].imag    =    self[N-k] 
+complex[k].imag    =    self[N-k]
     ...............         ................
 complex[N/2].real  =    self[N/2]
 complex[N/2].real  =    0
     ...............         ................
 complex[k&#39;].real   =    self[k]        k&#39; = N - k
-complex[k&#39;].imag   =   -self[N-k] 
+complex[k&#39;].imag   =   -self[N-k]
     ...............         ................
 complex[N-1].real  =    self[1]
 complex[N-1].imag  =   -self[N-1]</pre>
@@ -630,13 +629,13 @@ gsl_fft_real_radix2.  The result is a real array stored in natural order.</p>
 
 <h2 id="label-+Mixed-radix+FFT+routines+for+real+data"><a href="../index.html"name="4"></a> Mixed-radix FFT routines for real data<span><a href="#label-+Mixed-radix+FFT+routines+for+real+data">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>This section describes mixed-radix FFT algorithms for real data.  The
-mixed-radix functions work for FFTs of any length. They are a 
-reimplementation of the real-FFT routines in the Fortran FFTPACK library 
-by Paul Swarztrauber.  The theory behind the algorithm is explained in the
-article  <code>Fast Mixed-Radix Real Fourier Transforms</code> by Clive
-Temperton.  The routines here use the same indexing scheme and basic
-algorithms as  FFTPACK.</p>
+<p>This section describes mixed-radix FFT algorithms for real data. The
+mixed-radix functions work for FFTs of any length. They are a
+reimplementation of the real-FFT routines in the Fortran FFTPACK library by
+Paul Swarztrauber. The theory behind the algorithm is explained in the
+article <code>Fast Mixed-Radix Real Fourier Transforms</code> by Clive
+Temperton. The routines here use the same indexing scheme and basic
+algorithms as FFTPACK.</p>
 
 <p>The functions use the FFTPACK storage convention for half-complex
 sequences. In this convention the half-complex transform of a real sequence
@@ -651,17 +650,17 @@ implies that this is purely real too.</p>
 
 <h3 id="label-+Data+storage+scheme"><a href="../index.html"name="4.1"></a> Data storage scheme<span><a href="#label-+Data+storage+scheme">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
-<p>The storage scheme is best shown by some examples.  The table below shows
-the output for an odd-length sequence, n=5.  The two columns give the
-correspondence between the 5 values in the  half-complex sequence computed
-<code>real_transform</code>, <code>halfcomplex[]</code>  and the values
-<code>complex[]</code> that would be returned if the same real input 
+<p>The storage scheme is best shown by some examples. The table below shows
+the output for an odd-length sequence, n=5. The two columns give the
+correspondence between the 5 values in the half-complex sequence computed
+<code>real_transform</code>, <code>halfcomplex[]</code> and the values
+<code>complex[]</code> that would be returned if the same real input
 sequence were passed to <code>complex_backward</code> as a complex sequence
 (with imaginary parts set to 0),</p>
 
-<pre>complex[0].real  =  halfcomplex[0] 
+<pre>complex[0].real  =  halfcomplex[0]
 complex[0].imag  =  0
-complex[1].real  =  halfcomplex[1] 
+complex[1].real  =  halfcomplex[1]
 complex[1].imag  =  halfcomplex[2]
 complex[2].real  =  halfcomplex[3]
 complex[2].imag  =  halfcomplex[4]
@@ -672,28 +671,28 @@ complex[4].imag  = -halfcomplex[2]</pre>
 
 <p>The upper elements of the <code>complex</code> array,
 <code>complex[3]</code> and <code>complex[4]</code> are filled in using the
-symmetry condition. The imaginary part of  the zero-frequency term
+symmetry condition. The imaginary part of the zero-frequency term
 <code>complex[0].imag</code> is known to be zero by the symmetry.</p>
 
-<p>The next table shows the output for an even-length sequence,  n=5 In the
+<p>The next table shows the output for an even-length sequence, n=5 In the
 even case there are two values which are purely real,</p>
 
 <pre>complex[0].real  =  halfcomplex[0]
 complex[0].imag  =  0
-complex[1].real  =  halfcomplex[1] 
-complex[1].imag  =  halfcomplex[2] 
-complex[2].real  =  halfcomplex[3] 
-complex[2].imag  =  halfcomplex[4] 
-complex[3].real  =  halfcomplex[5] 
-complex[3].imag  =  0 
-complex[4].real  =  halfcomplex[3] 
+complex[1].real  =  halfcomplex[1]
+complex[1].imag  =  halfcomplex[2]
+complex[2].real  =  halfcomplex[3]
+complex[2].imag  =  halfcomplex[4]
+complex[3].real  =  halfcomplex[5]
+complex[3].imag  =  0
+complex[4].real  =  halfcomplex[3]
 complex[4].imag  = -halfcomplex[4]
-complex[5].real  =  halfcomplex[1] 
+complex[5].real  =  halfcomplex[1]
 complex[5].imag  = -halfcomplex[2]</pre>
 
 <p>The upper elements of the <code>complex</code> array,
-<code>complex[4]</code>  and <code>complex[5]</code> are filled in using
-the symmetry condition.  Both <code>complex[0].imag</code> and
+<code>complex[4]</code> and <code>complex[5]</code> are filled in using the
+symmetry condition. Both <code>complex[0].imag</code> and
 <code>complex[3].imag</code> are known to be zero.</p>
 
 <h4 id="label-+Wavetable+and+Workspace+classes"><a href="../index.html"name="4.1.1"></a> Wavetable and Workspace classes<span><a href="#label-+Wavetable+and+Workspace+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
@@ -704,18 +703,17 @@ the symmetry condition.  Both <code>complex[0].imag</code> and
 <p>GSL::FFT::HalfComplexWavetable.alloc(n)</p>
 
 <p>These methods create trigonometric lookup tables for an FFT of size
-<code>n</code>  real elements. The length <code>n</code> is factorized into
-a product of subtransforms,  and the factors and their trigonometric
+<code>n</code> real elements. The length <code>n</code> is factorized into
+a product of subtransforms, and the factors and their trigonometric
 coefficients are stored in the wavetable. The trigonometric coefficients
-are computed using direct calls to sin and cos,  for accuracy. Recursion
-relations could be used to compute the lookup table  faster, but if an
-application performs many FFTs of the same length then  computing the
-wavetable is a one-off overhead which does not affect the final 
-throughput.</p>
+are computed using direct calls to sin and cos, for accuracy. Recursion
+relations could be used to compute the lookup table faster, but if an
+application performs many FFTs of the same length then computing the
+wavetable is a one-off overhead which does not affect the final throughput.</p>
 
 <p>The wavetable structure can be used repeatedly for any transform of the
-same  length. The table is not modified by calls to any of the other FFT
-functions.  The appropriate type of wavetable must be used for forward real
+same length. The table is not modified by calls to any of the other FFT
+functions. The appropriate type of wavetable must be used for forward real
 or inverse half-complex transforms.</p>
 </li></ul>
 <hr>
@@ -747,11 +745,11 @@ real data.  For <code>halfcomplex_transform</code> <code>self</code>
 contains Fourier coefficients in the half-complex ordering described above.
 There is no restriction on the length <code>n</code>.</p>
 
-<p>Efficient modules are provided for subtransforms of length 2, 3, 4 and 5. 
+<p>Efficient modules are provided for subtransforms of length 2, 3, 4 and 5.
 Any remaining factors are computed with a slow, O(n^2), general-n module.</p>
 
 <p>The caller can supply a <code>table</code> containing trigonometric lookup
-tables  and a workspace <code>work</code> (optional).</p>
+tables and a workspace <code>work</code> (optional).</p>
 
 <p>These methods return the FFTed data, and the input data is not changed.</p>
 </li></ul>
@@ -830,7 +828,7 @@ graph(nil, data, data2, &quot;-T X -C -g 3 -L &#39;Real-halfcomplex&#39; -x 0 #{
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

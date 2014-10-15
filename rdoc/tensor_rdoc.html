@@ -164,8 +164,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -200,11 +198,11 @@
 
 <h1 id="label-Tensor+manipulations">Tensor manipulations<span><a href="#label-Tensor+manipulations">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>The tensor library is developed by J. Burguet and distributed  as an add-on
+<p>The tensor library is developed by J. Burguet and distributed as an add-on
 package of GSL. See <a
-href="http://sources.redhat.com/ml/gsl-discuss/2004-q4/msg00053.html"target="_top">here</a>
+href="https://sourceware.org/ml/gsl-discuss/2004-q4/msg00053.html">here</a>
 and <a
-href="http://sources.redhat.com/ml/gsl-discuss/2004-q4/msg00055.html"target="_top">here</a>.</p>
+href="https://sourceware.org/ml/gsl-discuss/2004-q4/msg00055.html">here</a>.</p>
 
 <h2 id="label-+Class+methods"><a href="../index.html"name="1"></a> Class methods<span><a href="#label-+Class+methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
@@ -264,7 +262,7 @@ tensors must have the same shape.</p>
 <ul><li>
 <p>GSL::Tensor#set(indices, x)</p>
 </li><li>
-<p><a href="indices">GSL::Tensor#</a>=x</p>
+<p>GSL::Tensor#[indices]=x</p>
 
 <p>Sets the element of the given indices to <code>x</code>.</p>
 </li></ul>
@@ -272,7 +270,7 @@ tensors must have the same shape.</p>
 <ul><li>
 <p>GSL::Tensor#get(indices)</p>
 </li><li>
-<p><a href="indices">GSL::Tensor#</a></p>
+<p>GSL::Tensor#[indices]</p>
 
 <p>Returns the tensor element. If the number of indices given is smaller than
 the rank of the tensor, the method GSL::Tensor#subtensor is called.</p>
@@ -295,7 +293,7 @@ the rank of the tensor, the method GSL::Tensor#subtensor is called.</p>
 <ul><li>
 <p>GSL::Tensor#subtensor(indices)</p>
 </li><li>
-<p><a href="indices">GSL::Tensor#</a></p>
+<p>GSL::Tensor#[indices]</p>
 
 <p>Return a subtensor.</p>
 
@@ -304,23 +302,23 @@ the rank of the tensor, the method GSL::Tensor#subtensor is called.</p>
 <pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">t</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">125</span>].<span class="ruby-identifier">to_tensor</span>(<span class="ruby-value">3</span>, <span class="ruby-value">5</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> <span class="ruby-operator">...</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">0</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span> 
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> 
-  <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> <span class="ruby-value">1.000e+01</span> 
-  <span class="ruby-value">1.100e+01</span> <span class="ruby-value">1.200e+01</span> <span class="ruby-value">1.300e+01</span> <span class="ruby-value">1.400e+01</span> <span class="ruby-value">1.500e+01</span> 
-  <span class="ruby-value">1.600e+01</span> <span class="ruby-value">1.700e+01</span> <span class="ruby-value">1.800e+01</span> <span class="ruby-value">1.900e+01</span> <span class="ruby-value">2.000e+01</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span>
+  <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> <span class="ruby-value">1.000e+01</span>
+  <span class="ruby-value">1.100e+01</span> <span class="ruby-value">1.200e+01</span> <span class="ruby-value">1.300e+01</span> <span class="ruby-value">1.400e+01</span> <span class="ruby-value">1.500e+01</span>
+  <span class="ruby-value">1.600e+01</span> <span class="ruby-value">1.700e+01</span> <span class="ruby-value">1.800e+01</span> <span class="ruby-value">1.900e+01</span> <span class="ruby-value">2.000e+01</span>
   <span class="ruby-value">2.100e+01</span> <span class="ruby-value">2.200e+01</span> <span class="ruby-value">2.300e+01</span> <span class="ruby-value">2.400e+01</span> <span class="ruby-value">2.500e+01</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">1.100e+01</span> <span class="ruby-value">1.200e+01</span> <span class="ruby-value">1.300e+01</span> <span class="ruby-value">1.400e+01</span> <span class="ruby-value">1.500e+01</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">3</span>,<span class="ruby-value">1</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">8.100e+01</span> <span class="ruby-value">8.200e+01</span> <span class="ruby-value">8.300e+01</span> <span class="ruby-value">8.400e+01</span> <span class="ruby-value">8.500e+01</span> ]
 <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">t</span>[<span class="ruby-value">1</span>][<span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span> 
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Tensor</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
 [ <span class="ruby-value">3.600e+01</span> <span class="ruby-value">3.700e+01</span> <span class="ruby-value">3.800e+01</span> <span class="ruby-value">3.900e+01</span> <span class="ruby-value">4.000e+01</span> ]
 </pre>
 </li></ul>
@@ -425,7 +423,7 @@ the rank of the tensor, the method GSL::Tensor#subtensor is called.</p>
 <p>GSL::Tensor#mul_elements(b)</p>
 
 <p>This calculate element-by-element multiplication of <code>self</code> and
-<code>b</code>,  and returns a new tensor.</p>
+<code>b</code>, and returns a new tensor.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -441,8 +439,8 @@ the rank of the tensor, the method GSL::Tensor#subtensor is called.</p>
 <p>GSL::Tensor#/(b)</p>
 
 <p>This calculate element-by-element division of <code>self</code> and
-<code>b</code>,  and returns a new tensor. Multiplies the elements of
-tensor <code>b</code> to the elements of <code>self</code> ,
+<code>b</code>, and returns a new tensor. Multiplies the elements of tensor
+<code>b</code> to the elements of <code>self</code> ,
 <code>in-place</code>.</p>
 </li></ul>
 <hr>
@@ -513,7 +511,7 @@ elements of the tensor <code>self</code>.</p>
 <p>GSL::Tensor#==(b)</p>
 
 <p>Returns <code>true</code> if the tensors have same size and elements equal
-to absolute accurary <code>eps</code> for all the indices,  and
+to absolute accurary <code>eps</code> for all the indices, and
 <code>false</code> otherwise.</p>
 </li></ul>
 
@@ -550,7 +548,7 @@ to absolute accurary <code>eps</code> for all the indices,  and
 <p>Returns the size</p>
 </li></ul>
 
-<p><a href="rngextra_rdoc.html">prev</a> <a href="narray_rdoc.html">next</a></p>
+<p><a href="rng_rdoc.html#3">prev</a> <a href="narray_rdoc.html">next</a></p>
 
 <p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
 </main>
@@ -559,7 +557,7 @@ to absolute accurary <code>eps</code> for all the indices,  and
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

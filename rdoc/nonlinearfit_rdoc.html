@@ -60,7 +60,7 @@
   <ul class="link-list" role="directory">
     <li><a href="#label-Nonlinear+Least-Squares+Fitting">Nonlinear Least-Squares Fitting</a>
     <li><a href="#label-+Overview"><a href="index.html"name="1"></a> Overview</a>
-    <li><a href="#label-+Initializing+the+Solver+"><a href="index.html"name="2"></a> Initializing the Solver </a>
+    <li><a href="#label-+Initializing+the+Solver"><a href="index.html"name="2"></a> Initializing the Solver</a>
     <li><a href="#label-+GSL%3A%3AMultiFit%3A%3AFdfSolver+class"><a href="index.html"name="2.1"></a> GSL::MultiFit::FdfSolver class</a>
     <li><a href="#label-+Providing+the+function+to+be+minimized"><a href="index.html"name="3"></a> Providing the function to be minimized</a>
     <li><a href="#label-+GSL%3A%3AMultiFit%3A%3AFunction_fdf+class"><a href="index.html"name="3.1"></a> GSL::MultiFit::Function_fdf class</a>
@@ -169,8 +169,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -206,14 +204,13 @@
 <h1 id="label-Nonlinear+Least-Squares+Fitting">Nonlinear Least-Squares Fitting<span><a href="#label-Nonlinear+Least-Squares+Fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>This chapter describes functions for multidimensional nonlinear
-least-squares  fitting. The library provides low level components for a
-variety of iterative  solvers and convergence tests. These can be combined
-by the user to achieve  the desired solution, with full access to the
-intermediate steps of the  iteration. Each class of methods uses the same
-framework, so that you can  switch between solvers at runtime without
-needing to recompile your program.  Each instance of a solver keeps track
-of its own state, allowing the solvers  to be used in multi-threaded
-programs.</p>
+least-squares fitting. The library provides low level components for a
+variety of iterative solvers and convergence tests. These can be combined
+by the user to achieve the desired solution, with full access to the
+intermediate steps of the iteration. Each class of methods uses the same
+framework, so that you can switch between solvers at runtime without
+needing to recompile your program. Each instance of a solver keeps track of
+its own state, allowing the solvers to be used in multi-threaded programs.</p>
 
 <p>Contents:</p>
 <ol><li>
@@ -250,25 +247,25 @@ fit parameters</a></p>
 <h2 id="label-+Overview"><a href="../index.html"name="1"></a> Overview<span><a href="#label-+Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>The problem of multidimensional nonlinear least-squares fitting requires
-the  minimization of the squared residuals of n functions, f_i, in p
-parameters,  x_i, All algorithms proceed from an initial guess using the
-linearization,  where x is the initial point, p is the proposed step and J
-is the Jacobian  matrix J_{ij} = d f_i / d x_j. Additional strategies are
-used to enlarge the  region of convergence. These include requiring a
-decrease in the norm ||F||  on each step or using a trust region to avoid
-steps which fall outside the  linear regime.</p>
+the minimization of the squared residuals of n functions, f_i, in p
+parameters, x_i, All algorithms proceed from an initial guess using the
+linearization, where x is the initial point, p is the proposed step and J
+is the Jacobian matrix J_{ij} = d f_i / d x_j. Additional strategies are
+used to enlarge the region of convergence. These include requiring a
+decrease in the norm ||F|| on each step or using a trust region to avoid
+steps which fall outside the linear regime.</p>
 
 <p>To perform a weighted least-squares fit of a nonlinear model Y(x,t) to data
 (t_i, y_i) with independent gaussian errors sigma_i, use function
-components  of the following form, Note that the model parameters are
-denoted by x in this  chapter since the non-linear least-squares algorithms
-are described  geometrically (i.e. finding the minimum of a surface). The
-independent  variable of any data to be fitted is denoted by t.</p>
+components of the following form, Note that the model parameters are
+denoted by x in this chapter since the non-linear least-squares algorithms
+are described geometrically (i.e. finding the minimum of a surface). The
+independent variable of any data to be fitted is denoted by t.</p>
 
-<p>With the definition above the Jacobian is  J_{ij} =(1 / sigma_i) d Y_i / d
+<p>With the definition above the Jacobian is J_{ij} =(1 / sigma_i) d Y_i / d
 x_j, where Y_i = Y(x,t_i).</p>
 
-<h2 id="label-+Initializing+the+Solver+"><a href="../index.html"name="2"></a> Initializing the Solver <span><a href="#label-+Initializing+the+Solver+">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-+Initializing+the+Solver"><a href="../index.html"name="2"></a> Initializing the Solver<span><a href="#label-+Initializing+the+Solver">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <h3 id="label-+GSL%3A%3AMultiFit%3A%3AFdfSolver+class"><a href="../index.html"name="2.1"></a> GSL::MultiFit::FdfSolver class<span><a href="#label-+GSL%3A%3AMultiFit%3A%3AFdfSolver+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 <hr>
@@ -276,7 +273,7 @@ x_j, where Y_i = Y(x,t_i).</p>
 <p>GSL::MultiFit::FdfSolver.alloc(T, n, p)</p>
 
 <p>This creates an instance of the <code>GSL::MultiFit::FdfSolver</code> class
-of  type <code>T</code> for <code>n</code> observations and <code>p</code>
+of type <code>T</code> for <code>n</code> observations and <code>p</code>
 parameters. The type <code>T</code> is given by a <code>Fixnum</code>
 constant or a <code>String</code>,</p>
 <ul><li>
@@ -286,7 +283,7 @@ constant or a <code>String</code>,</p>
 </li></ul>
 
 <p>For example, the following code creates an instance of a
-Levenberg-Marquardt  solver for 100 data points and 3 parameters,</p>
+Levenberg-Marquardt solver for 100 data points and 3 parameters,</p>
 
 <pre>solver = MultiFit::FdfSolver.alloc(MultiFit::LMDER, 100, 3)</pre>
 </li></ul>
@@ -295,7 +292,7 @@ Levenberg-Marquardt  solver for 100 data points and 3 parameters,</p>
 <p>GSL::MultiFit::FdfSolver#set(f, x)</p>
 
 <p>This method initializes, or reinitializes, an existing solver
-<code>self</code>  to use the function <code>f</code> and the initial guess
+<code>self</code> to use the function <code>f</code> and the initial guess
 <code>x</code>. The function <code>f</code> is an instance of the
 <code>GSL::MultiFit::Function_fdf</code> class (see below). The initial
 guess of the parameters <code>x</code> is given by a <a
@@ -337,8 +334,7 @@ href="vector_rdoc.html">GSL::Vector</a> object.</p>
 
 <p>Constructor for the <code>Function_fdf</code> class, to a function with
 <code>p</code> parameters, The first two or three arguments are Ruby Proc
-objects  to evaluate the function to minimize and its derivative
-(Jacobian).</p>
+objects to evaluate the function to minimize and its derivative (Jacobian).</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -366,16 +362,16 @@ the function <code>self</code>.</p>
 <p>GSL::MultiFit::FdfSolver#iterate</p>
 
 <p>THis performs a single iteration of the solver <code>self</code>. If the
-iteration  encounters an unexpected problem then an error code will be
-returned.  The solver maintains a current estimate of the best-fit
-parameters at all  times. This information can be accessed with the method
+iteration encounters an unexpected problem then an error code will be
+returned. The solver maintains a current estimate of the best-fit
+parameters at all times. This information can be accessed with the method
 <code>position</code>.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::MultiFit::FdfSolver#position</p>
 
-<p>This returns the current position (i.e. best-fit parameters) of the solver 
+<p>This returns the current position (i.e. best-fit parameters) of the solver
 <code>self</code>, as a <code>GSL::Vector</code> object.</p>
 </li></ul>
 
@@ -399,8 +395,8 @@ allows the user to test the current estimate of the best-fit parameters.</p>
 
 <p>This method tests for the convergence of the sequence by comparing the last
 step with the absolute error <code>epsabs</code> and relative error
-(<code>epsrel</code>  to the current position. The test returns
-<code>GSL::SUCCESS</code> if the following  condition is achieved,</p>
+(<code>epsrel</code> to the current position. The test returns
+<code>GSL::SUCCESS</code> if the following condition is achieved,</p>
 
 <pre>|dx_i| &lt; epsabs + epsrel |x_i|</pre>
 
@@ -414,23 +410,23 @@ otherwise.</p>
 <p>GSL::MultiFit::FdfSolver#test_gradient(epsabs)</p>
 
 <p>This function tests the residual gradient <code>g</code> against the
-absolute error  bound <code>epsabs</code>. If <code>g</code> is not given,
-it is calculated internally.  Mathematically, the gradient should be
-exactly zero at the minimum.  The test returns <code>GSL::SUCCESS</code> if
-the following condition is achieved,</p>
+absolute error bound <code>epsabs</code>. If <code>g</code> is not given,
+it is calculated internally. Mathematically, the gradient should be exactly
+zero at the minimum. The test returns <code>GSL::SUCCESS</code> if the
+following condition is achieved,</p>
 
 <pre>\sum_i |g_i| &lt; epsabs</pre>
 
 <p>and returns <code>GSL::CONTINUE</code> otherwise. This criterion is
-suitable for  situations where the precise location of the minimum, x, is
-unimportant provided  a value can be found where the gradient is small
+suitable for situations where the precise location of the minimum, x, is
+unimportant provided a value can be found where the gradient is small
 enough.</p>
 </li></ul>
 <hr>
 <ul><li>
 <p>GSL::MultiFit::FdfSolver#gradient</p>
 
-<p>This method returns the gradient g of Phi(x) = (1/2) ||F(x)||^2 from the 
+<p>This method returns the gradient g of Phi(x) = (1/2) ||F(x)||^2 from the
 Jacobian matrix and the function values, using the formula g = J^T f.</p>
 </li></ul>
 <hr>
@@ -456,10 +452,10 @@ Jacobian matrix and the function values, using the formula g = J^T f.</p>
 <p>GSL::MultiFit.covar(J, epsrel, covar)</p>
 
 <p>This method uses the Jacobian matrix <code>J</code> to compute the
-covariance  matrix of the best-fit parameters. If an existing matrix
+covariance matrix of the best-fit parameters. If an existing matrix
 <code>covar</code> is given, it is overwritten, and if not, this method
-returns a new matrix.  The parameter <code>epsrel</code> is used to remove
-linear-dependent columns when  <code>J</code> is rank deficient.</p>
+returns a new matrix. The parameter <code>epsrel</code> is used to remove
+linear-dependent columns when <code>J</code> is rank deficient.</p>
 
 <p>The covariance matrix is given by,</p>
 
@@ -471,8 +467,8 @@ Any columns of R which satisfy</p>
 <pre>|R_{kk}| &lt;= epsrel |R_{11}|</pre>
 
 <p>are considered linearly-dependent and are excluded from the covariance
-matrix  (the corresponding rows and columns of the covariance matrix are
-set to zero).</p>
+matrix (the corresponding rows and columns of the covariance matrix are set
+to zero).</p>
 </li></ul>
 
 <h2 id="label-+Higher+level+interfaces"><a href="../index.html"name="7"></a> Higher level interfaces<span><a href="#label-+Higher+level+interfaces">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
@@ -484,46 +480,46 @@ set to zero).</p>
 
 <p>This method uses <code>FdfSolver</code> with the LMSDER algorithm to fit
 the data <code>[x, y]</code> to a function of type <code>type</code>. The
-returned value is  an array of 4 elements, <code>[coef, err, chisq,
+returned value is an array of 4 elements, <code>[coef, err, chisq,
 dof]</code>, where <code>coef</code> is an array of the fitting
 coefficients, <code>err</code> contains errors in estimating
-<code>coef</code>, <code>chisq</code> is the  chi-squared, and
-<code>dof</code> is the degree-of-freedom in the fitting  which equals to
+<code>coef</code>, <code>chisq</code> is the chi-squared, and
+<code>dof</code> is the degree-of-freedom in the fitting which equals to
 (data length - number of fitting coefficients). The optional argument
 <code>guess</code> is an array of initial guess of the coefficients. The
 fitting type <code>type</code> is given by a <code>String</code> as
 follows.</p>
 <ul><li>
-<p><code>&quot;gaussian&quot;</code>: Gaussian fit,  <code>y = y0 + A
+<p><code>&quot;gaussian&quot;</code>: Gaussian fit, <code>y = y0 + A
 exp(-(x-x0)^2/2/var)</code>, <code>coef = [y0, A, x0, var]</code></p>
 </li><li>
 <p><code>&quot;gaussian_2peaks&quot;</code>: 2-peak Gaussian fit, <code>y = y0
 + A1 exp(-(x-x1)^2/2/var1) + A2 exp(-(x-x2)^2/2/var2)</code>, <code>coef =
 [y0, A1, x1, var1, A2, x2, var2]</code></p>
 </li><li>
-<p><code>&quot;exp&quot;</code>: Exponential fit,  <code>y = y0 + A exp(-b
+<p><code>&quot;exp&quot;</code>: Exponential fit, <code>y = y0 + A exp(-b
 x)</code>, <code>coef = [y0, A, b]</code></p>
 </li><li>
-<p><code>&quot;dblexp&quot;</code>: Double exponential fit,  <code>y = y0 + A1
+<p><code>&quot;dblexp&quot;</code>: Double exponential fit, <code>y = y0 + A1
 exp(-b1 x) + A2 exp(-b2 x)</code>, <code>coef = [y0, A1, b1, A2, b2]</code></p>
 </li><li>
-<p><code>&quot;sin&quot;</code>: Sinusoidal fit,  <code>y = y0 + A sin(f x +
+<p><code>&quot;sin&quot;</code>: Sinusoidal fit, <code>y = y0 + A sin(f x +
 phi)</code>, <code>coef = [y0, A, f, phi]</code></p>
 </li><li>
-<p><code>&quot;lor&quot;</code>: Lorentzian peak fit,  <code>y = y0 +
+<p><code>&quot;lor&quot;</code>: Lorentzian peak fit, <code>y = y0 +
 A/((x-x0)^2 + B)</code>, <code>coef = [y0, A, x0, B]</code></p>
 </li><li>
-<p><code>&quot;hill&quot;</code>: Hill&#39;s equation fit,  <code>y = y0 + (m
-- y0)/(1 + (xhalf/x)^r)</code>, <code>coef = [y0, n, xhalf, r]</code></p>
+<p><code>&quot;hill&quot;</code>: Hill&#39;s equation fit, <code>y = y0 + (m -
+y0)/(1 + (xhalf/x)^r)</code>, <code>coef = [y0, n, xhalf, r]</code></p>
 </li><li>
-<p><code>&quot;sigmoid&quot;</code>: Sigmoid (Fermi-Dirac) function fit, 
+<p><code>&quot;sigmoid&quot;</code>: Sigmoid (Fermi-Dirac) function fit,
 <code>y = y0 + m/(1 + exp((x0-x)/r))</code>, <code>coef = [y0, m, x0,
 r]</code></p>
 </li><li>
-<p><code>&quot;power&quot;</code>: Power-law fit,  <code>y = y0 + A
-x^r</code>, <code>coef = [y0, A, r]</code></p>
+<p><code>&quot;power&quot;</code>: Power-law fit, <code>y = y0 + A x^r</code>,
+<code>coef = [y0, A, r]</code></p>
 </li><li>
-<p><code>&quot;lognormal&quot;</code>: Lognormal peak fit,  <code>y = y0 + A
+<p><code>&quot;lognormal&quot;</code>: Lognormal peak fit, <code>y = y0 + A
 exp[ -(log(x/x0)/width)^2 ]</code>, <code>coef = [y0, A, x0, width]</code></p>
 </li></ul>
 
@@ -536,15 +532,15 @@ polynomical fittings.</p>
 <h3 id="label-+Fitting+to+user-defined+functions"><a href="../index.html"name="8.1"></a> Fitting to user-defined functions<span><a href="#label-+Fitting+to+user-defined+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>The following example program fits a weighted exponential model with
-background  to experimental data, Y = A exp(-lambda t) + b. The first part
-of the program sets  up the functions <code>procf</code> and
-<code>procdf</code> to calculate the model and its Jacobian.  The
+background to experimental data, Y = A exp(-lambda t) + b. The first part
+of the program sets up the functions <code>procf</code> and
+<code>procdf</code> to calculate the model and its Jacobian. The
 appropriate fitting function is given by,</p>
 
 <pre>f_i = ((A exp(-lambda t_i) + b) - y_i)/sigma_i</pre>
 
 <p>where we have chosen t_i = i. The Jacobian matrix <code>jac</code> is the
-derivative of  these functions with respect to the three parameters (A,
+derivative of these functions with respect to the three parameters (A,
 lambda, b). It is given by,</p>
 
 <pre>J_{ij} = d f_i / d x_j</pre>
@@ -658,7 +654,7 @@ graph(x, y, y0+amp*Sf::exp(-pow_2(Sf::log(x/x0)/w)))</pre>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

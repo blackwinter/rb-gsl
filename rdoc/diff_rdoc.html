@@ -160,8 +160,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -196,8 +194,8 @@
 
 <h1 id="label-Numerical+Differentiation">Numerical Differentiation<span><a href="#label-Numerical+Differentiation">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<p>The functions described in this chapter compute numerical derivatives by 
-finite differencing. An adaptive algorithm is used to find the best choice 
+<p>The functions described in this chapter compute numerical derivatives by
+finite differencing. An adaptive algorithm is used to find the best choice
 of finite difference and to estimate the error in the derivative.</p>
 
 <p>Contentes:</p>
@@ -221,22 +219,22 @@ in addition to the position x.  The original <code>GSL::Diff</code> methods
 <p>GSL::Function#deriv_central(x, h = 1e-8)</p>
 
 <p>These methods compute the numerical derivative of the function
-<code>f</code>  at the point <code>x</code> using an adaptive central
-difference algorithm with a  step-size of <code>h</code>. If a scalar
-<code>x</code> is given, the derivative and an  estimate of its absolute
+<code>f</code> at the point <code>x</code> using an adaptive central
+difference algorithm with a step-size of <code>h</code>. If a scalar
+<code>x</code> is given, the derivative and an estimate of its absolute
 error are returned as an array, [<code>result, abserr, status</code>]. If a
 vector/matrix/array <code>x</code> is given, an array of two elements are
 returned, [<code>result, abserr</code>], here each them is also a
 vector/matrix/array of the same dimension of <code>x</code>.</p>
 
 <p>The initial value of <code>h</code> is used to estimate an optimal
-step-size,  based on the scaling of the truncation error and round-off
-error in the  derivative calculation. The derivative is computed using a
-5-point rule for  equally spaced abscissae at x-h, x-h/2, x, x+h/2, x, with
-an error estimate  taken from the difference between the 5-point rule and
-the corresponding 3-point  rule x-h, x, x+h. Note that the value of the
-function at x does not contribute  to the derivative calculation, so only
-4-points are actually used.</p>
+step-size, based on the scaling of the truncation error and round-off error
+in the derivative calculation. The derivative is computed using a 5-point
+rule for equally spaced abscissae at x-h, x-h/2, x, x+h/2, x, with an error
+estimate taken from the difference between the 5-point rule and the
+corresponding 3-point rule x-h, x, x+h. Note that the value of the function
+at x does not contribute to the derivative calculation, so only 4-points
+are actually used.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -245,20 +243,20 @@ function at x does not contribute  to the derivative calculation, so only
 <p>GSL::Function#deriv_forward(x, h = 1e-8)</p>
 
 <p>These methods compute the numerical derivative of the function
-<code>f</code> at  the point <code>x</code> using an adaptive forward
-difference algorithm with a step-size  of <code>h</code>. The function is
-evaluated only at points greater than <code>x</code>,  and never at
+<code>f</code> at the point <code>x</code> using an adaptive forward
+difference algorithm with a step-size of <code>h</code>. The function is
+evaluated only at points greater than <code>x</code>, and never at
 <code>x</code> itself. The derivative and an estimate of its absolute error
-are returned as an array, [<code>result, abserr</code>].  These methods
-should be used if f(x) has a  discontinuity at <code>x</code>, or is
+are returned as an array, [<code>result, abserr</code>]. These methods
+should be used if f(x) has a discontinuity at <code>x</code>, or is
 undefined for values less than <code>x</code>.</p>
 
 <p>The initial value of <code>h</code> is used to estimate an optimal
-step-size, based on the  scaling of the truncation error and round-off
-error in the derivative calculation.  The derivative at x is computed using
-an “open” 4-point rule for equally spaced  abscissae at x+h/4, x+h/2,
-x+3h/4, x+h, with an error estimate taken from the  difference between the
-4-point rule and the corresponding 2-point rule x+h/2, x+h.</p>
+step-size, based on the scaling of the truncation error and round-off error
+in the derivative calculation. The derivative at x is computed using an
+“open” 4-point rule for equally spaced abscissae at x+h/4, x+h/2, x+3h/4,
+x+h, with an error estimate taken from the difference between the 4-point
+rule and the corresponding 2-point rule x+h/2, x+h.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -267,15 +265,15 @@ x+3h/4, x+h, with an error estimate taken from the  difference between the
 <p>GSL::Function#deriv_backward(x, h)</p>
 
 <p>These methods compute the numerical derivative of the function
-<code>f</code> at the  point <code>x</code> using an adaptive backward
-difference algorithm with a step-size  of <code>h</code>. The function is
-evaluated only at points less than <code>x</code>,  and never at
+<code>f</code> at the point <code>x</code> using an adaptive backward
+difference algorithm with a step-size of <code>h</code>. The function is
+evaluated only at points less than <code>x</code>, and never at
 <code>x</code> itself. The derivative and an estimate of its absolute error
-are returned as an array, [<code>result, abserr</code>].  This function
-should be used if f(x) has a discontinuity at <code>x</code>,  or is
+are returned as an array, [<code>result, abserr</code>]. This function
+should be used if f(x) has a discontinuity at <code>x</code>, or is
 undefined for values greater than <code>x</code>.</p>
 
-<p>These methods are equivalent to calling the method <code>forward</code> 
+<p>These methods are equivalent to calling the method <code>forward</code>
 with a negative step-size.</p>
 </li></ul>
 
@@ -288,8 +286,8 @@ with a negative step-size.</p>
 
 <p>These compute the numerical derivative of the function <code>f</code> ( <a
 href="function_rdoc.html">GSL::Function</a> object) at the point
-<code>x</code>  using an adaptive central difference algorithm. The result
-is returned as an array  which contains the derivative and an estimate of
+<code>x</code> using an adaptive central difference algorithm. The result
+is returned as an array which contains the derivative and an estimate of
 its absolute error.</p>
 </li></ul>
 <hr>
@@ -356,7 +354,7 @@ exact = 0.0000000000</pre>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

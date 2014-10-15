@@ -163,8 +163,6 @@
   
     <li><a href="../rdoc/roots_rdoc.html">roots</a>
   
-    <li><a href="../rdoc/screenshot_rdoc.html">screenshot</a>
-  
     <li><a href="../rdoc/sf_rdoc.html">sf</a>
   
     <li><a href="../rdoc/siman_rdoc.html">siman</a>
@@ -200,42 +198,40 @@
 <h1 id="label-Discrete+Wavelet+Transforms">Discrete Wavelet Transforms<span><a href="#label-Discrete+Wavelet+Transforms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>This chapter describes functions for performing Discrete Wavelet Transforms
-(DWTs).  The library includes wavelets for real data in both one and two
+(DWTs). The library includes wavelets for real data in both one and two
 dimensions.</p>
 
 <p>Contents:</p>
 <ol><li>
-<p><a href="rdoc/wavelet_rdoc.html#1">Definitions</a></p>
+<p><a href="wavelet_rdoc.html#1">Definitions</a></p>
 </li><li>
-<p><a href="rdoc/wavelet_rdoc.html#2">Initialization</a></p>
+<p><a href="wavelet_rdoc.html#2">Initialization</a></p>
 </li><li>
-<p><a href="rdoc/wavelet_rdoc.html#3">Transform methods</a></p>
+<p><a href="wavelet_rdoc.html#3">Transform methods</a></p>
 <ol><li>
-<p><a href="rdoc/wavelet_rdoc.html#3.1">Wavelet transforms in one
-dimension</a></p>
+<p><a href="wavelet_rdoc.html#3.1">Wavelet transforms in one dimension</a></p>
 </li><li>
-<p><a href="rdoc/wavelet_rdoc.html#3.2">Wavelet transforms in two
-dimension</a></p>
+<p><a href="wavelet_rdoc.html#3.2">Wavelet transforms in two dimension</a></p>
 </li></ol>
 </li><li>
-<p><a href="rdoc/wavelet_rdoc.html#4">Examples</a></p>
+<p><a href="wavelet_rdoc.html#4">Examples</a></p>
 </li></ol>
 
 <h2 id="label-+Definitions"><a href="../index.html"name="1"></a> Definitions<span><a href="#label-+Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>The continuous wavelet transform and its inverse are defined by the
 relations, and, where the basis functionspsi_{s,tau} are obtained by
-scaling and translation  from a single function, referred to as the mother
+scaling and translation from a single function, referred to as the mother
 wavelet.</p>
 
-<p>The discrete version of the wavelet transform acts on evenly sampled data, 
-with fixed scaling and translation steps (s, tau). The frequency and time 
-axes are sampled dyadically on scales of 2^j through a level parameter j. 
-The resulting family of functions {psi_{j,n}} constitutes an orthonormal 
+<p>The discrete version of the wavelet transform acts on evenly sampled data,
+with fixed scaling and translation steps (s, tau). The frequency and time
+axes are sampled dyadically on scales of 2^j through a level parameter j.
+The resulting family of functions {psi_{j,n}} constitutes an orthonormal
 basis for square-integrable signals.</p>
 
 <p>The discrete wavelet transform is an O(N) algorithm, and is also referred
-to as  the fast wavelet transform.</p>
+to as the fast wavelet transform.</p>
 
 <h2 id="label-+Initialization"><a href="../index.html"name="2"></a> Initialization<span><a href="#label-+Initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <hr>
@@ -245,8 +241,8 @@ to as  the fast wavelet transform.</p>
 <p>GSL::Wavelet.alloc(type, k)</p>
 
 <p>This function allocates and initializes a wavelet object of type
-<code>type</code>.  The parameter <code>k</code> selects the specific
-member of the wavelet family.</p>
+<code>type</code>. The parameter <code>k</code> selects the specific member
+of the wavelet family.</p>
 
 <p>The wavelet types are given by a constant (Fixnum) or a string as
 followings.</p>
@@ -268,9 +264,9 @@ followings.</p>
 <code>&quot;bspline_centered&quot;</code></p>
 </li></ul>
 
-<p>The centered forms of the wavelets align the coefficients of the various 
-sub-bands on edges. Thus the resulting visualization of the coefficients 
-of the wavelet transform in the phase plane is easier to understand.</p>
+<p>The centered forms of the wavelets align the coefficients of the various
+sub-bands on edges. Thus the resulting visualization of the coefficients of
+the wavelet transform in the phase plane is easier to understand.</p>
 </li></ul>
 <hr>
 <ul><li>
@@ -284,12 +280,12 @@ of the wavelet transform in the phase plane is easier to understand.</p>
 <p>GSL::Wavelet::Workspace.alloc(n)</p>
 
 <p>The GSL::Wavelet::Workspace object contains scratch space of the same size
-as  the input data, for holding intermediate results during the transform.
-This method allocates a workspace for the discrete wavelet transform.  To
+as the input data, for holding intermediate results during the transform.
+This method allocates a workspace for the discrete wavelet transform. To
 perform a one-dimensional transform on <code>n</code> elements, a workspace
-of  size <code>n</code> must be provided. For two-dimensional transforms of
-n-by-n  matrices it is sufficient to allocate a workspace of size
-<code>n</code>,  since the transform operates on individual rows and
+of size <code>n</code> must be provided. For two-dimensional transforms of
+n-by-n matrices it is sufficient to allocate a workspace of size
+<code>n</code>, since the transform operates on individual rows and
 columns.</p>
 </li></ul>
 
@@ -336,20 +332,20 @@ columns.</p>
 </li><li>
 <p>GSL::Vector#wavelet_transform_inverse(w, …)</p>
 
-<p>These methods compute forward and inverse discrete wavelet transforms  of
+<p>These methods compute forward and inverse discrete wavelet transforms of
 the vector <code>v</code>. The length of the transform is restricted to
-powers  of two. For the transform version of the function the argument dir
-can be  either GSL::Wavelet::FORWARD (+1) or GSL::Wavelet::BACKWARD (-1). 
-A workspace <code>work</code> can be omitted.</p>
+powers of two. For the transform version of the function the argument dir
+can be either GSL::Wavelet::FORWARD (+1) or GSL::Wavelet::BACKWARD (-1). A
+workspace <code>work</code> can be omitted.</p>
 
 <p>If <code>v</code> is a <code>GSL::Matrix</code> object, methods for
 2d-transforms are called.</p>
 
 <p>For the forward transform, the elements of the original vector are replaced
-by  the discrete wavelet transform f_i -&gt; w_{j,k} in a packed triangular
-storage  layout, where j is the index of the level j = 0 … J-1 and k is the
-index of  the coefficient within each level, k = 0 … (2^j)-1. The total
-number of  levels is J = log_2(n).</p>
+by the discrete wavelet transform f_i -&gt; w_{j,k} in a packed triangular
+storage layout, where j is the index of the level j = 0 … J-1 and k is the
+index of the coefficient within each level, k = 0 … (2^j)-1. The total
+number of levels is J = log_2(n).</p>
 
 <p>These methods return a transformed data, and the input vector is not
 changed.</p>
@@ -476,7 +472,7 @@ perm = data2.abs.sort_index
 i = 0
 while (i + nc) &lt; n
   data2[perm[i]] = 0.0
-  i += 1  
+  i += 1
 end
 
 #data3 = w.transform(data2, Wavelet::BACKWARD, work)
@@ -493,17 +489,16 @@ data3 = Wavelet.transform_inverse(w, data2)
 #If you have GNU graph utility...
 GSL::graph(nil, data, data3, &quot;-T X -C -g 3&quot;)</pre>
 
-<p><a href="rdoc/fft_rdoc.html">prev</a> <a
-href="rdoc/integration_rdoc.html">next</a></p>
+<p><a href="fft_rdoc.html">prev</a> <a href="integration_rdoc.html">next</a></p>
 
-<p><a href="rdoc/index_rdoc.html">back</a></p>
+<p><a href="../index.html">back</a></p>
 </main>
 
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
