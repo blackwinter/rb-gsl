@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>cheb - Ruby/GSL (v1.16.0.2)</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Chebyshev+Approximations">Chebyshev Approximations</a>
+    <li><a href="#label-Cheb+class"><code>Cheb</code> class</a>
+    <li><a href="#label-Chebyshev+Series+Evaluation">Chebyshev Series Evaluation</a>
+    <li><a href="#label-Derivatives+and+Integrals">Derivatives and Integrals</a>
+    <li><a href="#label-Example">Example</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./alf_rdoc.html">alf</a>
+  
+    <li><a href="./blas_rdoc.html">blas</a>
+  
+    <li><a href="./bspline_rdoc.html">bspline</a>
+  
+    <li><a href="./changes_rdoc.html">changes</a>
+  
+    <li><a href="./cheb_rdoc.html">cheb</a>
+  
+    <li><a href="./cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="./combi_rdoc.html">combi</a>
+  
+    <li><a href="./complex_rdoc.html">complex</a>
+  
+    <li><a href="./const_rdoc.html">const</a>
+  
+    <li><a href="./dht_rdoc.html">dht</a>
+  
+    <li><a href="./diff_rdoc.html">diff</a>
+  
+    <li><a href="./ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="./eigen_rdoc.html">eigen</a>
+  
+    <li><a href="./fft_rdoc.html">fft</a>
+  
+    <li><a href="./fit_rdoc.html">fit</a>
+  
+    <li><a href="./function_rdoc.html">function</a>
+  
+    <li><a href="./graph_rdoc.html">graph</a>
+  
+    <li><a href="./hist_rdoc.html">hist</a>
+  
+    <li><a href="./hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="./hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="./index_rdoc.html">index</a>
+  
+    <li><a href="./integration_rdoc.html">integration</a>
+  
+    <li><a href="./interp_rdoc.html">interp</a>
+  
+    <li><a href="./intro_rdoc.html">intro</a>
+  
+    <li><a href="./linalg_rdoc.html">linalg</a>
+  
+    <li><a href="./linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="./math_rdoc.html">math</a>
+  
+    <li><a href="./matrix_rdoc.html">matrix</a>
+  
+    <li><a href="./min_rdoc.html">min</a>
+  
+    <li><a href="./monte_rdoc.html">monte</a>
+  
+    <li><a href="./multimin_rdoc.html">multimin</a>
+  
+    <li><a href="./multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="./narray_rdoc.html">narray</a>
+  
+    <li><a href="./ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="./nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="./ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="./odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="./perm_rdoc.html">perm</a>
+  
+    <li><a href="./poly_rdoc.html">poly</a>
+  
+    <li><a href="./qrng_rdoc.html">qrng</a>
+  
+    <li><a href="./randist_rdoc.html">randist</a>
+  
+    <li><a href="./ref_rdoc.html">ref</a>
+  
+    <li><a href="./rng_rdoc.html">rng</a>
+  
+    <li><a href="./roots_rdoc.html">roots</a>
+  
+    <li><a href="./sf_rdoc.html">sf</a>
+  
+    <li><a href="./siman_rdoc.html">siman</a>
+  
+    <li><a href="./sort_rdoc.html">sort</a>
+  
+    <li><a href="./start_rdoc.html">start</a>
+  
+    <li><a href="./stats_rdoc.html">stats</a>
+  
+    <li><a href="./sum_rdoc.html">sum</a>
+  
+    <li><a href="./tensor_rdoc.html">tensor</a>
+  
+    <li><a href="./tut_rdoc.html">tut</a>
+  
+    <li><a href="./use_rdoc.html">use</a>
+  
+    <li><a href="./vector_rdoc.html">vector</a>
+  
+    <li><a href="./vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="./wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page cheb.rdoc">
+
+<h1 id="label-Chebyshev+Approximations">Chebyshev Approximations<span><a href="#label-Chebyshev+Approximations">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>This chapter describes routines for computing Chebyshev approximations to
+univariate functions. A Chebyshev approximation is a truncation of the
+series f(x) = sum c_n T_n(x), where the Chebyshev polynomials T_n(x) =
+cos(n arccos x) provide an orthogonal basis of polynomials on the interval
+[-1,1] with the weight function 1 / sqrt{1-x^2}. The first few Chebyshev
+polynomials are, T_0(x) = 1, T_1(x) = x, T_2(x) = 2 x^2 - 1. For further
+information see Abramowitz &amp; Stegun, Chapter 22.</p>
+<ol><li>
+<p><a href="cheb_rdoc.html#label-Cheb+class">GSL::Cheb class</a></p>
+</li><li>
+<p><a href="cheb_rdoc.html#label-Chebyshev+Series+Evaluation">Chebyshev Series
+Evaluation</a></p>
+</li><li>
+<p><a href="cheb_rdoc.html#label-Derivatives+and+Integrals">Derivatives and
+Integrals</a></p>
+</li><li>
+<p><a href="cheb_rdoc.html#label-Example">Examples</a></p>
+</li></ol>
+
+<h2 id="label-Cheb+class"><code>Cheb</code> class<span><a href="#label-Cheb+class">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Cheb.alloc(n)</p>
+
+<p>This create an instance of the GSL::Cheb class for a Chebyshev series of
+order n.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Cheb#init(f, a, b)</p>
+
+<p>This computes the Chebyshev approximation the function <code>f</code> over
+the range (<code>a,b</code>) to the previously specified order. Where
+<code>f</code> is a <a href="function_rdoc.html">GSL::Function</a> object.
+The computation of the Chebyshev approximation is an O(n^2) process, and
+requires <code>n</code> function evaluations.</p>
+<ul><li>
+<p>ex: Approximate a step function defined in (0, 1) by a Chebyshev series of
+order 40.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.5</span>
+    <span class="ruby-value">0.25</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-value">0.75</span>
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-identifier">cs</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Cheb</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">40</span>)
+<span class="ruby-identifier">cs</span>.<span class="ruby-identifier">init</span>(<span class="ruby-identifier">f</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
+</pre>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Chebyshev+Series+Evaluation">Chebyshev Series Evaluation<span><a href="#label-Chebyshev+Series+Evaluation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Cheb#eval(x)</p>
+
+<p>This evaluates the Chebyshev series at a given point <code>x</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Cheb#eval_n(n, x)</p>
+
+<p>This evaluates the Chebyshev series at a given point <code>x</code>, to (at
+most) the given order <code>n</code>.</p>
+</li></ul>
+
+<h2 id="label-Derivatives+and+Integrals">Derivatives and Integrals<span><a href="#label-Derivatives+and+Integrals">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Cheb#calc_deriv()</p>
+</li><li>
+<p>GSL::Cheb#deriv()</p>
+
+<p>This computes the derivative of the series, and returns a new GSL::Cheb
+object which contains the computed derivative. The reciever is not changed.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Cheb#calc_integ()</p>
+</li><li>
+<p>GSL::Cheb#integ()</p>
+
+<p>This computes the integral of the series, and returns a new GSL::Cheb
+object which contains the computed integral coefficients. The reciever is
+not changed.</p>
+</li></ul>
+
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.5</span>
+    <span class="ruby-value">0.25</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-value">0.75</span>
+  <span class="ruby-keyword">end</span>
+}
+
+<span class="ruby-identifier">n</span> = <span class="ruby-value">1000</span>
+<span class="ruby-identifier">order</span> = <span class="ruby-value">40</span>
+<span class="ruby-identifier">cs</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Cheb</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">order</span>)
+<span class="ruby-identifier">cs</span>.<span class="ruby-identifier">init</span>(<span class="ruby-identifier">f</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
+
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-identifier">n</span>)
+<span class="ruby-identifier">ff</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x</span>)
+<span class="ruby-identifier">r10</span> = <span class="ruby-identifier">cs</span>.<span class="ruby-identifier">eval_n</span>(<span class="ruby-value">10</span>, <span class="ruby-identifier">x</span>)
+<span class="ruby-identifier">r40</span> = <span class="ruby-identifier">cs</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x</span>)
+<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-identifier">graph</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">ff</span>, <span class="ruby-identifier">r10</span>, <span class="ruby-identifier">r40</span>)
+</pre>
+
+<p>See also the example scripts in <code>examples/cheb/</code>.</p>
+
+<p><a href="diff_rdoc.html">prev</a> <a href="sum_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

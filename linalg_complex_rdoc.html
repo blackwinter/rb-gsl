@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Ruby/GSL (v1.16.0.2)</title>
+<title>linalg_complex - Ruby/GSL (v1.16.0.2)</title>
 
 <link href="./fonts.css" rel="stylesheet">
 <link href="./rdoc.css" rel="stylesheet">
@@ -36,7 +36,6 @@
   </div>
 </div>
 
-
     <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
     <div id="search-field-wrapper">
@@ -53,6 +52,8 @@
 </div>
 
   </div>
+
+  
 
   <div id="project-metadata">
     <div id="fileindex-section" class="nav-section">
@@ -175,89 +176,142 @@
   </ul>
 </div>
 
-    <div id="classindex-section" class="nav-section">
-  <h3>Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-  </ul>
-</div>
-
   </div>
 </nav>
 
-<main role="main">
+<main role="main" aria-label="Page linalg_complex.rdoc">
 
-
-<h1 id="label-Ruby%2FGSL"><a href="index.html">Ruby/GSL</a><span><a href="#label-Ruby%2FGSL">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
-
-<p>Permission is granted to copy, distribute and/or modify this document under
-the terms of the GNU Free Documentation License.</p>
-
-<h2 id="label-Description">Description<span><a href="#label-Description">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<p><a href="https://blackwinter.github.com/rb-gsl">Ruby/GSL</a> is a ruby
-interface to the <a href="https://gnu.org/software/gsl/">GNU Scientific
-Library</a> (GSL), for numerical computing with <a
-href="http://www.ruby-lang.org/en/">Ruby</a>.</p>
-
-<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<h3 id="label-Using+the+gem+command">Using the gem command<span><a href="#label-Using+the+gem+command">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
-
-<p>Ruby/GSL may now be installed as a Ruby Gem by simply running</p>
-
-<pre>gem install rb-gsl</pre>
-
-<p>Note that the GSL libraries must already be installed before Ruby/GSL can
-be installed.</p>
+<h3 id="label-Complex+LU+decomposition">Complex LU decomposition<span><a href="#label-Complex+LU+decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
 <ul><li>
-<p>It is recommended to install the <a
-href="https://gnu.org/software/plotutils/plotutils.html">GNU plotutils</a>
-package.  Some of the example scripts in the &#39;examples/&#39; directory
-use the <code>graph</code> utility included in the package to plot the
-results. Windows-cygwin binaries of <code>GNU plotutils</code> and related
-packages are available from <a
-href="http://gnuwin32.sourceforge.net/packages/plotutils.htm">here</a>.</p>
+<p>GSL::Linalg::Complex::LU_decomp!(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::decomp!(A)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_decomp!</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_decomp!</p>
+
+<p>Factorizes the square matrix <code>A</code> into the LU decomposition PA =
+LU, and returns an array, <code>[perm, signum]</code>. <code>A</code> is
+changed.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_decomp(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::decomp(A)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_decomp</p>
+
+<p>Factorizes the square matrix <code>A</code> into the LU decomposition PA =
+LU, and returns an array, <code>[LU, perm, signum]</code>. <code>A</code>
+is not changed.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_solve(A, b)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_solve(b)</p>
+</li><li>
+<p>GSL::Linalg::Complex::solve(LU, perm, b)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::solve(LU, perm, b)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatirx#solve(perm, b)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_svx(A, x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::svx(A, x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_svx(A, x)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_svx(x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::svx(LU, perm, x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::svx(LU, perm, x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatirx#svx(perm, x)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_refine(A, LU, perm, b, x)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_::refine(A, LU, perm, b, x)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_invert(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::invert(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_invert(LU, perm)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::invert(LU, perm)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_invert</p>
+</li><li>
+<p>GSL::Matrix::Complex#invert</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatrix#invert(perm)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_det(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::det(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_det(LU, signum)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::det(LU, signum)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_det</p>
+</li><li>
+<p>GSL::Matrix::Complex#det</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatrix#det(signum)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_lndet(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::lndet(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_lndet(LU)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::lndet(LU)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_lndet</p>
+</li><li>
+<p>GSL::Matrix::Complex#lndet</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatrix#lndet</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Complex::LU_sgndet(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::sgndet(A)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU_sgndet(LU, signum)</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::sgndet(LU, signum)</p>
+</li><li>
+<p>GSL::Matrix::Complex#LU_sgndet</p>
+</li><li>
+<p>GSL::Matrix::Complex#sgndet</p>
+</li><li>
+<p>GSL::Linalg::Complex::LU::LUMatrix#sgndet(signum)</p>
 </li></ul>
 
-<h2 id="label-Reference">Reference<span><a href="#label-Reference">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<p>The <a href="ref_rdoc.html">Ruby/GSL reference manual</a> follows and
-borrows large parts of the GSL reference manual.</p>
-
-<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<p>See scripts in <code>examples/</code> and <code>tests/</code> directories.</p>
-
-<h2 id="label-Related+Projects">Related Projects<span><a href="#label-Related+Projects">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-<ul><li>
-<p><a href="http://ruby-gsl.sourceforge.net/">ruby-gsl:</a> Another Ruby
-binding, developed by Arno Erpenbeck.</p>
-</li></ul>
-
-<h2 id="label-Licence">Licence<span><a href="#label-Licence">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<p>Ruby/GSL is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License. This library is distributed in
-the hope that it will be useful, but WITHOUT ANY WARRANTY.</p>
-
-<h2 id="label-Bug+Report">Bug Report<span><a href="#label-Bug+Report">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-
-<p>If you encounter bugs in Ruby/GSL, please e-mail to me, or submit reports
-on <a href="https://github.com/blackwinter/rb-gsl/issues">GitHub</a>.</p>
-
-<h2 id="label-Authors">Authors<span><a href="#label-Authors">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
-<dl class="rdoc-list note-list"><dt>Yoshiki Tsunesada
-<dd>
-<p>July, 2004</p>
-</dd><dt>David MacMahon
-<dd>
-<p>November, 2010</p>
-</dd><dt>Jens Wille
-<dd>
-<p>November, 2013</p>
-</dd></dl>
+<p><a href="linalg_rdoc.html">back</a></p>
 </main>
 
 

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>math - Ruby/GSL (v1.16.0.2)</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Mathematical+Functions">Mathematical Functions</a>
+    <li><a href="#label-Mathematical+Constants">Mathematical Constants</a>
+    <li><a href="#label-Infinities+and+Not-a-number">Infinities and Not-a-number</a>
+    <li><a href="#label-Constants">Constants</a>
+    <li><a href="#label-Module+functions">Module functions</a>
+    <li><a href="#label-Elementary+Functions">Elementary Functions</a>
+    <li><a href="#label-Small+Integer+Powers">Small Integer Powers</a>
+    <li><a href="#label-Testing+the+Sign+of+Numbers">Testing the Sign of Numbers</a>
+    <li><a href="#label-Testing+for+Odd+and+Even+Numbers">Testing for Odd and Even Numbers</a>
+    <li><a href="#label-Maximum+and+Minimum+functions">Maximum and Minimum functions</a>
+    <li><a href="#label-Approximate+Comparison+of+Floating+Point+Numbers">Approximate Comparison of Floating Point Numbers</a>
+    <li><a href="#label-Module+Constants">Module Constants</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./alf_rdoc.html">alf</a>
+  
+    <li><a href="./blas_rdoc.html">blas</a>
+  
+    <li><a href="./bspline_rdoc.html">bspline</a>
+  
+    <li><a href="./changes_rdoc.html">changes</a>
+  
+    <li><a href="./cheb_rdoc.html">cheb</a>
+  
+    <li><a href="./cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="./combi_rdoc.html">combi</a>
+  
+    <li><a href="./complex_rdoc.html">complex</a>
+  
+    <li><a href="./const_rdoc.html">const</a>
+  
+    <li><a href="./dht_rdoc.html">dht</a>
+  
+    <li><a href="./diff_rdoc.html">diff</a>
+  
+    <li><a href="./ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="./eigen_rdoc.html">eigen</a>
+  
+    <li><a href="./fft_rdoc.html">fft</a>
+  
+    <li><a href="./fit_rdoc.html">fit</a>
+  
+    <li><a href="./function_rdoc.html">function</a>
+  
+    <li><a href="./graph_rdoc.html">graph</a>
+  
+    <li><a href="./hist_rdoc.html">hist</a>
+  
+    <li><a href="./hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="./hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="./index_rdoc.html">index</a>
+  
+    <li><a href="./integration_rdoc.html">integration</a>
+  
+    <li><a href="./interp_rdoc.html">interp</a>
+  
+    <li><a href="./intro_rdoc.html">intro</a>
+  
+    <li><a href="./linalg_rdoc.html">linalg</a>
+  
+    <li><a href="./linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="./math_rdoc.html">math</a>
+  
+    <li><a href="./matrix_rdoc.html">matrix</a>
+  
+    <li><a href="./min_rdoc.html">min</a>
+  
+    <li><a href="./monte_rdoc.html">monte</a>
+  
+    <li><a href="./multimin_rdoc.html">multimin</a>
+  
+    <li><a href="./multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="./narray_rdoc.html">narray</a>
+  
+    <li><a href="./ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="./nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="./ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="./odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="./perm_rdoc.html">perm</a>
+  
+    <li><a href="./poly_rdoc.html">poly</a>
+  
+    <li><a href="./qrng_rdoc.html">qrng</a>
+  
+    <li><a href="./randist_rdoc.html">randist</a>
+  
+    <li><a href="./ref_rdoc.html">ref</a>
+  
+    <li><a href="./rng_rdoc.html">rng</a>
+  
+    <li><a href="./roots_rdoc.html">roots</a>
+  
+    <li><a href="./sf_rdoc.html">sf</a>
+  
+    <li><a href="./siman_rdoc.html">siman</a>
+  
+    <li><a href="./sort_rdoc.html">sort</a>
+  
+    <li><a href="./start_rdoc.html">start</a>
+  
+    <li><a href="./stats_rdoc.html">stats</a>
+  
+    <li><a href="./sum_rdoc.html">sum</a>
+  
+    <li><a href="./tensor_rdoc.html">tensor</a>
+  
+    <li><a href="./tut_rdoc.html">tut</a>
+  
+    <li><a href="./use_rdoc.html">use</a>
+  
+    <li><a href="./vector_rdoc.html">vector</a>
+  
+    <li><a href="./vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="./wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page math.rdoc">
+
+<h1 id="label-Mathematical+Functions">Mathematical Functions<span><a href="#label-Mathematical+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="math_rdoc.html#label-Mathematical+Constants">Mathematical
+Constants</a></p>
+<ol><li>
+<p><a href="math_rdoc.html#label-Infinities+and+Not-a-number">Infinities and
+Not-a-number</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Constants">Constants</a></p>
+</li></ol>
+</li><li>
+<p><a href="math_rdoc.html#label-Module+functions">Module functions</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Elementary+Functions">Elementary
+Functions</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Small+Integer+Powers">Small Integer
+Powers</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Testing+the+Sign+of+Numbers">Testing the Sign
+of Numbers</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Testing+for+Odd+and+Even+Numbers">Testing for
+Odd and Even Numbers</a></p>
+</li><li>
+<p><a href="math_rdoc.html#label-Maximum+and+Minimum+functions">Maximum and
+Minimum functions</a></p>
+</li><li>
+<p><a
+href="math_rdoc.html#label-Approximate+Comparison+of+Floating+Point+Numbers">Approximate
+Comparison of Floating Point Numbers</a></p>
+</li></ol>
+
+<h2 id="label-Mathematical+Constants">Mathematical Constants<span><a href="#label-Mathematical+Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::M_E</p>
+
+<p>The base of exponentials, e</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_LOG2E</p>
+
+<p>The base-2 logarithm of e, log_2(e)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_LOG10E</p>
+
+<p>The base-10 logarithm of e, log_10(e)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_SQRT2</p>
+
+<p>The square root of two, sqrt(2)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_SQRT1_2</p>
+
+<p>The square root of one-half, sqrt(1/2)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_SQRT3</p>
+
+<p>The square root of three, sqrt(3)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_PI</p>
+
+<p>The constant pi</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_PI_2</p>
+
+<p>Pi divided by two</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_PI_4</p>
+
+<p>Pi divided by four</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_SQRTPI</p>
+
+<p>The square root of pi</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_2_SQRTPI</p>
+
+<p>Two divided by the square root of pi</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_1_PI</p>
+
+<p>The reciprocal of pi, 1/pi</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_2_PI</p>
+
+<p>Twice the reciprocal of pi, 2/pi</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_LN10</p>
+
+<p>The natural logarithm of ten, ln(10)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_LN2</p>
+
+<p>The natural logarithm of ten, ln(2)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_LNPI</p>
+
+<p>The natural logarithm of ten, ln(pi)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::M_EULER</p>
+
+<p>Euler&#39;s constant</p>
+</li></ul>
+
+<h2 id="label-Infinities+and+Not-a-number">Infinities and Not-a-number<span><a href="#label-Infinities+and+Not-a-number">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<h3 id="label-Constants">Constants<span><a href="#label-Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::POSINF</p>
+
+<p>The IEEE representation of positive infinity, computed from the expression
++1.0/0.0.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::NEGINF</p>
+
+<p>The IEEE representation of negative infinity, computed from the expression
+-1.0/0.0.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::NAN</p>
+
+<p>The IEEE representation of the Not-a-Number symbol, computed from the ratio
+0.0/0.0.</p>
+</li></ul>
+
+<h3 id="label-Module+functions">Module functions<span><a href="#label-Module+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::isnan(x)</p>
+
+<p>This returns 1 if <code>x</code> is not-a-number.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::isnan?(x)</p>
+
+<p>This returns <code>true</code> if <code>x</code>  is not-a-number, and
+<code>false</code> otherwise.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::isinf(x)</p>
+
+<p>This returns +1 if <code>x</code>  is positive infinity, -1 if
+<code>x</code>  is negative infinity and 0 otherwise. NOTE: In
+Darwin9.5.0-gcc4.0.1, this method returns 1 for -inf.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::isinf?(x)</p>
+
+<p>This returns <code>true</code> if <code>x</code> is positive or negative
+infinity, and <code>false</code> otherwise.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::finite(x)</p>
+
+<p>This returns 1 if <code>x</code> is a real number, and 0 if it is infinite
+or not-a-number.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::finite?(x)</p>
+
+<p>This returns <code>true</code> if <code>x</code> is a real number, and
+<code>false</code> if it is infinite or not-a-number.</p>
+</li></ul>
+
+<h2 id="label-Elementary+Functions">Elementary Functions<span><a href="#label-Elementary+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::log1p(x)</p>
+
+<p>This method computes the value of log(1+x) in a way that is accurate for
+small <code>x</code>. It provides an alternative to the BSD math function
+log1p(x).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::expm1(x)</p>
+
+<p>This method computes the value of exp(x)-1 in a way that is accurate for
+small <code>x</code>. It provides an alternative to the BSD math function
+expm1(x).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::hypot(x, y)</p>
+
+<p>This method computes the value of sqrt{x^2 + y^2} in a way that avoids
+overflow.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::hypot3(x, y, z)</p>
+
+<p>Computes the value of sqrt{x^2 + y^2 + z^2} in a way that avoids overflow.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::acosh(x)</p>
+
+<p>This method computes the value of arccosh(x).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::asinh(x)</p>
+
+<p>This method computes the value of arcsinh(x).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::atanh(x)</p>
+
+<p>This method computes the value of arctanh(x).</p>
+
+<p>These methods above can take argument <code>x</code> of Integer, Float,
+Array, Vector or Matrix.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::ldexp(x)</p>
+
+<p>This method computes the value of x * 2^e.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::frexp(x)</p>
+
+<p>This method splits the number <code>x</code> into its normalized fraction f
+and exponent e, such that x = f * 2^e and 0.5 &lt;= f &lt; 1. The method
+returns f and the exponent e as an array, [f, e]. If <code>x</code> is
+zero, both f and e are set to zero.</p>
+</li></ul>
+
+<h2 id="label-Small+Integer+Powers">Small Integer Powers<span><a href="#label-Small+Integer+Powers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::pow_int(x, n)</p>
+
+<p>This routine computes the power <code>x^n</code> for integer
+<code>n</code>. The power is computed efficiently – for example, x^8 is
+computed as ((x^2)^2)^2, requiring only 3 multiplications.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::pow_2(x)</p>
+</li><li>
+<p>GSL::pow_3(x)</p>
+</li><li>
+<p>GSL::pow_4(x)</p>
+</li><li>
+<p>GSL::pow_5(x)</p>
+</li><li>
+<p>GSL::pow_6(x)</p>
+</li><li>
+<p>GSL::pow_7(x)</p>
+</li><li>
+<p>GSL::pow_8(x)</p>
+</li><li>
+<p>GSL::pow_9(x)</p>
+
+<p>These methods can be used to compute small integer powers x^2, x^3, etc.
+efficiently.</p>
+</li></ul>
+
+<h2 id="label-Testing+the+Sign+of+Numbers">Testing the Sign of Numbers<span><a href="#label-Testing+the+Sign+of+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::SIGN(x)</p>
+</li><li>
+<p>GSL::sign(x)</p>
+
+<p>Return the sign of <code>x</code>. It is defined as ((x) &gt;= 0 ? 1 : -1).
+Note that with this definition the sign of zero is positive (regardless of
+its IEEE sign bit).</p>
+</li></ul>
+
+<h2 id="label-Testing+for+Odd+and+Even+Numbers">Testing for Odd and Even Numbers<span><a href="#label-Testing+for+Odd+and+Even+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::is_odd(n)</p>
+</li><li>
+<p>GSL::IS_ODD(n)</p>
+
+<p>Evaluate to 1 if <code>n</code> is odd and 0 if <code>n</code> is even. The
+argument <code>n</code> must be of Fixnum type.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::is_odd?(n)</p>
+</li><li>
+<p>GSL::IS_ODD?(n)</p>
+
+<p>Return <code>true</code> if <code>n</code> is odd and <code>false</code> if
+even.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::is_even(n)</p>
+</li><li>
+<p>GSL::IS_EVEN(n)</p>
+
+<p>Evaluate to 1 if <code>n</code> is even and 0 if <code>n</code> is odd. The
+argument <code>n</code> must be of Fixnum type.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::is_even?(n)</p>
+</li><li>
+<p>GSL::IS_even?(n)</p>
+
+<p>Return <code>true</code> if <code>n</code> is even and <code>false</code>
+if odd.</p>
+</li></ul>
+
+<h2 id="label-Maximum+and+Minimum+functions">Maximum and Minimum functions<span><a href="#label-Maximum+and+Minimum+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::max(a, b)</p>
+</li><li>
+<p>GSL::MAX(a, b)</p>
+</li><li>
+<p>GSL::min(a, b)</p>
+</li><li>
+<p>GSL::MIN(a, b)</p>
+</li></ul>
+
+<h2 id="label-Approximate+Comparison+of+Floating+Point+Numbers">Approximate Comparison of Floating Point Numbers<span><a href="#label-Approximate+Comparison+of+Floating+Point+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::fcmp(a, b, epsilon = 1e-10)</p>
+
+<p>This method determines whether <code>x</code> and <code>y</code> are
+approximately equal to a relative accuracy <code>epsilon</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::equal?(a, b, epsilon = 1e-10)</p>
+</li></ul>
+
+<h2 id="label-Module+Constants">Module Constants<span><a href="#label-Module+Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::VERSION</p>
+
+<p>GSL version</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::RB_GSL_VERSION</p>
+</li><li>
+<p>GSL::RUBY_GSL_VERSION</p>
+
+<p>Ruby/GSL version</p>
+</li></ul>
+
+<p><a href="ehandling_rdoc.html">prev</a> <a href="complex_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

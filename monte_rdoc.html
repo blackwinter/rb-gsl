@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>monte - Ruby/GSL (v1.16.0.2)</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Monte+Carlo+Integration">Monte Carlo Integration</a>
+    <li><a href="#label-The+Function+class">The Function class</a>
+    <li><a href="#label-Monte+Carlo+plans%2C+alrgorithms">Monte Carlo plans, alrgorithms</a>
+    <li><a href="#label-PLAIN+Monte+Carlo">PLAIN Monte Carlo</a>
+    <li><a href="#label-Miser">Miser</a>
+    <li><a href="#label-Vegas">Vegas</a>
+    <li><a href="#label-Integration">Integration</a>
+    <li><a href="#label-Accessing+internal+state+of+the+Monte+Carlo+classes">Accessing internal state of the Monte Carlo classes</a>
+    <li><a href="#label-Miser+Parameters+%28GSL-1.13+or+later%29">Miser Parameters (GSL-1.13 or later)</a>
+    <li><a href="#label-Accessors+of+Miser+Params">Accessors of Miser <code>Params</code></a>
+    <li><a href="#label-Vegas+Parameters+%28GSL-1.13+or+later%29">Vegas Parameters (GSL-1.13 or later)</a>
+    <li><a href="#label-Accessors+of+Vegas+Params">Accessors of Vegas <code>Params</code></a>
+    <li><a href="#label-Example">Example</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./alf_rdoc.html">alf</a>
+  
+    <li><a href="./blas_rdoc.html">blas</a>
+  
+    <li><a href="./bspline_rdoc.html">bspline</a>
+  
+    <li><a href="./changes_rdoc.html">changes</a>
+  
+    <li><a href="./cheb_rdoc.html">cheb</a>
+  
+    <li><a href="./cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="./combi_rdoc.html">combi</a>
+  
+    <li><a href="./complex_rdoc.html">complex</a>
+  
+    <li><a href="./const_rdoc.html">const</a>
+  
+    <li><a href="./dht_rdoc.html">dht</a>
+  
+    <li><a href="./diff_rdoc.html">diff</a>
+  
+    <li><a href="./ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="./eigen_rdoc.html">eigen</a>
+  
+    <li><a href="./fft_rdoc.html">fft</a>
+  
+    <li><a href="./fit_rdoc.html">fit</a>
+  
+    <li><a href="./function_rdoc.html">function</a>
+  
+    <li><a href="./graph_rdoc.html">graph</a>
+  
+    <li><a href="./hist_rdoc.html">hist</a>
+  
+    <li><a href="./hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="./hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="./index_rdoc.html">index</a>
+  
+    <li><a href="./integration_rdoc.html">integration</a>
+  
+    <li><a href="./interp_rdoc.html">interp</a>
+  
+    <li><a href="./intro_rdoc.html">intro</a>
+  
+    <li><a href="./linalg_rdoc.html">linalg</a>
+  
+    <li><a href="./linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="./math_rdoc.html">math</a>
+  
+    <li><a href="./matrix_rdoc.html">matrix</a>
+  
+    <li><a href="./min_rdoc.html">min</a>
+  
+    <li><a href="./monte_rdoc.html">monte</a>
+  
+    <li><a href="./multimin_rdoc.html">multimin</a>
+  
+    <li><a href="./multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="./narray_rdoc.html">narray</a>
+  
+    <li><a href="./ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="./nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="./ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="./odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="./perm_rdoc.html">perm</a>
+  
+    <li><a href="./poly_rdoc.html">poly</a>
+  
+    <li><a href="./qrng_rdoc.html">qrng</a>
+  
+    <li><a href="./randist_rdoc.html">randist</a>
+  
+    <li><a href="./ref_rdoc.html">ref</a>
+  
+    <li><a href="./rng_rdoc.html">rng</a>
+  
+    <li><a href="./roots_rdoc.html">roots</a>
+  
+    <li><a href="./sf_rdoc.html">sf</a>
+  
+    <li><a href="./siman_rdoc.html">siman</a>
+  
+    <li><a href="./sort_rdoc.html">sort</a>
+  
+    <li><a href="./start_rdoc.html">start</a>
+  
+    <li><a href="./stats_rdoc.html">stats</a>
+  
+    <li><a href="./sum_rdoc.html">sum</a>
+  
+    <li><a href="./tensor_rdoc.html">tensor</a>
+  
+    <li><a href="./tut_rdoc.html">tut</a>
+  
+    <li><a href="./use_rdoc.html">use</a>
+  
+    <li><a href="./vector_rdoc.html">vector</a>
+  
+    <li><a href="./vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="./wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page monte.rdoc">
+
+<h1 id="label-Monte+Carlo+Integration">Monte Carlo Integration<span><a href="#label-Monte+Carlo+Integration">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h2 id="label-The+Function+class">The Function class<span><a href="#label-The+Function+class">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The function to be integrated has its own datatype, the
+<code>GSL::Monte::Function</code> class.</p>
+<hr>
+<ul><li>
+<p>GSL::Munte::Function.alloc(proc, dim, params)</p>
+</li><li>
+<p>GSL::Munte::Function.alloc(proc, dim)</p>
+
+<p>Constructor. The following example shows how to use this:</p>
+<ul><li>
+<p>ex:</p>
+
+<pre class="ruby"><span class="ruby-identifier">proc_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]; <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]; <span class="ruby-identifier">c</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">dim</span> <span class="ruby-operator">!=</span> <span class="ruby-value">2</span>; <span class="ruby-identifier">raise</span>(<span class="ruby-string">&quot;dim != 2&quot;</span>); <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">x</span>[<span class="ruby-value">1</span>]
+}
+<span class="ruby-identifier">dim</span> = <span class="ruby-value">2</span>
+<span class="ruby-identifier">mf</span> = <span class="ruby-constant">Monte</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">proc_f</span>, <span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">mf</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">3</span>, <span class="ruby-value">2</span>, <span class="ruby-value">1</span>])
+</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Munte::Function#set(proc, dim, params)</p>
+</li><li>
+<p>GSL::Munte::Function#set(proc, dim)</p>
+</li><li>
+<p>GSL::Munte::Function#set(proc)</p>
+</li><li>
+<p>GSL::Munte::Function#set_proc(proc)</p>
+</li><li>
+<p>GSL::Munte::Function#set_proc(proc, dim)</p>
+</li><li>
+<p>GSL::Munte::Function#set_params(params)</p>
+</li><li>
+<p>GSL::Munte::Function#params</p>
+</li><li>
+<p>GSL::Munte::Function#eval</p>
+</li><li>
+<p>GSL::Munte::Function#call</p>
+</li></ul>
+
+<h2 id="label-Monte+Carlo+plans%2C+alrgorithms">Monte Carlo plans, alrgorithms<span><a href="#label-Monte+Carlo+plans%2C+alrgorithms">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<h3 id="label-PLAIN+Monte+Carlo">PLAIN Monte Carlo<span><a href="#label-PLAIN+Monte+Carlo">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Monte::Plain.alloc(dim)</p>
+</li><li>
+<p>GSL::Monte::Plain#init</p>
+</li></ul>
+
+<h3 id="label-Miser">Miser<span><a href="#label-Miser">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser.alloc(dim)</p>
+</li><li>
+<p>GSL::Monte::Miser#init</p>
+</li></ul>
+
+<h3 id="label-Vegas">Vegas<span><a href="#label-Vegas">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas.alloc(dim)</p>
+</li><li>
+<p>GSL::Monte::Vegas#init</p>
+</li></ul>
+
+<h2 id="label-Integration">Integration<span><a href="#label-Integration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL:Monte::Function#integrate(xl, xu, dim, calls, rng, s)</p>
+</li><li>
+<p>GSL:Monte::Function#integrate(xl, xu, dim, calls, s)</p>
+</li><li>
+<p>GSL:Monte::Function#integrate(xl, xu, calls, rng, s)</p>
+</li><li>
+<p>GSL:Monte::Function#integrate(xl, xu, calls, s)</p>
+
+<p>This method performs Monte-Carlo integration of the function
+<code>self</code> using the algorithm <code>s</code>, over the
+<code>dim</code>-dimensional hypercubic region defined by the lower and
+upper limits in the arrays <code>xl</code> and <code>xu</code>, each of
+size <code>dim</code>. The integration uses a fixed number of function
+calls <code>calls</code>. The argument <code>rng</code> is a random number
+generator (optional). If it is not given, a new generator is created
+internally and freed when the calculation finishes.</p>
+
+<p>See sample scripts <code>sample/monte*.rb</code> for more details.</p>
+</li></ul>
+
+<h2 id="label-Accessing+internal+state+of+the+Monte+Carlo+classes">Accessing internal state of the Monte Carlo classes<span><a href="#label-Accessing+internal+state+of+the+Monte+Carlo+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser#estimate_frac</p>
+</li><li>
+<p>GSL::Monte::Miser#estimate_frac=</p>
+</li><li>
+<p>GSL::Monte::Miser#min_calls</p>
+</li><li>
+<p>GSL::Monte::Miser#min_calls=</p>
+</li><li>
+<p>GSL::Monte::Miser#min_call_per_bisection</p>
+</li><li>
+<p>GSL::Monte::Miser#min_calls_per_bisection=</p>
+</li><li>
+<p>GSL::Monte::Miser#alpha</p>
+</li><li>
+<p>GSL::Monte::Miser#alpha=</p>
+</li><li>
+<p>GSL::Monte::Miser#dither</p>
+</li><li>
+<p>GSL::Monte::Miser#dither=</p>
+</li><li>
+<p>GSL::Monte::Vegas#alpha</p>
+</li><li>
+<p>GSL::Monte::Vegas#result</p>
+</li><li>
+<p>GSL::Monte::Vegas#sigma</p>
+</li><li>
+<p>GSL::Monte::Vegas#chisq</p>
+
+<p>Returns the chi-squared per degree of freedom for the weighted estimate of
+the integral. The returned value should be close to 1. A value which
+differs significantly from 1 indicates that the values from different
+iterations are inconsistent. In this case the weighted error will be
+under-estimated, and further iterations of the algorithm are needed to
+obtain reliable results.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas#runval</p>
+
+<p>Returns the raw (unaveraged) values of the integral and its error
+<code>[result, sigma]</code> from the most recent iteration of the
+algorithm.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas#iterations</p>
+</li><li>
+<p>GSL::Monte::Vegas#iterations=</p>
+</li><li>
+<p>GSL::Monte::Vegas#alpha</p>
+</li><li>
+<p>GSL::Monte::Vegas#alpha=</p>
+</li><li>
+<p>GSL::Monte::Vegas#stage</p>
+</li><li>
+<p>GSL::Monte::Vegas#stage=</p>
+</li><li>
+<p>GSL::Monte::Vegas#mode</p>
+</li><li>
+<p>GSL::Monte::Vegas#mode=</p>
+</li><li>
+<p>GSL::Monte::Vegas#verbose</p>
+</li><li>
+<p>GSL::Monte::Vegas#verbose=</p>
+</li></ul>
+
+<h2 id="label-Miser+Parameters+%28GSL-1.13+or+later%29">Miser Parameters (GSL-1.13 or later)<span><a href="#label-Miser+Parameters+%28GSL-1.13+or+later%29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser#params_get</p>
+
+<p>Returns the parameters of the integrator state as an instance of
+<code>GSL::Monte::Miser::Params</code> class.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser#params_set(params)</p>
+
+<p>Sets the integrator parameters based on values provided in an object of the
+<code>GSL::Monte::Miser::Params</code> class <code>params</code>.</p>
+</li></ul>
+
+<h3 id="label-Accessors+of+Miser+Params">Accessors of Miser <code>Params</code><span><a href="#label-Accessors+of+Miser+Params">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser::Params#estimate_frac</p>
+</li><li>
+<p>GSL::Monte::Miser::Params#estimate_frac=</p>
+
+<p>The fraction of the currently available number of function calls which are
+allocated to estimating the variance at each recursive step. The default
+value is 0.1.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser::Params#min_calls</p>
+</li><li>
+<p>GSL::Monte::Miser::Params#min_calls=</p>
+
+<p>The minimum number of function calls required for each estimate of the
+variance. If the number of function calls allocated to the estimate using
+<code>estimate_frac</code> falls below <code>min_calls</code> then
+<code>min_calls</code> are used instead. This ensures that each estimate
+maintains a reasonable level of accuracy. The default value of min_calls is
+16 * dim.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser::Params#min_calls_per_bisection</p>
+</li><li>
+<p>GSL::Monte::Miser::Params#min_calls_per_bisection=</p>
+
+<p>The minimum number of function calls required to proceed with a bisection
+step. When a recursive step has fewer calls available than
+<code>min_calls_per_bisection</code> it performs a plain Monte Carlo
+estimate of the current sub-region and terminates its branch of the
+recursion. The default value of this parameter is 32 * min_calls.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser::Params#alpha</p>
+</li><li>
+<p>GSL::Monte::Miser::Params#alpha=</p>
+
+<p>This parameter controls how the estimated variances for the two sub-regions
+of a bisection are combined when allocating points. With recursive sampling
+the overall variance should scale better than 1/N, since the values from
+the sub-regions will be obtained using a procedure which explicitly
+minimizes their variance. To accommodate this behavior the MISER algorithm
+allows the total variance to depend on a scaling parameter
+<code>alpha</code>, The authors of the original paper describing MISER
+recommend the value <code>alpha</code> = 2 as a good choice, obtained from
+numerical experiments, and this is used as the default value in this
+implementation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Miser::Params#dither</p>
+</li><li>
+<p>GSL::Monte::Miser::Params#dither=</p>
+</li></ul>
+
+<p>This parameter introduces a random fractional variation of size dither into
+each bisection, which can be used to break the symmetry of integrands which
+are concentrated near the exact center of the hypercubic integration
+region. The default value of dither is zero, so no variation is introduced.
+If needed, a typical value of dither is 0.1.</p>
+
+<h2 id="label-Vegas+Parameters+%28GSL-1.13+or+later%29">Vegas Parameters (GSL-1.13 or later)<span><a href="#label-Vegas+Parameters+%28GSL-1.13+or+later%29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas#params_get</p>
+
+<p>Returns the parameters of the integrator state as an instance of
+<code>GSL::Monte::Vegas::Params</code> class.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas#params_set(params)</p>
+
+<p>Sets the integrator parameters based on values provided in an object of the
+<code>GSL::Monte::Vegas::Params</code> class <code>params</code>.</p>
+</li></ul>
+
+<h3 id="label-Accessors+of+Vegas+Params">Accessors of Vegas <code>Params</code><span><a href="#label-Accessors+of+Vegas+Params">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas::Params#alpha</p>
+</li><li>
+<p>GSL::Monte::Vegas::Params#alpha=</p>
+
+<p>Controls the stiffness of the rebinning algorithm. It is typically set
+between one and two. A value of zero prevents rebinning of the grid. The
+default value is 1.5.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas::Params#iterations</p>
+</li><li>
+<p>GSL::Monte::Vegas::Params#iterations=</p>
+
+<p>The number of iterations to perform for each call to the routine. The
+default value is 5 iterations.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas::Params#stage</p>
+</li><li>
+<p>GSL::Monte::Vegas::Params#stage=</p>
+
+<p>Setting this determines the stage of the calculation. Normally, stage = 0
+which begins with a new uniform grid and empty weighted average. Calling
+vegas with stage = 1 retains the grid from the previous run but discards
+the weighted average, so that one can “tune” the grid using a relatively
+small number of points and then do a large run with stage = 1 on the
+optimized grid. Setting stage = 2 keeps the grid and the weighted average
+from the previous run, but may increase (or decrease) the number of
+histogram bins in the grid depending on the number of calls available.
+Choosing stage = 3 enters at the main loop, so that nothing is changed, and
+is equivalent to performing additional iterations in a previous call.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas::Params#mode</p>
+</li><li>
+<p>GSL::Monte::Vegas::Params#mode=</p>
+
+<p>The possible choices are <code>GSL::VEGAS::MODE_IMPORTANCE</code>,
+<code>GSL::VEGAS::MODE_STRATIFIED</code>,
+<code>GSL::VEGAS::MODE_IMPORTANCE_ONLY</code>. This determines whether
+VEGAS will use importance sampling or stratified sampling, or whether it
+can pick on its own. In low dimensions VEGAS uses strict stratified
+sampling (more precisely, stratified sampling is chosen if there are fewer
+than 2 bins per box).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Monte::Vegas::Params#verbose</p>
+</li><li>
+<p>GSL::Monte::Vegas::Params#verbose=</p>
+
+<p>Set the level of information printed by VEGAS. All information is written
+to the stream ostream. The default setting of verbose is -1, which turns
+off all output. A verbose value of 0 prints summary information about the
+weighted average and final result, while a value of 1 also displays the
+grid coordinates. A value of 2 prints information from the rebinning
+procedure for each iteration.</p>
+</li></ul>
+
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Monte</span>
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Math</span>
+
+<span class="ruby-identifier">proc_f</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">pi</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span>(<span class="ruby-identifier">pi</span><span class="ruby-operator">*</span><span class="ruby-identifier">pi</span><span class="ruby-operator">*</span><span class="ruby-identifier">pi</span>)
+  <span class="ruby-identifier">a</span><span class="ruby-operator">/</span>(<span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">cos</span>(<span class="ruby-identifier">k</span>[<span class="ruby-value">0</span>])<span class="ruby-operator">*</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">k</span>[<span class="ruby-value">1</span>])<span class="ruby-operator">*</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">k</span>[<span class="ruby-value">2</span>]))
+}
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_results</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>)
+  <span class="ruby-identifier">exact</span> = <span class="ruby-value">1.3932039296856768591842462603255</span>
+
+  <span class="ruby-identifier">diff</span> = <span class="ruby-identifier">result</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">exact</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%s ==================\n&quot;</span>, <span class="ruby-identifier">title</span>);
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;result = % .6f\n&quot;</span>, <span class="ruby-identifier">result</span>);
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;sigma  = % .6f\n&quot;</span>, <span class="ruby-identifier">error</span>);
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;exact  = % .6f\n&quot;</span>, <span class="ruby-identifier">exact</span>);
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;error  = % .6f = %.1g sigma\n&quot;</span>, <span class="ruby-identifier">diff</span>, <span class="ruby-identifier">diff</span>.<span class="ruby-identifier">abs</span><span class="ruby-operator">/</span><span class="ruby-identifier">error</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">dim</span> = <span class="ruby-value">3</span>
+<span class="ruby-identifier">xl</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+<span class="ruby-identifier">xu</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">PI</span>, <span class="ruby-constant">PI</span>, <span class="ruby-constant">PI</span>)
+<span class="ruby-constant">G</span> = <span class="ruby-constant">Monte</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">proc_f</span>, <span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">calls</span> = <span class="ruby-value">500000</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT</span>)
+
+<span class="ruby-identifier">plain</span> = <span class="ruby-constant">Monte</span><span class="ruby-operator">::</span><span class="ruby-constant">Plain</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span> = <span class="ruby-constant">G</span>.<span class="ruby-identifier">integrate</span>(<span class="ruby-identifier">xl</span>, <span class="ruby-identifier">xu</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-identifier">calls</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">plain</span>)
+<span class="ruby-identifier">display_results</span>(<span class="ruby-string">&quot;plain&quot;</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>)
+
+<span class="ruby-identifier">miser</span> = <span class="ruby-constant">Monte</span><span class="ruby-operator">::</span><span class="ruby-constant">Miser</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span> = <span class="ruby-constant">G</span>.<span class="ruby-identifier">integrate</span>(<span class="ruby-identifier">xl</span>, <span class="ruby-identifier">xu</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-identifier">calls</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">miser</span>)
+<span class="ruby-identifier">display_results</span>(<span class="ruby-string">&quot;miser&quot;</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>)
+
+<span class="ruby-identifier">vegas</span> = <span class="ruby-constant">Monte</span><span class="ruby-operator">::</span><span class="ruby-constant">Vegas</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span> = <span class="ruby-constant">G</span>.<span class="ruby-identifier">integrate</span>(<span class="ruby-identifier">xl</span>, <span class="ruby-identifier">xu</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-value">10000</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">vegas</span>)
+<span class="ruby-identifier">display_results</span>(<span class="ruby-string">&quot;vegas warm-up&quot;</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>)
+<span class="ruby-identifier">puts</span>(<span class="ruby-string">&quot;converging...&quot;</span>);
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span> = <span class="ruby-constant">G</span>.<span class="ruby-identifier">integrate</span>(<span class="ruby-identifier">xl</span>, <span class="ruby-identifier">xu</span>, <span class="ruby-identifier">dim</span>, <span class="ruby-identifier">calls</span><span class="ruby-operator">/</span><span class="ruby-value">5</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">vegas</span>)
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;result = % .6f sigma = % .6f chisq/dof = %.1f\n&quot;</span>,
+          <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>, <span class="ruby-identifier">vegas</span>.<span class="ruby-identifier">chisq</span>)
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> (<span class="ruby-identifier">vegas</span>.<span class="ruby-identifier">chisq</span><span class="ruby-operator">-</span><span class="ruby-value">1.0</span>).<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.5</span>
+<span class="ruby-identifier">display_results</span>(<span class="ruby-string">&quot;vegas final&quot;</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>)
+</pre>
+
+<p><a href="ntuple_rdoc.html">prev</a> <a href="siman_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

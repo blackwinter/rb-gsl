@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>linalg - Ruby/GSL (v1.16.0.2)</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Linear+Algebra">Linear Algebra</a>
+    <li><a href="#label-LU+Decomposition">LU Decomposition</a>
+    <li><a href="#label-Complex+LU+decomposition"><a href="linalg_complex_rdoc.html">Complex LU decomposition</a></a>
+    <li><a href="#label-QR+decomposition">QR decomposition</a>
+    <li><a href="#label-QR+Decomposition+with+Column+Pivoting">QR Decomposition with Column Pivoting</a>
+    <li><a href="#label-Singular+Value+Decomposition">Singular Value Decomposition</a>
+    <li><a href="#label-Cholesky+Decomposition">Cholesky Decomposition</a>
+    <li><a href="#label-Complex+Cholesky+decomposition"><a href="cholesky_complex_rdoc.html">Complex Cholesky decomposition</a></a>
+    <li><a href="#label-Tridiagonal+Decomposition+of+Real+Symmetric+Matrices">Tridiagonal Decomposition of Real Symmetric Matrices</a>
+    <li><a href="#label-Tridiagonal+Decomposition+of+Hermitian+Matrices">Tridiagonal Decomposition of Hermitian Matrices</a>
+    <li><a href="#label-Hessenberg+Decomposition+of+Real+Matrices">Hessenberg Decomposition of Real Matrices</a>
+    <li><a href="#label-Hessenberg-Triangular+Decomposition+of+Real+Matrices">Hessenberg-Triangular Decomposition of Real Matrices</a>
+    <li><a href="#label-Bidiagonalization">Bidiagonalization</a>
+    <li><a href="#label-Householder+Transformations">Householder Transformations</a>
+    <li><a href="#label-Householder+solver+for+linear+systems">Householder solver for linear systems</a>
+    <li><a href="#label-Tridiagonal+Systems">Tridiagonal Systems</a>
+    <li><a href="#label-Balancing">Balancing</a>
+    <li><a href="#label-NArray">NArray</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./alf_rdoc.html">alf</a>
+  
+    <li><a href="./blas_rdoc.html">blas</a>
+  
+    <li><a href="./bspline_rdoc.html">bspline</a>
+  
+    <li><a href="./changes_rdoc.html">changes</a>
+  
+    <li><a href="./cheb_rdoc.html">cheb</a>
+  
+    <li><a href="./cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="./combi_rdoc.html">combi</a>
+  
+    <li><a href="./complex_rdoc.html">complex</a>
+  
+    <li><a href="./const_rdoc.html">const</a>
+  
+    <li><a href="./dht_rdoc.html">dht</a>
+  
+    <li><a href="./diff_rdoc.html">diff</a>
+  
+    <li><a href="./ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="./eigen_rdoc.html">eigen</a>
+  
+    <li><a href="./fft_rdoc.html">fft</a>
+  
+    <li><a href="./fit_rdoc.html">fit</a>
+  
+    <li><a href="./function_rdoc.html">function</a>
+  
+    <li><a href="./graph_rdoc.html">graph</a>
+  
+    <li><a href="./hist_rdoc.html">hist</a>
+  
+    <li><a href="./hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="./hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="./index_rdoc.html">index</a>
+  
+    <li><a href="./integration_rdoc.html">integration</a>
+  
+    <li><a href="./interp_rdoc.html">interp</a>
+  
+    <li><a href="./intro_rdoc.html">intro</a>
+  
+    <li><a href="./linalg_rdoc.html">linalg</a>
+  
+    <li><a href="./linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="./math_rdoc.html">math</a>
+  
+    <li><a href="./matrix_rdoc.html">matrix</a>
+  
+    <li><a href="./min_rdoc.html">min</a>
+  
+    <li><a href="./monte_rdoc.html">monte</a>
+  
+    <li><a href="./multimin_rdoc.html">multimin</a>
+  
+    <li><a href="./multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="./narray_rdoc.html">narray</a>
+  
+    <li><a href="./ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="./nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="./ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="./odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="./perm_rdoc.html">perm</a>
+  
+    <li><a href="./poly_rdoc.html">poly</a>
+  
+    <li><a href="./qrng_rdoc.html">qrng</a>
+  
+    <li><a href="./randist_rdoc.html">randist</a>
+  
+    <li><a href="./ref_rdoc.html">ref</a>
+  
+    <li><a href="./rng_rdoc.html">rng</a>
+  
+    <li><a href="./roots_rdoc.html">roots</a>
+  
+    <li><a href="./sf_rdoc.html">sf</a>
+  
+    <li><a href="./siman_rdoc.html">siman</a>
+  
+    <li><a href="./sort_rdoc.html">sort</a>
+  
+    <li><a href="./start_rdoc.html">start</a>
+  
+    <li><a href="./stats_rdoc.html">stats</a>
+  
+    <li><a href="./sum_rdoc.html">sum</a>
+  
+    <li><a href="./tensor_rdoc.html">tensor</a>
+  
+    <li><a href="./tut_rdoc.html">tut</a>
+  
+    <li><a href="./use_rdoc.html">use</a>
+  
+    <li><a href="./vector_rdoc.html">vector</a>
+  
+    <li><a href="./vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="./wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page linalg.rdoc">
+
+<h1 id="label-Linear+Algebra">Linear Algebra<span><a href="#label-Linear+Algebra">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="linalg_rdoc.html#label-LU+Decomposition">LU Decomposition</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-QR+decomposition">QR Decomposition</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-QR+Decomposition+with+Column+Pivoting">QR
+Decomposition with Column Pivoting</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Singular+Value+Decomposition">Singular
+Value Decomposition</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Cholesky+Decomposition">Cholesky
+Decomposition</a></p>
+</li><li>
+<p><a
+href="linalg_rdoc.html#label-Tridiagonal+Decomposition+of+Real+Symmetric+Matrices">Tridiagonal
+Decomposition of Real Symmetric Matrices</a></p>
+</li><li>
+<p><a
+href="linalg_rdoc.html#label-Tridiagonal+Decomposition+of+Hermitian+Matrices">Tridiagonal
+Decomposition of Hermitian Matrices</a></p>
+</li><li>
+<p><a
+href="linalg_rdoc.html#label-Hessenberg+Decomposition+of+Real+Matrices">Hessenberg
+Decomposition of Real Matrices</a></p>
+</li><li>
+<p><a
+href="linalg_rdoc.html#label-Hessenberg-Triangular+Decomposition+of+Real+Matrices">Hessenberg-Triangular
+Decomposition of Real Matrices</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Bidiagonalization">Bidiagonalization</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Householder+Transformations">Householder
+Transformations</a></p>
+</li><li>
+<p><a
+href="linalg_rdoc.html#label-Householder+solver+for+linear+systems">Householder
+solver for linear systems</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Tridiagonal+Systems">Tridiagonal
+Systems</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-Balancing">Balancing</a></p>
+</li><li>
+<p><a href="linalg_rdoc.html#label-NArray">NArray</a></p>
+</li></ol>
+
+<h2 id="label-LU+Decomposition">LU Decomposition<span><a href="#label-LU+Decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.decomp(A)</p>
+</li><li>
+<p>GSL::Matrix#LU_decomp</p>
+
+<p>These method calculate the LU decomposition of the matrix. The returned
+value is an array of <code>[LU, perm, sign]</code>.</p>
+
+<p>Examples:</p>
+</li></ul>
+<ol><li>
+<p>Singleton method of the <code>GSL::Linalg::LU</code> module</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
+  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
+  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">lu</span>, <span class="ruby-identifier">perm</span>, <span class="ruby-identifier">sign</span> = <span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">LU</span>.<span class="ruby-identifier">decomp</span>(<span class="ruby-identifier">m</span>)
+</pre>
+</li><li>
+<p>Instance method of <code>GSL::Matrix</code> class</p>
+
+<pre>&gt;&gt; lu, perm, sign = m.LU_decomp</pre>
+</li></ol>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::LU.solve(lu, perm, b)</p>
+</li><li>
+<p>GSL::Matrix#LU_solve(b)</p>
+</li><li>
+<p>GSL::Linalg::LUMatrix#solve(perm, b)</p>
+
+<p>The following is an example to solve a linear system</p>
+
+<pre>A x = b, b = [1, 2, 3, 4]</pre>
+
+<p>using LU decomposition.</p>
+</li></ul>
+<ol><li>
+<p>Singleton method of the <code>GSL::Linalg::LU</code> module</p>
+
+<pre>A = Matrix[[0.18, 0.60, 0.57, 0.96], [0.41, 0.24, 0.99, 0.58],
+           [0.14, 0.30, 0.97, 0.66], [0.51, 0.13, 0.19, 0.85]]
+lu, perm, sign = A.LU_decomp
+b = Vector[1, 2, 3, 4]
+x = Linalg::LU.solve(lu, perm, b)</pre>
+</li><li>
+<p>Instance method of <code>GSL::Linalg::LUMatrix</code> class</p>
+
+<pre>lu, perm, sign = A.LU_decomp  # lu is an instance of Linalg::LUMatrix class
+b = Vector[1, 2, 3, 4]
+x = lu.solve(perm, b)</pre>
+</li><li>
+<p>Solve directly</p>
+
+<pre>x = Linalg::LU.solve(A, b)  # LU decomposition is calculated internally (A is not modified)</pre>
+</li></ol>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.svx(A, b)</p>
+</li><li>
+<p>GSL::Linalg::LU.svx(lu, perm, b)</p>
+</li><li>
+<p>GSL::Matrix#svx(b)</p>
+</li><li>
+<p>GSL::Linalg::LUMatrix#svx(perm, b)</p>
+
+<p>These solve the system Ax = b. The input vector <code>b</code> is
+overwitten by the solution <code>x</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.refine(A, lu, perm, b, x)</p>
+
+<p>This method applys an iterative improvement to <code>x</code>, the solution
+of <code>A x = b</code>, using the LU decomposition of <code>A</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.invert(A)</p>
+</li><li>
+<p>GSL::Linalg::LU.invert(lu, perm)</p>
+</li><li>
+<p>GSL::Matrix#invert</p>
+</li><li>
+<p>GSL::Linalg::LUMatrix#invert(perm)</p>
+
+<p>These computes and returns the inverse of the matrix.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.det(A)</p>
+</li><li>
+<p>GSL::Linalg::LU.det(lu, signum)</p>
+</li><li>
+<p>GSL::Matrix#det</p>
+</li><li>
+<p>GSL::Linalg::LUMatrix#det(signum)</p>
+
+<p>These methods return the determinant of the matrix.</p>
+</li></ul>
+
+<h3 id="label-Complex+LU+decomposition"><a href="linalg_complex_rdoc.html">Complex LU decomposition</a><span><a href="#label-Complex+LU+decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<h2 id="label-QR+decomposition">QR decomposition<span><a href="#label-QR+decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QR_decomp(A)</p>
+</li><li>
+<p>GSL::Linalg::QR.decomp(A)</p>
+</li><li>
+<p>GSL::Matrix#QR_decomp</p>
+
+<p>These compute QR decomposition of the matrix and return an array [QR, tau].</p>
+</li></ul>
+<ol><li>
+<p>Singleton method of the module <code>GSL::Linalg</code></p>
+
+<pre class="ruby"><span class="ruby-identifier">qr</span>, <span class="ruby-identifier">tau</span> = <span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">QR_decomp</span>(<span class="ruby-identifier">m</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">qr</span>.<span class="ruby-identifier">class</span>                 <span class="ruby-comment"># GSL::Linalg::QRMatrix, subclass of GSL::Matrix</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">tau</span>.<span class="ruby-identifier">class</span>                <span class="ruby-comment"># GSL::Linalg::TauVector, subclass of GSL::Vector</span>
+</pre>
+</li><li>
+<p>Singleton method of the module <code>GSL::Linalg:QR</code></p>
+
+<pre>qr, tau = Linalg::QR.decomp(m)</pre>
+</li><li>
+<p>Instance method of <code>GSL::Matrix</code></p>
+
+<pre>qr, tau = m.QR_decomp</pre>
+</li></ol>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QR.solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::QR.solve(QR, tau, b)</p>
+</li><li>
+<p>GSL::Matrix#QR_solve(b)</p>
+</li><li>
+<p>GSL::Linalg::QRMatrix#solve(tau, b)</p>
+
+<p>Solve the system A x = b using the QR decomposition.</p>
+<ul><li>
+<p>Ex1:</p>
+
+<pre>m = Matrix.alloc(...)
+b = Vector.alloc(...)
+x = Linalg::QR.solve(m, b)</pre>
+</li><li>
+<p>Ex2:</p>
+
+<pre>x = m.QR_solve(b)</pre>
+</li><li>
+<p>Ex3:</p>
+
+<pre>qr, tau = Linalg::QR.decomp(m)   # or m.QR_decomp
+x = Linalg::QR.solve(qr, tau, b)</pre>
+</li><li>
+<p>Ex4:</p>
+
+<pre>qr, tau = m.QR_decomp
+x = qr.solve(tau, b)</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QR.svx(A, x)</p>
+</li><li>
+<p>GSL::Linalg::QR.svx(QR, tau, x)</p>
+</li><li>
+<p>GSL::Matrix#QR_svx(x)</p>
+</li><li>
+<p>GSL::Linalg::QRMatrix#svx(tau, x)</p>
+
+<p>Solve the system A x = b. The input vector <code>x</code> is first give by
+the right-hand side vector <code>b</code>, and is overwritten by the
+solution.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QR.unpack(QR, tau)</p>
+</li><li>
+<p>GSL::Linalg::QRMatrix#unpack(tau)</p>
+
+<p>Unpack the encoded QR decomposition <code>QR,tau</code> and return an array
+<code>[Q, R]</code>.</p>
+
+<p>Ex:</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
+  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
+  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">qr</span>, <span class="ruby-identifier">tau</span> = <span class="ruby-identifier">m</span>.<span class="ruby-constant">QR_decomp</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">q</span>, <span class="ruby-identifier">r</span> = <span class="ruby-identifier">qr</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-identifier">tau</span>)
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">q</span><span class="ruby-operator">*</span><span class="ruby-identifier">r</span>               <span class="ruby-comment"># Reconstruct the metrix m</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
+  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
+  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QR.QRsolve(Q, R, tau)</p>
+
+<p>This method solves the system <code>R x = Q^T b</code> for <code>x</code>.
+It can be used when the QR decomposition of a matrix is available in
+unpacked form as <code>Q,R</code>.</p>
+</li></ul>
+
+<h2 id="label-QR+Decomposition+with+Column+Pivoting">QR Decomposition with Column Pivoting<span><a href="#label-QR+Decomposition+with+Column+Pivoting">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.decomp(A)</p>
+</li><li>
+<p>GSL::Matrix#QRPT_decomp</p>
+
+<p>These methods factorize the M-by-N matrix <code>A</code> into the QRP^T
+decomposition A = Q R P^T, and return an array <code>[QR, tau, perm,
+signum]</code>.</p>
+<ul><li>
+<p>Ex1:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Linalg</span>
+<span class="ruby-identifier">m</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-operator">...</span>)
+<span class="ruby-identifier">qr</span>, <span class="ruby-identifier">tau</span>, <span class="ruby-identifier">perm</span> = <span class="ruby-constant">QRPT</span>.<span class="ruby-identifier">decomp</span>(<span class="ruby-identifier">m</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">qr</span>.<span class="ruby-identifier">class</span>                 <span class="ruby-comment"># GSL::Linalg::QRPTMatrix, subclass of GSL::Matrix</span>
+</pre>
+</li><li>
+<p>Ex2:</p>
+
+<pre>qr, tau, perm = m.QROT_decomp</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.decomp2(A)</p>
+</li><li>
+<p>GSL::Matrix#QRPT_decomp2</p>
+
+<p>These return an array <code>[Q, R, tau, perm, signum]</code>.</p>
+<ul><li>
+<p>Ex</p>
+
+<pre class="ruby"><span class="ruby-identifier">q</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">tau</span>, <span class="ruby-identifier">perm</span> = <span class="ruby-constant">QRPT</span>.<span class="ruby-identifier">decomp2</span>(<span class="ruby-identifier">m</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">class</span>                  <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">QMatrix</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">class</span>                  <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">RMatrix</span>
+</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.solve(m, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPT.solve(qr, tau, perm, b)</p>
+</li><li>
+<p>GSL::Matrix#QRPT_solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPQMatrix#solve(qr, tau, perm, b)</p>
+
+<p>These methods solve the system <code>A x = b</code> using the QRP^T
+decomposition of <code>A</code> into <code>QR, tau, perm</code>. The
+solution <code>x</code> is returned as a Vector.</p>
+<ul><li>
+<p>Ex1:</p>
+
+<pre>m = Matrix.alloc(...)
+qr, tau, perm = m.QRPT_decomp
+b = Vector.alloc([1, 2, 3, 4])
+x = Linalg::QRPT.solve(qr, tau, perm, b)</pre>
+</li><li>
+<p>Ex2:</p>
+
+<pre>x = Linalg::QRPT.solve(m, b)</pre>
+</li><li>
+<p>Ex3:</p>
+
+<pre>x = qr.solve(tau, p, b)</pre>
+</li><li>
+<p>Ex4:</p>
+
+<pre>x = m.QRPT_solve(b)</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.svx(m, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPT.svx(qr, tau, perm, b)</p>
+</li><li>
+<p>GSL::Matrix#QRPT_svx(A, b)</p>
+
+<p>These methods solve the system <code>A x = b</code> using the QRP^T
+decomposition of <code>A</code> into <code>QR, tau, perm</code>. The input
+<code>b</code> is overwritten by the solution <code>x</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.QRsolve(q, r, tau, perm, b)</p>
+
+<p>This method solves the system <code>R P^T x = Q^T b</code> for x. It can be
+used when the QR decomposition of a matrix is available in unpacked form as
+<code>q, r</code> obtained by the method <code>decomp2</code>.</p>
+<ul><li>
+<p>Ex:</p>
+
+<pre>q, r, tau, perm = QRPT_decomp2
+x = Linalg::QRPT.QRsolve(q, r, perm, b)</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::QRPT.update(q, r, perm, u, v)</p>
+</li><li>
+<p>GSL::Linalg::QRPT.Rsolve(qr, perm, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPTMatrix#Rsolve(perm, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPT.Rsvx(qr, perm, b)</p>
+</li><li>
+<p>GSL::Linalg::QRPTMatrix#Rsvx(perm, b)</p>
+</li></ul>
+
+<h2 id="label-Singular+Value+Decomposition">Singular Value Decomposition<span><a href="#label-Singular+Value+Decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::SV.decomp(A[, work])</p>
+</li><li>
+<p>GSL::Matrix#SV_decomp([work])</p>
+
+<p>These methods factorize the M-by-N matrix <code>A</code> into the singular
+value decomposition <code>A = U S V^T</code> using  the Golub-Reinsch SVD
+algorithm, and return an array <code>[U, V, S]</code>.</p>
+
+<p>Ex:</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">Matrix</span>[[<span class="ruby-value">3</span>, <span class="ruby-value">5</span>, <span class="ruby-value">2</span>], [<span class="ruby-value">5</span>, <span class="ruby-value">1</span>, <span class="ruby-value">4</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">6</span>, <span class="ruby-value">3</span>]]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">3.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">2.000e+00</span>
+  <span class="ruby-value">5.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">4.000e+00</span>
+  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">3.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">s</span> = <span class="ruby-identifier">m</span>.<span class="ruby-constant">SV_decomp</span>  <span class="ruby-comment"># u, v: Matrix, s: Vector (singular values)</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">u</span><span class="ruby-operator">*</span><span class="ruby-identifier">u</span>.<span class="ruby-identifier">trans</span>              <span class="ruby-comment"># u is orthnormal</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">2.452e-17</span> <span class="ruby-operator">-</span><span class="ruby-value">4.083e-16</span>
+   <span class="ruby-value">2.452e-17</span>  <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">3.245e-16</span>
+  <span class="ruby-value">-4.083e-16</span> <span class="ruby-operator">-</span><span class="ruby-value">3.245e-16</span>  <span class="ruby-value">1.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span><span class="ruby-operator">*</span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">trans</span>              <span class="ruby-comment"># v is also orthnormal</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">3.555e-17</span> <span class="ruby-operator">-</span><span class="ruby-value">1.867e-16</span>
+   <span class="ruby-value">3.555e-17</span>  <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">1.403e-16</span>
+  <span class="ruby-value">-1.867e-16</span> <span class="ruby-operator">-</span><span class="ruby-value">1.403e-16</span>  <span class="ruby-value">1.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">u</span><span class="ruby-operator">*</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">diagonal</span>(<span class="ruby-identifier">s</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">trans</span> <span class="ruby-comment"># Reconstruct the matrix</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">:</span>
+[ <span class="ruby-value">3.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">2.000e+00</span>
+  <span class="ruby-value">5.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">4.000e+00</span>
+  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">3.000e+00</span> ]
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::SV.decomp_mod(A)</p>
+</li><li>
+<p>GSL::Matrix#SV_decomp_mod</p>
+
+<p>These compute the SVD using the modified Golub-Reinsch algorithm, which is
+faster for M&gt;&gt;N.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::SV.decomp_jacobi(A)</p>
+</li><li>
+<p>GSL::Matrix#SV_decomp_jacobi</p>
+
+<p>These compute the SVD using one-sided Jacobi orthogonalization. The Jacobi
+method can compute singular values to higher relative accuracy than
+Golub-Reinsch algorithms.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::SV.solve(A, b)</p>
+</li><li>
+<p>GSL::Linalg::SV.solve(U, V, S, b)</p>
+</li><li>
+<p>GSL::Matrix#SV_solve(b)</p>
+
+<p>These methods solve the system <code>A x = b</code> using the singular
+value decomposition <code>U, S, V</code> of <code>A</code>.</p>
+<ul><li>
+<p>Ex1:</p>
+
+<pre>m = Matrix.alloc(...)
+b = Vector.alloc(...)
+u, v, s = GSL::Linalg::SV.decomp(m)
+x = GSL::Linalg::SV.solve(u, v, s, b)</pre>
+</li><li>
+<p>Ex2:</p>
+
+<pre>x = GSL::Linalg::SV.solve(m, b)</pre>
+</li><li>
+<p>Ex3:</p>
+
+<pre>x = m.SV_solve(b)</pre>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Cholesky+Decomposition">Cholesky Decomposition<span><a href="#label-Cholesky+Decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>A symmetric, positive definite square matrix <code>A</code> has a Cholesky
+decomposition into a product of a lower triangular matrix L and its
+transpose L^T, as <code>A = L L^T</code>. This is sometimes referred to as
+taking the square-root of a matrix. The Cholesky decomposition can only be
+carried out when all the eigenvalues of the matrix are positive. This
+decomposition can be used to convert the linear system <code>A x = b</code>
+into a pair of triangular systems (<code>L y = b, L^T x = y</code>), which
+can be solved by forward and back-substitution.</p>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Cholesky.decomp(A)</p>
+
+<p>This method factorizes the positive-definite square matrix <code>A</code>
+into the Cholesky decomposition <code>A = L L^T</code>. The upper
+triangular part of the matrix returned contains L^T, the diagonal terms
+being identical for both L and L^T. If the matrix is not positive-definite
+then the decomposition will fail.</p>
+
+<p>Ex:</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">pascal</span>(<span class="ruby-value">3</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
+[  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">2.000e+00</span>  <span class="ruby-value">3.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">3.000e+00</span>  <span class="ruby-value">6.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">c</span> = <span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">Cholesky</span>.<span class="ruby-identifier">decomp</span>(<span class="ruby-identifier">m</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Linalg</span><span class="ruby-operator">::</span><span class="ruby-constant">Cholesky</span><span class="ruby-operator">::</span><span class="ruby-constant">CholeskyMatrix</span>
+[  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">2.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">2.000e+00</span>  <span class="ruby-value">1.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">l</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">lower</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
+[  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">0.000e+00</span>  <span class="ruby-value">0.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">0.000e+00</span>
+   <span class="ruby-value">1.000e+00</span>  <span class="ruby-value">2.000e+00</span>  <span class="ruby-value">1.000e+00</span> ]
+<span class="ruby-operator">&gt;&gt;</span> (<span class="ruby-identifier">l</span><span class="ruby-operator">*</span><span class="ruby-identifier">l</span>.<span class="ruby-identifier">trans</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">m</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Cholesky.solve(cholesky, b)</p>
+</li><li>
+<p>GSL::Linalg::Cholesky.svx(cholesky, x)</p>
+
+<p>These methods solve the system <code>A x = b</code> using the Cholesky
+decomposition of <code>A</code> into the matrix <code>cholesky</code> given
+by <code>GSL::Linalg::Cholesky.decomp</code>.</p>
+</li></ul>
+
+<h3 id="label-Complex+Cholesky+decomposition"><a href="cholesky_complex_rdoc.html">Complex Cholesky decomposition</a><span><a href="#label-Complex+Cholesky+decomposition">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<h2 id="label-Tridiagonal+Decomposition+of+Real+Symmetric+Matrices">Tridiagonal Decomposition of Real Symmetric Matrices<span><a href="#label-Tridiagonal+Decomposition+of+Real+Symmetric+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Symmtd::decomp(A)</p>
+
+<p>Factorizes the symmetric square matrix <code>A</code> into the symmetric
+tridiagonal decomposition Q T Q^T, and returns the results <code>(A&#39;,
+tau)</code>. On output the diagonal and subdiagonal part of the matrix
+<code>A&#39;</code>  contain the tridiagonal matrix <code>T</code>. The
+remaining lower triangular part of the matrix <code>A&#39;</code> contains
+the Householder vectors which, together with the Householder coefficients
+<code>tau</code>, encode the orthogonal matrix <code>Q</code>. This storage
+scheme is the same as used by LAPACK. The upper triangular part of
+<code>A</code> is not referenced.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Symmtd::unpack(A&#39;, tau)</p>
+
+<p>Unpacks the encoded symmetric tridiagonal decomposition <code>(A&#39;,
+tau)</code> obtained from <code>GSL::Linalg::Symmtd::decomp</code> into the
+orthogonal matrix <code>Q</code>, the vector of diagonal elements
+<code>diag</code> and the vector of subdiagonal elements
+<code>subdiag</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Symmtd::unpack_T(A&#39;, tau)</p>
+
+<p>Unpacks the diagonal and subdiagonal of the encoded symmetric tridiagonal
+decomposition <code>(A&#39;, tau)</code> obtained from
+<code>GSL::Linalg::Symmtd::decomp</code> into the vectors <code>diag</code>
+and <code>subdiag</code>.</p>
+</li></ul>
+
+<h2 id="label-Tridiagonal+Decomposition+of+Hermitian+Matrices">Tridiagonal Decomposition of Hermitian Matrices<span><a href="#label-Tridiagonal+Decomposition+of+Hermitian+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hermtd::decomp(A)</p>
+
+<p>Factorizes the hermitian matrix <code>A</code> into the symmetric
+tridiagonal decomposition U T U^T, and returns the result as <code>(A&#39;,
+tau)</code>. On output the real parts of the diagonal and subdiagonal part
+of the matrix <code>A&#39;</code> contain the tridiagonal matrix
+<code>T</code>. The remaining lower triangular part of the matrix
+<code>A&#39;</code> contains the Householder vectors which, together with
+the Householder coefficients <code>tau</code>, encode the orthogonal matrix
+<code>Q</code>. This storage scheme is the same as used by LAPACK. The
+upper triangular part of <code>A</code> and imaginary parts of the diagonal
+are not referenced.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hermtd::unpack(A&#39;, tau)</p>
+
+<p>Unpacks the encoded tridiagonal decomposition <code>(A&#39;, tau)</code>
+obtained from <code>GSL::Linalg::Hermtd::decomp</code> into the unitary
+matrix <code>U</code>, the real vector of diagonal elements
+<code>diag</code> and the real vector of subdiagonal elements
+<code>subdiag</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hermtd::unpack_T(A&#39;, tau)</p>
+
+<p>Unpacks the diagonal and subdiagonal of the encoded tridiagonal
+decomposition <code>(A, tau)</code> obtained from the
+<code>GSL::Linalg::Hermtd::decomp</code> into the real vectors
+<code>diag</code> and <code>subdiag</code>.</p>
+</li></ul>
+
+<h2 id="label-Hessenberg+Decomposition+of+Real+Matrices">Hessenberg Decomposition of Real Matrices<span><a href="#label-Hessenberg+Decomposition+of+Real+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hessenberg::decomp(A)</p>
+</li><li>
+<p>GSL::Linalg::hessenberg_decomp(A)</p>
+
+<p>Computes the Hessenberg decomposition of the matrix <code>A</code> by
+applying the similarity transformation <code>H = U^T A U</code>, and
+returns the result as <code>(A&#39;, tau</code>. On output, <code>H</code>
+is stored in the upper portion of <code>A&#39;</code>. The information
+required to construct the matrix <code>U</code> is stored in the lower
+triangular portion of <code>A&#39;</code>. <code>U</code> is a product of N
+- 2 Householder matrices. The Householder vectors are stored in the lower
+portion of <code>A&#39;</code> (below the subdiagonal) and the Householder
+coefficients are stored in the vector <code>tau</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hessenberg::unpack(A&#39;, tau)</p>
+</li><li>
+<p>GSL::Linalg::hessenberg_unpack(A&#39;, tau)</p>
+
+<p>Constructs the orthogonal matrix <code>U</code> and returns it from the
+information stored  in the Hessenberg matrix <code>A&#39;</code> along with
+the vector <code>tau</code>. <code>A&#39;</code> and <code>tau</code> are
+outputs from <code>GSL::Linalg::Hessenberg::decomp</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hessenberg::unpack_accum(A&#39;, tau, V = I)</p>
+</li><li>
+<p>GSL::Linalg::hessenberg_unpack_accum(A&#39;, tau, V = I)</p>
+
+<p>This method is similar to <code>GSL::Linalg::Hessenberg::unpack</code>,
+except it accumulates the matrix <code>U</code> into <code>V</code>, so
+that <code>V&#39; = VU</code>, and returns <code>V</code>. Setting V to the
+identity matrix provides the same result
+<code>GSL::Linalg::Hessenberg::unpack</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Hessenberg::set_zero(A&#39;)</p>
+</li><li>
+<p>GSL::Linalg::hessenberg_set_zero(A&#39;)</p>
+
+<p>Sets the lower triangular portion of <code>A&#39;</code>, below the
+subdiagonal, to zero. It is useful for clearing out the Householder vectors
+after calling <code>GSL::Linalg::Hessenberg::decomp</code>.</p>
+</li></ul>
+
+<h2 id="label-Hessenberg-Triangular+Decomposition+of+Real+Matrices">Hessenberg-Triangular Decomposition of Real Matrices<span><a href="#label-Hessenberg-Triangular+Decomposition+of+Real+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::hesstri_decomp(A, B)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp(A, B, work)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp(A, B, U, V)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp(A, B, U, V, work)</p>
+
+<p>Compute the Hessenberg-Triangular decomposition of the matrix pair
+<code>(A, B)</code>, and return <code>(H, R</code>. If U and V are provided
+(they may be null), the similarity transformations are stored in them.
+<code>work</code> is an additional workspace of length <code>N</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::hesstri_decomp!(A, B)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp!(A, B, work)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp!(A, B, U, V)</p>
+</li><li>
+<p>GSL::Linalg::hesstri_decomp!(A, B, U, V, work)</p>
+
+<p>Compute the Hessenberg-Triangular decomposition of the matrix pair
+<code>(A, B)</code>. On output, <code>H</code> is stored in <code>A</code>,
+and <code>R</code> is stored in <code>B</code>. If U and V are provided
+(they may be null), the similarity transformations are stored in them.
+<code>work</code> is an additional workspace of length <code>N</code>.</p>
+</li></ul>
+
+<h2 id="label-Bidiagonalization">Bidiagonalization<span><a href="#label-Bidiagonalization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Bidiag::decomp!(A)</p>
+</li><li>
+<p>GSL::Linalg::bidiag_decomp!(A)</p>
+</li><li>
+<p>GSL::Linalg::Bidiag::decomp(A)</p>
+</li><li>
+<p>GSL::Linalg::bidiag_decomp(A)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Bidiag::unpack</p>
+</li><li>
+<p>GSL::Linalg::bidiag_unpack</p>
+</li><li>
+<p>GSL::Linalg::Bidiag::unpack2</p>
+</li><li>
+<p>GSL::Linalg::bidiag_unpack2</p>
+</li><li>
+<p>GSL::Linalg::Bidiag::unpack_B</p>
+</li><li>
+<p>GSL::Linalg::bidiag_unpack_B</p>
+</li></ul>
+
+<h2 id="label-Householder+Transformations">Householder Transformations<span><a href="#label-Householder+Transformations">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Householder::transform(v)</p>
+</li><li>
+<p>GSL::Linalg::HH::transform(v)</p>
+</li><li>
+<p>GSL::Vector#householder_transform</p>
+
+<p>These methods prepare a Householder transformation P = I - tau v v^T which
+can be used to zero all the elements of the input vector except the first.
+On output the transformation is stored in the vector <code>v</code> and the
+scalar tau is returned.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Householder::hm(tau, v, A)</p>
+</li><li>
+<p>GSL::Linalg::HH::hm(tau, v, A)</p>
+
+<p>These methods apply the Householder matrix P defined by the scalar
+<code>tau</code> and the vector <code>v</code> to the left-hand side of the
+matrix <code>A</code>. On output the result P A is stored in
+<code>A</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Householder::mh(tau, v, A)</p>
+</li><li>
+<p>GSL::Linalg::HH::mh(tau, v, A)</p>
+
+<p>These methods apply the Householder matrix P defined by the scalar
+<code>tau</code> and the vector <code>v</code> to the right-hand side of
+the matrix <code>A</code>. On output the result A P is stored in
+<code>A</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::Householder::hv(tau, v, w)</p>
+</li><li>
+<p>GSL::Linalg::HH::hv(tau, v, w)</p>
+
+<p>These methods apply the Householder transformation P defined by the scalar
+<code>tau</code> and the vector <code>v</code> to the vector
+<code>w</code>. On output the result P w is stored in <code>w</code>.</p>
+</li></ul>
+
+<h2 id="label-Householder+solver+for+linear+systems">Householder solver for linear systems<span><a href="#label-Householder+solver+for+linear+systems">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linalg::HH.solve(A, b)</p>
+</li><li>
+<p>GSL::Matrix#HH_solve(b)</p>
+
+<p>These methods solve the system <code>A x = b</code> directly using
+Householder transformations. The matrix <code>A</code> is not modified.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::HH.solve!(A, b)</p>
+</li><li>
+<p>GSL::Matrix#HH_solve!(b)</p>
+
+<p>These methods solve the system <code>A x = b</code> directly using
+Householder transformations. The matrix <code>A</code> is destroyed by the
+Householder transformations.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::HH.svx(A, b)</p>
+</li><li>
+<p>GSL::Matrix#HH_svx(b)</p>
+
+<p>These methods solve the system <code>A x = b</code> in-place directly using
+Householder transformations. The input vector <code>b</code> is replaced by
+the solution.</p>
+</li></ul>
+
+<h2 id="label-Tridiagonal+Systems">Tridiagonal Systems<span><a href="#label-Tridiagonal+Systems">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Linglg::solve_tridiag(diag, e, f, b)</p>
+</li><li>
+<p>GSL::Linglg::Tridiag::solve(diag, e, f, b)</p>
+
+<p>These methods solve the general N-by-N system A x = b where <code>A</code>
+is tridiagonal ( N &gt;= 2). The super-diagonal and sub-diagonal vectors
+<code>e</code> and <code>f</code> must be one element shorter than the
+diagonal vector <code>diag</code>. The form of <code>A</code> for the
+4-by-4 case is shown below,</p>
+
+<pre>A = ( d_0 e_0  0   0  )
+    ( f_0 d_1 e_1  0  )
+    (  0  f_1 d_2 e_2 )
+    (  0   0  f_2 d_3 )</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linglg::solve_symm_tridiag(diag, e, b)</p>
+</li><li>
+<p>GSL::Linglg::Tridiag::solve_symm(diag, e, b)</p>
+
+<p>These methods solve the general N-by-N system A x = b where <code>A</code>
+is symmetric tridiagonal ( N &gt;= 2). The off-diagonal vector
+<code>e</code> must be one element shorter than the diagonal vector
+<code>diag</code>. The form of <code>A</code> for the 4-by-4 case is shown
+below,</p>
+
+<pre>A = ( d_0 e_0  0   0  )
+    ( e_0 d_1 e_1  0  )
+    (  0  e_1 d_2 e_2 )
+    (  0   0  e_2 d_3 )</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linglg::solve_cyc_tridiag(diag, e, f, b)</p>
+</li><li>
+<p>GSL::Linglg::Tridiag::solve_cyc(diag, e, f, b)</p>
+
+<p>These methods solve the general N-by-N system A x = b where <code>A</code>
+is cyclic tridiagonal ( N &gt;= 3). The cyclic super-diagonal and
+sub-diagonal vectors <code>e</code> and <code>f</code> must have the same
+number of elements as the diagonal vector <code>diag</code>. The form of
+<code>A</code> for the 4-by-4 case is shown below,</p>
+
+<pre>A = ( d_0 e_0  0  f_3 )
+    ( f_0 d_1 e_1  0  )
+    (  0  f_1 d_2 e_2 )
+    ( e_3  0  f_2 d_3 )</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linglg::solve_symm_cyc_tridiag(diag, e, b)</p>
+</li><li>
+<p>GSL::Linglg::Tridiag::solve_symm_cyc(diag, e, b)</p>
+
+<p>These methods solve the general N-by-N system A x = b where <code>A</code>
+is symmetric cyclic tridiagonal ( N &gt;= 3). The cyclic off-diagonal
+vector <code>e</code> must have the same number of elements as the diagonal
+vector <code>diag</code>. The form of <code>A</code> for the 4-by-4 case is
+shown below,</p>
+
+<pre>A = ( d_0 e_0  0  e_3 )
+    ( e_0 d_1 e_1  0  )
+    (  0  e_1 d_2 e_2 )
+    ( e_3  0  e_2 d_3 )</pre>
+</li></ul>
+
+<h2 id="label-Balancing">Balancing<span><a href="#label-Balancing">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The process of balancing a matrix applies similarity transformations to
+make the rows and columns have comparable norms. This is useful, for
+example, to reduce roundoff errors in the solution of eigenvalue problems.
+Balancing a matrix <code>A</code> consists of replacing <code>A</code> with
+a similar matrix where <code>D</code> is a diagonal matrix whose entries
+are powers of the floating point radix.</p>
+<hr>
+<ul><li>
+<p>GSL::Linalg::balance(A)</p>
+</li><li>
+<p>GSL::Linalg::balance(A, D)</p>
+
+<p>Calculates the balanced counterpart of <code>A</code> and the diagonal
+elements of the similarity transformation. The result is returned as
+<code>(A&#39;, D)</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Linalg::balance!(A)</p>
+</li><li>
+<p>GSL::Linalg::balance!(A, D)</p>
+
+<p>Replaces the matrix <code>A</code> with its balanced counterpart and stores
+the diagonal elements of the similarity transformation into the vector
+<code>D</code>.</p>
+</li></ul>
+
+<h2 id="label-NArray">NArray<span><a href="#label-NArray">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The following Linalg methods can handle NArray objects:</p>
+<ul><li><dl class="rdoc-list note-list"><dt>GSL::Linalg
+<dd></dd></dl>
+<ul><li><dl class="rdoc-list note-list"><dt>LU
+<dd></dd></dl>
+<ul><li>
+<p>LU.decomp(m)</p>
+</li><li>
+<p>LU.solve(lu, b)</p>
+</li><li>
+<p>LU.svx(lu, bx)</p>
+</li><li>
+<p>LU.det(lu, sign)</p>
+</li><li>
+<p>LU.lndet(lu)</p>
+</li><li>
+<p>LU.invert(lu, perm)</p>
+</li></ul>
+</li><li><dl class="rdoc-list note-list"><dt>QR
+<dd></dd></dl>
+<ul><li>
+<p>QR.decomp(m)</p>
+</li><li>
+<p>QR.solve(qr, tau, b)</p>
+</li><li>
+<p>QR.svx(qr, tau, bx)</p>
+</li></ul>
+</li><li><dl class="rdoc-list note-list"><dt>SV
+<dd></dd></dl>
+<ul><li>
+<p>SV.decomp(m)</p>
+</li><li>
+<p>SV.solve(u, v, s, b)</p>
+</li><li>
+<p>SV.svx(u, v, s, bx)</p>
+</li></ul>
+</li><li><dl class="rdoc-list note-list"><dt>Cholesky
+<dd></dd></dl>
+<ul><li>
+<p>Cholesky.decomp(m)</p>
+</li><li>
+<p>Cholesky.solve(u, v, s, b)</p>
+</li><li>
+<p>Cholesky.svx(u, v, s, bx)</p>
+</li></ul>
+</li><li><dl class="rdoc-list note-list"><dt>HH
+<dd></dd></dl>
+<ul><li>
+<p>HH.solve(m, b)</p>
+</li><li>
+<p>HH.svx(m, bx)</p>
+</li></ul>
+</li></ul>
+</li></ul>
+
+<p><a href="blas_rdoc.html">prev</a> <a href="eigen_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

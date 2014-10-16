@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>blas - Ruby/GSL (v1.16.0.2)</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-BLAS+Support">BLAS Support</a>
+    <li><a href="#label-Level+1">Level 1</a>
+    <li><a href="#label-Level+2">Level 2</a>
+    <li><a href="#label-Level+3">Level 3</a>
+    <li><a href="#label-Constants">Constants</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./alf_rdoc.html">alf</a>
+  
+    <li><a href="./blas_rdoc.html">blas</a>
+  
+    <li><a href="./bspline_rdoc.html">bspline</a>
+  
+    <li><a href="./changes_rdoc.html">changes</a>
+  
+    <li><a href="./cheb_rdoc.html">cheb</a>
+  
+    <li><a href="./cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="./combi_rdoc.html">combi</a>
+  
+    <li><a href="./complex_rdoc.html">complex</a>
+  
+    <li><a href="./const_rdoc.html">const</a>
+  
+    <li><a href="./dht_rdoc.html">dht</a>
+  
+    <li><a href="./diff_rdoc.html">diff</a>
+  
+    <li><a href="./ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="./eigen_rdoc.html">eigen</a>
+  
+    <li><a href="./fft_rdoc.html">fft</a>
+  
+    <li><a href="./fit_rdoc.html">fit</a>
+  
+    <li><a href="./function_rdoc.html">function</a>
+  
+    <li><a href="./graph_rdoc.html">graph</a>
+  
+    <li><a href="./hist_rdoc.html">hist</a>
+  
+    <li><a href="./hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="./hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="./index_rdoc.html">index</a>
+  
+    <li><a href="./integration_rdoc.html">integration</a>
+  
+    <li><a href="./interp_rdoc.html">interp</a>
+  
+    <li><a href="./intro_rdoc.html">intro</a>
+  
+    <li><a href="./linalg_rdoc.html">linalg</a>
+  
+    <li><a href="./linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="./math_rdoc.html">math</a>
+  
+    <li><a href="./matrix_rdoc.html">matrix</a>
+  
+    <li><a href="./min_rdoc.html">min</a>
+  
+    <li><a href="./monte_rdoc.html">monte</a>
+  
+    <li><a href="./multimin_rdoc.html">multimin</a>
+  
+    <li><a href="./multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="./narray_rdoc.html">narray</a>
+  
+    <li><a href="./ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="./nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="./ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="./odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="./perm_rdoc.html">perm</a>
+  
+    <li><a href="./poly_rdoc.html">poly</a>
+  
+    <li><a href="./qrng_rdoc.html">qrng</a>
+  
+    <li><a href="./randist_rdoc.html">randist</a>
+  
+    <li><a href="./ref_rdoc.html">ref</a>
+  
+    <li><a href="./rng_rdoc.html">rng</a>
+  
+    <li><a href="./roots_rdoc.html">roots</a>
+  
+    <li><a href="./sf_rdoc.html">sf</a>
+  
+    <li><a href="./siman_rdoc.html">siman</a>
+  
+    <li><a href="./sort_rdoc.html">sort</a>
+  
+    <li><a href="./start_rdoc.html">start</a>
+  
+    <li><a href="./stats_rdoc.html">stats</a>
+  
+    <li><a href="./sum_rdoc.html">sum</a>
+  
+    <li><a href="./tensor_rdoc.html">tensor</a>
+  
+    <li><a href="./tut_rdoc.html">tut</a>
+  
+    <li><a href="./use_rdoc.html">use</a>
+  
+    <li><a href="./vector_rdoc.html">vector</a>
+  
+    <li><a href="./vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="./wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page blas.rdoc">
+
+<h1 id="label-BLAS+Support">BLAS Support<span><a href="#label-BLAS+Support">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The following is the list of the methods defined in <code>GSL::Blas</code>
+module. See <a
+href="https://gnu.org/software/gsl/manual/gsl-ref_12.html#SEC212">GSL
+reference</a> for details.</p>
+
+<h2 id="label-Level+1">Level 1<span><a href="#label-Level+1">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Blas::ddot(x, y)</p>
+</li><li>
+<p>GSL::Vector#blas_ddot(y)</p>
+</li><li>
+<p>GSL::Vector#ddot(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zdotu(x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zdotu(y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zdotu(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zdotc(x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zdotc(y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zdotc(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dnrm2(x)</p>
+</li><li>
+<p>GSL::Vector#blas_dnrm2</p>
+</li><li>
+<p>GSL::Vector#dnrm2</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dznrm2(x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_dznrm2</p>
+</li><li>
+<p>GSL::Vector::Complex#dznrm2</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dasum(x)</p>
+</li><li>
+<p>GSL::Vector#blas_dasum</p>
+</li><li>
+<p>GSL::Vector#dasum</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dzasum(x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_dzasum</p>
+</li><li>
+<p>GSL::Vector::Complex#dzasum</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::idamax(x)</p>
+</li><li>
+<p>GSL::Vector#blas_idamax</p>
+</li><li>
+<p>GSL::Vector#idamax</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::izamax(x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_izamax</p>
+</li><li>
+<p>GSL::Vector::Complex#izamax</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dswap(x, y)</p>
+</li><li>
+<p>GSL::Vector#blas_dswap(y)</p>
+</li><li>
+<p>GSL::Vector#dswap(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zswap(x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zswap(y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zswap(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dcopy(x, y)</p>
+</li><li>
+<p>GSL::Vector#blas_dcopy(y)</p>
+</li><li>
+<p>GSL::Vector#dcopy(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zcopy(x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zcopy(y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zcopy(y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::daxpy!(a, x, y)</p>
+</li><li>
+<p>GSL::Vector#blas_daxpy!(a, y)</p>
+</li><li>
+<p>GSL::Vector#daxpy!(a, y)</p>
+</li><li>
+<p>GSL::Blas::daxpy(a, x, y)</p>
+</li><li>
+<p>GSL::Vector#blas_daxpy(a, y)</p>
+</li><li>
+<p>GSL::Vector#daxpy(a, y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zaxpy!(a, x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zaxpy!(a, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zaxpy!(a, y)</p>
+</li><li>
+<p>GSL::Blas::zaxpy(a, x, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zaxpy(a, y)</p>
+</li><li>
+<p>GSL::Vector::Complex#zaxpy(a, y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dscal!(a, x)</p>
+</li><li>
+<p>GSL::Vector#blas_dscal!(a)</p>
+</li><li>
+<p>GSL::Vector#dscal!(a)</p>
+</li><li>
+<p>GSL::Blas::dscal(a, x)</p>
+</li><li>
+<p>GSL::Vector#blas_dscal(a)</p>
+</li><li>
+<p>GSL::Vector#dscal(a)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zscal!(a, x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zscal!(a)</p>
+</li><li>
+<p>GSL::Vector::Complex#zscal!(a)</p>
+</li><li>
+<p>GSL::Blas::zscal(a, x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zscal(a)</p>
+</li><li>
+<p>GSL::Vector::Complex#zscal(a)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zdscal!(a, x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zdscal!(a)</p>
+</li><li>
+<p>GSL::Vector::Complex#zdscal!(a)</p>
+</li><li>
+<p>GSL::Blas::zdscal(a, x)</p>
+</li><li>
+<p>GSL::Vector::Complex#blas_zdscal(a)</p>
+</li><li>
+<p>GSL::Vector::Complex#zdscal(a)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::drot(x, y, c, s)</p>
+</li><li>
+<p>GSL::Blas::drot!(x, y, c, s)</p>
+</li><li>
+<p>GSL::Blas::drotm(x, y, p)</p>
+</li><li>
+<p>GSL::Blas::drotm!(x, y, p)</p>
+</li></ul>
+
+<h2 id="label-Level+2">Level 2<span><a href="#label-Level+2">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Blas::dgemv(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::dgemv!(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::zgemv(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::zgemv!(trans, a, A, x, b, y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dtrmv(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::dtrmv!(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::ztrmv(trans, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::ztrmv!(trans, a, A, x, b, y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dtrsv(uplo, trans, diag, A, x)</p>
+</li><li>
+<p>GSL::Blas::dtrsv!uplo, trans, diag, A, x)</p>
+</li><li>
+<p>GSL::Blas::ztrsvuplo, trans, diag, A, x)</p>
+</li><li>
+<p>GSL::Blas::ztrsv!uplo, trans, diag, A, x)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsymv(uplo, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::dsymv!(uplo, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::zhemv(uplo, a, A, x, b, y)</p>
+</li><li>
+<p>GSL::Blas::zhemv!(uplo, a, A, x, b, y)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dger(a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::dger!(a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zgeru(a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zgeru!(a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zgerc(a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zgerc!(a, x, y, A)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsyr(uplo, a, x, A)</p>
+</li><li>
+<p>GSL::Blas::dsyr!(uplo, a, x, A)</p>
+</li><li>
+<p>GSL::Blas::zher(uplo, a, x, A)</p>
+</li><li>
+<p>GSL::Blas::zher!(uplo, a, x, A)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsyr2(uplo, a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::dsyr2!(uplo, a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zher2(uplo, a, x, y, A)</p>
+</li><li>
+<p>GSL::Blas::zher2!(uplo, a, x, y, A)</p>
+</li></ul>
+
+<h2 id="label-Level+3">Level 3<span><a href="#label-Level+3">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Blas::dgemm(transA, transB, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::dgemm(A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zgemm(transA, transB, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zgemm(A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsymm(transA, transB, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::dsymm(A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zsymm(transA, transB, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zsymm(A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::zhemm(transA, transB, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zhemm(A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dtrmm(side, uplo, trans, diag, alpha, A, B)</p>
+</li><li>
+<p>GSL::Blas::ztrmm(side, uplo, trans, diag, alpha, A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dtrsm(side, uplo, trans, diag, alpha, A, B)</p>
+</li><li>
+<p>GSL::Blas::ztrsm(side, uplo, trans, diag, alpha, A, B)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsyrk(uplo, trans, diag, alpha, A, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zsyrk(uplo, trans, diag, alpha, A, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zherk(uplo, trans, diag, alpha, A, beta, C)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Blas::dsyr2k(uplo, trans, diag, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zsyr2k(uplo, trans, diag, alpha, A, B, beta, C)</p>
+</li><li>
+<p>GSL::Blas::zher2k(uplo, trans, diag, alpha, A, B, beta, C)</p>
+</li></ul>
+
+<h2 id="label-Constants">Constants<span><a href="#label-Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Blas::CblasRowMajor</p>
+</li><li>
+<p>GSL::Blas::RowMajor</p>
+</li><li>
+<p>GSL::Blas::CblasColMajor</p>
+</li><li>
+<p>GSL::Blas::ColMajor</p>
+</li><li>
+<p>GSL::Blas::CblasNoTrans</p>
+</li><li>
+<p>GSL::Blas::NoTrans</p>
+</li><li>
+<p>GSL::Blas::CblasTrans</p>
+</li><li>
+<p>GSL::Blas::Trans</p>
+</li><li>
+<p>GSL::Blas::CblasConjTrans</p>
+</li><li>
+<p>GSL::Blas::ConjTrans</p>
+</li><li>
+<p>GSL::Blas::CblasUpper</p>
+</li><li>
+<p>GSL::Blas::Upper</p>
+</li><li>
+<p>GSL::Blas::CblasTrans</p>
+</li><li>
+<p>GSL::Blas::Lower</p>
+</li><li>
+<p>GSL::Blas::CblasNonUnit</p>
+</li><li>
+<p>GSL::Blas::NonUnit</p>
+</li><li>
+<p>GSL::Blas::CblasUnit</p>
+</li><li>
+<p>GSL::Blas::Unit</p>
+</li><li>
+<p>GSL::Blas::CblasLeft</p>
+</li><li>
+<p>GSL::Blas::Left</p>
+</li><li>
+<p>GSL::Blas::CblasRight</p>
+</li><li>
+<p>GSL::Blas::Right</p>
+</li></ul>
+
+<p><a href="sort_rdoc.html">prev</a> <a href="linalg_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
