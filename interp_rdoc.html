@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>interp - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>interp - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -197,7 +194,7 @@
 
 <main role="main" aria-label="Page interp.rdoc">
 
-<h1 id="label-Interpolation">Interpolation<span><a href="#label-Interpolation">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Interpolation">Interpolation<span><a href="#label-Interpolation">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>This chapter describes functions for performing interpolation. The library
 provides a variety of interpolation methods, including Cubic splines and
@@ -234,7 +231,7 @@ acceleration</a></p>
 </li></ol>
 </li></ol>
 
-<h2 id="label-Interpolation+Classes">Interpolation Classes<span><a href="#label-Interpolation+Classes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Interpolation+Classes">Interpolation Classes<span><a href="#label-Interpolation+Classes">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
 <p>GSL</p>
 <ul><li>
@@ -247,7 +244,7 @@ acceleration</a></p>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Initializing+interpolation+objects">Initializing interpolation objects<span><a href="#label-Initializing+interpolation+objects">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Initializing+interpolation+objects">Initializing interpolation objects<span><a href="#label-Initializing+interpolation+objects">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Interp.alloc(T, n)</p>
@@ -294,7 +291,8 @@ uses the non-rounded corner algorithm of Wodicka.</p>
 <ul><li>
 <p>ex: For cubic spline for 10 points,</p>
 
-<pre>sp = Interp.alloc(&quot;cspline&quot;, 10)</pre>
+<pre class="ruby"><span class="ruby-identifier">sp</span> = <span class="ruby-constant">Interp</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;cspline&quot;</span>, <span class="ruby-value">10</span>)
+</pre>
 </li></ul>
 </li></ul>
 </li></ul>
@@ -324,7 +322,7 @@ type of <code>self</code>. For example, Akima spline interpolation requires
 a minimum of 5 points.</p>
 </li></ul>
 
-<h2 id="label-Index+Look-up+and+Acceleration">Index Look-up and Acceleration<span><a href="#label-Index+Look-up+and+Acceleration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Index+Look-up+and+Acceleration">Index Look-up and Acceleration<span><a href="#label-Index+Look-up+and+Acceleration">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Interp.bsearch(xa, x, index_lo, index_hi)</p>
@@ -358,7 +356,7 @@ The function returns an index <code>i</code> such that <code>xa[i] &lt;= x
 &lt; xa[i+1]</code>.</p>
 </li></ul>
 
-<h2 id="label-Evaluation+of+Interpolating+Functions">Evaluation of Interpolating Functions<span><a href="#label-Evaluation+of+Interpolating+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Evaluation+of+Interpolating+Functions">Evaluation of Interpolating Functions<span><a href="#label-Evaluation+of+Interpolating+Functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Interp#eval(xa, ya, x)</p>
@@ -401,9 +399,9 @@ function over the range <code>[a, b]</code>, using the interpolation object
 <code>self</code>, data vectors <code>xa</code> and <code>ya</code>.</p>
 </li></ul>
 
-<h2 id="label-Higher+level+interface">Higher level interface<span><a href="#label-Higher+level+interface">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Higher+level+interface">Higher level interface<span><a href="#label-Higher+level+interface">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Class+initialization">Class initialization<span><a href="#label-Class+initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Class+initialization">Class initialization<span><a href="#label-Class+initialization">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Spline.alloc(T, n)</p>
@@ -420,12 +418,14 @@ function over the range <code>[a, b]</code>, using the interpolation object
 <ul><li>
 <p><code>GSL::Spline.alloc</code> and <code>GSL::Spline#init</code></p>
 
-<pre>sp = GSL::Spline.alloc(T, n)
-sp.init(x, y)                 # x and y are vectors of length n</pre>
+<pre class="ruby"><span class="ruby-identifier">sp</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Spline</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">T</span>, <span class="ruby-identifier">n</span>)
+<span class="ruby-identifier">sp</span>.<span class="ruby-identifier">init</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)                 <span class="ruby-comment"># x and y are vectors of length n</span>
+</pre>
 </li><li>
 <p><code>GSL::Spline.alloc</code> with two vectors</p>
 
-<pre>sp = GSL::Spline.alloc(T, x, y)</pre>
+<pre class="ruby"><span class="ruby-identifier">sp</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Spline</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">T</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+</pre>
 </li></ul>
 
 <p>If <code>T</code> is not given, “cspline” is used.</p>
@@ -445,7 +445,7 @@ are Ruby arrays of equal sizes or <code>GSL::Vector</code>.</p>
 <p>This returns the name of the spline type used by <code>self</code>.</p>
 </li></ul>
 
-<h3 id="label-Evaluation">Evaluation<span><a href="#label-Evaluation">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Evaluation">Evaluation<span><a href="#label-Evaluation">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Spline#eval(x)</p>
@@ -482,7 +482,7 @@ set by <code>init</code>.</p>
 <p>Returns the numerical integral over the range [<code>a, b</code>].</p>
 </li></ul>
 
-<h3 id="label-Finding+and+acceleration">Finding and acceleration<span><a href="#label-Finding+and+acceleration">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Finding+and+acceleration">Finding and acceleration<span><a href="#label-Finding+and+acceleration">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Spline#find(xa, x)</p>
@@ -506,7 +506,7 @@ The function returns an index <code>i</code> such that <code>xa[i] &lt;= x
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

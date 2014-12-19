@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>multiroot - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>multiroot - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -198,7 +195,7 @@
 
 <main role="main" aria-label="Page multiroot.rdoc">
 
-<h1 id="label-Multidimensional+Root-Finding">Multidimensional Root-Finding<span><a href="#label-Multidimensional+Root-Finding">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Multidimensional+Root-Finding">Multidimensional Root-Finding<span><a href="#label-Multidimensional+Root-Finding">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>This chapter describes functions for multidimensional root-finding (solving
 nonlinear systems with n equations in n unknowns). The library provides low
@@ -235,7 +232,7 @@ Interface</a></p>
 </li></ol>
 </li></ol>
 
-<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The problem of multidimensional root finding requires the simultaneous
 solution of n equations, f_i, in n variables, x_i, In general there are no
@@ -275,7 +272,7 @@ in a <code>GSL::MultiRoot::FSolver</code> object. The updating procedure
 uses only function evaluations (not derivatives). The algorithms estimate
 the matrix J or J^{-1} by approximate methods.</p>
 
-<h2 id="label-Initializing+the+Solver">Initializing the Solver<span><a href="#label-Initializing+the+Solver">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Initializing+the+Solver">Initializing the Solver<span><a href="#label-Initializing+the+Solver">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Two types of solvers are available. The solver itself depends only on the
 dimension of the problem and the algorithm and can be reused for different
@@ -340,7 +337,7 @@ a <code>MultiRoot:Function_fdf</code> object.</p>
 <p>GSL::MultiRoot::FdfSolver#name</p>
 </li></ul>
 
-<h2 id="label-Providing+the+function+to+solve">Providing the function to solve<span><a href="#label-Providing+the+function+to+solve">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Providing+the+function+to+solve">Providing the function to solve<span><a href="#label-Providing+the+function+to+solve">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::MultiRoot:Function.alloc(proc, dim, params)</p>
@@ -394,7 +391,7 @@ a <code>MultiRoot:Function_fdf</code> object.</p>
 </pre>
 </li></ul>
 
-<h2 id="label-Iteration">Iteration<span><a href="#label-Iteration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Iteration">Iteration<span><a href="#label-Iteration">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::MultiRoot::FSolver#interate</p>
@@ -443,7 +440,7 @@ current estimate of the root for the solver <code>self</code>.</p>
 solver <code>self</code>.</p>
 </li></ul>
 
-<h2 id="label-Search+Stopping+Parameters">Search Stopping Parameters<span><a href="#label-Search+Stopping+Parameters">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Search+Stopping+Parameters">Search Stopping Parameters<span><a href="#label-Search+Stopping+Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::MultiRoot::FSolver#test_delta(epsabs, epsrel)</p>
@@ -479,7 +476,7 @@ suitable for situations where the precise location of the root,
 residual is small enough.</p>
 </li></ul>
 
-<h2 id="label-Higher+Level+Interface">Higher Level Interface<span><a href="#label-Higher+Level+Interface">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Higher+Level+Interface">Higher Level Interface<span><a href="#label-Higher+Level+Interface">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::MultiRoot::Function#solve(x0, max_iter = 1000, eps = 1e-7, type =
@@ -492,9 +489,9 @@ residual is small enough.</p>
 
 <p>See sample script <code>examples/multiroot/fsolver3.rb</code>.</p>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-FSolver">FSolver<span><a href="#label-FSolver">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-FSolver">FSolver<span><a href="#label-FSolver">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <pre class="ruby"><span class="ruby-identifier">proc</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">a</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>];  <span class="ruby-identifier">b</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
@@ -522,7 +519,7 @@ residual is small enough.</p>
 <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">CONTINUE</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">iter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1000</span>
 </pre>
 
-<h3 id="label-FdfSolver">FdfSolver<span><a href="#label-FdfSolver">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-FdfSolver">FdfSolver<span><a href="#label-FdfSolver">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <pre class="ruby"><span class="ruby-identifier">n</span> = <span class="ruby-value">2</span>
 
@@ -571,7 +568,7 @@ residual is small enough.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

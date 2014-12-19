@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>poly - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>poly - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -202,7 +199,7 @@
 
 <main role="main" aria-label="Page poly.rdoc">
 
-<h1 id="label-Polynomials">Polynomials<span><a href="#label-Polynomials">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Polynomials">Polynomials<span><a href="#label-Polynomials">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Contents:</p>
 <ol><li>
@@ -242,7 +239,7 @@ Operations</a></p>
 </li></ol>
 </li></ol>
 
-<h2 id="label-Polynomial+Evaluation">Polynomial Evaluation<span><a href="#label-Polynomial+Evaluation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Polynomial+Evaluation">Polynomial Evaluation<span><a href="#label-Polynomial+Evaluation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Poly.eval(c, x)</p>
@@ -258,23 +255,22 @@ polynomial given by a <code>GSL::Vector::Complex</code> or an
 
 <p>Ex)</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">17.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">17.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">NArray</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">17.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">17.0</span>, <span class="ruby-value">34.0</span>]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>
-[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">1.700e+01</span> <span class="ruby-value">3.400e+01</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], <span class="ruby-constant">NArray</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">float</span>(<span class="ruby-value">3</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">6.0</span>, <span class="ruby-value">17.0</span>, <span class="ruby-value">34.0</span> ]
-</pre>
+<pre>&gt;&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; GSL::Poly.eval([1, 2, 3], 2)
+=&gt; 17.0
+&gt;&gt; GSL::Poly.eval(GSL::Vector[1, 2, 3], 2)
+=&gt; 17.0
+&gt;&gt; GSL::Poly.eval(NArray[1.0, 2, 3], 2)
+=&gt; 17.0
+&gt;&gt; GSL::Poly.eval([1, 2, 3], [1, 2, 3])
+=&gt; [6.0, 17.0, 34.0]
+&gt;&gt; GSL::Poly.eval([1, 2, 3], GSL::Vector[1, 2, 3])
+=&gt; GSL::Vector
+[ 6.000e+00 1.700e+01 3.400e+01 ]
+&gt;&gt; GSL::Poly.eval([1, 2, 3], NArray[1.0, 2, 3])
+=&gt; NArray.float(3):
+[ 6.0, 17.0, 34.0 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -303,34 +299,33 @@ is 0.</p>
 
 <p>Ex.)</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">ary</span> = [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval_derivs</span>(<span class="ruby-identifier">ary</span>, <span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">8.0</span>, <span class="ruby-value">6.0</span>, <span class="ruby-value">0.0</span>]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">na</span> = <span class="ruby-constant">NArray</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">float</span>(<span class="ruby-value">3</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.0</span>, <span class="ruby-value">2.0</span>, <span class="ruby-value">3.0</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval_derivs</span>(<span class="ruby-identifier">na</span>, <span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">float</span>(<span class="ruby-value">4</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">6.0</span>, <span class="ruby-value">8.0</span>, <span class="ruby-value">6.0</span>, <span class="ruby-value">0.0</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">poly</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">eval_derivs</span>(<span class="ruby-identifier">poly</span>, <span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>
-[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">poly</span>.<span class="ruby-identifier">eval_derivs</span>(<span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>
-[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">poly</span>.<span class="ruby-identifier">eval_derivs</span>(<span class="ruby-value">1</span>, <span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>
-[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">6.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; ary = [1, 2, 3]
+=&gt; [1, 2, 3]
+&gt;&gt; GSL::Poly.eval_derivs(ary, 1)
+=&gt; [6.0, 8.0, 6.0, 0.0]
+&gt;&gt; na = NArray[1.0, 2, 3]
+=&gt; NArray.float(3):
+[ 1.0, 2.0, 3.0 ]
+&gt;&gt; GSL::Poly.eval_derivs(na, 1)
+=&gt; NArray.float(4):
+[ 6.0, 8.0, 6.0, 0.0 ]
+&gt;&gt; poly = GSL::Poly[1.0, 2, 3]
+=&gt; GSL::Poly
+[ 1.000e+00 2.000e+00 3.000e+00 ]
+&gt;&gt; GSL::Poly.eval_derivs(poly, 1)
+=&gt; GSL::Poly
+[ 6.000e+00 8.000e+00 6.000e+00 0.000e+00 ]
+&gt;&gt; poly.eval_derivs(1)
+=&gt; GSL::Poly
+[ 6.000e+00 8.000e+00 6.000e+00 0.000e+00 ]
+&gt;&gt; poly.eval_derivs(1, 3)
+=&gt; GSL::Poly
+[ 6.000e+00 8.000e+00 6.000e+00 ]</pre>
 </li></ul>
 
-<h2 id="label-Solving+polynomial+equations">Solving polynomial equations<span><a href="#label-Solving+polynomial+equations">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Solving+polynomial+equations">Solving polynomial equations<span><a href="#label-Solving+polynomial+equations">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Quadratic+Equations">Quadratic Equations<span><a href="#label-Quadratic+Equations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Quadratic+Equations">Quadratic Equations<span><a href="#label-Quadratic+Equations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly::solve_quadratic(a, b, c)</p>
@@ -347,10 +342,9 @@ is 0.</p>
 <ul><li>
 <p>Ex: z^2 - 3z + 2 = 0</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-identifier">solve_quadratic</span>(<span class="ruby-value">1</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Poly::solve_quadratic(1, -3, 2)
+=&gt; GSL::Vector:
+[ 1.000e+00 2.000e+00 ]</pre>
 </li></ul>
 </li></ul>
 <hr>
@@ -369,19 +363,18 @@ is 0.</p>
 <ul><li>
 <p>Ex: z^2 - 3z + 2 = 0</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-identifier">complex_solve_quadratic</span>(<span class="ruby-value">1</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">2</span>)
-[ [<span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span>] [<span class="ruby-value">2.000e+00</span> <span class="ruby-value">0.000e+00</span>] ]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Vector::Complex:0x764014&gt;</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-identifier">complex_solve_quadratic</span>(<span class="ruby-value">1</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">real</span>  <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Real</span> <span class="ruby-identifier">part</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; GSL::Poly::complex_solve_quadratic(1, -3, 2)
+[ [1.000e+00 0.000e+00] [2.000e+00 0.000e+00] ]
+=&gt; #&lt;GSL::Vector::Complex:0x764014&gt;
+&gt;&gt; GSL::Poly::complex_solve_quadratic(1, -3, 2).real  &lt;--- Real part
+=&gt; GSL::Vector::View:
+[ 1.000e+00 2.000e+00 ]</pre>
 </li></ul>
 </li></ul>
 
-<h3 id="label-Cubic+Equations">Cubic Equations<span><a href="#label-Cubic+Equations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Cubic+Equations">Cubic Equations<span><a href="#label-Cubic+Equations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly::solve_cubic(same as solve_quadratic)</p>
@@ -399,7 +392,7 @@ is 0.</p>
 <pre>z^3 + a z^2 + b z + c = 0</pre>
 </li></ul>
 
-<h3 id="label-General+Polynomial+Equations">General Polynomial Equations<span><a href="#label-General+Polynomial+Equations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-General+Polynomial+Equations">General Polynomial Equations<span><a href="#label-General+Polynomial+Equations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly::complex_solve(c0, c1, c2,,, )</p>
@@ -411,18 +404,17 @@ coefficients are given by “ascending” order.</p>
 <ul><li>
 <p>Ex: x^2 - 3 x + 2 == 0</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-identifier">complex_solve</span>(<span class="ruby-value">2</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">1</span>)    <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-identifier">different</span> <span class="ruby-identifier">from</span> <span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-identifier">quadratic_solve</span>
-[ [<span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span>] [<span class="ruby-value">2.000e+00</span> <span class="ruby-value">0.000e+00</span>] ]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Vector::Complex:0x75e614&gt;</span>
-</pre>
+<pre>&gt;&gt; GSL::Poly::complex_solve(2, -3, 1)    &lt;--- different from Poly::quadratic_solve
+[ [1.000e+00 0.000e+00] [2.000e+00 0.000e+00] ]
+=&gt; #&lt;GSL::Vector::Complex:0x75e614&gt;</pre>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Poly+class">Poly class<span><a href="#label-Poly+class">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Poly+class">Poly class<span><a href="#label-Poly+class">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>This class expresses polynomials of arbitrary orders.</p>
 
-<h3 id="label-Constructors">Constructors<span><a href="#label-Constructors">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Constructors">Constructors<span><a href="#label-Constructors">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly.alloc(c0, c1, c2, .…)</p>
@@ -438,11 +430,12 @@ represents a polynomial</p>
 <ul><li>
 <p>Ex: x^2 - 3 x + 2</p>
 
-<pre>poly = GSL::Poly.alloc([2, -3, 1])</pre>
+<pre class="ruby"><span class="ruby-identifier">poly</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">2</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">1</span>])
+</pre>
 </li></ul>
 </li></ul>
 
-<h3 id="label-Instance+Methods">Instance Methods<span><a href="#label-Instance+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Instance+Methods">Instance Methods<span><a href="#label-Instance+Methods">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly#eval(x)</p>
@@ -462,13 +455,12 @@ or an <code>Array</code>.</p>
 <ul><li>
 <p>Ex:  z^2 - 3 z + 2 = 0:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>[<span class="ruby-value">2</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">1</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">2.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">3.000e+00</span> <span class="ruby-value">1.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">solve_quadratic</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; a = GSL::Poly[2, -3, 1]
+=&gt; GSL::Poly:
+[ 2.000e+00 -3.000e+00 1.000e+00 ]
+&gt;&gt; a.solve_quadratic
+=&gt; GSL::Vector:
+[ 1.000e+00 2.000e+00 ]</pre>
 </li></ul>
 </li></ul>
 <hr>
@@ -491,17 +483,16 @@ or an <code>Array</code>.</p>
 <ul><li>
 <p>Ex: z^2 - 3 z + 2 = 0:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>[<span class="ruby-value">2</span>, <span class="ruby-value">-3</span>, <span class="ruby-value">1</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">2.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">3.000e+00</span> <span class="ruby-value">1.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">solve</span>
-[ [<span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span>] [<span class="ruby-value">2.000e+00</span> <span class="ruby-value">0.000e+00</span>] ]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Vector::Complex:0x35db28&gt;</span>
-</pre>
+<pre>&gt;&gt; a = GSL::Poly[2, -3, 1]
+=&gt; GSL::Poly:
+[ 2.000e+00 -3.000e+00 1.000e+00 ]
+&gt;&gt; a.solve
+[ [1.000e+00 0.000e+00] [2.000e+00 0.000e+00] ]
+=&gt; #&lt;GSL::Vector::Complex:0x35db28&gt;</pre>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Polynomial+fitting">Polynomial fitting<span><a href="#label-Polynomial+fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Polynomial+fitting">Polynomial fitting<span><a href="#label-Polynomial+fitting">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Poly.fit(x, y, order)</p>
@@ -516,19 +507,20 @@ fitting.</p>
 
 <p>Example:</p>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-x = GSL::Vector[1, 2, 3, 4, 5]
-y = GSL::Vector[5.5, 43.1, 128, 290.7, 498.4]
-# The results are stored in a polynomial &quot;coef&quot;
-coef, cov, chisq, status = Poly.fit(x, y, 3)
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>]
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>[<span class="ruby-value">5.5</span>, <span class="ruby-value">43.1</span>, <span class="ruby-value">128</span>, <span class="ruby-value">290.7</span>, <span class="ruby-value">498.4</span>]
+<span class="ruby-comment"># The results are stored in a polynomial &quot;coef&quot;</span>
+<span class="ruby-identifier">coef</span>, <span class="ruby-identifier">cov</span>, <span class="ruby-identifier">chisq</span>, <span class="ruby-identifier">status</span> = <span class="ruby-constant">Poly</span>.<span class="ruby-identifier">fit</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-value">3</span>)
 
-x2 = GSL::Vector.linspace(1, 5, 20)
-graph([x, y], [x2, coef.eval(x2)], &quot;-C -g 3 -S 4&quot;)</pre>
+<span class="ruby-identifier">x2</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">1</span>, <span class="ruby-value">5</span>, <span class="ruby-value">20</span>)
+<span class="ruby-identifier">graph</span>([<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>], [<span class="ruby-identifier">x2</span>, <span class="ruby-identifier">coef</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x2</span>)], <span class="ruby-string">&quot;-C -g 3 -S 4&quot;</span>)
+</pre>
 </li></ul>
 
-<h2 id="label-Divided-difference+representations">Divided-difference representations<span><a href="#label-Divided-difference+representations">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Divided-difference+representations">Divided-difference representations<span><a href="#label-Divided-difference+representations">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Poly::dd_init(xa, ya)</p>
@@ -552,9 +544,9 @@ to a Taylor expansion. On output the Taylor coefficients of the polynomial
 expanded about the point <code>xp</code> are returned.</p>
 </li></ul>
 
-<h2 id="label-Extensions">Extensions<span><a href="#label-Extensions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Extensions">Extensions<span><a href="#label-Extensions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Special+Polynomials">Special Polynomials<span><a href="#label-Special+Polynomials">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Special+Polynomials">Special Polynomials<span><a href="#label-Special+Polynomials">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly.hermite(n)</p>
@@ -567,16 +559,15 @@ method uses the recurrence relation</p>
 <ul><li>
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">hermite</span>(<span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">-2</span> <span class="ruby-value">0</span> <span class="ruby-value">4</span> ]                            <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-value">4</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">hermite</span>(<span class="ruby-value">5</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">0</span> <span class="ruby-value">120</span> <span class="ruby-value">0</span> <span class="ruby-operator">-</span><span class="ruby-value">160</span> <span class="ruby-value">0</span> <span class="ruby-value">32</span> ]                 <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-value">32</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">5</span> <span class="ruby-operator">-</span> <span class="ruby-value">160</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">3</span> <span class="ruby-operator">+</span> <span class="ruby-value">120</span><span class="ruby-identifier">x</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">hermite</span>(<span class="ruby-value">7</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">0</span> <span class="ruby-operator">-</span><span class="ruby-value">1680</span> <span class="ruby-value">0</span> <span class="ruby-value">3360</span> <span class="ruby-value">0</span> <span class="ruby-operator">-</span><span class="ruby-value">1344</span> <span class="ruby-value">0</span> <span class="ruby-value">128</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Poly.hermite(2)
+=&gt; GSL::Poly::Int:
+[ -2 0 4 ]                            &lt;----- 4x^2 - 2
+&gt;&gt; GSL::Poly.hermite(5)
+=&gt; GSL::Poly::Int:
+[ 0 120 0 -160 0 32 ]                 &lt;----- 32x^5 - 160x^3 + 120x
+&gt;&gt; GSL::Poly.hermite(7)
+=&gt; GSL::Poly::Int:
+[ 0 -1680 0 3360 0 -1344 0 128 ]</pre>
 </li></ul>
 </li></ul>
 <hr>
@@ -623,27 +614,26 @@ multiplied by n!.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-identifier">rb</span>(<span class="ruby-identifier">main</span>)<span class="ruby-operator">:</span><span class="ruby-value">001</span><span class="ruby-operator">:</span><span class="ruby-value">0</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">laguerre</span>(<span class="ruby-value">0</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1</span> ]                              <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-value">1</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">laguerre</span>(<span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1</span> <span class="ruby-operator">-</span><span class="ruby-value">1</span> ]                           <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-operator">-</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">laguerre</span>(<span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">2</span> <span class="ruby-operator">-</span><span class="ruby-value">4</span> <span class="ruby-value">1</span> ]                         <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> (<span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span><span class="ruby-operator">!</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">laguerre</span>(<span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">6</span> <span class="ruby-operator">-</span><span class="ruby-value">18</span> <span class="ruby-value">9</span> <span class="ruby-operator">-</span><span class="ruby-value">1</span> ]                     <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> (<span class="ruby-operator">-</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">3</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">18</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-value">6</span>)<span class="ruby-operator">/</span><span class="ruby-value">3</span><span class="ruby-operator">!</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span>.<span class="ruby-identifier">laguerre</span>(<span class="ruby-value">4</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Poly</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">24</span> <span class="ruby-operator">-</span><span class="ruby-value">96</span> <span class="ruby-value">72</span> <span class="ruby-operator">-</span><span class="ruby-value">16</span> <span class="ruby-value">1</span> ]                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> (<span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">4</span> <span class="ruby-operator">-</span> <span class="ruby-value">16</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">3</span> <span class="ruby-operator">+</span> <span class="ruby-value">72</span><span class="ruby-identifier">x</span><span class="ruby-operator">^</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">96</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-value">24</span>)<span class="ruby-operator">/</span><span class="ruby-value">4</span><span class="ruby-operator">!</span>
-</pre>
+<pre>rb(main):001:0&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; GSL::Poly.laguerre(0)
+=&gt; GSL::Poly::Int:
+[ 1 ]                              &lt;--- 1
+&gt;&gt; GSL::Poly.laguerre(1)
+=&gt; GSL::Poly::Int:
+[ 1 -1 ]                           &lt;--- -x + 1
+&gt;&gt; GSL::Poly.laguerre(2)
+=&gt; GSL::Poly::Int:
+[ 2 -4 1 ]                         &lt;--- (x^2 - 4x + 2)/2!
+&gt;&gt; GSL::Poly.laguerre(3)
+=&gt; GSL::Poly::Int:
+[ 6 -18 9 -1 ]                     &lt;--- (-x^3 + 9x^2 - 18x + 6)/3!
+&gt;&gt; GSL::Poly.laguerre(4)
+=&gt; GSL::Poly::Int:
+[ 24 -96 72 -16 1 ]                &lt;--- (x^4 - 16x^3 + 72x^2 - 96x + 24)/4!</pre>
 </li></ul>
 
-<h3 id="label-Polynomial+Operations">Polynomial Operations<span><a href="#label-Polynomial+Operations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Polynomial+Operations">Polynomial Operations<span><a href="#label-Polynomial+Operations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Poly#conv</p>
@@ -668,7 +658,7 @@ multiplied by n!.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

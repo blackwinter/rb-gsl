@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>qrng - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>qrng - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -194,7 +191,7 @@
 
 <main role="main" aria-label="Page qrng.rdoc">
 
-<h1 id="label-Quasi-Random+Sequences">Quasi-Random Sequences<span><a href="#label-Quasi-Random+Sequences">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Quasi-Random+Sequences">Quasi-Random Sequences<span><a href="#label-Quasi-Random+Sequences">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>This chapter describes the quasi-random sequence generator
 <code>GSL::QRng</code> of arbitrary dimensions. A quasi-random sequence
@@ -226,7 +223,7 @@ href="qrng_rdoc.html#label-Quasi-random+number+generator+algorithms">Quasi-rando
 number generator algorithms</a></p>
 </li></ol>
 
-<h2 id="label-Quasi-random+number+generator+initialization">Quasi-random number generator initialization<span><a href="#label-Quasi-random+number+generator+initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Quasi-random+number+generator+initialization">Quasi-random number generator initialization<span><a href="#label-Quasi-random+number+generator+initialization">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::QRng.alloc(T, d)</p>
@@ -241,7 +238,7 @@ number generator algorithms</a></p>
 <p>This reinitializes the generator to its starting point.</p>
 </li></ul>
 
-<h2 id="label-Sampling+from+a+quasi-random+number+generator">Sampling from a quasi-random number generator<span><a href="#label-Sampling+from+a+quasi-random+number+generator">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Sampling+from+a+quasi-random+number+generator">Sampling from a quasi-random number generator<span><a href="#label-Sampling+from+a+quasi-random+number+generator">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::QRng::get(x)</p>
@@ -254,15 +251,16 @@ href="vector_rdoc.html">GSL::Vector</a> class. The space available for
 
 <p>This is used as</p>
 
-<pre>q = QRng.alloc(QRng::SOBOL, dim)
-v = Vector.alloc(dim)
-for i in 0..1024 do
-  q.get(v)
-  printf(&quot;%.5f %.5f\n&quot;, v[0], v[1])
-end</pre>
+<pre class="ruby"><span class="ruby-identifier">q</span> = <span class="ruby-constant">QRng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">QRng</span><span class="ruby-operator">::</span><span class="ruby-constant">SOBOL</span>, <span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">dim</span>)
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1024</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%.5f %.5f\n&quot;</span>, <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>])
+<span class="ruby-keyword">end</span>
+</pre>
 </li></ul>
 
-<h2 id="label-Auxiliary+quasi-random+number+generator+functions">Auxiliary quasi-random number generator functions<span><a href="#label-Auxiliary+quasi-random+number+generator+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Auxiliary+quasi-random+number+generator+functions">Auxiliary quasi-random number generator functions<span><a href="#label-Auxiliary+quasi-random+number+generator+functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::QRng::name</p>
@@ -274,7 +272,7 @@ end</pre>
 <p>GSL::QRng::size</p>
 </li></ul>
 
-<h2 id="label-Saving+and+resorting+quasi-random+number+generator+state">Saving and resorting quasi-random number generator state<span><a href="#label-Saving+and+resorting+quasi-random+number+generator+state">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Saving+and+resorting+quasi-random+number+generator+state">Saving and resorting quasi-random number generator state<span><a href="#label-Saving+and+resorting+quasi-random+number+generator+state">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::QRng::clone</p>
@@ -285,7 +283,7 @@ end</pre>
 <code>self</code>.</p>
 </li></ul>
 
-<h2 id="label-Quasi-random+number+generator+algorithms">Quasi-random number generator algorithms<span><a href="#label-Quasi-random+number+generator+algorithms">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Quasi-random+number+generator+algorithms">Quasi-random number generator algorithms<span><a href="#label-Quasi-random+number+generator+algorithms">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>In creating a generator by the method <code>GSL::QRng.alloc(T, d)</code>,
 the algorithm type <code>T</code> is given by a String or a Fixnum
@@ -329,7 +327,7 @@ and B. Vandewoestyne and R. Cools Computational and Applied Mathematics
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>stats - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>stats - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -199,7 +196,7 @@
 
 <main role="main" aria-label="Page stats.rdoc">
 
-<h1 id="label-Statistics">Statistics<span><a href="#label-Statistics">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Statistics">Statistics<span><a href="#label-Statistics">&para;</a> <a href="#top">&uarr;</a></span></h1>
 <ol><li>
 <p><a
 href="stats_rdoc.html#label-Mean%2C+Standard+Deviation+and+Variance">Mean,
@@ -228,7 +225,7 @@ percentiles</a></p>
 <p><a href="stats_rdoc.html#label-Example">Examples</a></p>
 </li></ol>
 
-<h2 id="label-Mean-2C+Standard+Deviation+and+Variance">Mean, Standard Deviation and Variance<span><a href="#label-Mean-2C+Standard+Deviation+and+Variance">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Mean-2C+Standard+Deviation+and+Variance">Mean, Standard Deviation and Variance<span><a href="#label-Mean-2C+Standard+Deviation+and+Variance">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::mean(v)</p>
@@ -239,16 +236,15 @@ percentiles</a></p>
 <ul><li>
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">7</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">mean</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">4.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Stats</span><span class="ruby-operator">::</span><span class="ruby-identifier">mean</span>(<span class="ruby-identifier">v</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">4.0</span>
-</pre>
+<pre>&gt;&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; v = Vector[1..7]
+=&gt; GSL::Vector:
+[ 1.000e+00 2.000e+00 3.000e+00 4.000e+00 5.000e+00 6.000e+00 7.000e+00 ]
+&gt;&gt; v.mean
+=&gt; 4.0
+&gt;&gt; Stats::mean(v)
+=&gt; 4.0</pre>
 </li></ul>
 </li></ul>
 <hr>
@@ -316,7 +312,7 @@ mean <code>mean</code> of the underlying distribution is known <code>a
 priori</code>.</p>
 </li></ul>
 
-<h2 id="label-Absolute+deviation">Absolute deviation<span><a href="#label-Absolute+deviation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Absolute+deviation">Absolute deviation<span><a href="#label-Absolute+deviation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::absdev(v[, mean])</p>
@@ -326,7 +322,7 @@ priori</code>.</p>
 <p>Compute the absolute deviation (from the mean <code>mean</code> if given).</p>
 </li></ul>
 
-<h2 id="label-Higher+moments+-28skewness+and+kurtosis-29">Higher moments (skewness and kurtosis)<span><a href="#label-Higher+moments+-28skewness+and+kurtosis-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Higher+moments+-28skewness+and+kurtosis-29">Higher moments (skewness and kurtosis)<span><a href="#label-Higher+moments+-28skewness+and+kurtosis-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::skew(v[, mean, sd])</p>
@@ -344,7 +340,7 @@ priori</code>.</p>
 <p>Kurtosis</p>
 </li></ul>
 
-<h2 id="label-Autocorrelation">Autocorrelation<span><a href="#label-Autocorrelation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Autocorrelation">Autocorrelation<span><a href="#label-Autocorrelation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::lag1_autocorrelation(v[, mean])</p>
@@ -354,7 +350,7 @@ priori</code>.</p>
 <p>The lag-1 autocorrelation</p>
 </li></ul>
 
-<h2 id="label-Covariance">Covariance<span><a href="#label-Covariance">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Covariance">Covariance<span><a href="#label-Covariance">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::covariance(v1, v2)</p>
@@ -364,7 +360,7 @@ priori</code>.</p>
 <p>Covariance of vectors <code>v1, v2</code>.</p>
 </li></ul>
 
-<h2 id="label-Correlation">Correlation<span><a href="#label-Correlation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Correlation">Correlation<span><a href="#label-Correlation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::correlation(v1, v2)</p>
@@ -373,7 +369,7 @@ priori</code>.</p>
 vectors <code>v1, v2</code>. (&gt;= GSL-1.10)</p>
 </li></ul>
 
-<h2 id="label-Weighted+samples">Weighted samples<span><a href="#label-Weighted+samples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Weighted+samples">Weighted samples<span><a href="#label-Weighted+samples">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Vector#wmean(w)</p>
@@ -389,7 +385,7 @@ vectors <code>v1, v2</code>. (&gt;= GSL-1.10)</p>
 <p>GSL::Vector#wkurtosis(w)</p>
 </li></ul>
 
-<h2 id="label-Maximum+and+Minimum+values">Maximum and Minimum values<span><a href="#label-Maximum+and+Minimum+values">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Maximum+and+Minimum+values">Maximum and Minimum values<span><a href="#label-Maximum+and+Minimum+values">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::max(data)</p>
@@ -447,7 +443,7 @@ one is chosen.</p>
 in a single pass.</p>
 </li></ul>
 
-<h2 id="label-Median+and+Percentiles">Median and Percentiles<span><a href="#label-Median+and+Percentiles">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Median+and+Percentiles">Median and Percentiles<span><a href="#label-Median+and+Percentiles">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Stats::median_from_sorted_data(v)</p>
@@ -469,7 +465,7 @@ numerical order. There are no checks to see whether the data are sorted, so
 the method <code>GSL::Vector#sort</code> should always be used first.</p>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
 <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;gsl&#39;</span>
@@ -499,7 +495,7 @@ the method <code>GSL::Vector#sort</code> should always be used first.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

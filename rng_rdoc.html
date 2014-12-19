@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>rng - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>rng - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -195,7 +192,7 @@
 
 <main role="main" aria-label="Page rng.rdoc">
 
-<h1 id="label-Random+Number+Generation">Random Number Generation<span><a href="#label-Random+Number+Generation">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Random+Number+Generation">Random Number Generation<span><a href="#label-Random+Number+Generation">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>The library provides a large collection of random number generators which
 can be accessed through a uniform interface. Environment variables allow
@@ -230,7 +227,7 @@ random number generator functions</a></p>
 number environment variables</a></p>
 </li></ol>
 
-<h2 id="label-General+comments+on+random+numbers">General comments on random numbers<span><a href="#label-General+comments+on+random+numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-General+comments+on+random+numbers">General comments on random numbers<span><a href="#label-General+comments+on+random+numbers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>In 1988, Park and Miller wrote a paper entitled “Random number generators:
 good ones are hard to find.” [Commun. ACM, 31, 1192-1201]. Fortunately,
@@ -260,7 +257,7 @@ Generally, a random number generator is used to estimate some quantity for
 which the theory of probability provides an exact answer. Comparison to
 this exact answer provides a measure of “randomness”.</p>
 
-<h2 id="label-The+Random+Number+Generator+Interface">The Random Number Generator Interface<span><a href="#label-The+Random+Number+Generator+Interface">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-The+Random+Number+Generator+Interface">The Random Number Generator Interface<span><a href="#label-The+Random+Number+Generator+Interface">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>It is important to remember that a random number generator is not a “real”
 function like sine or cosine. Unlike real functions, successive calls to a
@@ -277,7 +274,7 @@ to algorithm.</p>
 <p>The random number generator library uses <code>GSL::Rng</code> class for
 the interface.</p>
 
-<h2 id="label-Random+number+generator+initialization">Random number generator initialization<span><a href="#label-Random+number+generator+initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Random+number+generator+initialization">Random number generator initialization<span><a href="#label-Random+number+generator+initialization">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Rng.alloc(rng_type[, seed])</p>
@@ -306,14 +303,13 @@ href="https://gnu.org/software/gsl/manual/html_node/Random-number-generator-algo
 reference manual</a> for the complete list. The following demonstrates how
 to use this class,</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;gsl&#39;</span>
+<pre>require &#39;gsl&#39;
 
-<span class="ruby-identifier">r</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-constant">TAUS</span>, <span class="ruby-value">1</span>)
-<span class="ruby-identifier">r2</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;ran0&quot;</span>, <span class="ruby-value">2</span>)
-<span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">name</span>                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-string">&quot;taus&quot;</span>
-<span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">get</span>                 <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-identifier">get</span> <span class="ruby-identifier">an</span> <span class="ruby-identifier">integer</span>
-<span class="ruby-identifier">p</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">uniform</span>            <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-identifier">get</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">float</span> <span class="ruby-identifier">of</span> [<span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
-</pre>
+r = Rng.alloc(Rng::TAUS, 1)
+r2 = Rng.alloc(&quot;ran0&quot;, 2)
+p r.name                &lt;- &quot;taus&quot;
+p r.get                 &lt;- get an integer
+p r2.uniform            &lt;- get a float of [0, 1)</pre>
 
 <p>A generator of the type <code>gsl_rng_taus</code> is created with seed 1,
 and <code>gsl_rng_ran0</code> with seed 2. The method <code>get</code>
@@ -333,11 +329,12 @@ installed, additional two generators are available,</p>
 
 <p>They are created as</p>
 
-<pre>r1 = Rng.alloc(Rng::RNGEXTRA_RNG1)
-p r1.name                &lt;- &quot;rng1&quot;
+<pre class="ruby"><span class="ruby-identifier">r1</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-constant">RNGEXTRA_RNG1</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">name</span>                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-string">&quot;rng1&quot;</span>
 
-r2 = Rng.alloc(&quot;rngextra_rng2&quot;)
-p r2.name                &lt;- &quot;rng2&quot;</pre>
+<span class="ruby-identifier">r2</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;rngextra_rng2&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">name</span>                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-string">&quot;rng2&quot;</span>
+</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -375,7 +372,7 @@ generator <code>dest</code>, making dest into an exact copy of
 <code>s</code>.</p>
 </li></ul>
 
-<h2 id="label-Sampling+from+a+random+number+generator">Sampling from a random number generator<span><a href="#label-Sampling+from+a+random+number+generator">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Sampling+from+a+random+number+generator">Sampling from a random number generator<span><a href="#label-Sampling+from+a+random+number+generator">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Rng#get</p>
@@ -403,7 +400,7 @@ distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
 <p>This method returns a random integer from 0 to n-1 inclusive.</p>
 </li></ul>
 
-<h2 id="label-Auxiliary+random+number+generator+functions">Auxiliary random number generator functions<span><a href="#label-Auxiliary+random+number+generator+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Auxiliary+random+number+generator+functions">Auxiliary random number generator functions<span><a href="#label-Auxiliary+random+number+generator+functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Rng#name</p>
@@ -429,7 +426,7 @@ distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
 <code>self</code>.</p>
 </li></ul>
 
-<h2 id="label-Random+number+environment+variables">Random number environment variables<span><a href="#label-Random+number+environment+variables">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Random+number+environment+variables">Random number environment variables<span><a href="#label-Random+number+environment+variables">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The library allows you to choose a default generator and seed from the
 environment variables <code>GSL_RNG_TYPE</code> and
@@ -456,7 +453,7 @@ zero.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

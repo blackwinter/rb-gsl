@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>matrix - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>matrix - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -206,7 +203,7 @@
 
 <main role="main" aria-label="Page matrix.rdoc">
 
-<h1 id="label-Matrices">Matrices<span><a href="#label-Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Matrices">Matrices<span><a href="#label-Matrices">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Contents:</p>
 <ol><li>
@@ -251,7 +248,7 @@ maximum and minimum elements of matrices</a></p>
 <p><a href="matrix_rdoc.html#label-Special+matrices">Special matrices</a></p>
 </li></ol>
 
-<h2 id="label-Class+methods">Class methods<span><a href="#label-Class+methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Class+methods">Class methods<span><a href="#label-Class+methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Matrix.alloc(n)</p>
@@ -271,16 +268,16 @@ maximum and minimum elements of matrices</a></p>
 <ol><li>
 <p>From arrays</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>], [<span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">6</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">8</span>, <span class="ruby-value">9</span>]]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]</pre>
 </li><li>
 <p>With an array and rows&amp;cols,</p>
 
-<pre>m = GSL::Matrix.alloc([1, 2, 3, 4, 5, 6, 7, 8, 9], 3, 3)</pre>
+<pre class="ruby"><span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">6</span>, <span class="ruby-value">7</span>, <span class="ruby-value">8</span>, <span class="ruby-value">9</span>], <span class="ruby-value">3</span>, <span class="ruby-value">3</span>)
+</pre>
 </li><li>
 <p>With Range objects,</p>
 
@@ -300,16 +297,15 @@ maximum and minimum elements of matrices</a></p>
 
 <p>Examples:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">eye</span>(<span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">1</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">1</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">eye</span>(<span class="ruby-value">2</span>, <span class="ruby-value">4</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">1</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int.eye(3)
+=&gt; GSL::Matrix::Int
+[ 1 0 0
+  0 1 0
+  0 0 1 ]
+&gt;&gt; m = GSL::Matrix::Int.eye(2, 4)
+=&gt; GSL::Matrix::Int
+[ 1 0 0 0
+  0 1 0 0 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -337,18 +333,17 @@ maximum and minimum elements of matrices</a></p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">diagonal</span>(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">2</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">3</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">4</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">diagonal</span>(<span class="ruby-value">2</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">2</span> <span class="ruby-value">0</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">5</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">0</span> <span class="ruby-value">0</span> <span class="ruby-value">3</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Matrix::Int.diagonal(1..4)
+=&gt; GSL::Matrix::Int
+[ 1 0 0 0
+  0 2 0 0
+  0 0 3 0
+  0 0 0 4 ]
+&gt;&gt; GSL::Matrix::Int.diagonal(2, 5, 3)
+=&gt; GSL::Matrix::Int
+[ 2 0 0
+  0 5 0
+  0 0 3 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -372,31 +367,30 @@ maximum and minimum elements of matrices</a></p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">indgen</span>(<span class="ruby-value">3</span>, <span class="ruby-value">5</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">0</span>  <span class="ruby-value">1</span>  <span class="ruby-value">2</span>  <span class="ruby-value">3</span>  <span class="ruby-value">4</span>
-   <span class="ruby-value">5</span>  <span class="ruby-value">6</span>  <span class="ruby-value">7</span>  <span class="ruby-value">8</span>  <span class="ruby-value">9</span>
-  <span class="ruby-value">10</span> <span class="ruby-value">11</span> <span class="ruby-value">12</span> <span class="ruby-value">13</span> <span class="ruby-value">14</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">indgen</span>(<span class="ruby-value">3</span>, <span class="ruby-value">5</span>, <span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">2</span>  <span class="ruby-value">3</span>  <span class="ruby-value">4</span>  <span class="ruby-value">5</span>  <span class="ruby-value">6</span>
-   <span class="ruby-value">7</span>  <span class="ruby-value">8</span>  <span class="ruby-value">9</span> <span class="ruby-value">10</span> <span class="ruby-value">11</span>
-  <span class="ruby-value">12</span> <span class="ruby-value">13</span> <span class="ruby-value">14</span> <span class="ruby-value">15</span> <span class="ruby-value">16</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">indgen</span>(<span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4.5</span>, <span class="ruby-value">6.7</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[  <span class="ruby-value">4.500e+00</span>  <span class="ruby-value">1.120e+01</span>  <span class="ruby-value">1.790e+01</span>
-   <span class="ruby-value">2.460e+01</span>  <span class="ruby-value">3.130e+01</span>  <span class="ruby-value">3.800e+01</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int.indgen(3, 5)
+=&gt; GSL::Matrix::Int
+[  0  1  2  3  4
+   5  6  7  8  9
+  10 11 12 13 14 ]
+&gt;&gt; m = GSL::Matrix::Int.indgen(3, 5, 2)
+=&gt; GSL::Matrix::Int
+[  2  3  4  5  6
+   7  8  9 10 11
+  12 13 14 15 16 ]
+&gt;&gt; m = GSL::Matrix.indgen(2, 3, 4.5, 6.7)
+=&gt; GSL::Matrix
+[  4.500e+00  1.120e+01  1.790e+01
+   2.460e+01  3.130e+01  3.800e+01 ]</pre>
 </li></ul>
 
-<h3 id="label-NOTE-3A">NOTE:<span><a href="#label-NOTE-3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-NOTE-3A">NOTE:<span><a href="#label-NOTE-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>Matrix dimensions are limited within the range of Fixnum. For 32-bit CPU,
 the maximum of matrix dimension is 2^30 ~ 1e9.</p>
 
-<h2 id="label-Instance+Methods">Instance Methods<span><a href="#label-Instance+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Instance+Methods">Instance Methods<span><a href="#label-Instance+Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Accessing+matrix+elements">Accessing matrix elements<span><a href="#label-Accessing+matrix+elements">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Accessing+matrix+elements">Accessing matrix elements<span><a href="#label-Accessing+matrix+elements">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#size1</p>
@@ -417,13 +411,12 @@ the maximum of matrix dimension is 2^30 ~ 1e9.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">size1</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">size2</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">shape</span>
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">3</span>, <span class="ruby-value">5</span>]
-</pre>
+<pre>&gt;&gt; m.size1
+=&gt; 3
+&gt;&gt; m.size2
+=&gt; 5
+&gt;&gt; m.shape
+=&gt; [3, 5]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -506,29 +499,29 @@ individual bits.</p>
 
 <p>Examples:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">6.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>] = <span class="ruby-value">123</span>     <span class="ruby-comment"># m.set(1, 2, 123)</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">123</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">1.230e+02</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">2.0</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">set</span>([<span class="ruby-value">3</span>, <span class="ruby-value">5</span>, <span class="ruby-value">2</span>], [<span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>], [<span class="ruby-value">7</span>, <span class="ruby-value">1</span>, <span class="ruby-value">5</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">3.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">2.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">5.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>]   <span class="ruby-comment"># old/unsupported form</span>
-<span class="ruby-constant">NoMethodError</span><span class="ruby-operator">:</span> <span class="ruby-identifier">undefined</span> <span class="ruby-identifier">method</span> <span class="ruby-node">%x[]&#39; for 2.0:Float
+<pre>&gt;&gt; m = GSL::Matrix[1..9, 3, 3]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m[1, 2]
+=&gt; 6.0
+&gt;&gt; m[1, 2] = 123     # m.set(1, 2, 123)
+=&gt; 123
+&gt;&gt; m
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 1.230e+02
+  7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m[1]
+=&gt; 2.0
+&gt;&gt; m.set([3, 5, 2], [4, 5, 3], [7, 1, 5])
+=&gt; GSL::Matrix
+[ 3.000e+00 5.000e+00 2.000e+00
+  4.000e+00 5.000e+00 3.000e+00
+  7.000e+00 1.000e+00 5.000e+00 ]
+&gt;&gt; m[1][1]   # old/unsupported form
+NoMethodError: undefined method `[]&#39; for 2.0:Float
         from (irb):8
 &gt;&gt; m = GSL::Matrix::Int[1..9, 3, 3]
 =&gt; GSL::Matrix::Int
@@ -544,8 +537,7 @@ individual bits.</p>
 &gt;&gt; m[1][2]   # Bit 2 of m[0,1]
 =&gt; 0
 &gt;&gt; m[1][3]   # Bit 3 of m[0,1]
-=&gt; 0
-</span></pre>
+=&gt; 0</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -556,12 +548,11 @@ individual bits.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">eye</span>(<span class="ruby-value">3</span>).<span class="ruby-identifier">to_a</span>
-=<span class="ruby-operator">&gt;</span> [[<span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>], [<span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>], [<span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>]]
-</pre>
+<pre>&gt;&gt; GSL::Matrix.eye(3).to_a
+=&gt; [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]</pre>
 </li></ul>
 
-<h3 id="label-Initializing+matrix+elements">Initializing matrix elements<span><a href="#label-Initializing+matrix+elements">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Initializing+matrix+elements">Initializing matrix elements<span><a href="#label-Initializing+matrix+elements">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#set_all(x)</p>
@@ -584,7 +575,7 @@ of the identity matrix, i.e. a unit diagonal with all off-diagonal elements
 zero. This applies to both square and rectangular matrices.</p>
 </li></ul>
 
-<h3 id="label-IO">IO<span><a href="#label-IO">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-IO">IO<span><a href="#label-IO">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#fwrite(io)</p>
@@ -604,7 +595,7 @@ zero. This applies to both square and rectangular matrices.</p>
 <p>GSL::Matrix#fscanf(filename)</p>
 </li></ul>
 
-<h3 id="label-Matrix+views">Matrix views<span><a href="#label-Matrix+views">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Matrix+views">Matrix views<span><a href="#label-Matrix+views">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The <code>GSL::Matrix::View</code> class is defined to be used as
 “references” to matrices. The <code>Matrix::View</code> class is a subclass
@@ -738,24 +729,23 @@ columns.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">matrix_view</span>(<span class="ruby-value">3</span>, <span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>] = <span class="ruby-value">99.99</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">99.99</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">9.999e+01</span> <span class="ruby-value">6.000e+00</span> <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span>
-</pre>
+<pre>&gt;&gt; v = Vector[1..9]
+=&gt; GSL::Vector
+[ 1.000e+00 2.000e+00 3.000e+00 4.000e+00 5.000e+00 6.000e+00 7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m = v.matrix_view(3, 3)
+=&gt; GSL::Matrix::View
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m[1][1] = 99.99
+=&gt; 99.99
+&gt;&gt; v
+=&gt; GSL::Vector
+[ 1.000e+00 2.000e+00 3.000e+00 4.000e+00 9.999e+01 6.000e+00 7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt;</pre>
 </li></ul>
 
-<h3 id="label-Creating+row+and+column+views">Creating row and column views<span><a href="#label-Creating+row+and+column+views">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Creating+row+and+column+views">Creating row and column views<span><a href="#label-Creating+row+and+column+views">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#row(i)</p>
@@ -803,30 +793,29 @@ matrix.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">row</span>(<span class="ruby-value">1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>
-[ <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">col</span>(<span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>
-[ <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">col</span>(<span class="ruby-value">2</span>)[<span class="ruby-value">2</span>] = <span class="ruby-value">123</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">123</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">1.230e+02</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">diagonal</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">1.230e+02</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix[1..9, 3, 3]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m.row(1)
+=&gt; GSL::Vector::View
+[ 4.000e+00 5.000e+00 6.000e+00 ]
+&gt;&gt; m.col(2)
+=&gt; GSL::Vector::Col::View
+[ 3.000e+00
+  6.000e+00
+  9.000e+00 ]
+&gt;&gt; m.col(2)[2] = 123
+=&gt; 123
+&gt;&gt; m
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 1.230e+02 ]
+&gt;&gt; m.diagonal
+=&gt; GSL::Vector::View:
+[ 1.000e+00 5.000e+00 1.230e+02 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -851,17 +840,16 @@ the matrix corresponds to k = 0.</p>
 <p>Creates a <code>GSL::Vector</code> object “flattening” the rows of the
 matrix <code>self</code>.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_v</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix[1..6, 2, 3]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00 ]
+&gt;&gt; m.to_v
+=&gt; GSL::Vector
+[ 1.000e+00 2.000e+00 3.000e+00 4.000e+00 5.000e+00 6.000e+00 ]</pre>
 </li></ul>
 
-<h3 id="label-Iterators">Iterators<span><a href="#label-Iterators">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Iterators">Iterators<span><a href="#label-Iterators">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#each_row</p>
@@ -885,7 +873,7 @@ matrix <code>self</code>.</p>
 <p>GSL::Matrix#map! { |item| .. }</p>
 </li></ul>
 
-<h3 id="label-Copying+matrices">Copying matrices<span><a href="#label-Copying+matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Copying+matrices">Copying matrices<span><a href="#label-Copying+matrices">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#clone</p>
@@ -901,7 +889,7 @@ matrix <code>self</code>.</p>
 <p>GSL::Matrix.swap(dest, src)</p>
 </li></ul>
 
-<h3 id="label-Copying+rows+and+columns">Copying rows and columns<span><a href="#label-Copying+rows+and+columns">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Copying+rows+and+columns">Copying rows and columns<span><a href="#label-Copying+rows+and+columns">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#get_row(i)</p>
@@ -933,7 +921,7 @@ same as the length of the row.</p>
 the same as the length of the column.</p>
 </li></ul>
 
-<h3 id="label-Exchanging+rows+and+columns">Exchanging rows and columns<span><a href="#label-Exchanging+rows+and+columns">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Exchanging+rows+and+columns">Exchanging rows and columns<span><a href="#label-Exchanging+rows+and+columns">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#swap_rows!(i, j)</p>
@@ -995,17 +983,16 @@ operation to be possible.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">4</span> <span class="ruby-value">5</span> <span class="ruby-value">6</span>
-  <span class="ruby-value">7</span> <span class="ruby-value">8</span> <span class="ruby-value">9</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">reverse_rows</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">7</span> <span class="ruby-value">8</span> <span class="ruby-value">9</span>
-  <span class="ruby-value">4</span> <span class="ruby-value">5</span> <span class="ruby-value">6</span>
-  <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int[1..9, 3, 3]
+=&gt; GSL::Matrix::Int
+[ 1 2 3
+  4 5 6
+  7 8 9 ]
+&gt;&gt; m.reverse_rows
+=&gt; GSL::Matrix::Int
+[ 7 8 9
+  4 5 6
+  1 2 3 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1015,17 +1002,16 @@ operation to be possible.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">4</span> <span class="ruby-value">5</span> <span class="ruby-value">6</span>
-  <span class="ruby-value">7</span> <span class="ruby-value">8</span> <span class="ruby-value">9</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">reverse_rows</span>.<span class="ruby-identifier">reverse_columns</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">9</span> <span class="ruby-value">8</span> <span class="ruby-value">7</span>
-  <span class="ruby-value">6</span> <span class="ruby-value">5</span> <span class="ruby-value">4</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">2</span> <span class="ruby-value">1</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int[1..9, 3, 3]
+=&gt; GSL::Matrix::Int
+[ 1 2 3
+  4 5 6
+  7 8 9 ]
+&gt;&gt; m.reverse_rows.reverse_columns
+=&gt; GSL::Matrix::Int
+[ 9 8 7
+  6 5 4
+  3 2 1 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1039,30 +1025,29 @@ a clockwise direction.</p>
 
 <p>Examples:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">4</span> <span class="ruby-value">5</span> <span class="ruby-value">6</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">rot90</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">3</span> <span class="ruby-value">6</span>
-  <span class="ruby-value">2</span> <span class="ruby-value">5</span>
-  <span class="ruby-value">1</span> <span class="ruby-value">4</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">rot90</span>(<span class="ruby-value">2</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">6</span> <span class="ruby-value">5</span> <span class="ruby-value">4</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">2</span> <span class="ruby-value">1</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">rot90</span>(<span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">4</span> <span class="ruby-value">1</span>
-  <span class="ruby-value">5</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">6</span> <span class="ruby-value">3</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">rot90</span>(<span class="ruby-value">-1</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">4</span> <span class="ruby-value">1</span>
-  <span class="ruby-value">5</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">6</span> <span class="ruby-value">3</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int[1..6, 2, 3]
+=&gt; GSL::Matrix::Int
+[ 1 2 3
+  4 5 6 ]
+&gt;&gt; m.rot90
+=&gt; GSL::Matrix::Int
+[ 3 6
+  2 5
+  1 4 ]
+&gt;&gt; m.rot90(2)
+=&gt; GSL::Matrix::Int
+[ 6 5 4
+  3 2 1 ]
+&gt;&gt; m.rot90(3)
+=&gt; GSL::Matrix::Int
+[ 4 1
+  5 2
+  6 3 ]
+&gt;&gt; m.rot90(-1)
+=&gt; GSL::Matrix::Int
+[ 4 1
+  5 2
+  6 3 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1078,22 +1063,21 @@ a clockwise direction.</p>
 <p>This creates a matrix copying the lower half part of the matrix
 <code>self</code>, including the diagonal elements.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">upper</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span>
-  <span class="ruby-value">0.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">lower</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span>
-  <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> <span class="ruby-value">0.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> <span class="ruby-value">9.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix[1..9, 3, 3]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  4.000e+00 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]
+&gt;&gt; m.upper
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00 3.000e+00
+  0.000e+00 5.000e+00 6.000e+00
+  0.000e+00 0.000e+00 9.000e+00 ]
+&gt;&gt; m.lower
+=&gt; GSL::Matrix
+[ 1.000e+00 0.000e+00 0.000e+00
+  4.000e+00 5.000e+00 0.000e+00
+  7.000e+00 8.000e+00 9.000e+00 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1104,21 +1088,20 @@ a clockwise direction.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">4</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">5</span>  <span class="ruby-value">6</span>  <span class="ruby-value">7</span>
-   <span class="ruby-value">8</span>  <span class="ruby-value">9</span> <span class="ruby-value">10</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">horzcat</span>(<span class="ruby-identifier">b</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">1</span>  <span class="ruby-value">2</span>  <span class="ruby-value">5</span>  <span class="ruby-value">6</span>  <span class="ruby-value">7</span>
-   <span class="ruby-value">3</span>  <span class="ruby-value">4</span>  <span class="ruby-value">8</span>  <span class="ruby-value">9</span> <span class="ruby-value">10</span> ]
-</pre>
+<pre>&gt;&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; a = GSL::Matrix::Int[1..4, 2, 2]
+=&gt; GSL::Matrix::Int
+[ 1 2
+  3 4 ]
+&gt;&gt; b = GSL::Matrix::Int[5..10, 2, 3]
+=&gt; GSL::Matrix::Int
+[  5  6  7
+   8  9 10 ]
+&gt;&gt; a.horzcat(b)
+=&gt; GSL::Matrix::Int
+[  1  2  5  6  7
+   3  4  8  9 10 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1129,26 +1112,25 @@ a clockwise direction.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">4</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>, <span class="ruby-value">3</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">5</span>  <span class="ruby-value">6</span>
-   <span class="ruby-value">7</span>  <span class="ruby-value">8</span>
-   <span class="ruby-value">9</span> <span class="ruby-value">10</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">vertcat</span>(<span class="ruby-identifier">b</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[  <span class="ruby-value">1</span>  <span class="ruby-value">2</span>
-   <span class="ruby-value">3</span>  <span class="ruby-value">4</span>
-   <span class="ruby-value">5</span>  <span class="ruby-value">6</span>
-   <span class="ruby-value">7</span>  <span class="ruby-value">8</span>
-   <span class="ruby-value">9</span> <span class="ruby-value">10</span> ]
-</pre>
+<pre>&gt;&gt; a = GSL::Matrix::Int[1..4, 2, 2]
+=&gt; GSL::Matrix::Int
+[ 1 2
+  3 4 ]
+&gt;&gt; b = GSL::Matrix::Int[5..10, 3, 2]
+=&gt; GSL::Matrix::Int
+[  5  6
+   7  8
+   9 10 ]
+&gt;&gt; a.vertcat(b)
+=&gt; GSL::Matrix::Int
+[  1  2
+   3  4
+   5  6
+   7  8
+   9 10 ]</pre>
 </li></ul>
 
-<h3 id="label-Matrix+operations">Matrix operations<span><a href="#label-Matrix+operations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Matrix+operations">Matrix operations<span><a href="#label-Matrix+operations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#add(b)</p>
@@ -1209,30 +1191,29 @@ matrix.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span>
-  <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">8</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">5.000e+00</span> <span class="ruby-value">6.000e+00</span>
-  <span class="ruby-value">7.000e+00</span> <span class="ruby-value">8.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">b</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.900e+01</span> <span class="ruby-value">2.200e+01</span>
-  <span class="ruby-value">4.300e+01</span> <span class="ruby-value">5.000e+01</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-value">2</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">2.000e+00</span> <span class="ruby-value">4.000e+00</span>
-  <span class="ruby-value">6.000e+00</span> <span class="ruby-value">8.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">c</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">c</span>.<span class="ruby-identifier">col</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>
-[ <span class="ruby-value">5.000e+00</span>
-  <span class="ruby-value">1.100e+01</span> ]
-</pre>
+<pre>&gt;&gt; a = GSL::Matrix[1..4, 2, 2]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00
+  3.000e+00 4.000e+00 ]
+&gt;&gt; b = GSL::Matrix[5..8, 2, 2]
+=&gt; GSL::Matrix
+[ 5.000e+00 6.000e+00
+  7.000e+00 8.000e+00 ]
+&gt;&gt; a*b
+=&gt; GSL::Matrix
+[ 1.900e+01 2.200e+01
+  4.300e+01 5.000e+01 ]
+&gt;&gt; a*2
+=&gt; GSL::Matrix
+[ 2.000e+00 4.000e+00
+  6.000e+00 8.000e+00 ]
+&gt;&gt; c = Vector[1, 2]
+=&gt; GSL::Vector
+[ 1.000e+00 2.000e+00 ]
+&gt;&gt; a*c.col
+=&gt; GSL::Vector::Col
+[ 5.000e+00
+  1.100e+01 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1244,27 +1225,26 @@ is given, this method solves the linear system by using LU decomposition.</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-value">2</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span>
-  <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">3.333e-01</span> <span class="ruby-value">6.667e-01</span>         <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>, <span class="ruby-value">2</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>
-  <span class="ruby-value">1.000e+00</span> <span class="ruby-value">1.333e+00</span> ]       <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-value">3</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>, <span class="ruby-value">4</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">5</span>, <span class="ruby-value">6</span>].<span class="ruby-identifier">col</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>
-[ <span class="ruby-value">5.000e+00</span>
-  <span class="ruby-value">6.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">x</span> = <span class="ruby-identifier">m</span><span class="ruby-operator">/</span><span class="ruby-identifier">b</span>          <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Solve</span> <span class="ruby-identifier">m</span> (<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>) = <span class="ruby-identifier">b</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>
-[ <span class="ruby-value">-4.000e+00</span>                  <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-identifier">x</span> = <span class="ruby-value">-4</span>
-  <span class="ruby-value">4.500e+00</span> ]                 <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-identifier">y</span> = <span class="ruby-value">4.5</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>
-[  <span class="ruby-value">5.000e+00</span>
-   <span class="ruby-value">6.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix[1..4, 2, 2]
+=&gt; GSL::Matrix
+[ 1.000e+00 2.000e+00
+  3.000e+00 4.000e+00 ]
+&gt;&gt; m/3
+=&gt; GSL::Matrix
+[ 3.333e-01 6.667e-01         &lt;--- 1/3, 2/3
+  1.000e+00 1.333e+00 ]       &lt;--- 3/3, 4/3
+&gt;&gt; b = Vector[5, 6].col
+=&gt; GSL::Vector::Col
+[ 5.000e+00
+  6.000e+00 ]
+&gt;&gt; x = m/b          &lt;--- Solve m (x,y) = b
+=&gt; GSL::Vector::Col
+[ -4.000e+00                  &lt;--- x = -4
+  4.500e+00 ]                 &lt;--- y = 4.5
+&gt;&gt; m*x
+=&gt; GSL::Vector::Col
+[  5.000e+00
+   6.000e+00 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1273,7 +1253,7 @@ is given, this method solves the linear system by using LU decomposition.</p>
 <p>Computes matrix power of <code>b</code>.</p>
 </li></ul>
 
-<h3 id="label-Finding+maximum+and+minimum+elements+of+matrices">Finding maximum and minimum elements of matrices<span><a href="#label-Finding+maximum+and+minimum+elements+of+matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Finding+maximum+and+minimum+elements+of+matrices">Finding maximum and minimum elements of matrices<span><a href="#label-Finding+maximum+and+minimum+elements+of+matrices">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#max</p>
@@ -1305,7 +1285,7 @@ minimum and the maximum values in the  matrix.</p>
 indices of the minimum and the maximum value in the matrix.</p>
 </li></ul>
 
-<h3 id="label-Matrix+properties">Matrix properties<span><a href="#label-Matrix+properties">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Matrix+properties">Matrix properties<span><a href="#label-Matrix+properties">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Matrix#isnull</p>
@@ -1392,17 +1372,16 @@ the signum of NaN as 0 rather than NaN.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">-5</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>, <span class="ruby-value">3</span>, <span class="ruby-value">3</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">-5</span> <span class="ruby-operator">-</span><span class="ruby-value">4</span> <span class="ruby-operator">-</span><span class="ruby-value">3</span>
-  <span class="ruby-value">-2</span> <span class="ruby-operator">-</span><span class="ruby-value">1</span>  <span class="ruby-value">0</span>
-   <span class="ruby-value">1</span>  <span class="ruby-value">2</span>  <span class="ruby-value">3</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">abs</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">5</span> <span class="ruby-value">4</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">2</span> <span class="ruby-value">1</span> <span class="ruby-value">0</span>
-  <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix::Int[-5..4, 3, 3]
+=&gt; GSL::Matrix::Int
+[ -5 -4 -3
+  -2 -1  0
+   1  2  3 ]
+&gt;&gt; m.abs
+=&gt; GSL::Matrix::Int
+[ 5 4 3
+  2 1 0
+  1 2 3 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1415,7 +1394,7 @@ to absolute accurary <code>eps</code> for all the indices, and
 <code>false</code> otherwise.</p>
 </li></ul>
 
-<h2 id="label-NArray">NArray<span><a href="#label-NArray">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-NArray">NArray<span><a href="#label-NArray">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Matrix#to_na</p>
@@ -1445,7 +1424,7 @@ modifications to the View object affect on the original NArray object
 object.</p>
 </li></ul>
 
-<h2 id="label-Special+matrices">Special matrices<span><a href="#label-Special+matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Special+matrices">Special matrices<span><a href="#label-Special+matrices">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Matrix.hirbert(n)</p>
@@ -1461,37 +1440,36 @@ element is defined as 1/(i+j+1).</p>
 
 <p>Ex:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">hilbert</span>(<span class="ruby-value">4</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">5.000e-01</span> <span class="ruby-value">3.333e-01</span> <span class="ruby-value">2.500e-01</span>
-  <span class="ruby-value">5.000e-01</span> <span class="ruby-value">3.333e-01</span> <span class="ruby-value">2.500e-01</span> <span class="ruby-value">2.000e-01</span>
-  <span class="ruby-value">3.333e-01</span> <span class="ruby-value">2.500e-01</span> <span class="ruby-value">2.000e-01</span> <span class="ruby-value">1.667e-01</span>
-  <span class="ruby-value">2.500e-01</span> <span class="ruby-value">2.000e-01</span> <span class="ruby-value">1.667e-01</span> <span class="ruby-value">1.429e-01</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">invm</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">invhilbert</span>(<span class="ruby-value">4</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.600e+01</span> <span class="ruby-operator">-</span><span class="ruby-value">1.200e+02</span> <span class="ruby-value">2.400e+02</span> <span class="ruby-operator">-</span><span class="ruby-value">1.400e+02</span>
-  <span class="ruby-value">-1.200e+02</span> <span class="ruby-value">1.200e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">2.700e+03</span> <span class="ruby-value">1.680e+03</span>
-  <span class="ruby-value">2.400e+02</span> <span class="ruby-operator">-</span><span class="ruby-value">2.700e+03</span> <span class="ruby-value">6.480e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">4.200e+03</span>
-  <span class="ruby-value">-1.400e+02</span> <span class="ruby-value">1.680e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">4.200e+03</span> <span class="ruby-value">2.800e+03</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">invm2</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">inv</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.600e+01</span> <span class="ruby-operator">-</span><span class="ruby-value">1.200e+02</span> <span class="ruby-value">2.400e+02</span> <span class="ruby-operator">-</span><span class="ruby-value">1.400e+02</span>
-  <span class="ruby-value">-1.200e+02</span> <span class="ruby-value">1.200e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">2.700e+03</span> <span class="ruby-value">1.680e+03</span>
-  <span class="ruby-value">2.400e+02</span> <span class="ruby-operator">-</span><span class="ruby-value">2.700e+03</span> <span class="ruby-value">6.480e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">4.200e+03</span>
-  <span class="ruby-value">-1.400e+02</span> <span class="ruby-value">1.680e+03</span> <span class="ruby-operator">-</span><span class="ruby-value">4.200e+03</span> <span class="ruby-value">2.800e+03</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span><span class="ruby-operator">*</span><span class="ruby-identifier">invm</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">5.684e-14</span> <span class="ruby-operator">-</span><span class="ruby-value">2.274e-13</span> <span class="ruby-value">1.137e-13</span>
-  <span class="ruby-value">1.998e-15</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">4.663e-14</span> <span class="ruby-value">3.109e-14</span>
-  <span class="ruby-value">3.664e-15</span> <span class="ruby-operator">-</span><span class="ruby-value">7.239e-14</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">1.017e-13</span>
-  <span class="ruby-value">-2.442e-15</span> <span class="ruby-value">1.510e-14</span> <span class="ruby-operator">-</span><span class="ruby-value">8.038e-14</span> <span class="ruby-value">1.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">m</span><span class="ruby-operator">*</span><span class="ruby-identifier">invm2</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span>
-  <span class="ruby-value">-1.554e-15</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">2.389e-14</span> <span class="ruby-value">8.349e-15</span>
-  <span class="ruby-value">1.295e-15</span> <span class="ruby-value">3.405e-15</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-operator">-</span><span class="ruby-value">6.957e-15</span>
-  <span class="ruby-value">1.110e-15</span> <span class="ruby-value">1.916e-14</span> <span class="ruby-value">1.707e-14</span> <span class="ruby-value">1.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; m = GSL::Matrix.hilbert(4)
+=&gt; GSL::Matrix
+[ 1.000e+00 5.000e-01 3.333e-01 2.500e-01
+  5.000e-01 3.333e-01 2.500e-01 2.000e-01
+  3.333e-01 2.500e-01 2.000e-01 1.667e-01
+  2.500e-01 2.000e-01 1.667e-01 1.429e-01 ]
+&gt;&gt; invm = GSL::Matrix.invhilbert(4)
+=&gt; GSL::Matrix
+[ 1.600e+01 -1.200e+02 2.400e+02 -1.400e+02
+  -1.200e+02 1.200e+03 -2.700e+03 1.680e+03
+  2.400e+02 -2.700e+03 6.480e+03 -4.200e+03
+  -1.400e+02 1.680e+03 -4.200e+03 2.800e+03 ]
+&gt;&gt; invm2 = m.inv
+=&gt; GSL::Matrix
+[ 1.600e+01 -1.200e+02 2.400e+02 -1.400e+02
+  -1.200e+02 1.200e+03 -2.700e+03 1.680e+03
+  2.400e+02 -2.700e+03 6.480e+03 -4.200e+03
+  -1.400e+02 1.680e+03 -4.200e+03 2.800e+03 ]
+&gt;&gt; m*invm
+=&gt; GSL::Matrix
+[ 1.000e+00 5.684e-14 -2.274e-13 1.137e-13
+  1.998e-15 1.000e+00 -4.663e-14 3.109e-14
+  3.664e-15 -7.239e-14 1.000e+00 -1.017e-13
+  -2.442e-15 1.510e-14 -8.038e-14 1.000e+00 ]
+&gt;&gt; m*invm2
+=&gt; GSL::Matrix
+[ 1.000e+00 0.000e+00 0.000e+00 0.000e+00
+  -1.554e-15 1.000e+00 -2.389e-14 8.349e-15
+  1.295e-15 3.405e-15 1.000e+00 -6.957e-15
+  1.110e-15 1.916e-14 1.707e-14 1.000e+00 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1500,19 +1478,18 @@ element is defined as 1/(i+j+1).</p>
 <p>Returns the Pascal matrix of order <code>n</code>, created from
 Pascal&#39;s triangle.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">pascal</span>(<span class="ruby-value">10</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>     <span class="ruby-value">1</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">2</span>     <span class="ruby-value">3</span>     <span class="ruby-value">4</span>     <span class="ruby-value">5</span>     <span class="ruby-value">6</span>     <span class="ruby-value">7</span>     <span class="ruby-value">8</span>     <span class="ruby-value">9</span>    <span class="ruby-value">10</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">3</span>     <span class="ruby-value">6</span>    <span class="ruby-value">10</span>    <span class="ruby-value">15</span>    <span class="ruby-value">21</span>    <span class="ruby-value">28</span>    <span class="ruby-value">36</span>    <span class="ruby-value">45</span>    <span class="ruby-value">55</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">4</span>    <span class="ruby-value">10</span>    <span class="ruby-value">20</span>    <span class="ruby-value">35</span>    <span class="ruby-value">56</span>    <span class="ruby-value">84</span>   <span class="ruby-value">120</span>   <span class="ruby-value">165</span>   <span class="ruby-value">220</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">5</span>    <span class="ruby-value">15</span>    <span class="ruby-value">35</span>    <span class="ruby-value">70</span>   <span class="ruby-value">126</span>   <span class="ruby-value">210</span>   <span class="ruby-value">330</span>   <span class="ruby-value">495</span>   <span class="ruby-value">715</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">6</span>    <span class="ruby-value">21</span>    <span class="ruby-value">56</span>   <span class="ruby-value">126</span>   <span class="ruby-value">252</span>   <span class="ruby-value">462</span>   <span class="ruby-value">792</span>  <span class="ruby-value">1287</span>  <span class="ruby-value">2002</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">7</span>    <span class="ruby-value">28</span>    <span class="ruby-value">84</span>   <span class="ruby-value">210</span>   <span class="ruby-value">462</span>   <span class="ruby-value">924</span>  <span class="ruby-value">1716</span>  <span class="ruby-value">3003</span>  <span class="ruby-value">5005</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">8</span>    <span class="ruby-value">36</span>   <span class="ruby-value">120</span>   <span class="ruby-value">330</span>   <span class="ruby-value">792</span>  <span class="ruby-value">1716</span>  <span class="ruby-value">3432</span>  <span class="ruby-value">6435</span> <span class="ruby-value">11440</span>
-      <span class="ruby-value">1</span>     <span class="ruby-value">9</span>    <span class="ruby-value">45</span>   <span class="ruby-value">165</span>   <span class="ruby-value">495</span>  <span class="ruby-value">1287</span>  <span class="ruby-value">3003</span>  <span class="ruby-value">6435</span> <span class="ruby-value">12870</span> <span class="ruby-value">24310</span>
-      <span class="ruby-value">1</span>    <span class="ruby-value">10</span>    <span class="ruby-value">55</span>   <span class="ruby-value">220</span>   <span class="ruby-value">715</span>  <span class="ruby-value">2002</span>  <span class="ruby-value">5005</span> <span class="ruby-value">11440</span> <span class="ruby-value">24310</span> <span class="ruby-value">48620</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Matrix::Int.pascal(10)
+=&gt; GSL::Matrix::Int
+[     1     1     1     1     1     1     1     1     1     1
+      1     2     3     4     5     6     7     8     9    10
+      1     3     6    10    15    21    28    36    45    55
+      1     4    10    20    35    56    84   120   165   220
+      1     5    15    35    70   126   210   330   495   715
+      1     6    21    56   126   252   462   792  1287  2002
+      1     7    28    84   210   462   924  1716  3003  5005
+      1     8    36   120   330   792  1716  3432  6435 11440
+      1     9    45   165   495  1287  3003  6435 12870 24310
+      1    10    55   220   715  2002  5005 11440 24310 48620 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1520,13 +1497,12 @@ Pascal&#39;s triangle.</p>
 
 <p>Creates a Vendermonde matrix from a vector or an array <code>v</code>.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">vander</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">1.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">1.000e+00</span>
-  <span class="ruby-value">8.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">1.000e+00</span>
-  <span class="ruby-value">2.700e+01</span> <span class="ruby-value">9.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">1.000e+00</span>
-  <span class="ruby-value">6.400e+01</span> <span class="ruby-value">1.600e+01</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">1.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Matrix.vander([1, 2, 3, 4])
+=&gt; GSL::Matrix
+[ 1.000e+00 1.000e+00 1.000e+00 1.000e+00
+  8.000e+00 4.000e+00 2.000e+00 1.000e+00
+  2.700e+01 9.000e+00 3.000e+00 1.000e+00
+  6.400e+01 1.600e+01 4.000e+00 1.000e+00 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1534,14 +1510,13 @@ Pascal&#39;s triangle.</p>
 
 <p>Creates a Toeplitz matrix from a vector or an array <code>v</code>.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">toeplitz</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span> <span class="ruby-value">5</span>
-  <span class="ruby-value">2</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">2</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">4</span> <span class="ruby-value">3</span> <span class="ruby-value">2</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">5</span> <span class="ruby-value">4</span> <span class="ruby-value">3</span> <span class="ruby-value">2</span> <span class="ruby-value">1</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Matrix::Int.toeplitz([1, 2, 3, 4, 5])
+=&gt; GSL::Matrix::Int
+[ 1 2 3 4 5
+  2 1 2 3 4
+  3 2 1 2 3
+  4 3 2 1 2
+  5 4 3 2 1 ]</pre>
 </li></ul>
 <hr>
 <ul><li>
@@ -1549,13 +1524,12 @@ Pascal&#39;s triangle.</p>
 
 <p>Creates a circulant matrix from a vector or an array <code>v</code>.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>.<span class="ruby-identifier">circulant</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>])
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">4</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span>
-  <span class="ruby-value">3</span> <span class="ruby-value">4</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span>
-  <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span> <span class="ruby-value">1</span>
-  <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span> ]
-</pre>
+<pre>&gt;&gt; GSL::Matrix::Int.circulant([1, 2, 3, 4])
+=&gt; GSL::Matrix::Int
+[ 4 1 2 3
+  3 4 1 2
+  2 3 4 1
+  1 2 3 4 ]</pre>
 </li></ul>
 
 <p><a href="vector_rdoc.html">prev</a> <a href="perm_rdoc.html">next</a></p>
@@ -1567,7 +1541,7 @@ Pascal&#39;s triangle.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>eigen - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>eigen - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -200,9 +197,9 @@
 
 <main role="main" aria-label="Page eigen.rdoc">
 
-<h1 id="label-Eigensystems">Eigensystems<span><a href="#label-Eigensystems">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Eigensystems">Eigensystems<span><a href="#label-Eigensystems">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h3 id="label-Contentes">Contentes<span><a href="#label-Contentes">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Contentes">Contentes<span><a href="#label-Contentes">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <ol><li>
 <p><a href="eigen_rdoc.html#label-Modules+and+classes">Modules and classes</a></p>
 </li><li>
@@ -233,7 +230,7 @@ href="eigen_rdoc.html#label-Sorting+Eigenvalues+and+Eigenvectors">Sorting
 Eigenvalues and Eigenvectors </a></p>
 </li></ol>
 
-<h2 id="label-Modules+and+classes">Modules and classes<span><a href="#label-Modules+and+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Modules+and+classes">Modules and classes<span><a href="#label-Modules+and+classes">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
 <p>GSL</p>
 <ul><li>
@@ -308,9 +305,9 @@ Eigenvalues and Eigenvectors </a></p>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Real+Symmetric+Matrices">Real Symmetric Matrices<span><a href="#label-Real+Symmetric+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Real+Symmetric+Matrices">Real Symmetric Matrices<span><a href="#label-Real+Symmetric+Matrices">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Workspace+classes">Workspace classes<span><a href="#label-Workspace+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Workspace+classes">Workspace classes<span><a href="#label-Workspace+classes">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Eigen::Symm::Workspace.alloc(n)</p>
@@ -322,7 +319,7 @@ Eigenvalues and Eigenvectors </a></p>
 <p>GSL::Eigen::Hermv::Workspace.alloc(n)</p>
 </li></ul>
 
-<h3 id="label-Methods+to+solve+eigensystems">Methods to solve eigensystems<span><a href="#label-Methods+to+solve+eigensystems">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Methods+to+solve+eigensystems">Methods to solve eigensystems<span><a href="#label-Methods+to+solve+eigensystems">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Eigen::symm(A)</p>
@@ -352,16 +349,18 @@ eigenvectors.</p>
 <p>Singleton method of the <code>GSL::Eigen</code> module,
 <code>GSL::Eigen::symm</code></p>
 
-<pre>m = GSL::Matrix.alloc([1.0, 1/2.0, 1/3.0, 1/4.0], [1/2.0, 1/3.0, 1/4.0, 1/5.0],
-                   [1/3.0, 1/4.0, 1/5.0, 1/6.0], [1/4.0, 1/5.0, 1/6.0, 1/7.0])
-eigval, eigvec = Eigen::symmv(m)</pre>
+<pre class="ruby"><span class="ruby-identifier">m</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">2.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">3.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">4.0</span>], [<span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">2.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">3.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">4.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">5.0</span>],
+                   [<span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">3.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">4.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">5.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">6.0</span>], [<span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">4.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">5.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">6.0</span>, <span class="ruby-value">1</span><span class="ruby-operator">/</span><span class="ruby-value">7.0</span>])
+<span class="ruby-identifier">eigval</span>, <span class="ruby-identifier">eigvec</span> = <span class="ruby-constant">Eigen</span><span class="ruby-operator">::</span><span class="ruby-identifier">symmv</span>(<span class="ruby-identifier">m</span>)
+</pre>
 </li><li>
 <p>Instance method of <code>GSL::Matrix</code> class</p>
 
-<pre>eigval, eigvec = m.eigen_symmv</pre>
+<pre class="ruby"><span class="ruby-identifier">eigval</span>, <span class="ruby-identifier">eigvec</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">eigen_symmv</span>
+</pre>
 </li></ol>
 
-<h2 id="label-Complex+Hermitian+Matrices">Complex Hermitian Matrices<span><a href="#label-Complex+Hermitian+Matrices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Complex+Hermitian+Matrices">Complex Hermitian Matrices<span><a href="#label-Complex+Hermitian+Matrices">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Eigen::herm(A)</p>
@@ -385,7 +384,7 @@ eigval, eigvec = Eigen::symmv(m)</pre>
 <p>GSL::Matrix::Complex#eigen_hermv(workspace</p>
 </li></ul>
 
-<h2 id="label-Real+Nonsymmetric+Matrices+-28-3E-3D+GSL-1.9-29">Real Nonsymmetric Matrices (&gt;= GSL-1.9)<span><a href="#label-Real+Nonsymmetric+Matrices+-28-3E-3D+GSL-1.9-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Real+Nonsymmetric+Matrices+-28-3E-3D+GSL-1.9-29">Real Nonsymmetric Matrices (&gt;= GSL-1.9)<span><a href="#label-Real+Nonsymmetric+Matrices+-28-3E-3D+GSL-1.9-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Eigen::Nonsymm.alloc(n)</p>
@@ -486,7 +485,7 @@ On output, the upper portion of <code>m</code> contains the Schur form
 <code>T</code>.</p>
 </li></ul>
 
-<h2 id="label-Real+Generalized+Symmetric-Definite+Eigensystems+-28GSL-1.10-29">Real Generalized Symmetric-Definite Eigensystems (GSL-1.10)<span><a href="#label-Real+Generalized+Symmetric-Definite+Eigensystems+-28GSL-1.10-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Real+Generalized+Symmetric-Definite+Eigensystems+-28GSL-1.10-29">Real Generalized Symmetric-Definite Eigensystems (GSL-1.10)<span><a href="#label-Real+Generalized+Symmetric-Definite+Eigensystems+-28GSL-1.10-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The real generalized symmetric-definite eigenvalue problem is to find
 eigenvalues <code>lambda</code> and eigenvectors <code>x</code> such that
@@ -528,7 +527,7 @@ eigenvectors are normalized to have unit magnitude. On output,
 <code>B</code> contains its Cholesky decomposition.</p>
 </li></ul>
 
-<h2 id="label-Complex+Generalized+Hermitian-Definite+Eigensystems+-28-3E-3D+GSL-1.10-29">Complex Generalized Hermitian-Definite Eigensystems (&gt;= GSL-1.10)<span><a href="#label-Complex+Generalized+Hermitian-Definite+Eigensystems+-28-3E-3D+GSL-1.10-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Complex+Generalized+Hermitian-Definite+Eigensystems+-28-3E-3D+GSL-1.10-29">Complex Generalized Hermitian-Definite Eigensystems (&gt;= GSL-1.10)<span><a href="#label-Complex+Generalized+Hermitian-Definite+Eigensystems+-28-3E-3D+GSL-1.10-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The complex generalized hermitian-definite eigenvalue problem is to find
 eigenvalues <code>lambda</code> and eigenvectors <code>x</code> such that
@@ -568,7 +567,7 @@ computed eigenvectors are normalized to have unit magnitude. On output,
 <code>B</code> contains its Cholesky decomposition.</p>
 </li></ul>
 
-<h2 id="label-Real+Generalized+Nonsymmetric+Eigensystems+-28-3E-3D+GSL-1.10-29">Real Generalized Nonsymmetric Eigensystems (&gt;= GSL-1.10)<span><a href="#label-Real+Generalized+Nonsymmetric+Eigensystems+-28-3E-3D+GSL-1.10-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Real+Generalized+Nonsymmetric+Eigensystems+-28-3E-3D+GSL-1.10-29">Real Generalized Nonsymmetric Eigensystems (&gt;= GSL-1.10)<span><a href="#label-Real+Generalized+Nonsymmetric+Eigensystems+-28-3E-3D+GSL-1.10-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Eigen::Gen.alloc(n)</p>
@@ -655,7 +654,7 @@ eigenvectors are returned in <code>alpha, beta, evec</code>. On output,
 computes the left and right Schur vectors and returns them.</p>
 </li></ul>
 
-<h2 id="label-Sorting+Eigenvalues+and+Eigenvectors">Sorting Eigenvalues and Eigenvectors<span><a href="#label-Sorting+Eigenvalues+and+Eigenvectors">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Sorting+Eigenvalues+and+Eigenvectors">Sorting Eigenvalues and Eigenvectors<span><a href="#label-Sorting+Eigenvalues+and+Eigenvectors">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Eigen::symmv_sort(eval, evec, type = GSL::Eigen::SORT_VAL_ASC)</p>
@@ -749,7 +748,7 @@ being complex.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

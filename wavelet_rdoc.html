@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>wavelet - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>wavelet - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -195,7 +192,7 @@
 
 <main role="main" aria-label="Page wavelet.rdoc">
 
-<h1 id="label-Discrete+Wavelet+Transforms">Discrete Wavelet Transforms<span><a href="#label-Discrete+Wavelet+Transforms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Discrete+Wavelet+Transforms">Discrete Wavelet Transforms<span><a href="#label-Discrete+Wavelet+Transforms">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>This chapter describes functions for performing Discrete Wavelet Transforms
 (DWTs). The library includes wavelets for real data in both one and two
@@ -221,7 +218,7 @@ transforms in two dimension</a></p>
 <p><a href="wavelet_rdoc.html#label-Example">Examples</a></p>
 </li></ol>
 
-<h2 id="label-Definitions">Definitions<span><a href="#label-Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Definitions">Definitions<span><a href="#label-Definitions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The continuous wavelet transform and its inverse are defined by the
 relations, and, where the basis functionspsi_{s,tau} are obtained by
@@ -237,7 +234,7 @@ basis for square-integrable signals.</p>
 <p>The discrete wavelet transform is an O(N) algorithm, and is also referred
 to as the fast wavelet transform.</p>
 
-<h2 id="label-Initialization">Initialization<span><a href="#label-Initialization">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Initialization">Initialization<span><a href="#label-Initialization">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Wavelet.alloc(type, k)</p>
@@ -293,9 +290,9 @@ n-by-n matrices it is sufficient to allocate a workspace of size
 columns.</p>
 </li></ul>
 
-<h2 id="label-Transform+Methods">Transform Methods<span><a href="#label-Transform+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Transform+Methods">Transform Methods<span><a href="#label-Transform+Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Wavelet+transforms+in+one+dimension">Wavelet transforms in one dimension<span><a href="#label-Wavelet+transforms+in+one+dimension">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Wavelet+transforms+in+one+dimension">Wavelet transforms in one dimension<span><a href="#label-Wavelet+transforms+in+one+dimension">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Wavelet.transform(w, v, dir = GSL::Wavelet::FORWARD, work)</p>
@@ -355,7 +352,7 @@ number of levels is J = log_2(n).</p>
 changed.</p>
 </li></ul>
 
-<h3 id="label-Wavelet+transforms+in+two+dimension">Wavelet transforms in two dimension<span><a href="#label-Wavelet+transforms+in+two+dimension">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Wavelet+transforms+in+two+dimension">Wavelet transforms in two dimension<span><a href="#label-Wavelet+transforms+in+two+dimension">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Wavelet.transform(same as the methods for one dimensional transforms)</p>
@@ -443,55 +440,56 @@ nstransforms)</p>
 <p>GSL::Wavelet2d#nstransform_inverse()</p>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-n = 256
-nc = 20
+<span class="ruby-identifier">n</span> = <span class="ruby-value">256</span>
+<span class="ruby-identifier">nc</span> = <span class="ruby-value">20</span>
 
-data = Vector.alloc(n)
-data.fscanf(&quot;ecg.dat&quot;)
+<span class="ruby-identifier">data</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-identifier">data</span>.<span class="ruby-identifier">fscanf</span>(<span class="ruby-string">&quot;ecg.dat&quot;</span>)
 
-w = GSL::Wavelet.alloc(&quot;daubechies&quot;, 4)
-work = GSL::Wavelet::Workspace.alloc(n)
+<span class="ruby-identifier">w</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Wavelet</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;daubechies&quot;</span>, <span class="ruby-value">4</span>)
+<span class="ruby-identifier">work</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Wavelet</span><span class="ruby-operator">::</span><span class="ruby-constant">Workspace</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
 
-##### Choose as you like...
-data2 = w.transform(data, Wavelet::FORWARD, work)
-#data2 = w.transform(data, work)
-#data2 = w.transform(data)
-#data2 = w.transform(data, Wavelet::FORWARD)
-#data2 = w.transform_forward(data, work)
-#data2 = w.transform_forward(data)
-#data2 = Wavelet.transform(w, data, Wavelet::FORWARD, work)
-#data2 = Wavelet.transform(w, data, Wavelet::FORWARD)
-#data2 = Wavelet.transform(w, data, work)
-#data2 = Wavelet.transform_forward(w, data)
-#data2 = data.wavelet_transform(w, Wavelet::FORWARD, work)
-#data2 = data.wavelet_transform_forward(w, work)
+<span class="ruby-comment">##### Choose as you like...</span>
+<span class="ruby-identifier">data2</span> = <span class="ruby-identifier">w</span>.<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">data</span>, <span class="ruby-constant">Wavelet</span><span class="ruby-operator">::</span><span class="ruby-constant">FORWARD</span>, <span class="ruby-identifier">work</span>)
+<span class="ruby-comment">#data2 = w.transform(data, work)</span>
+<span class="ruby-comment">#data2 = w.transform(data)</span>
+<span class="ruby-comment">#data2 = w.transform(data, Wavelet::FORWARD)</span>
+<span class="ruby-comment">#data2 = w.transform_forward(data, work)</span>
+<span class="ruby-comment">#data2 = w.transform_forward(data)</span>
+<span class="ruby-comment">#data2 = Wavelet.transform(w, data, Wavelet::FORWARD, work)</span>
+<span class="ruby-comment">#data2 = Wavelet.transform(w, data, Wavelet::FORWARD)</span>
+<span class="ruby-comment">#data2 = Wavelet.transform(w, data, work)</span>
+<span class="ruby-comment">#data2 = Wavelet.transform_forward(w, data)</span>
+<span class="ruby-comment">#data2 = data.wavelet_transform(w, Wavelet::FORWARD, work)</span>
+<span class="ruby-comment">#data2 = data.wavelet_transform_forward(w, work)</span>
 
-perm = data2.abs.sort_index
+<span class="ruby-identifier">perm</span> = <span class="ruby-identifier">data2</span>.<span class="ruby-identifier">abs</span>.<span class="ruby-identifier">sort_index</span>
 
-i = 0
-while (i + nc) &lt; n
-  data2[perm[i]] = 0.0
-  i += 1
-end
+<span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">while</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nc</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">n</span>
+  <span class="ruby-identifier">data2</span>[<span class="ruby-identifier">perm</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span>
 
-#data3 = w.transform(data2, Wavelet::BACKWARD, work)
-#data3 = w.transform(data2, Wavelet::BACKWARD)
-#data3 = w.transform_inverse(data2, work)
-#data3 = w.transform_inverse(data2)
-#data3 = Wavelet.transform(w, data2, Wavelet::BACKWARD, work)
-#data3 = Wavelet.transform(w, data2, Wavelet::BACKWARD)
-#data3 = Wavelet.transform_inverse(w, data2, work)
-data3 = Wavelet.transform_inverse(w, data2)
-#data3 = data2.wavelet_transform(w, Wavelet::BACKWARD, work)
-#data3 = data2.wavelet_transform_inverse(w, work)
+<span class="ruby-comment">#data3 = w.transform(data2, Wavelet::BACKWARD, work)</span>
+<span class="ruby-comment">#data3 = w.transform(data2, Wavelet::BACKWARD)</span>
+<span class="ruby-comment">#data3 = w.transform_inverse(data2, work)</span>
+<span class="ruby-comment">#data3 = w.transform_inverse(data2)</span>
+<span class="ruby-comment">#data3 = Wavelet.transform(w, data2, Wavelet::BACKWARD, work)</span>
+<span class="ruby-comment">#data3 = Wavelet.transform(w, data2, Wavelet::BACKWARD)</span>
+<span class="ruby-comment">#data3 = Wavelet.transform_inverse(w, data2, work)</span>
+<span class="ruby-identifier">data3</span> = <span class="ruby-constant">Wavelet</span>.<span class="ruby-identifier">transform_inverse</span>(<span class="ruby-identifier">w</span>, <span class="ruby-identifier">data2</span>)
+<span class="ruby-comment">#data3 = data2.wavelet_transform(w, Wavelet::BACKWARD, work)</span>
+<span class="ruby-comment">#data3 = data2.wavelet_transform_inverse(w, work)</span>
 
-#If you have GNU graph utility...
-GSL::graph(nil, data, data3, &quot;-T X -C -g 3&quot;)</pre>
+<span class="ruby-comment">#If you have GNU graph utility...</span>
+<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-identifier">graph</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">data3</span>, <span class="ruby-string">&quot;-T X -C -g 3&quot;</span>)
+</pre>
 
 <p><a href="fft_rdoc.html">prev</a> <a href="integration_rdoc.html">next</a></p>
 
@@ -502,7 +500,7 @@ GSL::graph(nil, data, data3, &quot;-T X -C -g 3&quot;)</pre>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

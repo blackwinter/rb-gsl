@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>fit - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>fit - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -201,7 +198,7 @@
 
 <main role="main" aria-label="Page fit.rdoc">
 
-<h1 id="label-Least-Squares+Fitting">Least-Squares Fitting<span><a href="#label-Least-Squares+Fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Least-Squares+Fitting">Least-Squares Fitting<span><a href="#label-Least-Squares+Fitting">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>This chapter describes routines for performing least squares fits to
 experimental data using linear combinations of functions. The data may be
@@ -252,7 +249,7 @@ fitting</a></p>
 </li></ol>
 </li></ol>
 
-<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Least-squares fits are found by minimizing chi^2 (chi-squared), the
 weighted sum of squared residuals over n experimental datapoints (x_i, y_i)
@@ -287,7 +284,7 @@ root of the corresponding diagonal elements of the covariance matrix,
 sigma_{c_a} = sqrt{C_{aa}}. The correlation coefficient of the fit
 parameters c_a and c_b is given by rho_{ab} = C_{ab} / sqrt{C_{aa} C_{bb}}.</p>
 
-<h2 id="label-Linear+regression">Linear regression<span><a href="#label-Linear+regression">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Linear+regression">Linear regression<span><a href="#label-Linear+regression">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The functions described in this section can be used to perform
 least-squares fits to a straight line model, Y = c_0 + c_1 X. For weighted
@@ -299,7 +296,7 @@ residuals, chi^2,</p>
 <p>for the parameters <code>c0, c1</code>. For unweighted data the sum is
 computed with <code>w_i = 1</code>.</p>
 
-<h3 id="label-Module+functions+for+linear+regression">Module functions for linear regression<span><a href="#label-Module+functions+for+linear+regression">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Module+functions+for+linear+regression">Module functions for linear regression<span><a href="#label-Module+functions+for+linear+regression">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Fit::linear(x, y)</p>
@@ -336,7 +333,7 @@ standard deviation for the model Y = c_0 + c_1 X at the point
 <code>x</code>. The returned value is an array of <code>[y, yerr]</code>.</p>
 </li></ul>
 
-<h2 id="label-Linear+fitting+without+a+constant+term">Linear fitting without a constant term<span><a href="#label-Linear+fitting+without+a+constant+term">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Linear+fitting+without+a+constant+term">Linear fitting without a constant term<span><a href="#label-Linear+fitting+without+a+constant+term">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Fit::mul(x, y)</p>
@@ -369,9 +366,9 @@ the fitted function <code>y</code> and its standard deviation
 returned value is an array of <code>[y, yerr]</code>.</p>
 </li></ul>
 
-<h2 id="label-Multi-parameter+fitting">Multi-parameter fitting<span><a href="#label-Multi-parameter+fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Multi-parameter+fitting">Multi-parameter fitting<span><a href="#label-Multi-parameter+fitting">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Workspace+class">Workspace class<span><a href="#label-Workspace+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Workspace+class">Workspace class<span><a href="#label-Workspace+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::MultiFit::Workspace.alloc(n, p)</p>
@@ -380,7 +377,7 @@ returned value is an array of <code>[y, yerr]</code>.</p>
 using <code>p</code> parameters.</p>
 </li></ul>
 
-<h3 id="label-Module+functions">Module functions<span><a href="#label-Module+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Module+functions">Module functions<span><a href="#label-Module+functions">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::MultiFit::linear(X, y, work)</p>
@@ -442,7 +439,7 @@ y - X c</code> for the observations <code>y</code>, coefficients
 returns <code>r</code>.</p>
 </li></ul>
 
-<h3 id="label-Higer+level+interface">Higer level interface<span><a href="#label-Higer+level+interface">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Higer+level+interface">Higer level interface<span><a href="#label-Higer+level+interface">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::MultiFit::polyfit(x, y, order)</p>
@@ -452,95 +449,99 @@ the vector data (<code>x, y</code>) in a least-square sense.</p>
 
 <p>Example:</p>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-x = Vector[1, 2, 3, 4, 5]
-y = Vector[5.5, 43.1, 128, 290.7, 498.4]
-# The results are stored in a polynomial &quot;coef&quot;
-coef, err, chisq, status = MultiFit.polyfit(x, y, 3)
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>]
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-value">5.5</span>, <span class="ruby-value">43.1</span>, <span class="ruby-value">128</span>, <span class="ruby-value">290.7</span>, <span class="ruby-value">498.4</span>]
+<span class="ruby-comment"># The results are stored in a polynomial &quot;coef&quot;</span>
+<span class="ruby-identifier">coef</span>, <span class="ruby-identifier">err</span>, <span class="ruby-identifier">chisq</span>, <span class="ruby-identifier">status</span> = <span class="ruby-constant">MultiFit</span>.<span class="ruby-identifier">polyfit</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-value">3</span>)
 
-x2 = Vector.linspace(1, 5, 20)
-graph([x, y], [x2, coef.eval(x2)], &quot;-C -g 3 -S 4&quot;)</pre>
+<span class="ruby-identifier">x2</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">1</span>, <span class="ruby-value">5</span>, <span class="ruby-value">20</span>)
+<span class="ruby-identifier">graph</span>([<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>], [<span class="ruby-identifier">x2</span>, <span class="ruby-identifier">coef</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x2</span>)], <span class="ruby-string">&quot;-C -g 3 -S 4&quot;</span>)
+</pre>
 </li></ul>
 
-<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Linear+regression">Linear regression<span><a href="#label-Linear+regression">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Linear+regression">Linear regression<span><a href="#label-Linear+regression">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
-include GSL::Fit
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Fit</span>
 
-n = 4
-x = Vector.alloc(1970, 1980, 1990, 2000)
-y = Vector.alloc(12, 11, 14, 13)
-w = Vector.alloc(0.1, 0.2, 0.3, 0.4)
+<span class="ruby-identifier">n</span> = <span class="ruby-value">4</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">1970</span>, <span class="ruby-value">1980</span>, <span class="ruby-value">1990</span>, <span class="ruby-value">2000</span>)
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">12</span>, <span class="ruby-value">11</span>, <span class="ruby-value">14</span>, <span class="ruby-value">13</span>)
+<span class="ruby-identifier">w</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">0.1</span>, <span class="ruby-value">0.2</span>, <span class="ruby-value">0.3</span>, <span class="ruby-value">0.4</span>)
 
-#for i in 0...n do
-#   printf(&quot;%e %e %e\n&quot;, x[i], y[i], 1.0/Math::sqrt(w[i]))
-#end
+<span class="ruby-comment">#for i in 0...n do</span>
+<span class="ruby-comment">#   printf(&quot;%e %e %e\n&quot;, x[i], y[i], 1.0/Math::sqrt(w[i]))</span>
+<span class="ruby-comment">#end</span>
 
-c0, c1, cov00, cov01, cov11, chisq = wlinear(x, w, y)
+<span class="ruby-identifier">c0</span>, <span class="ruby-identifier">c1</span>, <span class="ruby-identifier">cov00</span>, <span class="ruby-identifier">cov01</span>, <span class="ruby-identifier">cov11</span>, <span class="ruby-identifier">chisq</span> = <span class="ruby-identifier">wlinear</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">w</span>, <span class="ruby-identifier">y</span>)
 
-printf(&quot;# best fit: Y = %g + %g X\n&quot;, c0, c1);
-printf(&quot;# covariance matrix:\n&quot;);
-printf(&quot;# [ %g, %g\n#   %g, %g]\n&quot;,
-        cov00, cov01, cov01, cov11);
-printf(&quot;# chisq = %g\n&quot;, chisq);</pre>
+<span class="ruby-identifier">printf</span>(<span class="ruby-node">&quot;# best fit: Y = %g + %g X\n&quot;</span>, <span class="ruby-identifier">c0</span>, <span class="ruby-identifier">c1</span>);
+<span class="ruby-identifier">printf</span>(<span class="ruby-node">&quot;# covariance matrix:\n&quot;</span>);
+<span class="ruby-identifier">printf</span>(<span class="ruby-node">&quot;# [ %g, %g\n#   %g, %g]\n&quot;</span>,
+        <span class="ruby-identifier">cov00</span>, <span class="ruby-identifier">cov01</span>, <span class="ruby-identifier">cov01</span>, <span class="ruby-identifier">cov11</span>);
+<span class="ruby-identifier">printf</span>(<span class="ruby-node">&quot;# chisq = %g\n&quot;</span>, <span class="ruby-identifier">chisq</span>);
+</pre>
 
-<h3 id="label-Exponential+fitting">Exponential fitting<span><a href="#label-Exponential+fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Exponential+fitting">Exponential fitting<span><a href="#label-Exponential+fitting">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-# Create data
-r = Rng.alloc(&quot;knuthran&quot;)
-a = 2.0
-b = -1.0
-sigma = 0.01
-N = 10
-x = Vector.linspace(0, 5, N)
-y = a*Sf::exp(b*x) + sigma*r.gaussian
+<span class="ruby-comment"># Create data</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;knuthran&quot;</span>)
+<span class="ruby-identifier">a</span> = <span class="ruby-value">2.0</span>
+<span class="ruby-identifier">b</span> = <span class="ruby-value">-1.0</span>
+<span class="ruby-identifier">sigma</span> = <span class="ruby-value">0.01</span>
+<span class="ruby-constant">N</span> = <span class="ruby-value">10</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-value">5</span>, <span class="ruby-constant">N</span>)
+<span class="ruby-identifier">y</span> = <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-identifier">b</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">sigma</span><span class="ruby-operator">*</span><span class="ruby-identifier">r</span>.<span class="ruby-identifier">gaussian</span>
 
-# Fitting
-a2, b2, = Fit.linear(x, Sf::log(y))
-x2 = Vector.linspace(0, 5, 20)
-A = Sf::exp(a2)
-printf(&quot;Expect: a = %f, b = %f\n&quot;, a, b)
-printf(&quot;Result: a = %f, b = %f\n&quot;, A, b2)
-graph([x, y], [x2, A*Sf::exp(b2*x2)], &quot;-C -g 3 -S 4&quot;)</pre>
+<span class="ruby-comment"># Fitting</span>
+<span class="ruby-identifier">a2</span>, <span class="ruby-identifier">b2</span>, = <span class="ruby-constant">Fit</span>.<span class="ruby-identifier">linear</span>(<span class="ruby-identifier">x</span>, <span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">log</span>(<span class="ruby-identifier">y</span>))
+<span class="ruby-identifier">x2</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-value">5</span>, <span class="ruby-value">20</span>)
+<span class="ruby-constant">A</span> = <span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a2</span>)
+<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;Expect: a = %f, b = %f\n&quot;</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;Result: a = %f, b = %f\n&quot;</span>, <span class="ruby-constant">A</span>, <span class="ruby-identifier">b2</span>)
+<span class="ruby-identifier">graph</span>([<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>], [<span class="ruby-identifier">x2</span>, <span class="ruby-constant">A</span><span class="ruby-operator">*</span><span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-identifier">b2</span><span class="ruby-operator">*</span><span class="ruby-identifier">x2</span>)], <span class="ruby-string">&quot;-C -g 3 -S 4&quot;</span>)
+</pre>
 
-<h3 id="label-Multi-parameter+fitting">Multi-parameter fitting<span><a href="#label-Multi-parameter+fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Multi-parameter+fitting">Multi-parameter fitting<span><a href="#label-Multi-parameter+fitting">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
-include GSL::MultiFit
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">MultiFit</span>
 
-Rng.env_setup()
+<span class="ruby-constant">Rng</span>.<span class="ruby-identifier">env_setup</span>()
 
-r = GSL::Rng.alloc(Rng::DEFAULT)
-n = 19
-dim = 3
-X = Matrix.alloc(n, dim)
-y = Vector.alloc(n)
-w = Vector.alloc(n)
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT</span>)
+<span class="ruby-identifier">n</span> = <span class="ruby-value">19</span>
+<span class="ruby-identifier">dim</span> = <span class="ruby-value">3</span>
+<span class="ruby-constant">X</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-identifier">w</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
 
-a = 0.1
-for i in 0...n
-  y0 = Math::exp(a)
-  sigma = 0.1*y0
-  val = r.gaussian(sigma)
-  X.set(i, 0, 1.0)
-  X.set(i, 1, a)
-  X.set(i, 2, a*a)
-  y[i] = y0 + val
-  w[i] = 1.0/(sigma*sigma)
-  #printf(&quot;%g %g %g\n&quot;, a, y[i], sigma)
-  a += 0.1
-end
+<span class="ruby-identifier">a</span> = <span class="ruby-value">0.1</span>
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">n</span>
+  <span class="ruby-identifier">y0</span> = <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a</span>)
+  <span class="ruby-identifier">sigma</span> = <span class="ruby-value">0.1</span><span class="ruby-operator">*</span><span class="ruby-identifier">y0</span>
+  <span class="ruby-identifier">val</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">gaussian</span>(<span class="ruby-identifier">sigma</span>)
+  <span class="ruby-constant">X</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">i</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1.0</span>)
+  <span class="ruby-constant">X</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">i</span>, <span class="ruby-value">1</span>, <span class="ruby-identifier">a</span>)
+  <span class="ruby-constant">X</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">i</span>, <span class="ruby-value">2</span>, <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
+  <span class="ruby-identifier">y</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">y0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">w</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span>(<span class="ruby-identifier">sigma</span><span class="ruby-operator">*</span><span class="ruby-identifier">sigma</span>)
+  <span class="ruby-comment">#printf(&quot;%g %g %g\n&quot;, a, y[i], sigma)</span>
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0.1</span>
+<span class="ruby-keyword">end</span>
 
-c, cov, chisq, status = MultiFit.wlinear(X, w, y)</pre>
+<span class="ruby-identifier">c</span>, <span class="ruby-identifier">cov</span>, <span class="ruby-identifier">chisq</span>, <span class="ruby-identifier">status</span> = <span class="ruby-constant">MultiFit</span>.<span class="ruby-identifier">wlinear</span>(<span class="ruby-constant">X</span>, <span class="ruby-identifier">w</span>, <span class="ruby-identifier">y</span>)
+</pre>
 
 <p><a href="multimin_rdoc.html">prev</a> <a
 href="nonlinearfit_rdoc.html">next</a></p>
@@ -552,7 +553,7 @@ href="nonlinearfit_rdoc.html">next</a></p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

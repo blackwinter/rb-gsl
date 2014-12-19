@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>math - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>math - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -200,7 +197,7 @@
 
 <main role="main" aria-label="Page math.rdoc">
 
-<h1 id="label-Mathematical+Functions">Mathematical Functions<span><a href="#label-Mathematical+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Mathematical+Functions">Mathematical Functions<span><a href="#label-Mathematical+Functions">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Contents:</p>
 <ol><li>
@@ -235,7 +232,7 @@ href="math_rdoc.html#label-Approximate+Comparison+of+Floating+Point+Numbers">App
 Comparison of Floating Point Numbers</a></p>
 </li></ol>
 
-<h2 id="label-Mathematical+Constants">Mathematical Constants<span><a href="#label-Mathematical+Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Mathematical+Constants">Mathematical Constants<span><a href="#label-Mathematical+Constants">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::M_E</p>
@@ -339,9 +336,9 @@ Comparison of Floating Point Numbers</a></p>
 <p>Euler&#39;s constant</p>
 </li></ul>
 
-<h2 id="label-Infinities+and+Not-a-number">Infinities and Not-a-number<span><a href="#label-Infinities+and+Not-a-number">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Infinities+and+Not-a-number">Infinities and Not-a-number<span><a href="#label-Infinities+and+Not-a-number">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Constants">Constants<span><a href="#label-Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Constants">Constants<span><a href="#label-Constants">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::POSINF</p>
@@ -364,7 +361,7 @@ Comparison of Floating Point Numbers</a></p>
 0.0/0.0.</p>
 </li></ul>
 
-<h3 id="label-Module+functions">Module functions<span><a href="#label-Module+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Module+functions">Module functions<span><a href="#label-Module+functions">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::isnan(x)</p>
@@ -408,7 +405,7 @@ or not-a-number.</p>
 <code>false</code> if it is infinite or not-a-number.</p>
 </li></ul>
 
-<h2 id="label-Elementary+Functions">Elementary Functions<span><a href="#label-Elementary+Functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Elementary+Functions">Elementary Functions<span><a href="#label-Elementary+Functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::log1p(x)</p>
@@ -475,7 +472,7 @@ returns f and the exponent e as an array, [f, e]. If <code>x</code> is
 zero, both f and e are set to zero.</p>
 </li></ul>
 
-<h2 id="label-Small+Integer+Powers">Small Integer Powers<span><a href="#label-Small+Integer+Powers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Small+Integer+Powers">Small Integer Powers<span><a href="#label-Small+Integer+Powers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::pow_int(x, n)</p>
@@ -506,7 +503,7 @@ computed as ((x^2)^2)^2, requiring only 3 multiplications.</p>
 efficiently.</p>
 </li></ul>
 
-<h2 id="label-Testing+the+Sign+of+Numbers">Testing the Sign of Numbers<span><a href="#label-Testing+the+Sign+of+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Testing+the+Sign+of+Numbers">Testing the Sign of Numbers<span><a href="#label-Testing+the+Sign+of+Numbers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::SIGN(x)</p>
@@ -518,7 +515,7 @@ Note that with this definition the sign of zero is positive (regardless of
 its IEEE sign bit).</p>
 </li></ul>
 
-<h2 id="label-Testing+for+Odd+and+Even+Numbers">Testing for Odd and Even Numbers<span><a href="#label-Testing+for+Odd+and+Even+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Testing+for+Odd+and+Even+Numbers">Testing for Odd and Even Numbers<span><a href="#label-Testing+for+Odd+and+Even+Numbers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::is_odd(n)</p>
@@ -556,7 +553,7 @@ argument <code>n</code> must be of Fixnum type.</p>
 if odd.</p>
 </li></ul>
 
-<h2 id="label-Maximum+and+Minimum+functions">Maximum and Minimum functions<span><a href="#label-Maximum+and+Minimum+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Maximum+and+Minimum+functions">Maximum and Minimum functions<span><a href="#label-Maximum+and+Minimum+functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::max(a, b)</p>
@@ -568,7 +565,7 @@ if odd.</p>
 <p>GSL::MIN(a, b)</p>
 </li></ul>
 
-<h2 id="label-Approximate+Comparison+of+Floating+Point+Numbers">Approximate Comparison of Floating Point Numbers<span><a href="#label-Approximate+Comparison+of+Floating+Point+Numbers">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Approximate+Comparison+of+Floating+Point+Numbers">Approximate Comparison of Floating Point Numbers<span><a href="#label-Approximate+Comparison+of+Floating+Point+Numbers">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::fcmp(a, b, epsilon = 1e-10)</p>
@@ -581,7 +578,7 @@ approximately equal to a relative accuracy <code>epsilon</code>.</p>
 <p>GSL::equal?(a, b, epsilon = 1e-10)</p>
 </li></ul>
 
-<h2 id="label-Module+Constants">Module Constants<span><a href="#label-Module+Constants">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Module+Constants">Module Constants<span><a href="#label-Module+Constants">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::VERSION</p>
@@ -606,7 +603,7 @@ approximately equal to a relative accuracy <code>epsilon</code>.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>combi - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>combi - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -196,7 +193,7 @@
 
 <main role="main" aria-label="Page combi.rdoc">
 
-<h1 id="label-Combinations">Combinations<span><a href="#label-Combinations">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Combinations">Combinations<span><a href="#label-Combinations">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Contents:</p>
 <ol><li>
@@ -219,7 +216,7 @@ and writing combinations</a></p>
 </li></ol>
 </li></ol>
 
-<h2 id="label-Combination+allocation">Combination allocation<span><a href="#label-Combination+allocation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Combination+allocation">Combination allocation<span><a href="#label-Combination+allocation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Combination.alloc(n, k)</p>
@@ -238,7 +235,7 @@ combination.</p>
 initializes it to the lexicographically first combination.</p>
 </li></ul>
 
-<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Combination#init_first</p>
@@ -254,7 +251,7 @@ lexicographically first combination, i.e. (0,1,2,…,k-1).</p>
 lexicographically last combination, i.e. (n-k,n-k+1,…,n-1).</p>
 </li></ul>
 
-<h3 id="label-Accessing+combination+elements">Accessing combination elements<span><a href="#label-Accessing+combination+elements">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Accessing+combination+elements">Accessing combination elements<span><a href="#label-Accessing+combination+elements">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Combination#get(i)</p>
@@ -265,7 +262,7 @@ lexicographically last combination, i.e. (n-k,n-k+1,…,n-1).</p>
 <code>self</code>.</p>
 </li></ul>
 
-<h3 id="label-Combination+properties">Combination properties<span><a href="#label-Combination+properties">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Combination+properties">Combination properties<span><a href="#label-Combination+properties">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Combination#n</p>
@@ -299,7 +296,7 @@ number at most once. The numbers have to be in increasing order.</p>
 <p>Thie returns true if the combination is valid, and false otherwise.</p>
 </li></ul>
 
-<h3 id="label-Combination+functions">Combination functions<span><a href="#label-Combination+functions">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Combination+functions">Combination functions<span><a href="#label-Combination+functions">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Combination#next</p>
@@ -321,7 +318,7 @@ previous combination in lexicographic order, returning
 returns <code>GSL::FAILURE</code> and leaves <code>self</code> unmodified.</p>
 </li></ul>
 
-<h3 id="label-Reading+and+writing+combinations">Reading and writing combinations<span><a href="#label-Reading+and+writing+combinations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Reading+and+writing+combinations">Reading and writing combinations<span><a href="#label-Reading+and+writing+combinations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Combination#fwrite(filename)</p>
@@ -341,20 +338,21 @@ returns <code>GSL::FAILURE</code> and leaves <code>self</code> unmodified.</p>
 <p>GSL::Combination#fscanf(io)</p>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-printf(&quot;All subsets of {0,1,2,3} by size:\n&quot;) ;
-for i in 0...4 do
-  c = GSL::Combination.calloc(4, i);
-  begin
-    printf(&quot;{&quot;);
-    c.fprintf(STDOUT, &quot; %u&quot;);
-    printf(&quot; }\n&quot;);
-  end while c.next == GSL::SUCCESS
-end</pre>
+<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;All subsets of {0,1,2,3} by size:\n&quot;</span>) ;
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">4</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Combination</span>.<span class="ruby-identifier">calloc</span>(<span class="ruby-value">4</span>, <span class="ruby-identifier">i</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;{&quot;</span>);
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">fprintf</span>(<span class="ruby-constant">STDOUT</span>, <span class="ruby-string">&quot; %u&quot;</span>);
+    <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot; }\n&quot;</span>);
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">next</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SUCCESS</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
 <p><a href="perm_rdoc.html">prev</a> <a href="sort_rdoc.html">next</a></p>
 
@@ -365,7 +363,7 @@ end</pre>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

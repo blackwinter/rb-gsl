@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>fft - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>fft - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -209,7 +206,7 @@
 
 <main role="main" aria-label="Page fft.rdoc">
 
-<h1 id="label-Fast+Fourier+Transforms">Fast Fourier Transforms<span><a href="#label-Fast+Fourier+Transforms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Fast+Fourier+Transforms">Fast Fourier Transforms<span><a href="#label-Fast+Fourier+Transforms">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Contents:</p>
 <ol><li>
@@ -275,7 +272,7 @@ real FFTs</a></p>
 <p><a href="fft_rdoc.html#label-Examples">Examples</a></p>
 </li></ol>
 
-<h2 id="label-Mathematical+Definitions">Mathematical Definitions<span><a href="#label-Mathematical+Definitions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Mathematical+Definitions">Mathematical Definitions<span><a href="#label-Mathematical+Definitions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Fast Fourier Transforms are efficient algorithms for calculating the
 discrete fourier transform (DFT),</p>
@@ -311,9 +308,9 @@ inverse FFT, When the overall scale of the result is unimportant it is
 often convenient to use the backwards FFT instead of the inverse to save
 unnecessary divisions.</p>
 
-<h2 id="label-Complex+data+FFTs">Complex data FFTs<span><a href="#label-Complex+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Complex+data+FFTs">Complex data FFTs<span><a href="#label-Complex+data+FFTs">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Overview+of+complex+data+FFTs">Overview of complex data FFTs<span><a href="#label-Overview+of+complex+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Overview+of+complex+data+FFTs">Overview of complex data FFTs<span><a href="#label-Overview+of+complex+data+FFTs">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The complex data FFT routines are provided as instance methods of <a
 href="vector_complex_rdoc.html">GSL::Vector::Complex</a>.</p>
@@ -375,7 +372,7 @@ shifted data.  The <code>#ifftshift!</code> method modifies
 lengths, but not for odd lengths.</p>
 </li></ul>
 
-<h3 id="label-Radix-2+FFT+routines+for+complex+data">Radix-2 FFT routines for complex data<span><a href="#label-Radix-2+FFT+routines+for+complex+data">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Radix-2+FFT+routines+for+complex+data">Radix-2 FFT routines for complex data<span><a href="#label-Radix-2+FFT+routines+for+complex+data">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The radix-2 algorithms are simple and compact, although not necessarily the
 most efficient. They use the Cooley-Tukey algorithm to compute complex FFTs
@@ -419,40 +416,41 @@ data, and the input data is not changed.</p>
 <p>These are decimation-in-frequency versions of the radix-2 FFT functions.</p>
 </li></ul>
 
-<h4 id="label-Example+of+complex+Radix-2+FFT">Example of complex Radix-2 FFT<span><a href="#label-Example+of+complex+Radix-2+FFT">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-Example+of+complex+Radix-2+FFT">Example of complex Radix-2 FFT<span><a href="#label-Example+of+complex+Radix-2+FFT">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
 <p>Here is an example program which computes the FFT of a short pulse in a
 sample of length  128. To make the resulting Fourier transform real the
 pulse is defined for equal positive and negative times (-10 … 10), where
 the negative times wrap around the end of the array.</p>
 
-<pre>require(&quot;gsl&quot;)
-include GSL
+<pre class="ruby"><span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span>
 
-n = 128
-data = Vector::Complex[n]
+<span class="ruby-identifier">n</span> = <span class="ruby-value">128</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Complex</span>[<span class="ruby-identifier">n</span>]
 
-data[0] = 1.0
-for i in 1..10 do
-  data[i] = 1.0
-  data[n-i] = 1.0
-end
+<span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">1.0</span>
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">10</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">1.0</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-identifier">n</span><span class="ruby-operator">-</span><span class="ruby-identifier">i</span>] = <span class="ruby-value">1.0</span>
+<span class="ruby-keyword">end</span>
 
-#for i in 0...n do
-#  printf(&quot;%d %e %e\n&quot;, i, data[i].re, data[i].im)
-#end
+<span class="ruby-comment">#for i in 0...n do</span>
+<span class="ruby-comment">#  printf(&quot;%d %e %e\n&quot;, i, data[i].re, data[i].im)</span>
+<span class="ruby-comment">#end</span>
 
-# You can choose whichever you like
-#ffted = data.radix2_forward()
-ffted = data.radix2_transform(FFT::FORWARD)
-ffted /= Math::sqrt(n)
-for i in 0...n do
-  printf(&quot;%d %e %e\n&quot;, i, ffted[i].re, ffted[i].im)
-end</pre>
+<span class="ruby-comment"># You can choose whichever you like</span>
+<span class="ruby-comment">#ffted = data.radix2_forward()</span>
+<span class="ruby-identifier">ffted</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">radix2_transform</span>(<span class="ruby-constant">FFT</span><span class="ruby-operator">::</span><span class="ruby-constant">FORWARD</span>)
+<span class="ruby-identifier">ffted</span> <span class="ruby-operator">/=</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">n</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%d %e %e\n&quot;</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">ffted</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">re</span>, <span class="ruby-identifier">ffted</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">im</span>)
+<span class="ruby-keyword">end</span>
+</pre>
 
-<h3 id="label-Mixed-radix+FFT+routines+for+complex+data">Mixed-radix FFT routines for complex data<span><a href="#label-Mixed-radix+FFT+routines+for+complex+data">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Mixed-radix+FFT+routines+for+complex+data">Mixed-radix FFT routines for complex data<span><a href="#label-Mixed-radix+FFT+routines+for+complex+data">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<h4 id="label-ComplexWavetable+class">ComplexWavetable class<span><a href="#label-ComplexWavetable+class">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-ComplexWavetable+class">ComplexWavetable class<span><a href="#label-ComplexWavetable+class">&para;</a> <a href="#top">&uarr;</a></span></h4>
 <hr>
 <ul><li>
 <p>GSL::FFT::ComplexWavetable.alloc(n)</p>
@@ -480,7 +478,7 @@ FFT functions. The same wavetable can be used for both forward and backward
 <p>GSL::FFT::ComplexWavetable#factor</p>
 </li></ul>
 
-<h4 id="label-ComplexWorkspace+class">ComplexWorkspace class<span><a href="#label-ComplexWorkspace+class">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-ComplexWorkspace+class">ComplexWorkspace class<span><a href="#label-ComplexWorkspace+class">&para;</a> <a href="#top">&uarr;</a></span></h4>
 <hr>
 <ul><li>
 <p>GSL::FFT::ComplexWorkspace.alloc(n)</p>
@@ -488,7 +486,7 @@ FFT functions. The same wavetable can be used for both forward and backward
 <p>Creates a workspace for a complex transform of length <code>n</code>.</p>
 </li></ul>
 
-<h4 id="label-Methods+to+compute+transform">Methods to compute transform<span><a href="#label-Methods+to+compute+transform">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-Methods+to+compute+transform">Methods to compute transform<span><a href="#label-Methods+to+compute+transform">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
 <p><strong>The FFT methods described below return FFTed data, and the input
 vector is not changed. Use methods with &#39;!&#39; as
@@ -524,7 +522,7 @@ lookup tables and a workspace <code>work</code> (they are optional).</p>
 <p>These methods return the FFTed data, and the input data is not changed.</p>
 </li></ul>
 
-<h4 id="label-Example+to+use+the+mixed-radix+FFT+algorithm">Example to use the mixed-radix FFT algorithm<span><a href="#label-Example+to+use+the+mixed-radix+FFT+algorithm">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-Example+to+use+the+mixed-radix+FFT+algorithm">Example to use the mixed-radix FFT algorithm<span><a href="#label-Example+to+use+the+mixed-radix+FFT+algorithm">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;gsl&#39;</span>
 <span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span>
@@ -550,9 +548,9 @@ lookup tables and a workspace <code>work</code> (they are optional).</p>
 <span class="ruby-keyword">end</span>
 </pre>
 
-<h2 id="label-Real+data+FFTs">Real data FFTs<span><a href="#label-Real+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Real+data+FFTs">Real data FFTs<span><a href="#label-Real+data+FFTs">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Overview+of+real+data+FFTs">Overview of real data FFTs<span><a href="#label-Overview+of+real+data+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Overview+of+real+data+FFTs">Overview of real data FFTs<span><a href="#label-Overview+of+real+data+FFTs">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The functions for real data FFTs are provided as instance methods of <a
 href="vector_rdoc.html">GSL::Vector</a>.  While they are similar to those
@@ -581,7 +579,7 @@ accesses).  This means that a half complex sequence produces by a radix-2
 forward transform <strong>cannot</strong> be recovered by a mixed-radix
 inverse transform (and vice versa).</p>
 
-<h3 id="label-Radix-2+FFT+routines+for+real+data">Radix-2 FFT routines for real data<span><a href="#label-Radix-2+FFT+routines+for+real+data">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Radix-2+FFT+routines+for+real+data">Radix-2 FFT routines for real data<span><a href="#label-Radix-2+FFT+routines+for+real+data">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The routines for readix-2 real FFTs are provided as instance methods of <a
 href="vector_rdoc.html">GSL::Vector</a>.</p>
@@ -647,7 +645,7 @@ half-complex sequence data stored according the output scheme used by
 gsl_fft_real_radix2.  The result is a real array stored in natural order.</p>
 </li></ul>
 
-<h2 id="label-Mixed-radix+FFT+routines+for+real+data">Mixed-radix FFT routines for real data<span><a href="#label-Mixed-radix+FFT+routines+for+real+data">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Mixed-radix+FFT+routines+for+real+data">Mixed-radix FFT routines for real data<span><a href="#label-Mixed-radix+FFT+routines+for+real+data">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>This section describes mixed-radix FFT algorithms for real data. The
 mixed-radix functions work for FFTs of any length. They are a
@@ -668,7 +666,7 @@ zero since the zero frequency component is simply the sum of the input data
 frequency n/2 is not stored either, since the symmetry z_k = z_{N-k}^*
 implies that this is purely real too.</p>
 
-<h3 id="label-Data+storage+scheme">Data storage scheme<span><a href="#label-Data+storage+scheme">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Data+storage+scheme">Data storage scheme<span><a href="#label-Data+storage+scheme">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The storage scheme is best shown by some examples. The table below shows
 the output for an odd-length sequence, n=5. The two columns give the
@@ -678,16 +676,17 @@ correspondence between the 5 values in the half-complex sequence computed
 sequence were passed to <code>complex_backward</code> as a complex sequence
 (with imaginary parts set to 0),</p>
 
-<pre>complex[0].real  =  halfcomplex[0]
-complex[0].imag  =  0
-complex[1].real  =  halfcomplex[1]
-complex[1].imag  =  halfcomplex[2]
-complex[2].real  =  halfcomplex[3]
-complex[2].imag  =  halfcomplex[4]
-complex[3].real  =  halfcomplex[3]
-complex[3].imag  = -halfcomplex[4]
-complex[4].real  =  halfcomplex[1]
-complex[4].imag  = -halfcomplex[2]</pre>
+<pre class="ruby"><span class="ruby-identifier">complex</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">0</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-value">0</span>
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">1</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">2</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">3</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">4</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">3</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">imag</span>  = <span class="ruby-operator">-</span><span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">4</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">1</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">imag</span>  = <span class="ruby-operator">-</span><span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">2</span>]
+</pre>
 
 <p>The upper elements of the <code>complex</code> array,
 <code>complex[3]</code> and <code>complex[4]</code> are filled in using the
@@ -697,25 +696,26 @@ symmetry condition. The imaginary part of the zero-frequency term
 <p>The next table shows the output for an even-length sequence, n=5 In the
 even case there are two values which are purely real,</p>
 
-<pre>complex[0].real  =  halfcomplex[0]
-complex[0].imag  =  0
-complex[1].real  =  halfcomplex[1]
-complex[1].imag  =  halfcomplex[2]
-complex[2].real  =  halfcomplex[3]
-complex[2].imag  =  halfcomplex[4]
-complex[3].real  =  halfcomplex[5]
-complex[3].imag  =  0
-complex[4].real  =  halfcomplex[3]
-complex[4].imag  = -halfcomplex[4]
-complex[5].real  =  halfcomplex[1]
-complex[5].imag  = -halfcomplex[2]</pre>
+<pre class="ruby"><span class="ruby-identifier">complex</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">0</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-value">0</span>
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">1</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">2</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">3</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">4</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">5</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">imag</span>  =  <span class="ruby-value">0</span>
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">3</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">imag</span>  = <span class="ruby-operator">-</span><span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">4</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">5</span>].<span class="ruby-identifier">real</span>  =  <span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">1</span>]
+<span class="ruby-identifier">complex</span>[<span class="ruby-value">5</span>].<span class="ruby-identifier">imag</span>  = <span class="ruby-operator">-</span><span class="ruby-identifier">halfcomplex</span>[<span class="ruby-value">2</span>]
+</pre>
 
 <p>The upper elements of the <code>complex</code> array,
 <code>complex[4]</code> and <code>complex[5]</code> are filled in using the
 symmetry condition. Both <code>complex[0].imag</code> and
 <code>complex[3].imag</code> are known to be zero.</p>
 
-<h4 id="label-Wavetable+and+Workspace+classes">Wavetable and Workspace classes<span><a href="#label-Wavetable+and+Workspace+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-Wavetable+and+Workspace+classes">Wavetable and Workspace classes<span><a href="#label-Wavetable+and+Workspace+classes">&para;</a> <a href="#top">&uarr;</a></span></h4>
 <hr>
 <ul><li>
 <p>GSL::FFT::RealWavetable.alloc(n)</p>
@@ -745,7 +745,7 @@ or inverse half-complex transforms.</p>
 inverse halfcomplex transforms.</p>
 </li></ul>
 
-<h4 id="label-Methods+for+mixed-radix+real+FFTs">Methods for mixed-radix real FFTs<span><a href="#label-Methods+for+mixed-radix+real+FFTs">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h4 id="label-Methods+for+mixed-radix+real+FFTs">Methods for mixed-radix real FFTs<span><a href="#label-Methods+for+mixed-radix+real+FFTs">&para;</a> <a href="#top">&uarr;</a></span></h4>
 
 <p><strong>The FFT methods described below return FFTed data, and the input
 vector is not changed. Use methods with &#39;!&#39; as
@@ -782,62 +782,64 @@ tables and a workspace <code>work</code> (optional).</p>
 <p>GSL::Vector#ifft</p>
 </li></ul>
 
-<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Example+1">Example 1<span><a href="#label-Example+1">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Example+1">Example 1<span><a href="#label-Example+1">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
-include GSL
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span>
 
-N = 2048
-SAMPLING = 1000   # 1 kHz
-TMAX = 1.0/SAMPLING*N
-FREQ1 = 50
-FREQ2 = 120
-t = Vector.linspace(0, TMAX, N)
-x = Sf::sin(2*M_PI*FREQ1*t) + Sf::sin(2*M_PI*FREQ2*t)
-y = x.fft
+<span class="ruby-constant">N</span> = <span class="ruby-value">2048</span>
+<span class="ruby-constant">SAMPLING</span> = <span class="ruby-value">1000</span>   <span class="ruby-comment"># 1 kHz</span>
+<span class="ruby-constant">TMAX</span> = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-constant">SAMPLING</span><span class="ruby-operator">*</span><span class="ruby-constant">N</span>
+<span class="ruby-constant">FREQ1</span> = <span class="ruby-value">50</span>
+<span class="ruby-constant">FREQ2</span> = <span class="ruby-value">120</span>
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">TMAX</span>, <span class="ruby-constant">N</span>)
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">M_PI</span><span class="ruby-operator">*</span><span class="ruby-constant">FREQ1</span><span class="ruby-operator">*</span><span class="ruby-identifier">t</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Sf</span><span class="ruby-operator">::</span><span class="ruby-identifier">sin</span>(<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-constant">M_PI</span><span class="ruby-operator">*</span><span class="ruby-constant">FREQ2</span><span class="ruby-operator">*</span><span class="ruby-identifier">t</span>)
+<span class="ruby-identifier">y</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">fft</span>
 
-y2 = y.subvector(1, N-2).to_complex2
-mag = y2.abs
-phase = y2.arg
-f = Vector.linspace(0, SAMPLING/2, mag.size)
-graph(f, mag, &quot;-C -g 3 -x 0 200 -X &#39;Frequency [Hz]&#39;&quot;)</pre>
+<span class="ruby-identifier">y2</span> = <span class="ruby-identifier">y</span>.<span class="ruby-identifier">subvector</span>(<span class="ruby-value">1</span>, <span class="ruby-constant">N</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>).<span class="ruby-identifier">to_complex2</span>
+<span class="ruby-identifier">mag</span> = <span class="ruby-identifier">y2</span>.<span class="ruby-identifier">abs</span>
+<span class="ruby-identifier">phase</span> = <span class="ruby-identifier">y2</span>.<span class="ruby-identifier">arg</span>
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-value">0</span>, <span class="ruby-constant">SAMPLING</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-identifier">mag</span>.<span class="ruby-identifier">size</span>)
+<span class="ruby-identifier">graph</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">mag</span>, <span class="ruby-string">&quot;-C -g 3 -x 0 200 -X &#39;Frequency [Hz]&#39;&quot;</span>)
+</pre>
 
-<h3 id="label-Example+2">Example 2<span><a href="#label-Example+2">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Example+2">Example 2<span><a href="#label-Example+2">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
-include GSL
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span>
 
-n = 100
-data = Vector.alloc(n)
+<span class="ruby-identifier">n</span> = <span class="ruby-value">100</span>
+<span class="ruby-identifier">data</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
 
-for i in (n/3)...(2*n/3) do
-  data[i] = 1.0
-end
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> (<span class="ruby-identifier">n</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>)<span class="ruby-operator">...</span>(<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-identifier">n</span><span class="ruby-operator">/</span><span class="ruby-value">3</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">1.0</span>
+<span class="ruby-keyword">end</span>
 
-rtable = FFT::RealWavetable.alloc(n)
-rwork = FFT::RealWorkspace.alloc(n)
+<span class="ruby-identifier">rtable</span> = <span class="ruby-constant">FFT</span><span class="ruby-operator">::</span><span class="ruby-constant">RealWavetable</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-identifier">rwork</span> = <span class="ruby-constant">FFT</span><span class="ruby-operator">::</span><span class="ruby-constant">RealWorkspace</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
 
-#ffted = data.real_transform(rtable, rwork)
-#ffted = data.real_transform(rtable)
-#ffted = data.real_transform(rwork)
-#ffted = data.real_transform()
-ffted = data.fft
+<span class="ruby-comment">#ffted = data.real_transform(rtable, rwork)</span>
+<span class="ruby-comment">#ffted = data.real_transform(rtable)</span>
+<span class="ruby-comment">#ffted = data.real_transform(rwork)</span>
+<span class="ruby-comment">#ffted = data.real_transform()</span>
+<span class="ruby-identifier">ffted</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">fft</span>
 
-for i in 11...n do
-  ffted[i] = 0.0
-end
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">11</span><span class="ruby-operator">...</span><span class="ruby-identifier">n</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">ffted</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">0.0</span>
+<span class="ruby-keyword">end</span>
 
-hctable = FFT::HalfComplexWavetable.alloc(n)
+<span class="ruby-identifier">hctable</span> = <span class="ruby-constant">FFT</span><span class="ruby-operator">::</span><span class="ruby-constant">HalfComplexWavetable</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">n</span>)
 
-#data2 = ffted.halfcomplex_inverse(hctable, rwork)
-#data2 = ffted.halfcomplex_inverse()
-data2 = ffted.ifft
+<span class="ruby-comment">#data2 = ffted.halfcomplex_inverse(hctable, rwork)</span>
+<span class="ruby-comment">#data2 = ffted.halfcomplex_inverse()</span>
+<span class="ruby-identifier">data2</span> = <span class="ruby-identifier">ffted</span>.<span class="ruby-identifier">ifft</span>
 
-graph(nil, data, data2, &quot;-T X -C -g 3 -L &#39;Real-halfcomplex&#39; -x 0 #{data.size}&quot;)</pre>
+<span class="ruby-identifier">graph</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">data2</span>, <span class="ruby-node">&quot;-T X -C -g 3 -L &#39;Real-halfcomplex&#39; -x 0 #{data.size}&quot;</span>)
+</pre>
 
 <p><a href="eigen_rdoc.html">prev</a> <a href="wavelet_rdoc.html">next</a></p>
 
@@ -848,7 +850,7 @@ graph(nil, data, data2, &quot;-T X -C -g 3 -L &#39;Real-halfcomplex&#39; -x 0 #{
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

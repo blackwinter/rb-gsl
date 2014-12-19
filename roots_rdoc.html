@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>roots - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>roots - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -196,7 +193,7 @@
 
 <main role="main" aria-label="Page roots.rdoc">
 
-<h1 id="label-One+dimensional+root-finding+and+the+solver+classes">One dimensional root-finding and the solver classes<span><a href="#label-One+dimensional+root-finding+and+the+solver+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-One+dimensional+root-finding+and+the+solver+classes">One dimensional root-finding and the solver classes<span><a href="#label-One+dimensional+root-finding+and+the+solver+classes">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>One-dimensional root finding algorithms can be divided into two classes,
 <code>root bracketing</code> and <code>root polishing</code>. The state for
@@ -229,7 +226,7 @@ interface</a></p>
 <p><a href="roots_rdoc.html#label-Example">Example</a></p>
 </li></ol>
 
-<h2 id="label-Solver+classes">Solver classes<span><a href="#label-Solver+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Solver+classes">Solver classes<span><a href="#label-Solver+classes">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Root::FSolver.alloc(T)</p>
@@ -247,11 +244,12 @@ interface</a></p>
 </li><li>
 <p>Ex:</p>
 
-<pre>include GSL::Root
-s1 = FSolver.alloc(&quot;bisection&quot;)
-s2 = FSolver.alloc(&quot;brent&quot;)
-s3 = FSolver.alloc(FSolver::BISECTION)
-s4 = FSolver.alloc(FSolver::BRENT)</pre>
+<pre class="ruby"><span class="ruby-identifier">include</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Root</span>
+<span class="ruby-identifier">s1</span> = <span class="ruby-constant">FSolver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;bisection&quot;</span>)
+<span class="ruby-identifier">s2</span> = <span class="ruby-constant">FSolver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;brent&quot;</span>)
+<span class="ruby-identifier">s3</span> = <span class="ruby-constant">FSolver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">FSolver</span><span class="ruby-operator">::</span><span class="ruby-constant">BISECTION</span>)
+<span class="ruby-identifier">s4</span> = <span class="ruby-constant">FSolver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">FSolver</span><span class="ruby-operator">::</span><span class="ruby-constant">BRENT</span>)
+</pre>
 </li></ul>
 </li></ul>
 <hr>
@@ -272,7 +270,7 @@ s4 = FSolver.alloc(FSolver::BRENT)</pre>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Root::FSolver#set(f, xl, xu)</p>
@@ -292,7 +290,7 @@ use the function and derivative <code>fdf</code> and the initial guess
 object (see below).</p>
 </li></ul>
 
-<h3 id="label-Methods+to+solve+equations">Methods to solve equations<span><a href="#label-Methods+to+solve+equations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Methods+to+solve+equations">Methods to solve equations<span><a href="#label-Methods+to+solve+equations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Root::FSolver#iterate</p>
@@ -328,7 +326,7 @@ an unexpected problem then an error code will be returned (
 <p>Return the current bracketing interval for the solver.</p>
 </li></ul>
 
-<h3 id="label-Function_fdf+class">Function_fdf class<span><a href="#label-Function_fdf+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Function_fdf+class">Function_fdf class<span><a href="#label-Function_fdf+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
 <p>The <code>FSolver</code> object require an instance of the <a
 href="function_rdoc.html">GSL::Function</a> class, which is already
@@ -392,11 +390,12 @@ function.</p>
 <ul><li>
 <p>Ex: x*x - 5 == 0</p>
 
-<pre>function_fdf.set_params([1, 0, -5])</pre>
+<pre class="ruby"><span class="ruby-identifier">function_fdf</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">-5</span>])
+</pre>
 </li></ul>
 </li></ul>
 
-<h3 id="label-Search+Stopping+Parameters">Search Stopping Parameters<span><a href="#label-Search+Stopping+Parameters">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Search+Stopping+Parameters">Search Stopping Parameters<span><a href="#label-Search+Stopping+Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Root::test_interval(xl, xu, epsrel, epsabs)</p>
@@ -450,7 +449,7 @@ unimportant provided a value can be found where the residual, |f(x)|, is
 small enough.</p>
 </li></ul>
 
-<h2 id="label-High-level+interface">High-level interface<span><a href="#label-High-level+interface">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-High-level+interface">High-level interface<span><a href="#label-High-level+interface">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Root:FSolver.solve(func, [xl, xu], [epsabs = 0, epsrel = 1e-6])</p>
@@ -487,7 +486,7 @@ elements is returned, as [<code>root, iterations, status</code>].</p>
 </li></ul>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>This example is equivalent to the one found in the GSL manual, using the
 Brent&#39;s algorithm to solve the equation x^2 - 5 = 0.</p>
@@ -584,7 +583,7 @@ the Newton-Raphson algorithm.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

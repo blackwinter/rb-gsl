@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>narray - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>narray - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -206,9 +203,9 @@
 
 <main role="main" aria-label="Page narray.rdoc">
 
-<h1 id="label-NArray+compatibilities">NArray compatibilities<span><a href="#label-NArray+compatibilities">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-NArray+compatibilities">NArray compatibilities<span><a href="#label-NArray+compatibilities">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h3 id="label-Contents-3A">Contents:<span><a href="#label-Contents-3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Contents-3A">Contents:<span><a href="#label-Contents-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <ol><li>
 <p><a href="narray_rdoc.html#label-Data+type+conversions">Data type
 conversions</a></p>
@@ -217,9 +214,9 @@ conversions</a></p>
 accepts NArray</a></p>
 </li></ol>
 
-<h2 id="label-Data+type+conversions">Data type conversions<span><a href="#label-Data+type+conversions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Data+type+conversions">Data type conversions<span><a href="#label-Data+type+conversions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-GSL+to+NArray">GSL to NArray<span><a href="#label-GSL+to+NArray">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-GSL+to+NArray">GSL to NArray<span><a href="#label-GSL+to+NArray">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Vector#to_na</p>
@@ -256,21 +253,20 @@ objects are shared with the NArray-ref objects.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">0</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span> <span class="ruby-value">5</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">na</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_nvector_ref</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NVector</span>(<span class="ruby-identifier">ref</span>).<span class="ruby-identifier">int</span>(<span class="ruby-value">6</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">na</span>[<span class="ruby-value">3</span>] = <span class="ruby-value">999</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">999</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">v</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span>
-[ <span class="ruby-value">0</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">999</span> <span class="ruby-value">4</span> <span class="ruby-value">5</span> ]
-</pre>
+<pre>&gt;&gt; v = Vector::Int[0..5]
+=&gt; GSL::Vector::Int
+[ 0 1 2 3 4 5 ]
+&gt;&gt; na = v.to_nvector_ref
+=&gt; NVector(ref).int(6):
+[ 0, 1, 2, 3, 4, 5 ]
+&gt;&gt; na[3] = 999
+=&gt; 999
+&gt;&gt; v
+=&gt; GSL::Vector::Int
+[ 0 1 2 999 4 5 ]</pre>
 </li></ul>
 
-<h3 id="label-NArray+to+GSL">NArray to GSL<span><a href="#label-NArray+to+GSL">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-NArray+to+GSL">NArray to GSL<span><a href="#label-NArray+to+GSL">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>NArray#to_gv</p>
@@ -295,23 +291,22 @@ the View objects.</p>
 
 <p>Example:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">na</span> = <span class="ruby-constant">NArray</span>[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span>]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">int</span>(<span class="ruby-value">6</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span> = <span class="ruby-identifier">na</span>.<span class="ruby-identifier">to_gv_int_view</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Int</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>
-[ <span class="ruby-value">0</span> <span class="ruby-value">1</span> <span class="ruby-value">2</span> <span class="ruby-value">3</span> <span class="ruby-value">4</span> <span class="ruby-value">5</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">2</span>] = <span class="ruby-value">-99</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">-99</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">na</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">NArray</span>.<span class="ruby-identifier">int</span>(<span class="ruby-value">6</span>)<span class="ruby-operator">:</span>
-[ <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">-99</span>, <span class="ruby-value">3</span>, <span class="ruby-value">4</span>, <span class="ruby-value">5</span> ]
-</pre>
+<pre>&gt;&gt; na = NArray[0, 1, 2, 3, 4, 5]
+=&gt; NArray.int(6):
+[ 0, 1, 2, 3, 4, 5 ]
+&gt;&gt; b = na.to_gv_int_view
+=&gt; GSL::Vector::Int::View
+[ 0 1 2 3 4 5 ]
+&gt;&gt; b[2] = -99
+=&gt; -99
+&gt;&gt; na
+=&gt; NArray.int(6):
+[ 0, 1, -99, 3, 4, 5 ]</pre>
 </li></ul>
 
-<h2 id="label-Methods+which+accepts+NArray">Methods which accepts NArray<span><a href="#label-Methods+which+accepts+NArray">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Methods+which+accepts+NArray">Methods which accepts NArray<span><a href="#label-Methods+which+accepts+NArray">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-GSL+module"><code>GSL</code> module<span><a href="#label-GSL+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-GSL+module"><code>GSL</code> module<span><a href="#label-GSL+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::graph()</p>
@@ -335,13 +330,13 @@ the View objects.</p>
 <p>GSL::pow_2(x), …, GSL::pow_9(x)</p>
 </li></ul>
 
-<h3 id="label-Sf+module"><code>Sf</code> module<span><a href="#label-Sf+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Sf+module"><code>Sf</code> module<span><a href="#label-Sf+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p><a href="sf_rdoc.html">Any</a></p>
 </li></ul>
 
-<h3 id="label-Linalg+module"><code>Linalg</code> module<span><a href="#label-Linalg+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Linalg+module"><code>Linalg</code> module<span><a href="#label-Linalg+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Linalg::LU.decomp(na)</p>
@@ -379,7 +374,7 @@ the View objects.</p>
 <p>GSL::Linalg::HH.svx(m, bx)</p>
 </li></ul>
 
-<h3 id="label-Eigen+module"><code>Eigen</code> module<span><a href="#label-Eigen+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Eigen+module"><code>Eigen</code> module<span><a href="#label-Eigen+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Eigen::symm(na)</p>
@@ -387,13 +382,13 @@ the View objects.</p>
 <p>GSL::Eigen::symmv(na)</p>
 </li></ul>
 
-<h3 id="label-FFT+module"><code>FFT</code> module<span><a href="#label-FFT+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-FFT+module"><code>FFT</code> module<span><a href="#label-FFT+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p><a href="fft_rdoc.html">Many</a></p>
 </li></ul>
 
-<h3 id="label-Function+class"><code>Function</code> class<span><a href="#label-Function+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Function+class"><code>Function</code> class<span><a href="#label-Function+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Function#eval</p>
@@ -411,19 +406,19 @@ the View objects.</p>
 <p>GSL::Function#diff_backward(x, h)</p>
 </li></ul>
 
-<h3 id="label-Ran+and+Cdf+module"><code>Ran</code> and <code>Cdf</code> module<span><a href="#label-Ran+and+Cdf+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Ran+and+Cdf+module"><code>Ran</code> and <code>Cdf</code> module<span><a href="#label-Ran+and+Cdf+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p><a href="randist_rdoc.html">Many</a></p>
 </li></ul>
 
-<h3 id="label-Stats+module"><code>Stats</code> module<span><a href="#label-Stats+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Stats+module"><code>Stats</code> module<span><a href="#label-Stats+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p><a href="stats_rdoc.html">Any</a></p>
 </li></ul>
 
-<h3 id="label-Interp+and+Spline+class"><code>Interp</code> and <code>Spline</code> class<span><a href="#label-Interp+and+Spline+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Interp+and+Spline+class"><code>Interp</code> and <code>Spline</code> class<span><a href="#label-Interp+and+Spline+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Interp#init</p>
@@ -435,7 +430,7 @@ the View objects.</p>
 <p>GSL::Spline#eval</p>
 </li></ul>
 
-<h3 id="label-Deriv+and+Diff+module"><code>Deriv</code> and <code>Diff</code> module<span><a href="#label-Deriv+and+Diff+module">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Deriv+and+Diff+module"><code>Deriv</code> and <code>Diff</code> module<span><a href="#label-Deriv+and+Diff+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Deriv.central(f, x, h)</p>
@@ -451,7 +446,7 @@ the View objects.</p>
 <p>GSL::Diff.backward(f, x, h)</p>
 </li></ul>
 
-<h3 id="label-Cheb+class"><code>Cheb</code> class<span><a href="#label-Cheb+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Cheb+class"><code>Cheb</code> class<span><a href="#label-Cheb+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Cheb#eval(x)</p>
@@ -459,7 +454,7 @@ the View objects.</p>
 <p>GSL::Cheb#eval_n(n, x)</p>
 </li></ul>
 
-<h3 id="label-Wavelet+class"><code>Wavelet</code> class<span><a href="#label-Wavelet+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Wavelet+class"><code>Wavelet</code> class<span><a href="#label-Wavelet+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p><a href="wavelet_rdoc.html">Many</a></p>
@@ -474,7 +469,7 @@ the View objects.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

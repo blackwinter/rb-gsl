@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>hist - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>hist - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -202,7 +199,7 @@
 
 <main role="main" aria-label="Page hist.rdoc">
 
-<h1 id="label-Histograms">Histograms<span><a href="#label-Histograms">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Histograms">Histograms<span><a href="#label-Histograms">&para;</a> <a href="#top">&uarr;</a></span></h1>
 <ol><li>
 <p><a href="hist_rdoc.html#label-Histogram+allocation">Histogram
 allocation</a></p>
@@ -239,7 +236,7 @@ Operations</a></p>
 histogram probability distribution</a></p>
 </li></ol>
 
-<h2 id="label-Histogram+allocation">Histogram allocation<span><a href="#label-Histogram+allocation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Histogram+allocation">Histogram allocation<span><a href="#label-Histogram+allocation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram.alloc(n)</p>
@@ -275,18 +272,17 @@ histogram probability distribution</a></p>
 </li><li>
 <p>With size and the range [min, max]:</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h</span> = <span class="ruby-constant">Histogram</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">5</span>, [<span class="ruby-value">0</span>, <span class="ruby-value">5</span>])
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">range</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Range</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">2.000e+00</span> <span class="ruby-value">3.000e+00</span> <span class="ruby-value">4.000e+00</span> <span class="ruby-value">5.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">bin</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">increment</span>(<span class="ruby-value">2.5</span>)
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">bin</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Histogram</span><span class="ruby-operator">::</span><span class="ruby-constant">Bin</span><span class="ruby-operator">:</span>
-[ <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">1.000e+00</span> <span class="ruby-value">0.000e+00</span> <span class="ruby-value">0.000e+00</span> ]
-</pre>
+<pre>&gt;&gt; h = Histogram.alloc(5, [0, 5])
+&gt;&gt; h.range
+=&gt; GSL::Histogram::Range:
+[ 0.000e+00 1.000e+00 2.000e+00 3.000e+00 4.000e+00 5.000e+00 ]
+&gt;&gt; h.bin
+=&gt; GSL::Histogram::Bin:
+[ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 ]
+&gt;&gt; h.increment(2.5)
+&gt;&gt; h.bin
+=&gt; GSL::Histogram::Bin:
+[ 0.000e+00 0.000e+00 1.000e+00 0.000e+00 0.000e+00 ]</pre>
 </li></ol>
 </li></ul>
 <hr>
@@ -337,7 +333,7 @@ bin[n-1] corresponds to xmin + (n-1)d &lt;= x &lt; xmax</pre>
 <p>where d is the bin spacing, d = (xmax-xmin)/n.</p>
 </li></ul>
 
-<h2 id="label-Copying+Histograms">Copying Histograms<span><a href="#label-Copying+Histograms">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Copying+Histograms">Copying Histograms<span><a href="#label-Copying+Histograms">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram.memcpy(dest, src)</p>
@@ -354,7 +350,7 @@ two histograms must be of the same size.</p>
 <code>self</code>.</p>
 </li></ul>
 
-<h2 id="label-Updating+and+accessing+histogram+elements">Updating and accessing histogram elements<span><a href="#label-Updating+and+accessing+histogram+elements">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Updating+and+accessing+histogram+elements">Updating and accessing histogram elements<span><a href="#label-Updating+and+accessing+histogram+elements">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#increment(x, weight = 1)</p>
@@ -434,7 +430,7 @@ the number of bins of the histogram <code>self</code>.</p>
 <p>This method resets all the bins in the histogram <code>self</code> to zero.</p>
 </li></ul>
 
-<h2 id="label-Searching+histogram+ranges">Searching histogram ranges<span><a href="#label-Searching+histogram+ranges">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Searching+histogram+ranges">Searching histogram ranges<span><a href="#label-Searching+histogram+ranges">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#find(x)</p>
@@ -443,7 +439,7 @@ the number of bins of the histogram <code>self</code>.</p>
 coordinate <code>x</code> in the histogram <code>self</code>.</p>
 </li></ul>
 
-<h2 id="label-Histogram+Statistics">Histogram Statistics<span><a href="#label-Histogram+Statistics">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Histogram+Statistics">Histogram Statistics<span><a href="#label-Histogram+Statistics">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#max_val</p>
@@ -498,7 +494,7 @@ the result is limited by the bin width.</p>
 <code>istart</code>-th bin to the <code>iend</code>-th bin.</p>
 </li></ul>
 
-<h2 id="label-Histogram+Operations">Histogram Operations<span><a href="#label-Histogram+Operations">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Histogram+Operations">Histogram Operations<span><a href="#label-Histogram+Operations">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#add(h2)</p>
@@ -514,7 +510,7 @@ the result is limited by the bin width.</p>
 <p>GSL::Histogram#shift(val)</p>
 </li></ul>
 
-<h2 id="label-Reading+and+writing+histograms">Reading and writing histograms<span><a href="#label-Reading+and+writing+histograms">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Reading+and+writing+histograms">Reading and writing histograms<span><a href="#label-Reading+and+writing+histograms">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Histogram#fwrite(io)</p>
@@ -534,9 +530,9 @@ the result is limited by the bin width.</p>
 <p>GSL::Histogram#fscanf(filename)</p>
 </li></ul>
 
-<h2 id="label-Extentions">Extentions<span><a href="#label-Extentions">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Extentions">Extentions<span><a href="#label-Extentions">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Histogram+operations">Histogram operations<span><a href="#label-Histogram+operations">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Histogram+operations">Histogram operations<span><a href="#label-Histogram+operations">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Histogram#normalize</p>
@@ -603,7 +599,7 @@ created from a <code>GSL::Histogram</code> <code>h</code> is given by
 <p>GSL::Histogram::Integral#diff</p>
 </li></ul>
 
-<h3 id="label-Graphics">Graphics<span><a href="#label-Graphics">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Graphics">Graphics<span><a href="#label-Graphics">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Histogram#graph(options)</p>
@@ -612,7 +608,7 @@ created from a <code>GSL::Histogram</code> <code>h</code> is given by
 <code>self</code>. The options as “-T X -C -l x” etc are given by a String.</p>
 </li></ul>
 
-<h3 id="label-Fitting">Fitting<span><a href="#label-Fitting">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Fitting">Fitting<span><a href="#label-Fitting">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Histogram#fit_exponential(binstart = 0, binend = n-1)</p>
@@ -654,24 +650,25 @@ mean, height, errsig, errmean, errhei, sumsq, dof]</code>.</p>
 
 <p>Example:</p>
 
-<pre>#!/usr/bin/env ruby
-require(&quot;gsl&quot;)
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
 
-N = 10000
-MAX = 8
-rng = Rng.alloc
+<span class="ruby-constant">N</span> = <span class="ruby-value">10000</span>
+<span class="ruby-constant">MAX</span> = <span class="ruby-value">8</span>
+<span class="ruby-identifier">rng</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>
 
-data = Ran.gaussian(rng, 1.5, N) + 2
-h = Histogram.alloc(100, [-MAX, MAX])
-h.increment(data)
+<span class="ruby-identifier">data</span> = <span class="ruby-constant">Ran</span>.<span class="ruby-identifier">gaussian</span>(<span class="ruby-identifier">rng</span>, <span class="ruby-value">1.5</span>, <span class="ruby-constant">N</span>) <span class="ruby-operator">+</span> <span class="ruby-value">2</span>
+<span class="ruby-identifier">h</span> = <span class="ruby-constant">Histogram</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-value">100</span>, [<span class="ruby-operator">-</span><span class="ruby-constant">MAX</span>, <span class="ruby-constant">MAX</span>])
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">increment</span>(<span class="ruby-identifier">data</span>)
 
-sigma, mean, height, = h.fit_gaussian
-x = Vector.linspace(-MAX, MAX, 100)
-y = height*Ran::gaussian_pdf(x-mean, sigma)
-GSL::graph(h, [x, y], &quot;-T X -C -g 3&quot;)</pre>
+<span class="ruby-identifier">sigma</span>, <span class="ruby-identifier">mean</span>, <span class="ruby-identifier">height</span>, = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">fit_gaussian</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">linspace</span>(<span class="ruby-operator">-</span><span class="ruby-constant">MAX</span>, <span class="ruby-constant">MAX</span>, <span class="ruby-value">100</span>)
+<span class="ruby-identifier">y</span> = <span class="ruby-identifier">height</span><span class="ruby-operator">*</span><span class="ruby-constant">Ran</span><span class="ruby-operator">::</span><span class="ruby-identifier">gaussian_pdf</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">-</span><span class="ruby-identifier">mean</span>, <span class="ruby-identifier">sigma</span>)
+<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-identifier">graph</span>(<span class="ruby-identifier">h</span>, [<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>], <span class="ruby-string">&quot;-T X -C -g 3&quot;</span>)
+</pre>
 </li></ul>
 
-<h2 id="label-The+histogram+probability+distribution">The histogram probability distribution<span><a href="#label-The+histogram+probability+distribution">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-The+histogram+probability+distribution">The histogram probability distribution<span><a href="#label-The+histogram+probability+distribution">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The probability distribution function for a histogram consists of a set of
 bins which measure the probability of an event falling into a given range
@@ -684,7 +681,7 @@ be shown that by taking a uniform random number in this range and finding
 its corresponding coordinate in the cumulative probability distribution we
 obtain samples with the desired probability distribution.</p>
 
-<h3 id="label-Pdf+class">Pdf class<span><a href="#label-Pdf+class">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Pdf+class">Pdf class<span><a href="#label-Pdf+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Histogram::Pdf.alloc(n)</p>
@@ -710,7 +707,8 @@ one, to compute a single random sample from the probability distribution
 <code>self</code>. The algorithm used to compute the sample s is given by
 the following formula,</p>
 
-<pre>s = range[i] + delta * (range[i+1] - range[i])</pre>
+<pre class="ruby"><span class="ruby-identifier">s</span> = <span class="ruby-identifier">range</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">delta</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">range</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">range</span>[<span class="ruby-identifier">i</span>])
+</pre>
 
 <p>where i is the index which satisfies <code>sum[i] &lt;= r &lt;
 sum[i+1]</code> and <code>delta</code> is <code>(r - sum[i])/(sum[i+1] -
@@ -748,7 +746,7 @@ struct.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

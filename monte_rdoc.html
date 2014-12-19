@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>monte - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>monte - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -201,9 +198,9 @@
 
 <main role="main" aria-label="Page monte.rdoc">
 
-<h1 id="label-Monte+Carlo+Integration">Monte Carlo Integration<span><a href="#label-Monte+Carlo+Integration">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Monte+Carlo+Integration">Monte Carlo Integration<span><a href="#label-Monte+Carlo+Integration">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h2 id="label-The+Function+class">The Function class<span><a href="#label-The+Function+class">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-The+Function+class">The Function class<span><a href="#label-The+Function+class">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>The function to be integrated has its own datatype, the
 <code>GSL::Monte::Function</code> class.</p>
@@ -249,9 +246,9 @@
 <p>GSL::Munte::Function#call</p>
 </li></ul>
 
-<h2 id="label-Monte+Carlo+plans-2C+alrgorithms">Monte Carlo plans, alrgorithms<span><a href="#label-Monte+Carlo+plans-2C+alrgorithms">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Monte+Carlo+plans-2C+alrgorithms">Monte Carlo plans, alrgorithms<span><a href="#label-Monte+Carlo+plans-2C+alrgorithms">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-PLAIN+Monte+Carlo">PLAIN Monte Carlo<span><a href="#label-PLAIN+Monte+Carlo">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-PLAIN+Monte+Carlo">PLAIN Monte Carlo<span><a href="#label-PLAIN+Monte+Carlo">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Monte::Plain.alloc(dim)</p>
@@ -259,7 +256,7 @@
 <p>GSL::Monte::Plain#init</p>
 </li></ul>
 
-<h3 id="label-Miser">Miser<span><a href="#label-Miser">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Miser">Miser<span><a href="#label-Miser">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Monte::Miser.alloc(dim)</p>
@@ -267,7 +264,7 @@
 <p>GSL::Monte::Miser#init</p>
 </li></ul>
 
-<h3 id="label-Vegas">Vegas<span><a href="#label-Vegas">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Vegas">Vegas<span><a href="#label-Vegas">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Monte::Vegas.alloc(dim)</p>
@@ -275,7 +272,7 @@
 <p>GSL::Monte::Vegas#init</p>
 </li></ul>
 
-<h2 id="label-Integration">Integration<span><a href="#label-Integration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Integration">Integration<span><a href="#label-Integration">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL:Monte::Function#integrate(xl, xu, dim, calls, rng, s)</p>
@@ -298,7 +295,7 @@ internally and freed when the calculation finishes.</p>
 <p>See sample scripts <code>sample/monte*.rb</code> for more details.</p>
 </li></ul>
 
-<h2 id="label-Accessing+internal+state+of+the+Monte+Carlo+classes">Accessing internal state of the Monte Carlo classes<span><a href="#label-Accessing+internal+state+of+the+Monte+Carlo+classes">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Accessing+internal+state+of+the+Monte+Carlo+classes">Accessing internal state of the Monte Carlo classes<span><a href="#label-Accessing+internal+state+of+the+Monte+Carlo+classes">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Monte::Miser#estimate_frac</p>
@@ -367,7 +364,7 @@ algorithm.</p>
 <p>GSL::Monte::Vegas#verbose=</p>
 </li></ul>
 
-<h2 id="label-Miser+Parameters+-28GSL-1.13+or+later-29">Miser Parameters (GSL-1.13 or later)<span><a href="#label-Miser+Parameters+-28GSL-1.13+or+later-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Miser+Parameters+-28GSL-1.13+or+later-29">Miser Parameters (GSL-1.13 or later)<span><a href="#label-Miser+Parameters+-28GSL-1.13+or+later-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Monte::Miser#params_get</p>
@@ -383,7 +380,7 @@ algorithm.</p>
 <code>GSL::Monte::Miser::Params</code> class <code>params</code>.</p>
 </li></ul>
 
-<h3 id="label-Accessors+of+Miser+Params">Accessors of Miser <code>Params</code><span><a href="#label-Accessors+of+Miser+Params">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Accessors+of+Miser+Params">Accessors of Miser <code>Params</code><span><a href="#label-Accessors+of+Miser+Params">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Monte::Miser::Params#estimate_frac</p>
@@ -449,7 +446,7 @@ are concentrated near the exact center of the hypercubic integration
 region. The default value of dither is zero, so no variation is introduced.
 If needed, a typical value of dither is 0.1.</p>
 
-<h2 id="label-Vegas+Parameters+-28GSL-1.13+or+later-29">Vegas Parameters (GSL-1.13 or later)<span><a href="#label-Vegas+Parameters+-28GSL-1.13+or+later-29">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Vegas+Parameters+-28GSL-1.13+or+later-29">Vegas Parameters (GSL-1.13 or later)<span><a href="#label-Vegas+Parameters+-28GSL-1.13+or+later-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Monte::Vegas#params_get</p>
@@ -465,7 +462,7 @@ If needed, a typical value of dither is 0.1.</p>
 <code>GSL::Monte::Vegas::Params</code> class <code>params</code>.</p>
 </li></ul>
 
-<h3 id="label-Accessors+of+Vegas+Params">Accessors of Vegas <code>Params</code><span><a href="#label-Accessors+of+Vegas+Params">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Accessors+of+Vegas+Params">Accessors of Vegas <code>Params</code><span><a href="#label-Accessors+of+Vegas+Params">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <hr>
 <ul><li>
 <p>GSL::Monte::Vegas::Params#alpha</p>
@@ -530,7 +527,7 @@ grid coordinates. A value of 2 prints information from the rebinning
 procedure for each iteration.</p>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
 <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
@@ -590,7 +587,7 @@ procedure for each iteration.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

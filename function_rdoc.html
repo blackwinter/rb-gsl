@@ -4,21 +4,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>function - Ruby/GSL (v1.16.0.3)</title>
-
-<link href="./fonts.css" rel="stylesheet">
-<link href="./rdoc.css" rel="stylesheet">
+<title>function - Ruby/GSL (v1.16.0.4)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/navigation.js"></script>
-<script src="./js/search_index.js"></script>
-<script src="./js/search.js"></script>
-<script src="./js/searcher.js"></script>
 <script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="file">
@@ -193,9 +190,9 @@
 
 <main role="main" aria-label="Page function.rdoc">
 
-<h1 id="label-GSL-3A-3AFunction+class">GSL::Function class<span><a href="#label-GSL-3A-3AFunction+class">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-GSL-3A-3AFunction+class">GSL::Function class<span><a href="#label-GSL-3A-3AFunction+class">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h2 id="label-Class+Methods">Class Methods<span><a href="#label-Class+Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Class+Methods">Class Methods<span><a href="#label-Class+Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Function.alloc</p>
@@ -212,7 +209,8 @@
 <p>The value of the function is calculated by the method
 <code>Function#eval</code>, as</p>
 
-<pre>p f.eval(x)</pre>
+<pre class="ruby"><span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x</span>)
+</pre>
 
 <p>The function can have parameters of arbitrary numbers. Here is an example
 in case of exponential function <code>f(x; a, b) = a*exp(-b*x)</code>.</p>
@@ -225,11 +223,12 @@ in case of exponential function <code>f(x; a, b) = a*exp(-b*x)</code>.</p>
 
 <p>To evaluate the function <code>f(x) = 2*exp(-3*x)</code>,</p>
 
-<pre>f.set_params([2, 3])
-f.eval(x)</pre>
+<pre class="ruby"><span class="ruby-identifier">f</span>.<span class="ruby-identifier">set_params</span>([<span class="ruby-value">2</span>, <span class="ruby-value">3</span>])
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">x</span>)
+</pre>
 </li></ul>
 
-<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Function#eval(x)</p>
@@ -242,9 +241,10 @@ f.eval(x)</pre>
 
 <p>These methods return a value of the function at <code>x</code>.</p>
 
-<pre>p f.eval(2.5)
-p f.call(2.5)
-p f[2.5]</pre>
+<pre class="ruby"><span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">2.5</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">2.5</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>[<span class="ruby-value">2.5</span>]
+</pre>
 
 <p>The argument <code>x</code> can be a scalar, a Vector, Matrix, Array or
 Range.</p>
@@ -270,7 +270,7 @@ Range.</p>
 <p>This set the constant parameters of the function.</p>
 </li></ul>
 
-<h2 id="label-Graph">Graph<span><a href="#label-Graph">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Graph">Graph<span><a href="#label-Graph">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <hr>
 <ul><li>
 <p>GSL::Function#graph(x[, options])</p>
@@ -287,27 +287,26 @@ Range.</p>
 </pre>
 </li></ul>
 
-<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>A quadratic function, f(x) = x^2 + 2x + 3.</p>
 
-<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span> = <span class="ruby-constant">Function</span>.<span class="ruby-identifier">alloc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">param</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">param</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">param</span>[<span class="ruby-value">1</span>] }
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Function:0x6e8eb0&gt;</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">set_params</span>(<span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Function:0x6e8eb0&gt;</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">2</span>)                             <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Scalar</span>
-=<span class="ruby-operator">&gt;</span> <span class="ruby-value">11</span>
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>)                          <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Range</span>
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">11.0</span>, <span class="ruby-value">18.0</span>, <span class="ruby-value">27.0</span>]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])                     <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">Array</span>
-=<span class="ruby-operator">&gt;</span> [<span class="ruby-value">6.0</span>, <span class="ruby-value">11.0</span>, <span class="ruby-value">18.0</span>]
-<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>], [<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]))    <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>
-[ <span class="ruby-value">6.000e+00</span> <span class="ruby-value">1.100e+01</span>
-  <span class="ruby-value">1.800e+01</span> <span class="ruby-value">2.700e+01</span> ]
-=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;GSL::Matrix:0x6dd1b4&gt;</span>
-</pre>
+<pre>&gt;&gt; require(&quot;gsl&quot;)
+=&gt; true
+&gt;&gt; f = Function.alloc { |x, param| x*x + param[0]*x + param[1] }
+=&gt; #&lt;GSL::Function:0x6e8eb0&gt;
+&gt;&gt; f.set_params(2, 3)
+=&gt; #&lt;GSL::Function:0x6e8eb0&gt;
+&gt;&gt; f.eval(2)                             &lt;--- Scalar
+=&gt; 11
+&gt;&gt; f.eval(1..4)                          &lt;--- Range
+=&gt; [6.0, 11.0, 18.0, 27.0]
+&gt;&gt; f.eval([1, 2, 3])                     &lt;--- Array
+=&gt; [6.0, 11.0, 18.0]
+&gt;&gt; f.eval(Matrix.alloc([1, 2], [3, 4]))    &lt;--- GSL::Matrix
+[ 6.000e+00 1.100e+01
+  1.800e+01 2.700e+01 ]
+=&gt; #&lt;GSL::Matrix:0x6dd1b4&gt;</pre>
 
 <p><a href="index.html">back</a></p>
 </main>
@@ -316,7 +315,7 @@ Range.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
