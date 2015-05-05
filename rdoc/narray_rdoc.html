@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>narray - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-NArray+compatibilities">NArray compatibilities</a>
+    <li><a href="#label-Contents-3A">Contents:</a>
+    <li><a href="#label-Data+type+conversions">Data type conversions</a>
+    <li><a href="#label-GSL+to+NArray">GSL to NArray</a>
+    <li><a href="#label-NArray+to+GSL">NArray to GSL</a>
+    <li><a href="#label-Methods+which+accepts+NArray">Methods which accepts NArray</a>
+    <li><a href="#label-GSL+module"><code>GSL</code> module</a>
+    <li><a href="#label-Sf+module"><code>Sf</code> module</a>
+    <li><a href="#label-Linalg+module"><code>Linalg</code> module</a>
+    <li><a href="#label-Eigen+module"><code>Eigen</code> module</a>
+    <li><a href="#label-FFT+module"><code>FFT</code> module</a>
+    <li><a href="#label-Function+class"><code>Function</code> class</a>
+    <li><a href="#label-Ran+and+Cdf+module"><code>Ran</code> and <code>Cdf</code> module</a>
+    <li><a href="#label-Stats+module"><code>Stats</code> module</a>
+    <li><a href="#label-Interp+and+Spline+class"><code>Interp</code> and <code>Spline</code> class</a>
+    <li><a href="#label-Deriv+and+Diff+module"><code>Deriv</code> and <code>Diff</code> module</a>
+    <li><a href="#label-Cheb+class"><code>Cheb</code> class</a>
+    <li><a href="#label-Wavelet+class"><code>Wavelet</code> class</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/narray.rdoc">
+
+<h1 id="label-NArray+compatibilities">NArray compatibilities<span><a href="#label-NArray+compatibilities">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h3 id="label-Contents-3A">Contents:<span><a href="#label-Contents-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ol><li>
+<p><a href="narray_rdoc.html#label-Data+type+conversions">Data type
+conversions</a></p>
+</li><li>
+<p><a href="narray_rdoc.html#label-Methods+which+accepts+NArray">Methods which
+accepts NArray</a></p>
+</li></ol>
+
+<h2 id="label-Data+type+conversions">Data type conversions<span><a href="#label-Data+type+conversions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-GSL+to+NArray">GSL to NArray<span><a href="#label-GSL+to+NArray">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Vector#to_na</p>
+</li><li>
+<p>GSL::Vector#to_nvector</p>
+</li><li>
+<p>GSL::Vector::Complex#to_na</p>
+</li><li>
+<p>GSL::Vector::Complex#to_nvector</p>
+</li><li>
+<p>GSL::Matrix#to_na</p>
+</li><li>
+<p>GSL::Matrix#to_nmatrix</p>
+
+<p>Convert GSL objects to NArray. The data contained by the GSL objects are
+copied to a newly allocated memory block of the NArray objects created.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#to_na_ref</p>
+</li><li>
+<p>GSL::Vector#to_nvector_ref</p>
+</li><li>
+<p>GSL::Vector::Complex#to_na_ref</p>
+</li><li>
+<p>GSL::Vector::Complex#to_nvector_ref</p>
+</li><li>
+<p>GSL::Matrix#to_na_ref</p>
+</li><li>
+<p>GSL::Matrix#to_nmatrix_ref</p>
+
+<p>Create NArray-ref objects from GSL data. The memory block of the GSL
+objects are shared with the NArray-ref objects.</p>
+
+<p>Example:</p>
+
+<pre>&gt;&gt; v = Vector::Int[0..5]
+=&gt; GSL::Vector::Int
+[ 0 1 2 3 4 5 ]
+&gt;&gt; na = v.to_nvector_ref
+=&gt; NVector(ref).int(6):
+[ 0, 1, 2, 3, 4, 5 ]
+&gt;&gt; na[3] = 999
+=&gt; 999
+&gt;&gt; v
+=&gt; GSL::Vector::Int
+[ 0 1 2 999 4 5 ]</pre>
+</li></ul>
+
+<h3 id="label-NArray+to+GSL">NArray to GSL<span><a href="#label-NArray+to+GSL">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>NArray#to_gv</p>
+</li><li>
+<p>NArray#to_gm</p>
+
+<p><code>NArray#to_gv</code> converts NArray objects to
+<code>GSL::Vector</code> or <code>GSL::Vector::Complex</code>. 
+<code>NArray#to_gm</code> converts NArray objects to
+<code>GSL::Matrix</code>.  The data contained by the NArray objects are
+copied to a newly allocated memory block of the GSL objects created.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>NArray#to_gv_view</p>
+</li><li>
+<p>NArray#to_gm_view</p>
+
+<p>Create <code>GSL::Vector::View</code> or <code>GSL::Matrix::View</code>
+objects from NArray. The memory block of the NArray objects are shared with
+the View objects.</p>
+
+<p>Example:</p>
+
+<pre>&gt;&gt; na = NArray[0, 1, 2, 3, 4, 5]
+=&gt; NArray.int(6):
+[ 0, 1, 2, 3, 4, 5 ]
+&gt;&gt; b = na.to_gv_int_view
+=&gt; GSL::Vector::Int::View
+[ 0 1 2 3 4 5 ]
+&gt;&gt; b[2] = -99
+=&gt; -99
+&gt;&gt; na
+=&gt; NArray.int(6):
+[ 0, 1, -99, 3, 4, 5 ]</pre>
+</li></ul>
+
+<h2 id="label-Methods+which+accepts+NArray">Methods which accepts NArray<span><a href="#label-Methods+which+accepts+NArray">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-GSL+module"><code>GSL</code> module<span><a href="#label-GSL+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::graph()</p>
+</li><li>
+<p>GSL::log1p(x)</p>
+</li><li>
+<p>GSL::expm1(x)</p>
+</li><li>
+<p>GSL::hypot(x, y)</p>
+</li><li>
+<p>GSL::acosh(x)</p>
+</li><li>
+<p>GSL::asinh(x)</p>
+</li><li>
+<p>GSL::atanh(x)</p>
+</li><li>
+<p>GSL::pow(x, a)</p>
+</li><li>
+<p>GSL::pow_int(x, n)</p>
+</li><li>
+<p>GSL::pow_2(x), …, GSL::pow_9(x)</p>
+</li></ul>
+
+<h3 id="label-Sf+module"><code>Sf</code> module<span><a href="#label-Sf+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p><a href="sf_rdoc.html">Any</a></p>
+</li></ul>
+
+<h3 id="label-Linalg+module"><code>Linalg</code> module<span><a href="#label-Linalg+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Linalg::LU.decomp(na)</p>
+</li><li>
+<p>GSL::Linalg::LU.solve(lu, b)</p>
+</li><li>
+<p>GSL::Linalg::LU.svx(lu, bx)</p>
+</li><li>
+<p>GSL::Linalg::LU.det(lu, sign)</p>
+</li><li>
+<p>GSL::Linalg::LU.lndet(lu)</p>
+</li><li>
+<p>GSL::Linalg::LU.invert(lu, perm)</p>
+</li><li>
+<p>GSL::Linalg::QR.decomp(m)</p>
+</li><li>
+<p>GSL::Linalg::QR.solve(qr, tau, b)</p>
+</li><li>
+<p>GSL::Linalg::QR.svx(qr, tau, bx)</p>
+</li><li>
+<p>GSL::Linalg::SV.decomp(m)</p>
+</li><li>
+<p>GSL::Linalg::SV.solve(u, v, s, b)</p>
+</li><li>
+<p>GSL::Linalg::SV.svx(u, v, s, bx)</p>
+</li><li>
+<p>GSL::Linalg::Cholesky.decomp(m)</p>
+</li><li>
+<p>GSL::Linalg::Cholesky.solve(u, v, s, b)</p>
+</li><li>
+<p>GSL::Linalg::Cholesky.svx(u, v, s, bx)</p>
+</li><li>
+<p>GSL::Linalg::HH.solve(m, b)</p>
+</li><li>
+<p>GSL::Linalg::HH.svx(m, bx)</p>
+</li></ul>
+
+<h3 id="label-Eigen+module"><code>Eigen</code> module<span><a href="#label-Eigen+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Eigen::symm(na)</p>
+</li><li>
+<p>GSL::Eigen::symmv(na)</p>
+</li></ul>
+
+<h3 id="label-FFT+module"><code>FFT</code> module<span><a href="#label-FFT+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p><a href="fft_rdoc.html">Many</a></p>
+</li></ul>
+
+<h3 id="label-Function+class"><code>Function</code> class<span><a href="#label-Function+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Function#eval</p>
+</li><li>
+<p>GSL::Function#deriv_central(x, h)</p>
+</li><li>
+<p>GSL::Function#deriv_forward(x, h)</p>
+</li><li>
+<p>GSL::Function#deriv_backward(x, h)</p>
+</li><li>
+<p>GSL::Function#diff_central(x, h)</p>
+</li><li>
+<p>GSL::Function#diff_forward(x, h)</p>
+</li><li>
+<p>GSL::Function#diff_backward(x, h)</p>
+</li></ul>
+
+<h3 id="label-Ran+and+Cdf+module"><code>Ran</code> and <code>Cdf</code> module<span><a href="#label-Ran+and+Cdf+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p><a href="randist_rdoc.html">Many</a></p>
+</li></ul>
+
+<h3 id="label-Stats+module"><code>Stats</code> module<span><a href="#label-Stats+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p><a href="stats_rdoc.html">Any</a></p>
+</li></ul>
+
+<h3 id="label-Interp+and+Spline+class"><code>Interp</code> and <code>Spline</code> class<span><a href="#label-Interp+and+Spline+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Interp#init</p>
+</li><li>
+<p>GSL::Interp#eval</p>
+</li><li>
+<p>GSL::Spline#init</p>
+</li><li>
+<p>GSL::Spline#eval</p>
+</li></ul>
+
+<h3 id="label-Deriv+and+Diff+module"><code>Deriv</code> and <code>Diff</code> module<span><a href="#label-Deriv+and+Diff+module">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Deriv.central(f, x, h)</p>
+</li><li>
+<p>GSL::Deriv.forward(f, x, h)</p>
+</li><li>
+<p>GSL::Deriv.backward(f, x, h)</p>
+</li><li>
+<p>GSL::Diff.central(f, x, h)</p>
+</li><li>
+<p>GSL::Diff.forward(f, x, h)</p>
+</li><li>
+<p>GSL::Diff.backward(f, x, h)</p>
+</li></ul>
+
+<h3 id="label-Cheb+class"><code>Cheb</code> class<span><a href="#label-Cheb+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Cheb#eval(x)</p>
+</li><li>
+<p>GSL::Cheb#eval_n(n, x)</p>
+</li></ul>
+
+<h3 id="label-Wavelet+class"><code>Wavelet</code> class<span><a href="#label-Wavelet+class">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p><a href="wavelet_rdoc.html">Many</a></p>
+</li></ul>
+
+<p><a href="tensor_rdoc.html">prev</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>bspline - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Basis+Splines">Basis Splines</a>
+    <li><a href="#label-Overview">Overview</a>
+    <li><a href="#label-Initializing+the+B-splines+solver">Initializing the B-splines solver</a>
+    <li><a href="#label-Constructing+the+knots+vector">Constructing the knots vector</a>
+    <li><a href="#label-Evaluation+of+B-splines">Evaluation of B-splines</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/bspline.rdoc">
+
+<h1 id="label-Basis+Splines">Basis Splines<span><a href="#label-Basis+Splines">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This chapter describes functions for the computation of smoothing basis
+splines (B-splines). This is only for GSL-1.9 or later.</p>
+<ol><li>
+<p><a href="bspline_rdoc.html#label-Overview">Overview</a></p>
+</li><li>
+<p><a
+href="bspline_rdoc.html#label-Initializing+the+B-splines+solver">Initializing
+the B-splines solver</a></p>
+</li><li>
+<p><a
+href="bspline_rdoc.html#label-Constructing+the+knots+vector">Constructing
+the knots vector</a></p>
+</li><li>
+<p><a href="bspline_rdoc.html#label-Evaluation+of+B-splines">Evaluation of
+B-splines</a></p>
+</li></ol>
+
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>B-splines are commonly used as basis functions to fit smoothing curves to
+large data sets. To do this, the abscissa axis is broken up into some
+number of intervals, where the endpoints of each interval are called
+breakpoints. These breakpoints are then converted to knots by imposing
+various continuity and smoothness conditions at each interface. Given a
+nondecreasing knot vector t = {t_0, t_1, dots, t_{n+k-1, the n basis
+splines of order k are defined by for i = 0, dots, n-1. The common case of
+cubic B-splines is given by k = 4. The above recurrence relation can be
+evaluated in a numerically stable way by the de Boor algorithm.</p>
+
+<p>If we define appropriate knots on an interval [a,b] then the B-spline basis
+functions form a complete set on that interval. Therefore we can expand a
+smoothing function as given enough (x_j, f(x_j)) data pairs. The c_i can be
+readily obtained from a least-squares fit.</p>
+
+<h2 id="label-Initializing+the+B-splines+solver">Initializing the B-splines solver<span><a href="#label-Initializing+the+B-splines+solver">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::BSpline.alloc(k, nbreak)</p>
+
+<p>This method creates a workspace for computing B-splines of order
+<code>k</code>. The number of breakpoints is given by <code>nbreak</code>.
+This leads to <code>n = nbreak + k - 2</code> basis functions. Cubic
+B-splines are specified by <code>k = 4</code>. The size of the workspace is
+<code>O(5k + nbreak)</code>.</p>
+</li></ul>
+
+<h2 id="label-Constructing+the+knots+vector">Constructing the knots vector<span><a href="#label-Constructing+the+knots+vector">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::BSpline#knots(breakpts)</p>
+
+<p>This method computes the knots associated with the given breakpoints
+<code>breakpts</code> and returns the knots as a
+<code>GSL::Vector::View</code> object.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::BSpline#knots_uniform(a, b)</p>
+
+<p>This method assumes uniformly spaced breakpoints on [<code>a,b</code>] and
+constructs the corresponding knot vector using the previously specified
+<code>nbreak</code> parameter.</p>
+</li></ul>
+
+<h2 id="label-Evaluation+of+B-splines">Evaluation of B-splines<span><a href="#label-Evaluation+of+B-splines">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::BSpline#eval(x[, B])</p>
+
+<p>This method evaluates all B-spline basis functions at the position
+<code>x</code> and stores them in <code>B</code> (if given), so that the
+ith element of <code>B</code> is <code>B_i(x)</code>. <code>B</code> must
+be of length <code>n = nbreak + k - 2</code>. If <code>B</code> is not
+given, a newly created vector is returned.It is far more efficient to
+compute all of the basis functions at once than to compute them
+individually, due to the nature of the defining recurrence relation.</p>
+</li></ul>
+
+<p><a href="nonlinearfit_rdoc.html">prev</a> <a
+href="const_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

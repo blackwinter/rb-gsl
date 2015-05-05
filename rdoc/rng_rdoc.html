@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>rng - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Random+Number+Generation">Random Number Generation</a>
+    <li><a href="#label-General+comments+on+random+numbers">General comments on random numbers</a>
+    <li><a href="#label-The+Random+Number+Generator+Interface">The Random Number Generator Interface</a>
+    <li><a href="#label-Random+number+generator+initialization">Random number generator initialization</a>
+    <li><a href="#label-Sampling+from+a+random+number+generator">Sampling from a random number generator</a>
+    <li><a href="#label-Auxiliary+random+number+generator+functions">Auxiliary random number generator functions</a>
+    <li><a href="#label-Random+number+environment+variables">Random number environment variables</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/rng.rdoc">
+
+<h1 id="label-Random+Number+Generation">Random Number Generation<span><a href="#label-Random+Number+Generation">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>The library provides a large collection of random number generators which
+can be accessed through a uniform interface. Environment variables allow
+you to select different generators and seeds at runtime, so that you can
+easily switch between generators without needing to recompile your program.
+Each instance of a generator keeps track of its own state, allowing the
+generators to be used in multi-threaded programs. Additional functions are
+available for transforming uniform random numbers into samples from
+continuous or discrete probability distributions such as the Gaussian,
+log-normal or Poisson distributions.</p>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="rng_rdoc.html#label-General+comments+on+random+numbers">General
+comments on random numbers</a></p>
+</li><li>
+<p><a href="rng_rdoc.html#label-The+Random+Number+Generator+Interface">The
+Random Number Generator Interface: GSL::Rng class</a></p>
+</li><li>
+<p><a href="rng_rdoc.html#label-Random+number+generator+initialization">Random
+number generator initialization</a></p>
+</li><li>
+<p><a
+href="rng_rdoc.html#label-Sampling+from+a+random+number+generator">Sampling
+from a random number generator</a></p>
+</li><li>
+<p><a
+href="rng_rdoc.html#label-Auxiliary+random+number+generator+functions">Auxiliary
+random number generator functions</a></p>
+</li><li>
+<p><a href="rng_rdoc.html#label-Random+number+environment+variables">Random
+number environment variables</a></p>
+</li></ol>
+
+<h2 id="label-General+comments+on+random+numbers">General comments on random numbers<span><a href="#label-General+comments+on+random+numbers">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>In 1988, Park and Miller wrote a paper entitled “Random number generators:
+good ones are hard to find.” [Commun. ACM, 31, 1192-1201]. Fortunately,
+some excellent random number generators are available, though poor ones are
+still in common use. You may be happy with the system-supplied random
+number generator on your computer, but you should be aware that as
+computers get faster, requirements on random number generators increase.
+Nowadays, a simulation that calls a random number generator millions of
+times can often finish before you can make it down the hall to the coffee
+machine and back.</p>
+
+<p>A very nice review of random number generators was written by Pierre
+L&#39;Ecuyer, as Chapter 4 of the book: Handbook on Simulation, Jerry
+Banks, ed. (Wiley, 1997). The chapter is available in postscript from
+L&#39;Ecuyer&#39;s ftp site (see references). Knuth&#39;s volume on
+Seminumerical Algorithms (originally published in 1968) devotes 170 pages
+to random number generators, and has recently been updated in its 3rd
+edition (1997). It is brilliant, a classic. If you don&#39;t own it, you
+should stop reading right now, run to the nearest bookstore, and buy it.</p>
+
+<p>A good random number generator will satisfy both theoretical and
+statistical properties. Theoretical properties are often hard to obtain
+(they require real math!), but one prefers a random number generator with a
+long period, low serial correlation, and a tendency not to “fall mainly on
+the planes.” Statistical tests are performed with numerical simulations.
+Generally, a random number generator is used to estimate some quantity for
+which the theory of probability provides an exact answer. Comparison to
+this exact answer provides a measure of “randomness”.</p>
+
+<h2 id="label-The+Random+Number+Generator+Interface">The Random Number Generator Interface<span><a href="#label-The+Random+Number+Generator+Interface">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>It is important to remember that a random number generator is not a “real”
+function like sine or cosine. Unlike real functions, successive calls to a
+random number generator yield different return values. Of course that is
+just what you want for a random number generator, but to achieve this
+effect, the generator must keep track of some kind of “state” variable.
+Sometimes this state is just an integer (sometimes just the value of the
+previously generated random number), but often it is more complicated than
+that and may involve a whole array of numbers, possibly with some indices
+thrown in. To use the random number generators, you do not need to know the
+details of what comprises the state, and besides that varies from algorithm
+to algorithm.</p>
+
+<p>The random number generator library uses <code>GSL::Rng</code> class for
+the interface.</p>
+
+<h2 id="label-Random+number+generator+initialization">Random number generator initialization<span><a href="#label-Random+number+generator+initialization">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Rng.alloc(rng_type[, seed])</p>
+
+<p>This method returns a GSL::Rng object of a random number generator of type
+<code>rng_type</code> with a seed <code>seed</code>. These two arguments
+can be omitted, and the generator &#39;gsl_rng_mt19937&#39; and a seed 0
+are used as defaults. The GSL library provides a number of random number
+generator types, and one can choose with a constant
+<code>GSL::RNG_xxx</code> or a String, as</p>
+<ul><li>
+<p><code>GSL::Rng::MT19937</code> or <code>&quot;gsl_rng_mt19937&quot;</code>
+or <code>&quot;mt19937&quot;</code></p>
+</li><li>
+<p><code>GSL::Rng::RANLXS0</code>  or <code>&quot;gsl_rng_ranlsx0&quot;</code>
+or <code>&quot;ranlxs0&quot;</code></p>
+</li><li>
+<p><code>GSL::Rng::ZUF</code>  or <code>&quot;gsl_rng_zuf&quot;</code>  or
+<code>&quot;zuf&quot;</code></p>
+</li><li>
+<p>…</p>
+</li></ul>
+
+<p>See the <a
+href="https://gnu.org/software/gsl/manual/html_node/Random-number-generator-algorithms.html#Random-number-generator-algorithms">GSL
+reference manual</a> for the complete list. The following demonstrates how
+to use this class,</p>
+
+<pre>require &#39;gsl&#39;
+
+r = Rng.alloc(Rng::TAUS, 1)
+r2 = Rng.alloc(&quot;ran0&quot;, 2)
+p r.name                &lt;- &quot;taus&quot;
+p r.get                 &lt;- get an integer
+p r2.uniform            &lt;- get a float of [0, 1)</pre>
+
+<p>A generator of the type <code>gsl_rng_taus</code> is created with seed 1,
+and <code>gsl_rng_ran0</code> with seed 2. The method <code>get</code>
+returns a random integer. The method <code>uniform</code> returns a
+floating number uniformly distributed in the range [0, 1).</p>
+
+<p>If the package <a
+href="http://www.network-theory.co.uk/download/rngextra/">rngextra</a> is
+installed, additional two generators are available,</p>
+<ul><li>
+<p><code>GSL::Rng::RNGEXTRA_RNG1</code>,
+<code>&quot;rngextra_rng1&quot;</code></p>
+</li><li>
+<p><code>GSL::Rng::RNGEXTRA_RNG2</code>,
+<code>&quot;rngextra_rng2&quot;</code></p>
+</li></ul>
+
+<p>They are created as</p>
+
+<pre class="ruby"><span class="ruby-identifier">r1</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Rng</span><span class="ruby-operator">::</span><span class="ruby-constant">RNGEXTRA_RNG1</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">name</span>                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-string">&quot;rng1&quot;</span>
+
+<span class="ruby-identifier">r2</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;rngextra_rng2&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">name</span>                <span class="ruby-operator">&lt;</span><span class="ruby-operator">-</span> <span class="ruby-string">&quot;rng2&quot;</span>
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng.default_seed</p>
+
+<p>Returns the default seed</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng.set_default_seed(seed)</p>
+</li><li>
+<p>GSL::Rng.default_seed=(seed)</p>
+
+<p>Override the default seed by <code>seed</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng.types_setup()</p>
+
+<p>Returns an array of all the available generators&#39; names.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSK::Rng.memcpy(dest, src)</p>
+
+<p>Copies the random number generator <code>src</code>) into the pre-existing
+generator <code>dest</code>, making dest into an exact copy of
+<code>src</code>. The two generators must be of the same type.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#set(s)</p>
+
+<p>This method initializes the random number generator with a given seed
+<code>s</code>.</p>
+</li></ul>
+
+<h2 id="label-Sampling+from+a+random+number+generator">Sampling from a random number generator<span><a href="#label-Sampling+from+a+random+number+generator">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Rng#get</p>
+
+<p>This returns a random integer from the reciever generator.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#uniform</p>
+
+<p>This method returns a double precision floating point number uniformly
+distributed in the range [0,1).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#uniform_pos</p>
+
+<p>This returns a positive double precision floating point number uniformly
+distributed in the range (0,1), excluding both 0.0 and 1.0.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#uniform_int(n)</p>
+
+<p>This method returns a random integer from 0 to n-1 inclusive.</p>
+</li></ul>
+
+<h2 id="label-Auxiliary+random+number+generator+functions">Auxiliary random number generator functions<span><a href="#label-Auxiliary+random+number+generator+functions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Rng#name</p>
+
+<p>This method returns a Sting object of the name of the generator.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#max</p>
+</li><li>
+<p>GSL::Rng#min</p>
+
+<p>These method return the largest/smallest value that the method
+<code>get</code> can return.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Rng#clone</p>
+</li><li>
+<p>GSL::Rng#duplicate</p>
+
+<p>Return a newly created generator which is an exact copy of the generator
+<code>self</code>.</p>
+</li></ul>
+
+<h2 id="label-Random+number+environment+variables">Random number environment variables<span><a href="#label-Random+number+environment+variables">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The library allows you to choose a default generator and seed from the
+environment variables <code>GSL_RNG_TYPE</code> and
+<code>GSL_RNG_SEED</code> and the method <code>GSL::Rng::env_setup</code>.</p>
+<hr>
+<ul><li>
+<p>GSL::Rng.env_setup()</p>
+
+<p>Reads the environment variables <code>GSL_RNG_TYPE</code> and
+<code>GSL_RNG_SEED</code> and uses their values to set the corresponding
+library variables.</p>
+
+<p>If you don&#39;t specify a generator for <code>GSL_RNG_TYPE</code> then
+“mt19937” is used as the default. The initial value of the default seed is
+zero.</p>
+</li></ul>
+
+<p><a href="integration_rdoc.html">prev</a> <a href="qrng_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

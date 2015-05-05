@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>hist2d - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-GSL-3A-3AHistogram2d+class">GSL::Histogram2d class</a>
+    <li><a href="#label-Class+methods">Class methods</a>
+    <li><a href="#label-Methods">Methods</a>
+    <li><a href="#label-Pdf+class">Pdf class</a>
+    <li><a href="#label-Example">Example</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/hist2d.rdoc">
+
+<h1 id="label-GSL-3A-3AHistogram2d+class">GSL::Histogram2d class<span><a href="#label-GSL-3A-3AHistogram2d+class">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Class+methods">Class methods<span><a href="#label-Class+methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d.alloc(nx, ny)</p>
+</li><li>
+<p>GSL::Histogram2d.alloc(xrange, yrange)</p>
+</li><li>
+<p>GSL::Histogram2d.alloc(nx, xmin, xmax, ny, ymin, ymax)</p>
+</li><li>
+<p>GSL::Histogram2d.alloc(nx, [xmin, xmax], ny, [ymin, ymax])</p>
+
+<p>Constructors.</p>
+<ol><li>
+<p>With sizes</p>
+
+<pre>&gt;&gt; h2 = GSL::Histogram2d.alloc(2, 3)  # size 6
+&gt;&gt; h2.xrange
+=&gt; GSL::Histogram::Range:
+[ 0.000e+00 1.000e+00 2.000e+00 ]
+&gt;&gt; h2.yrange
+=&gt; GSL::Histogram::Range:
+[ 0.000e+00 1.000e+00 2.000e+00 3.000e+00 ]
+&gt;&gt; h2.bin
+=&gt; GSL::Histogram::Bin:
+[ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 ]
+&gt;&gt; h2.xrange.class.superclass
+=&gt; GSL::Vector::View::ReadOnly
+&gt;&gt; h2.bin.class.superclass
+=&gt; GSL::Vector::View::ReadOnly</pre>
+</li><li>
+<p>With ranges</p>
+
+<pre>&gt;&gt; h2 = Histogram2d.alloc([3, 6, 7], [2, 3, 8])
+&gt;&gt; h2.xrange
+=&gt; GSL::Histogram::Range:
+[ 3.000e+00 6.000e+00 7.000e+00 ]
+&gt;&gt; h2.yrange
+=&gt; GSL::Histogram::Range:
+[ 2.000e+00 3.000e+00 8.000e+00 ]
+&gt;&gt; h2.bin
+=&gt; GSL::Histogram::Bin:
+[ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 ]</pre>
+</li><li>
+<p>With sizes and ranges</p>
+
+<pre>&gt;&gt; h2 = Histogram2d.alloc(4, [0, 4], 3, [1, 5])
+&gt;&gt; h2.xrange
+=&gt; GSL::Histogram::Range:
+[ 0.000e+00 1.000e+00 2.000e+00 3.000e+00 4.000e+00 ]
+&gt;&gt; h2.yrange
+=&gt; GSL::Histogram::Range:
+[ 1.000e+00 2.333e+00 3.667e+00 5.000e+00 ]</pre>
+</li></ol>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d.alloc_uniform(nx, xmin, xmax, ny, ymin, ymax)</p>
+</li><li>
+<p>GSL::Histogram2d.equal_bins_p(h1, h2)</p>
+</li></ul>
+
+<h2 id="label-Methods">Methods<span><a href="#label-Methods">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#set_ranges(vx, vy)</p>
+
+<p>This sets the ranges of the existing histogram using two <a
+href="vector_rdoc.html">GSL::Vector</a> objects or arrays.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#set_ranges_uniform(xmin, xmax, ymin, ymax)</p>
+</li><li>
+<p>GSL::Histogram2d#set_ranges_uniform([xmin, xmax], [ymin, ymax])</p>
+
+<p>This sets the ranges of the existing histogram <code>self</code> to cover
+the ranges <code>xmin</code> to <code>xmax</code> and <code>ymin</code> to
+<code>ymax</code> uniformly. The values of the histogram bins are reset to
+zero.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#clone</p>
+</li><li>
+<p>GSL::Histogram2d#duplicate</p>
+
+<p>Returns a newly created histogram which is an exact copy of the histogram
+<code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#increment(x, y, weight = 1)</p>
+</li><li>
+<p>GSL::Histogram2d#accumulate(x, y, weight = 1)</p>
+</li><li>
+<p>GSL::Histogram2d#fill(x, y, weight = 1)</p>
+
+<p>These method update the histogram <code>self</code> by adding
+<code>weight</code> to the bin whose <code>x</code> and <code>y</code>
+ranges contain the coordinates (x,y). If (x,y) lies outside the limits of
+the histogram then none of the bins are modified.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#increment2(x, y, weight = 1)</p>
+</li><li>
+<p>GSL::Histogram2d#accumulate2(x, y, weight = 1)</p>
+</li><li>
+<p>GSL::Histogram2d#fill2(x, y, weight = 1)</p>
+
+<p>These are similar to <code>GSL::Histogram#increment/accumulate/fill</code>,
+but when (x,y) lies outside the limits of the histogram then the edge bin
+is incremented.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#get(i[, j])</p>
+</li><li>
+<p>GSL::Histogram2d#get([i, j])</p>
+</li><li>
+<p>GSL::Histogram2d#[i, j]</p>
+
+<p>Return the contents of the <code>(i,j)</code>-th bin of the histogram
+<code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#get_xrange(i)</p>
+</li><li>
+<p>GSL::Histogram2d#get_yrange(j)</p>
+
+<p>These methods find the upper and lower range limits of the
+<code>i</code>-th and <code>j</code>-th bins in the x and y directions of
+the histogram <code>self</code>.</p>
+
+<p>Ex:</p>
+
+<pre>&gt;&gt; h2 = Histogram2d.alloc(2, [0, 2], 3, [1, 4])
+&gt;&gt; h2.get_xrange(1)
+=&gt; [1.0, 2.0]
+&gt;&gt; h2.get_yrange(1)
+=&gt; [2.0, 3.0]</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#xrange</p>
+</li><li>
+<p>GSL::Histogram2d#yrange</p>
+
+<p>These methods returns the range of histogram as <code>Vector::View</code>
+objects.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#xmax</p>
+</li><li>
+<p>GSL::Histogram2d#xmin</p>
+</li><li>
+<p>GSL::Histogram2d#ymax</p>
+</li><li>
+<p>GSL::Histogram2d#ymin</p>
+</li><li>
+<p>GSL::Histogram2d#nx</p>
+</li><li>
+<p>GSL::Histogram2d#ny</p>
+
+<p>These methodss return the maximum upper and minimum lower range limits and
+the number of bins for the x and y directions of the histogram
+<code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#reset</p>
+
+<p>Resets all the bins of the histogram <code>self</code> to zero.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#find(x, y)</p>
+
+<p>Finds the indices i and j to the to the bin which covers the coordinates
+(<code>x,y</code>).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#max_val</p>
+
+<p>Returns the maximum value contained in the histogram bins.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#max_bin</p>
+
+<p>Returns the indices (i,j) of the bin containing the maximum value in the
+histogram <code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#min_val</p>
+
+<p>Returns the minimum value contained in the histogram bins.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#min_bin</p>
+
+<p>Returns the indices (i,j) of the bin containing the minimum value in the
+histogram <code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#xmean</p>
+
+<p>Returns the mean of the histogrammed x variable, where the histogram is
+regarded as a probability distribution. Negative bin values are ignored for
+the purposes of this calculation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#xsigma</p>
+
+<p>Returns the standard deviation of the histogrammed x variable, where the
+histogram is regarded as a probability distribution. Negative bin values
+are ignored for the purposes of this calculation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#ymean</p>
+
+<p>Returns the mean of the histogrammed y variable, where the histogram is
+regarded as a probability distribution. Negative bin values are ignored for
+the purposes of this calculation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#ysigma</p>
+
+<p>Returns the standard deviation of the histogrammed y variable, where the
+histogram is regarded as a probability distribution. Negative bin values
+are ignored for the purposes of this calculation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#cov</p>
+
+<p>Returns the covariance of the histogrammed x and y variables, where the
+histogram is regarded as a probability distribution. Negative bin values
+are ignored for the purposes of this calculation.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#sum</p>
+</li><li>
+<p>GSL::Histogram2d#integral</p>
+
+<p>Return the sum of all bin values. Negative bin values are included in the
+sum.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#add</p>
+</li><li>
+<p>GSL::Histogram2d#sub</p>
+</li><li>
+<p>GSL::Histogram2d#mul</p>
+</li><li>
+<p>GSL::Histogram2d#div</p>
+</li><li>
+<p>GSL::Histogram2d#scale(val)</p>
+</li><li>
+<p>GSL::Histogram2d#shift(val)</p>
+</li><li>
+<p>GSL::Histogram2d#fwrite(io)</p>
+</li><li>
+<p>GSL::Histogram2d#fwrite(filename)</p>
+</li><li>
+<p>GSL::Histogram2d#fread(io)</p>
+</li><li>
+<p>GSL::Histogram2d#fread(filename)</p>
+</li><li>
+<p>GSL::Histogram2d#fprintf(io, range_format, bin_format)</p>
+</li><li>
+<p>GSL::Histogram2d#fprintf(filename, range_format, bin_format)</p>
+</li><li>
+<p>GSL::Histogram2d#fscanf(io)</p>
+</li><li>
+<p>GSL::Histogram2d#fscanf(filename)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#xproject(jstart = 0, jend = ny-1)</p>
+
+<p>Creates a <code>GSL::Histogram</code> object by projecting the 2D histogram
+<code>self</code> onto the x-axis over the y-range from <code>jstart</code>
+to <code>jend</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d#yproject(istart = 0, iend = nx-1)</p>
+
+<p>Creates a <code>GSL::Histogram</code> object by projecting the 2D histogram
+<code>self</code> onto the y-axis over the x-range from <code>istart</code>
+to <code>iend</code>.</p>
+</li></ul>
+
+<h2 id="label-Pdf+class">Pdf class<span><a href="#label-Pdf+class">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d::Pdf.alloc(nx, ny)</p>
+
+<p>Constructors</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d::Pdf#init(h)</p>
+
+<p>Initializer with a GSL::Histogram2d object <code>h</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Histogram2d::Pdf#sample(r1, r2)</p>
+</li></ul>
+
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-comment">#!/usr/bin/env ruby</span>
+<span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+
+<span class="ruby-constant">N</span> = <span class="ruby-value">10000</span>
+<span class="ruby-constant">BINS</span> = <span class="ruby-value">100</span>
+
+<span class="ruby-identifier">rng</span> = <span class="ruby-constant">Rng</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>)
+<span class="ruby-identifier">h2</span> = <span class="ruby-constant">Histogram2d</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">BINS</span>, [<span class="ruby-value">-5</span>, <span class="ruby-value">5</span>], <span class="ruby-constant">BINS</span>, [<span class="ruby-value">-8</span>, <span class="ruby-value">8</span>])
+
+<span class="ruby-identifier">sig1</span> = <span class="ruby-value">1.0</span>
+<span class="ruby-identifier">sig2</span> = <span class="ruby-value">2.0</span>
+
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">N</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">gaussian</span>(<span class="ruby-identifier">sig1</span>)
+  <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">rng</span>.<span class="ruby-identifier">gaussian</span>(<span class="ruby-identifier">sig2</span>)
+  <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">increment</span>(<span class="ruby-identifier">r1</span>, <span class="ruby-identifier">r2</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">hx</span> = <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xproject</span>
+<span class="ruby-identifier">hy</span> = <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">yproject</span>
+<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%f %f %f %f\n&quot;</span>, <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">xsigma</span>, <span class="ruby-identifier">h2</span>.<span class="ruby-identifier">ysigma</span>, <span class="ruby-identifier">hx</span>.<span class="ruby-identifier">sigma</span>, <span class="ruby-identifier">hy</span>.<span class="ruby-identifier">sigma</span>)
+<span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-identifier">graph</span>(<span class="ruby-identifier">hx</span>, <span class="ruby-identifier">hy</span>, <span class="ruby-string">&quot;-T X -C -g 3&quot;</span>)
+</pre>
+
+<p><a href="hist_rdoc.html">prev</a> <a href="hist3d_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>odeiv - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Ordinary+Differential+Equations">Ordinary Differential Equations</a>
+    <li><a href="#label-Classes+for+ODE+solver">Classes for ODE solver</a>
+    <li><a href="#label-Class+Descriptions">Class Descriptions</a>
+    <li><a href="#label-System">System</a>
+    <li><a href="#label-Step">Step</a>
+    <li><a href="#label-Control">Control</a>
+    <li><a href="#label-Evolve">Evolve</a>
+    <li><a href="#label-Solver">Solver</a>
+    <li><a href="#label-Example">Example</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/odeiv.rdoc">
+
+<h1 id="label-Ordinary+Differential+Equations">Ordinary Differential Equations<span><a href="#label-Ordinary+Differential+Equations">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This chapter describes functions for solving ordinary differential equation
+(ODE) initial value problems. The library provides a variety of low-level
+methods, such as Runge-Kutta and Bulirsch-Stoer routines, and higher-level
+components for adaptive step-size control. The components can be combined
+by the user to achieve the desired solution, with full access to any
+intermediate steps.</p>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="odeiv_rdoc.html#label-Classes+for+ODE+solver">Classes for ODE
+solver</a></p>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Class+Descriptions">Class Descriptions</a></p>
+<ol><li>
+<p><a href="odeiv_rdoc.html#label-System">GSL::Odeiv::System : Defining the
+ODE System</a></p>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Step">GSL::Odeiv::Step : Stepping
+Algorithms</a></p>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Control">GSL::Odeiv::Control : Adaptive
+Step-size Control</a></p>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Evolve">GSL::Odeiv::Evolve : Evolution</a></p>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Solver">GSL::Odeiv::Solver : Higher level
+interface</a></p>
+</li></ol>
+</li><li>
+<p><a href="odeiv_rdoc.html#label-Example">Examples</a></p>
+</li></ol>
+
+<h2 id="label-Classes+for+ODE+solver">Classes for ODE solver<span><a href="#label-Classes+for+ODE+solver">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System</p>
+</li><li>
+<p>GSL::Odeiv::Step</p>
+</li><li>
+<p>GSL::Odeiv::Control</p>
+</li><li>
+<p>GSL::Odeiv::Evolve</p>
+
+<p>These are GSL structure wrappers.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Solver</p>
+
+<p>Another higher-level interface to ODE system classes.</p>
+</li></ul>
+
+<h2 id="label-Class+Descriptions">Class Descriptions<span><a href="#label-Class+Descriptions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-System">System<span><a href="#label-System">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System.alloc(func, jac, dim)</p>
+</li><li>
+<p>GSL::Odeiv::System.alloc(func, dim)</p>
+
+<p>Constructor. This defines a general ODE system with the dimension
+<code>dim</code>.</p>
+
+<pre> # t: variable (scalar)
+ # y: vector
+ # dydt: vector
+ # params: scalar or an array
+
+ func = Proc.new { |t, y, dydt, params|
+   mu = params
+   dydt[0] = y[1]
+   dydt[1] = -y[0] - mu*y[1]*(y[0]*y[0] - 1.0)
+ }
+
+ # t: scalar
+ # y: vector
+ # dfdy: matrix, jacobian
+ # dfdt: vector
+ # params: scalar of an array
+ jac = Proc.new { |t, y, dfdy, dfdt, params|
+   mu = params
+   dfdy.set(0, 0, 0.0)
+   dfdy.set(0, 1, 1.0)
+   dfdy.set(1, 0, -2*mu*y[0]*y[1] - 1.0)
+   dfdy.set(1, 1, -mu*(y[0]*y[0] - 1.0))
+   dfdt[0] = 0.0
+   dfdt[1] = 0.0
+ }
+
+sys = GSL:Odeiv::System.alloc(func, jac, dim)   # for &quot;BSIMP&quot; algorithm</pre>
+
+<p>Note that some of the simpler solver algorithms do not make use of the
+Jacobian matrix, so it is not always strictly necessary to provide it. Thus
+the constructor is as</p>
+
+<pre>sys = GSL:Odeiv::System.alloc(func, nil, dim)   # for others, replaced by nil
+sys = GSL:Odeiv::System.alloc(func, dim)        # or omit</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System#set(func, jac, parameters…)</p>
+
+<p>This method sets or resets the procedures to evaluate the function and
+jacobian, and the constant parameters.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System#set_params(…)</p>
+
+<p>Set the constant parameters of the function.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System#function</p>
+</li><li>
+<p>GSL::Odeiv::System#func</p>
+</li><li>
+<p>GSL::Odeiv::System#jacobian</p>
+</li><li>
+<p>GSL::Odeiv::System#jac</p>
+
+<p>Return Proc objects</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System#dimension</p>
+</li><li>
+<p>GSL::Odeiv::System#dim</p>
+</li></ul>
+
+<h3 id="label-Step">Step<span><a href="#label-Step">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The lowest level components are the stepping functions which advance a
+solution from time <code>t</code> to <code>t+h</code> for a fixed step-size
+<code>h</code> and estimate the resulting local error.</p>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Step.alloc(T, dim)</p>
+
+<p>Constructor for a stepping function of an algorithm type <code>T</code> for
+a system of dimension <code>dim</code>. The algorithms are specified by one
+of the constants under the <code>GSL::Odeiv::Step</code> class, as</p>
+<ol><li>
+<p><code>GSL::Odeiv::Step::RK2</code>, Embedded 2nd order Runge-Kutta with 3rd
+order error estimate.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RK4</code>, 4th order (classical) Runge-Kutta.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RKF45</code>, Embedded 4th order
+Runge-Kutta-Fehlberg method with 5th order error estimate. This method is a
+good general-purpose integrator.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RKCK</code>, Embedded 4th order Runge-Kutta
+Cash-Karp method with 5th order error estimate.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RK8PD</code>, Embedded 8th order Runge-Kutta
+Prince-Dormand method with 9th order error estimate.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RK2IMP</code>, Implicit 2nd order Runge-Kutta at
+Gaussian points</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RK4IMP</code>, Implicit 4th order Runge-Kutta at
+Gaussian points</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::BSIMP</code>, Implicit Bulirsch-Stoer method of
+Bader and Deuflhard. This algorithm requires the Jacobian.</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::GEAR1</code>, M=1 implicit Gear method</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::GEAR2</code>, M=2 implicit Gear method</p>
+</li><li>
+<p><code>GSL::Odeiv::Step::RK2SIMP</code> (GSL-1.6)</p>
+</li></ol>
+<ul><li>
+<p>Ex:</p>
+
+<pre class="ruby"><span class="ruby-identifier">step</span> = <span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span><span class="ruby-operator">::</span><span class="ruby-constant">RKF45</span>, <span class="ruby-value">2</span>)
+</pre>
+</li></ul>
+
+<p>The algorithm types can also be given by a String, same as the C struct
+name,</p>
+<ol><li>
+<p>“<code>rk2</code>” or “<code>gsl_odeiv_step_rk2</code>”</p>
+</li><li>
+<p>“<code>rk4</code>” or “<code>gsl_odeiv_step_rk4</code>”</p>
+</li><li>
+<p>“<code>rkf45</code>” or “<code>gsl_odeiv_step_rkf45</code>”</p>
+</li><li>
+<p>“<code>rkck</code>” or “<code>gsl_odeiv_step_rkck</code>”</p>
+</li><li>
+<p>“<code>rk8pd</code>” or “<code>gsl_odeiv_step_rk8pd</code>”</p>
+</li><li>
+<p>“<code>rk2imp</code>” or “<code>gsl_odeiv_step_rk2imp</code>”</p>
+</li><li>
+<p>“<code>rk4imp</code>” or “<code>gsl_odeiv_step_rk4imp</code>”</p>
+</li><li>
+<p>“<code>bsimp</code>” or “<code>gsl_odeiv_step_bsimp</code>”</p>
+</li><li>
+<p>“<code>gear1</code>” or “<code>gsl_odeiv_step_gear1</code>”</p>
+</li><li>
+<p>“<code>gear2</code>” or “<code>gsl_odeiv_step_gear2</code>”</p>
+</li><li>
+<p>“<code>rk2simp</code>” or “<code>gsl_odeiv_step_rk2simp</code>” (GSL-1.6)</p>
+</li></ol>
+<ul><li>
+<p>Ex:</p>
+
+<pre class="ruby"><span class="ruby-identifier">step</span> = <span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;bsimp&quot;</span>, <span class="ruby-value">4</span>)
+<span class="ruby-identifier">step2</span> = <span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-string">&quot;gsl_odeiv_step_rkck&quot;</span>, <span class="ruby-value">3</span>)
+</pre>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Step#reset</p>
+
+<p>This method resets the stepper. It should be used whenever the next use of
+s will not be a continuation of a previous step.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Step#name</p>
+
+<p>Returns the name of the stepper as a String. For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Odeiv</span>
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">Step</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Step</span><span class="ruby-operator">::</span><span class="ruby-constant">RK4</span>, <span class="ruby-value">2</span>)
+<span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;step method is &#39;%s&#39;\n&quot;</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span>)
+</pre>
+
+<p>would print something like step method is &#39;rk4&#39;.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Step#order</p>
+
+<p>Returns the order of the stepper on the previous step. This order can vary
+if the stepper itself is adaptive.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Step#apply(t, h, y, yerr, dydt_in, dydt_out, sys)</p>
+</li><li>
+<p>GSL::Odeiv::Step#apply(t, h, y, yerr, dydt_in, sys)</p>
+</li><li>
+<p>GSL::Odeiv::Step#apply(t, h, y, yerr, sys)</p>
+
+<p>This method applies the stepper to the system of equations defined by
+<code>dydt</code>, using the step size <code>h</code> to advance the system
+from time <code>t</code> and state <code>y</code> to time <code>t+h</code>.
+The new state of the system is stored in <code>y</code> on output, with an
+estimate of the absolute error in each component stored in
+<code>yerr</code>. If the argument <code>dydt_in</code> is not
+<code>nil</code> it should be a <a href="vector_rdoc.html">GSL::Vector</a>
+object containing the derivatives for the system at time <code>t</code> on
+input. This is optional as the derivatives will be computed internally if
+they are not provided, but allows the reuse of existing derivative
+information. On output the new derivatives of the system at time
+<code>t+h</code> will be stored in <code>dydt_out</code> if it is not nil.</p>
+</li></ul>
+
+<h3 id="label-Control">Control<span><a href="#label-Control">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control.standard_new(epsabs, epsrel, a_y, a_dydt)</p>
+</li><li>
+<p>GSL::Odeiv::Control.alloc(epsabs, epsrel, a_y, a_dydt)</p>
+
+<p>The standard control object is a four parameter heuristic based on absolute
+and relative errors <code>epsabs</code> and <code>epsrel</code>, and
+scaling factors <code>a_y</code> and <code>a_dydt</code> for the system
+state <code>y(t)</code> and derivatives <code>y&#39;(t)</code>
+respectively.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control.y_new(epsabs, epsrel)</p>
+
+<p>This method creates a new control object which will keep the local error on
+each step within an absolute error of <code>epsabs</code> and relative
+error of <code>epsrel</code> with respect to the solution
+<code>y_i(t)</code>. This is equivalent to the standard control object with
+<code>a_y=1</code> and <code>a_dydt=0</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control.yp_new(epsabs, epsrel)</p>
+
+<p>This method creates a new control object which will keep the local error on
+each step within an absolute error of <code>epsabs</code> and relative
+error of <code>epsrel</code> with respect to the derivatives of the
+solution <code>y&#39;_i(t)</code>. This is equivalent to the standard
+control object with <code>a_y=0</code> and <code>a_dydt=1</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control.alloc(epsabs, epsrel, a_y, a_dydt, vscale, dim)</p>
+
+<p>This creates a new control object which uses the same algorithm as
+<code>GSL::Odeiv::Control.standard_new</code> but with an absolute error
+which is scaled for each component by the <code>GSL::Vector</code> object
+<code>vscale</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control#init(epsabs, epsrel, a_y, a_dydt)</p>
+
+<p>This method initializes the controler with the parameters
+<code>epsabs</code> (absolute error),  <code>epsrel</code> (relative
+error), <code>a_y</code> (scaling factor for y) and <code>a_dydt</code>
+(scaling factor for derivatives).</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Control#name</p>
+</li><li>
+<p>GSL::Odeiv::Control#hadjust(step, y0, yerr, dydt, h)</p>
+
+<p>This method adjusts the step-size <code>h</code> using the control function
+object, and the current values of <code>y</code>,  <code>yerr</code> and
+<code>dydt</code>. The stepping function <code>step</code> is also needed
+to determine the order of the method. On output, an array of two elements
+[<code>hadj, status</code>] is returned: If the error in the y-values 
+<code>yerr</code> is found to be too large then the step-size
+<code>h</code> is reduced and the method returns [<code>hadj,
+status</code>=<code>GSL::ODEIV::HADJ_DEC</code>]. If the error is
+sufficiently small then <code>h</code> may be increased and [<code>hadj,
+status</code>=<code>GSL::ODEIV::HADJ_INC</code>] is returned. The method
+returns [<code>hadj, status</code>=<code>GSL::ODEIV::HADJ_NIL</code>] if
+the step-size is unchanged. The goal of the method is to estimate the
+largest step-size which satisfies the user-specified accuracy requirements
+for the current point.</p>
+</li></ul>
+
+<h3 id="label-Evolve">Evolve<span><a href="#label-Evolve">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The higher level of the system is the <code>GSL::Evolve</code> class which
+combines the results of a stepper and controler to reliably advance the
+solution forward over an interval <code>(t_0, t_1)</code>. If the controler
+signals that the step-size should be decreased the <code>GSL::Evolve</code>
+object backs out of the current step and tries the proposed smaller
+step-size. This process is continued until an acceptable step-size is
+found.</p>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Evolve.alloc(dim)</p>
+
+<p>These create a <code>GSL::Evolve</code> object for a system of
+<code>dim</code> dimensions.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Evolve#reset</p>
+
+<p>This method resets the GSL::Evolve object. It should be used whenever the
+next use of e will not be a continuation of a previous step.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Evolve#apply(evolve, control, step, sys, t, t1, h, y)</p>
+
+<p>This method advances the system <code>sys</code> from time <code>t</code>
+and position <code>y</code> using the stepping function <code>step</code>.
+The initial step-size is taken as <code>h</code>. The maximum time
+<code>t1</code> is guaranteed not to be exceeded by the time-step. On
+output, an array of three elements is returned, [<code>tnext, hnext,
+status</code>], where <code>tnext</code> is the time advanced,
+<code>hnext</code> is the step-size for the next step, and
+<code>status</code> is an error code retunred by
+<code>gsl_odeiv_evolve_apply()</code> function. On the final time-step the
+value of <code>tnext</code> will be set to <code>t1</code> exactly.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Evolve#count</p>
+</li></ul>
+
+<h3 id="label-Solver">Solver<span><a href="#label-Solver">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This is the highest level interface to solve ODE system, which contains
+System, Step, Control, and Evolve classes.</p>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::Solver.alloc(T, cary, fac, dim)</p>
+
+<p>This creates a ODE solver with the algorithm type <code>T</code> for the
+system of dimention <code>dim</code>. Here <code>cary</code> is an array as
+an argument for the <code>GSL::Odeive:Control</code> constructor.</p>
+<ul><li>
+<p>Ex1</p>
+
+<pre class="ruby"><span class="ruby-identifier">solver</span> = <span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Solver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span><span class="ruby-operator">::</span><span class="ruby-constant">RKF45</span>, [<span class="ruby-value">1e-6</span>, <span class="ruby-value">0.0</span>], <span class="ruby-identifier">func</span>, <span class="ruby-identifier">dim</span>)
+</pre>
+<ul><li>
+<p>Type: RKF45,</p>
+</li><li>
+<p>Control: epsabs = 1e-6, epsrel = 0.0, a_y = 1, a_dydt = 0</p>
+</li><li>
+<p>System: function = <code>func</code>, jacobian = <code>nil</code></p>
+</li><li>
+<p>Dimension: dim</p>
+</li></ul>
+</li><li>
+<p>Ex2:</p>
+
+<pre class="ruby"><span class="ruby-identifier">solver</span> = <span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Solver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Odeiv</span><span class="ruby-operator">::</span><span class="ruby-constant">Step</span><span class="ruby-operator">::</span><span class="ruby-constant">BSIMP</span>, [<span class="ruby-value">1e-6</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>], <span class="ruby-identifier">func</span>, <span class="ruby-identifier">jac</span>, <span class="ruby-identifier">dim</span>)
+</pre>
+<ul><li>
+<p>Type: BSIMP,</p>
+</li><li>
+<p>Control: epsabs = 1e-6, epsrel = 0.0, a_y = 1, a_dydt = 0</p>
+</li><li>
+<p>System: function = <code>func</code>, jacobian = <code>jac</code></p>
+</li><li>
+<p>Dimension: dim</p>
+</li></ul>
+</li></ul>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv:::Solver#reset</p>
+
+<p>Reset the solver elements (step, evolve)</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv:::Solver#step</p>
+</li><li>
+<p>GSL::Odeiv:::Solver#control</p>
+</li><li>
+<p>GSL::Odeiv:::Solver#evolve</p>
+</li><li>
+<p>GSL::Odeiv:::Solver#system</p>
+
+<p>Access to the solver elements.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv::System#set_params(…)</p>
+
+<p>Set the constant parameters of the function to solve.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Odeiv:::Solver#apply(t, t1, h, y)</p>
+
+<p>This method advances the system from time <code>t</code> and position
+<code>y</code> (<code>GSL::Vector</code> object) using the stepping
+function. On output, the new time and position are returned as an array
+[<code>tnext, hnext, status</code>], i.e. <code>t, y</code> themselves are
+not modified by this method. The maximum time <code>t1</code> is guaranteed
+not to be exceeded by the time-step. On the final time-step the value of
+<code>tnext</code> will be set to <code>t1</code> exactly.</p>
+</li></ul>
+
+<h2 id="label-Example">Example<span><a href="#label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The following program solves the second-order nonlinear Van der Pol
+oscillator equation, as found in the GSL manual, x“(t) + mu x&#39;(t)
+(x(t)^2 - 1) + x(t) = 0,</p>
+
+<p>This can be converted into a first order system suitable for use with the
+routines described in this chapter by introducing a separate variable for
+the velocity, y = x&#39;(t),</p>
+<ul><li>
+<p>x&#39; = y</p>
+</li><li>
+<p>y&#39; = -x + mu y (1-x^2)</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span>(<span class="ruby-string">&quot;gsl&quot;</span>)
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Odeiv</span>
+
+<span class="ruby-identifier">dim</span> = <span class="ruby-value">2</span>    <span class="ruby-comment"># dimension of the system</span>
+
+<span class="ruby-comment"># Proc object to calculate the derivatives</span>
+<span class="ruby-identifier">func</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">dydt</span>, <span class="ruby-identifier">mu</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">dydt</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">y</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">dydt</span>[<span class="ruby-value">1</span>] = <span class="ruby-operator">-</span><span class="ruby-identifier">y</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">mu</span><span class="ruby-operator">*</span><span class="ruby-identifier">y</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span>(<span class="ruby-identifier">y</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">y</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1.0</span>)
+}
+
+<span class="ruby-comment"># Create the solver</span>
+<span class="ruby-identifier">solver</span> = <span class="ruby-constant">Solver</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-constant">Step</span><span class="ruby-operator">::</span><span class="ruby-constant">RKF45</span>, [<span class="ruby-value">1e-6</span>, <span class="ruby-value">0.0</span>], <span class="ruby-identifier">func</span>, <span class="ruby-identifier">dim</span>)
+<span class="ruby-identifier">mu</span> = <span class="ruby-value">10.0</span>
+<span class="ruby-identifier">solver</span>.<span class="ruby-identifier">set_params</span>(<span class="ruby-identifier">mu</span>)
+
+<span class="ruby-identifier">t</span> = <span class="ruby-value">0.0</span>       <span class="ruby-comment"># initial time</span>
+<span class="ruby-identifier">t1</span> = <span class="ruby-value">100.0</span>    <span class="ruby-comment"># end time</span>
+<span class="ruby-identifier">h</span> = <span class="ruby-value">1e-6</span>      <span class="ruby-comment"># initial step</span>
+<span class="ruby-identifier">y</span> = <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">alloc</span>([<span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>])    <span class="ruby-comment"># initial value</span>
+
+<span class="ruby-keyword">while</span> <span class="ruby-identifier">t</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">t1</span>
+  <span class="ruby-identifier">t</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">status</span> = <span class="ruby-identifier">solver</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">t1</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">y</span>)
+
+  <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SUCCESS</span>
+
+  <span class="ruby-identifier">printf</span>(<span class="ruby-string">&quot;%.5e %.5e %.5e %.5e\n&quot;</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">y</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">y</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">h</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+</li></ul>
+
+<p><a href="siman_rdoc.html">prev</a> <a href="interp_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

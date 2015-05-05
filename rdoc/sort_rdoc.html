@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>sort - Ruby/GSL (v1.16.0.4)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Sorting">Sorting</a>
+    <li><a href="#label-Heapsort">Heapsort</a>
+    <li><a href="#label-Sorting+vectors">Sorting vectors</a>
+    <li><a href="#label-Selecting+the+k+smallest+or+largest+elements">Selecting the k smallest or largest elements</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../COPYING.html">COPYING</a>
+  
+    <li><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li><a href="../README.html">README</a>
+  
+    <li><a href="../rdoc/alf_rdoc.html">alf</a>
+  
+    <li><a href="../rdoc/blas_rdoc.html">blas</a>
+  
+    <li><a href="../rdoc/bspline_rdoc.html">bspline</a>
+  
+    <li><a href="../rdoc/changes_rdoc.html">changes</a>
+  
+    <li><a href="../rdoc/cheb_rdoc.html">cheb</a>
+  
+    <li><a href="../rdoc/cholesky_complex_rdoc.html">cholesky_complex</a>
+  
+    <li><a href="../rdoc/combi_rdoc.html">combi</a>
+  
+    <li><a href="../rdoc/complex_rdoc.html">complex</a>
+  
+    <li><a href="../rdoc/const_rdoc.html">const</a>
+  
+    <li><a href="../rdoc/dht_rdoc.html">dht</a>
+  
+    <li><a href="../rdoc/diff_rdoc.html">diff</a>
+  
+    <li><a href="../rdoc/ehandling_rdoc.html">ehandling</a>
+  
+    <li><a href="../rdoc/eigen_rdoc.html">eigen</a>
+  
+    <li><a href="../rdoc/fft_rdoc.html">fft</a>
+  
+    <li><a href="../rdoc/fit_rdoc.html">fit</a>
+  
+    <li><a href="../rdoc/function_rdoc.html">function</a>
+  
+    <li><a href="../rdoc/graph_rdoc.html">graph</a>
+  
+    <li><a href="../rdoc/hist_rdoc.html">hist</a>
+  
+    <li><a href="../rdoc/hist2d_rdoc.html">hist2d</a>
+  
+    <li><a href="../rdoc/hist3d_rdoc.html">hist3d</a>
+  
+    <li><a href="../rdoc/integration_rdoc.html">integration</a>
+  
+    <li><a href="../rdoc/interp_rdoc.html">interp</a>
+  
+    <li><a href="../rdoc/intro_rdoc.html">intro</a>
+  
+    <li><a href="../rdoc/linalg_rdoc.html">linalg</a>
+  
+    <li><a href="../rdoc/linalg_complex_rdoc.html">linalg_complex</a>
+  
+    <li><a href="../rdoc/math_rdoc.html">math</a>
+  
+    <li><a href="../rdoc/matrix_rdoc.html">matrix</a>
+  
+    <li><a href="../rdoc/min_rdoc.html">min</a>
+  
+    <li><a href="../rdoc/monte_rdoc.html">monte</a>
+  
+    <li><a href="../rdoc/multimin_rdoc.html">multimin</a>
+  
+    <li><a href="../rdoc/multiroot_rdoc.html">multiroot</a>
+  
+    <li><a href="../rdoc/narray_rdoc.html">narray</a>
+  
+    <li><a href="../rdoc/ndlinear_rdoc.html">ndlinear</a>
+  
+    <li><a href="../rdoc/nonlinearfit_rdoc.html">nonlinearfit</a>
+  
+    <li><a href="../rdoc/ntuple_rdoc.html">ntuple</a>
+  
+    <li><a href="../rdoc/odeiv_rdoc.html">odeiv</a>
+  
+    <li><a href="../rdoc/perm_rdoc.html">perm</a>
+  
+    <li><a href="../rdoc/poly_rdoc.html">poly</a>
+  
+    <li><a href="../rdoc/qrng_rdoc.html">qrng</a>
+  
+    <li><a href="../rdoc/randist_rdoc.html">randist</a>
+  
+    <li><a href="../rdoc/ref_rdoc.html">ref</a>
+  
+    <li><a href="../rdoc/rng_rdoc.html">rng</a>
+  
+    <li><a href="../rdoc/roots_rdoc.html">roots</a>
+  
+    <li><a href="../rdoc/sf_rdoc.html">sf</a>
+  
+    <li><a href="../rdoc/siman_rdoc.html">siman</a>
+  
+    <li><a href="../rdoc/sort_rdoc.html">sort</a>
+  
+    <li><a href="../rdoc/start_rdoc.html">start</a>
+  
+    <li><a href="../rdoc/stats_rdoc.html">stats</a>
+  
+    <li><a href="../rdoc/sum_rdoc.html">sum</a>
+  
+    <li><a href="../rdoc/tensor_rdoc.html">tensor</a>
+  
+    <li><a href="../rdoc/tut_rdoc.html">tut</a>
+  
+    <li><a href="../rdoc/use_rdoc.html">use</a>
+  
+    <li><a href="../rdoc/vector_rdoc.html">vector</a>
+  
+    <li><a href="../rdoc/vector_complex_rdoc.html">vector_complex</a>
+  
+    <li><a href="../rdoc/wavelet_rdoc.html">wavelet</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page rdoc/sort.rdoc">
+
+<h1 id="label-Sorting">Sorting<span><a href="#label-Sorting">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Contents:</p>
+<ol><li>
+<p><a href="sort_rdoc.html#label-Heapsort">Heapsort of vectors</a></p>
+</li><li>
+<p><a href="sort_rdoc.html#label-Sorting+vectors">Sorting vectors</a></p>
+</li><li>
+<p><a
+href="sort_rdoc.html#label-Selecting+the+k+smallest+or+largest+elements">Selecting
+the k smallest or largest elements</a></p>
+</li></ol>
+
+<h2 id="label-Heapsort">Heapsort<span><a href="#label-Heapsort">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Vector#heapsort</p>
+</li><li>
+<p>GSL::Vector::Complex#heapsort</p>
+</li><li>
+<p>GSL.heapsort(v)</p>
+
+<p>These method sort the elements of the vector <code>self</code> using the
+comparison function given by a block, and return the result as a new vector
+object. The vector <code>self</code> is not changed.</p>
+
+<p>Example: Sorting a complex vector in ascending order by magnitudes.</p>
+
+<pre class="ruby"><span class="ruby-identifier">p</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">heapsort</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">a</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">abs</span>
+}
+</pre>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#heapsort!</p>
+</li><li>
+<p>GSL::Vector::Complex#heapsort!</p>
+</li><li>
+<p>GSL.heapsort!(v)</p>
+
+<p>These method sort the elements of the vector <code>self</code> in-place.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#heapsort_index</p>
+</li><li>
+<p>GSL::Vector::Complex#heapsort_index</p>
+</li><li>
+<p>GSL.heapsort_index(v)</p>
+
+<p>These method indirectly sort the elements of the vector <code>self</code>
+using the comparison function given by a block, and return the result as a
+permutation object. The vector itself is not changed.</p>
+</li></ul>
+
+<h2 id="label-Sorting+vectors">Sorting vectors<span><a href="#label-Sorting+vectors">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Vector#sort!</p>
+
+<p>This method sorts the elements of the vector <code>self</code> into
+ascending numerical order. The vector itself is changed.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#sort</p>
+
+<p>This returns a new vector whose elements are sorted into ascending
+numerical order. The vector <code>self</code> is not changed.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#sort_index</p>
+
+<p>This method indirectly sorts the elements of the vector <code>self</code>
+into ascending order, and returns the result as a
+<code>GSL::Permutation</code> object. The elements of the returned
+permutation give the index of the vector element which would have been
+stored in that position if the vector had been sorted in place. The first
+element of the permutation gives the index of the least element in
+<code>self</code>,  and the last element of the permutation gives the index
+of the greatest element in <code>self</code>. The vector <code>self</code>
+is not changed.</p>
+</li></ul>
+
+<h2 id="label-Selecting+the+k+smallest+or+largest+elements">Selecting the k smallest or largest elements<span><a href="#label-Selecting+the+k+smallest+or+largest+elements">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<hr>
+<ul><li>
+<p>GSL::Vector#sort_smallest(k)</p>
+</li><li>
+<p>GSL::Vector#sort_largest(k)</p>
+
+<p>These functions return a new vector of the <code>k</code> smallest or
+largest elements  of the vector <code>self</code>. The argument
+<code>k</code> must be less than or equal to the length of the vector
+<code>self</code>.</p>
+</li></ul>
+<hr>
+<ul><li>
+<p>GSL::Vector#sort_smallest_index(k)</p>
+</li><li>
+<p>GSL::Vector#sort_largest_index(k)</p>
+
+<p>These functions return a new <code>GSL::Permutation</code> object of the
+indices of the <code>k</code> smallest or largest elements of the vector
+<code>self</code>. <code>k</code> must be less than or equal to the length
+of the vector.</p>
+</li></ul>
+
+<p><a href="combi_rdoc.html">prev</a> <a href="blas_rdoc.html">next</a></p>
+
+<p><a href="ref_rdoc.html">Reference index</a> <a href="../index.html">top</a></p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
