@@ -1,3 +1,5 @@
+# Development has shifted to [SciRuby/rb-gsl](https://github.com/SciRuby/rb-gsl).
+
 # Ruby/GSL, a Ruby interface to GSL (GNU Scientific library)
 
 Permission is granted to copy, distribute and/or modify this document under
